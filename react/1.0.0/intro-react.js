@@ -1,0 +1,1 @@
+import{e as o,o as s,g as t}from"./vendor.js";const n={class:"markdown-body"},c=t("h1",null,"NutUI React",-1),r=t("p",null,"xxxxx",-1),a=[c,r],p={setup(_,{expose:e}){return e({frontmatter:{}}),(l,i)=>(s(),o("div",n,a))}};export{p as default};
