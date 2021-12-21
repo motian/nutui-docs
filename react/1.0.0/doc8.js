@@ -1,112 +1,41 @@
-import{e as a,o as n,y as t}from"./vendor.js";const l={class:"markdown-body"},p=t(`<h1>Checkbox \u590D\u9009\u6309\u94AE</h1><h3>\u4ECB\u7ECD</h3><p>\u591A\u9009\u6309\u94AE\u7528\u4E8E\u9009\u62E9\u3002</p><h3>\u5B89\u88C5</h3><pre><code class="language-ts"><span class="hljs-keyword">import</span> { Checkbox,CheckBoxGroup,Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;@nutui/nutui&#39;</span>;
-
-</code></pre><h2>\u57FA\u672C\u7528\u6CD5</h2><pre><code class="language-html">const CheckBoxDemo = () =&gt; {
-  const [checked, setChecked] = useState(true)
-  return (<span class="hljs-tag">&lt;&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">CheckBox</span> <span class="hljs-attr">textPosition</span>=<span class="hljs-string">{</span>&#39;<span class="hljs-attr">left</span>&#39;} <span class="hljs-attr">label</span>=<span class="hljs-string">{</span>&#39;\u590D\u9009\u6846&#39;} <span class="hljs-attr">checked</span>=<span class="hljs-string">{checked}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">CheckBox</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">CheckBox</span> <span class="hljs-attr">textPosition</span>=<span class="hljs-string">{</span>&#39;<span class="hljs-attr">right</span>&#39;} <span class="hljs-attr">label</span>=<span class="hljs-string">{</span>&#39;\u590D\u9009\u6846&#39;} <span class="hljs-attr">checked</span>=<span class="hljs-string">{false}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">CheckBox</span>&gt;</span>
-  <span class="hljs-tag">&lt;/&gt;</span>
-  )
-}
-</code></pre><h2>\u7981\u7528\u72B6\u6001</h2><pre><code class="language-html">const CheckBoxDemo = () =&gt; {
-  return (<span class="hljs-tag">&lt;&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">CheckBox</span>
-      <span class="hljs-attr">textPosition</span>=<span class="hljs-string">{</span>&#39;<span class="hljs-attr">right</span>&#39;}
-      <span class="hljs-attr">label</span>=<span class="hljs-string">{</span>&#39;\u672A\u9009\u65F6\u7981\u7528\u72B6\u6001&#39;}
-      <span class="hljs-attr">checked</span>=<span class="hljs-string">{false}</span>
-      <span class="hljs-attr">disabled</span>=<span class="hljs-string">{true}</span>
-    &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">CheckBox</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">CheckBox</span>
-      <span class="hljs-attr">textPosition</span>=<span class="hljs-string">{</span>&#39;<span class="hljs-attr">right</span>&#39;}
-      <span class="hljs-attr">label</span>=<span class="hljs-string">{</span>&#39;\u9009\u4E2D\u65F6\u7981\u7528\u72B6\u6001&#39;}
-      <span class="hljs-attr">checked</span>=<span class="hljs-string">{true}</span>
-      <span class="hljs-attr">disabled</span>=<span class="hljs-string">{true}</span>
-    &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">CheckBox</span>&gt;</span>
-  <span class="hljs-tag">&lt;/&gt;</span>)
-}
-</code></pre><h2>\u81EA\u5B9A\u4E49\u5C3A\u5BF8</h2><pre><code class="language-html">const CheckBoxDemo = () =&gt; {
-  return (<span class="hljs-tag">&lt;&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">CheckBox</span> <span class="hljs-attr">label</span>=<span class="hljs-string">{</span>&#39;\u81EA\u5B9A\u4E49\u5C3A\u5BF8<span class="hljs-attr">25</span>&#39;} <span class="hljs-attr">iconSize</span>=<span class="hljs-string">{25}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">CheckBox</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">CheckBox</span> <span class="hljs-attr">label</span>=<span class="hljs-string">{</span>&#39;\u81EA\u5B9A\u4E49\u5C3A\u5BF8<span class="hljs-attr">10</span>&#39;} <span class="hljs-attr">iconSize</span>=<span class="hljs-string">{10}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">CheckBox</span>&gt;</span>
-  <span class="hljs-tag">&lt;/&gt;</span>)
-}
-</code></pre><h2>\u81EA\u5B9A\u4E49\u56FE\u6807</h2><p>\u8FD9\u91CC\u5EFA\u8BAE\u540C\u65F6\u8BBE\u7F6E <code>iconName</code> \u548C <code>iconActiveName</code> \u5C5E\u6027</p><pre><code class="language-html">const CheckBoxDemo = () =&gt; {
-  return (<span class="hljs-tag">&lt;&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">CheckBox</span> <span class="hljs-attr">iconName</span>=<span class="hljs-string">&quot;checklist&quot;</span> <span class="hljs-attr">iconActiveName</span>=<span class="hljs-string">&quot;checklist&quot;</span>&gt;</span>\u81EA\u5B9A\u4E49\u56FE\u6807<span class="hljs-tag">&lt;/<span class="hljs-name">CheckBox</span>&gt;</span>
-  <span class="hljs-tag">&lt;/&gt;</span>)
-}
-</code></pre><h2>change\u4E8B\u4EF6</h2><p>\u503C\u53D1\u751F\u53D8\u5316\u65F6\uFF0C\u5C06\u89E6\u53D1change\u4E8B\u4EF6</p><pre><code class="language-html">const CheckBoxDemo = () =&gt; {
-  return (<span class="hljs-tag">&lt;&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">CheckBox</span>
-      <span class="hljs-attr">checked</span>=<span class="hljs-string">{false}</span>
-      <span class="hljs-attr">onChange</span>=<span class="hljs-string">{(state,</span> <span class="hljs-attr">label</span>) =&gt;</span> {
-      Toast.text(\`\u60A8\${state ? &#39;\u9009\u4E2D&#39; : &#39;\u53D6\u6D88&#39;}\u4E86\${label}\`)
-      }}
-      &gt;
-      change\u590D\u9009\u6846
-    <span class="hljs-tag">&lt;/<span class="hljs-name">CheckBox</span>&gt;</span>
-  <span class="hljs-tag">&lt;/&gt;</span>)
-}
-</code></pre><h2>CheckBoxGroup\u4F7F\u7528</h2><pre><code class="language-html">const CheckBoxDemo = () =&gt; {
-  const [checkboxgroup1, setCheckboxgroup1] = useState([&#39;1&#39;])
-  return (
-    <span class="hljs-tag">&lt;<span class="hljs-name">CheckBoxGroup</span>
-      <span class="hljs-attr">checkedValue</span>=<span class="hljs-string">{checkboxgroup1}</span>
-      <span class="hljs-attr">onChange</span>=<span class="hljs-string">{(value)</span> =&gt;</span> {
-    console.log(value)
-    setCheckboxgroup1(value)
-    }}
-    &gt;
-      <span class="hljs-tag">&lt;<span class="hljs-name">CheckBox</span> <span class="hljs-attr">checked</span>=<span class="hljs-string">{false}</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>
-        \u7EC4\u5408\u590D\u9009\u6846
-      <span class="hljs-tag">&lt;/<span class="hljs-name">CheckBox</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">CheckBox</span> <span class="hljs-attr">checked</span>=<span class="hljs-string">{false}</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>
-        \u7EC4\u5408\u590D\u9009\u6846
-      <span class="hljs-tag">&lt;/<span class="hljs-name">CheckBox</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">CheckBox</span> <span class="hljs-attr">checked</span>=<span class="hljs-string">{false}</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;3&quot;</span>&gt;</span>
-        \u7EC4\u5408\u590D\u9009\u6846
-      <span class="hljs-tag">&lt;/<span class="hljs-name">CheckBox</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">CheckBox</span> <span class="hljs-attr">checked</span>=<span class="hljs-string">{false}</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;4&quot;</span>&gt;</span>
-        \u7EC4\u5408\u590D\u9009\u6846
-      <span class="hljs-tag">&lt;/<span class="hljs-name">CheckBox</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">CheckBoxGroup</span>&gt;</span>
-  )
-}
-</code></pre><h2>CheckBoxGroup \u5168\u9009/\u53D6\u6D88</h2><pre><code class="language-html">const CheckBoxDemo = () =&gt; {
-  const [checkboxgroup2, setCheckboxgroup2] = useState([&#39;1&#39;])
-  const checkboxgroup2Ref = useRef(null)
-  return (<span class="hljs-tag">&lt;&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">CheckBoxGroup</span>
-      <span class="hljs-attr">style</span>=<span class="hljs-string">{{}}</span>
-      <span class="hljs-attr">ref</span>=<span class="hljs-string">{checkboxgroup2Ref}</span>
-      <span class="hljs-attr">checkedValue</span>=<span class="hljs-string">{checkboxgroup2}</span>
-      <span class="hljs-attr">onChange</span>=<span class="hljs-string">{(value)</span> =&gt;</span> {
-    Toast.text(\`\${value.length === 2 ? &#39;\u5168\u9009&#39; : &#39;\u53D6\u6D88\u5168\u9009&#39;}\`)
-    }}
-    &gt;
-    <span class="hljs-tag">&lt;<span class="hljs-name">CheckBox</span> <span class="hljs-attr">checked</span>=<span class="hljs-string">{false}</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>
-      \u7EC4\u5408\u590D\u9009\u6846
-    <span class="hljs-tag">&lt;/<span class="hljs-name">CheckBox</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">CheckBox</span> <span class="hljs-attr">checked</span>=<span class="hljs-string">{false}</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>
-      \u7EC4\u5408\u590D\u9009\u6846
-    <span class="hljs-tag">&lt;/<span class="hljs-name">CheckBox</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">CheckBoxGroup</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
-      <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>
-      <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> {
-    ;(checkboxgroup2Ref.current as any).toggleAll(true)
-    }}
-    &gt;
-    \u5168\u9009
-    <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
-      <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;info&quot;</span>
-      <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> {
-    ;(checkboxgroup2Ref.current as any).toggleAll(false)
-    }}
-    &gt;
-    \u53D6\u6D88
-    <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/&gt;</span>)
-}
-</code></pre><h2>Checkbox</h2><table><thead><tr><th>\u5B57\u6BB5</th><th>\u8BF4\u660E</th><th>\u7C7B\u578B</th><th>\u9ED8\u8BA4\u503C</th></tr></thead><tbody><tr><td>checked</td><td>\u662F\u5426\u5904\u4E8E\u9009\u4E2D\u72B6\u6001</td><td>Boolean</td><td><code>false</code></td></tr><tr><td>disabled</td><td>\u662F\u5426\u7981\u7528\u9009\u62E9</td><td>Boolean</td><td><code>false</code></td></tr><tr><td>textPosition</td><td>\u6587\u672C\u6240\u5728\u7684\u4F4D\u7F6E\uFF0C\u53EF\u9009\u503C\uFF1A<code>left</code>,<code>right</code></td><td>String</td><td><code>right</code></td></tr><tr><td>iconSize</td><td><a href="#/icon">\u56FE\u6807\u5C3A\u5BF8</a></td><td>String\u3001Number</td><td><code>18</code></td></tr><tr><td>iconName</td><td><a href="#/icon">\u56FE\u6807\u540D\u79F0</a>\uFF0C\u9009\u4E2D\u524D(\u5EFA\u8BAE\u548C<code>iconActiveName</code>\u4E00\u8D77\u4FEE\u6539)</td><td>String</td><td><code>&#39;check-normal&#39;</code></td></tr><tr><td>iconActiveName</td><td><a href="#/icon">\u56FE\u6807\u540D\u79F0</a>\uFF0C\u9009\u4E2D\u540E(\u5EFA\u8BAE\u548C<code>iconName</code>\u4E00\u8D77\u4FEE\u6539)</td><td>String</td><td><code>&#39;checked&#39;</code></td></tr><tr><td>label</td><td>\u590D\u9009\u6846\u7684\u6587\u672C\u5185\u5BB9</td><td>String</td><td>-</td></tr></tbody></table><h2>CheckBoxGroup</h2><table><thead><tr><th>\u5B57\u6BB5</th><th>\u8BF4\u660E</th><th>\u7C7B\u578B</th><th>\u9ED8\u8BA4\u503C</th></tr></thead><tbody><tr><td>checkedValue</td><td>\u5F53\u524D\u9009\u4E2D\u9879\u7684\u6807\u8BC6\u7B26\uFF0C\u548C <code>label</code> \u76F8\u5BF9\u5E94</td><td>String</td><td>-</td></tr><tr><td>disabled</td><td>\u662F\u5426\u7981\u7528\u9009\u62E9,\u5C06\u7528\u4E8E\u5176\u4E0B\u7684\u5168\u90E8\u590D\u9009\u6846</td><td>Boolean</td><td><code>false</code></td></tr></tbody></table><h2>Checkbox Event</h2><table><thead><tr><th>\u5B57\u6BB5</th><th>\u8BF4\u660E</th><th>\u56DE\u8C03\u53C2\u6570</th></tr></thead><tbody><tr><td>change</td><td>\u503C\u53D8\u5316\u65F6\u89E6\u53D1</td><td>(state, label),<code>state</code>\u4EE3\u8868\u5F53\u524D\u72B6\u6001\uFF0C<code>label</code>\u8868\u793A\u5F53\u524D\u9009\u4E2D\u7684\u503C</td></tr></tbody></table><h2>CheckBoxGroup Event</h2><table><thead><tr><th>\u5B57\u6BB5</th><th>\u8BF4\u660E</th><th>\u56DE\u8C03\u53C2\u6570</th></tr></thead><tbody><tr><td>change</td><td>\u503C\u53D8\u5316\u65F6\u89E6\u53D1</td><td>label,<code>label</code>\u8FD4\u56DE\u4E00\u4E2A\u6570\u7EC4\uFF0C\u8868\u793A\u5F53\u524D\u9009\u4E2D\u9879\u7684\u96C6\u5408</td></tr></tbody></table>`,29),c=[p],d={setup(e,{expose:s}){return s({frontmatter:{}}),(o,r)=>(n(),a("div",l,c))}};export{d as default};
+import{e as a,o as t,y as n}from"./vendor.js";const l={class:"markdown-body"},p=n(`<h1>Button \u6309\u94AE</h1><h3>\u4ECB\u7ECD</h3><p>\u6309\u94AE\u7528\u4E8E\u89E6\u53D1\u4E00\u4E2A\u64CD\u4F5C\uFF0C\u5982\u63D0\u4EA4\u8868\u5355\u3002</p><h3>\u5B89\u88C5</h3><pre><code class="language-javascript"><span class="hljs-keyword">import</span> { Button } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;@nutui/nutui-react&#39;</span>;
+</code></pre><h2>\u4EE3\u7801\u6F14\u793A</h2><h3>\u6309\u94AE\u7C7B\u578B</h3><p>\u6309\u94AE\u652F\u6301 <code>default</code>\u3001<code>primary</code>\u3001<code>info</code>\u3001<code>warning</code>\u3001<code>danger</code>\u3001<code>success</code> \u516D\u79CD\u7C7B\u578B\uFF0C\u9ED8\u8BA4\u4E3A <code>default</code>\u3002</p><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>\u4E3B\u8981\u6309\u94AE<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;info&quot;</span>&gt;</span>\u4FE1\u606F\u6309\u94AE<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;default&quot;</span>&gt;</span>\u9ED8\u8BA4\u6309\u94AE<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;danger&quot;</span>&gt;</span>\u5371\u9669\u6309\u94AE<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;warning&quot;</span>&gt;</span>\u8B66\u544A\u6309\u94AE<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;success&quot;</span>&gt;</span>\u6210\u529F\u6309\u94AE<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+</code></pre><h3>\u6734\u7D20\u6309\u94AE</h3><p>\u901A\u8FC7 <code>plain</code> \u5C5E\u6027\u5C06\u6309\u94AE\u8BBE\u7F6E\u4E3A\u6734\u7D20\u6309\u94AE\uFF0C\u6734\u7D20\u6309\u94AE\u7684\u6587\u5B57\u4E3A\u6309\u94AE\u989C\u8272\uFF0C\u80CC\u666F\u4E3A\u767D\u8272\u3002</p><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">plain</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>\u6734\u7D20\u6309\u94AE<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">plain</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;info&quot;</span>&gt;</span>\u6734\u7D20\u6309\u94AE<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+</code></pre><h3>\u7981\u7528\u72B6\u6001</h3><p>\u901A\u8FC7 <code>disabled</code> \u5C5E\u6027\u6765\u7981\u7528\u6309\u94AE\uFF0C\u7981\u7528\u72B6\u6001\u4E0B\u6309\u94AE\u4E0D\u53EF\u70B9\u51FB\u3002</p><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>\u7981\u7528\u72B6\u6001<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">plain</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;info&quot;</span>&gt;</span>\u7981\u7528\u72B6\u6001<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">plain</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>\u7981\u7528\u72B6\u6001<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+</code></pre><h3>\u6309\u94AE\u5F62\u72B6</h3><p>\u901A\u8FC7 <code>shape</code> \u5C5E\u6027\u8BBE\u7F6E\u6309\u94AE\u5F62\u72B6\uFF0C\u652F\u6301\u5706\u5F62\u3001\u65B9\u5F62\u6309\u94AE\uFF0C\u9ED8\u8BA4\u4E3A\u5706\u5F62\u3002</p><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">&quot;square&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>\u65B9\u5F62\u6309\u94AE<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;info&quot;</span>&gt;</span>\u5706\u5F62\u6309\u94AE<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+</code></pre><h3>\u52A0\u8F7D\u72B6\u6001</h3><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">loading</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;info&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">loading</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;warning&quot;</span>&gt;</span>\u52A0\u8F7D\u4E2D...<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
+          <span class="hljs-attr">loading</span>=<span class="hljs-string">{loading}</span>
+          <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;success&quot;</span>
+          <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> {
+            setTimeout(() =&gt; {
+              setLoading(false)
+            }, 1500),
+              setLoading(!loading)
+          }}
+          style={{ margin: 8 }}
+        &gt;
+          Click me!
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+</code></pre><h3>\u56FE\u6807\u6309\u94AE</h3><pre><code class="language-html">  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">&quot;square&quot;</span> <span class="hljs-attr">plain</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;star-fill&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">shape</span>=<span class="hljs-string">&quot;square&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;star&quot;</span>&gt;</span>\u6536\u85CF<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+</code></pre><h3>\u6309\u94AE\u5C3A\u5BF8</h3><p>\u652F\u6301 <code>large</code>\u3001<code>normal</code>\u3001<code>small</code> \u4E09\u79CD\u5C3A\u5BF8\uFF0C\u9ED8\u8BA4\u4E3A <code>normal</code>\u3002</p><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;large&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>\u5927\u53F7\u6309\u94AE<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>\u666E\u901A\u6309\u94AE<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;small&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>\u5C0F\u578B\u6309\u94AE<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+</code></pre><h3>\u5757\u7EA7\u5143\u7D20</h3><p>\u6309\u94AE\u5728\u9ED8\u8BA4\u60C5\u51B5\u4E0B\u4E3A\u884C\u5185\u5757\u7EA7\u5143\u7D20\uFF0C\u901A\u8FC7 <code>block</code> \u5C5E\u6027\u53EF\u4EE5\u5C06\u6309\u94AE\u7684\u5143\u7D20\u7C7B\u578B\u8BBE\u7F6E\u4E3A\u5757\u7EA7\u5143\u7D20\uFF0C\u5E38\u7528\u6765\u5B9E\u73B0\u901A\u680F\u6309\u94AE\u3002</p><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">block</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>\u5757\u7EA7\u5143\u7D20<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+</code></pre><h3>\u81EA\u5B9A\u4E49\u989C\u8272</h3><p>\u901A\u8FC7 color \u5C5E\u6027\u53EF\u4EE5\u81EA\u5B9A\u4E49\u6309\u94AE\u7684\u989C\u8272\u3002</p><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;#7232dd&quot;</span>&gt;</span>\u5355\u8272\u6309\u94AE<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;#7232dd&quot;</span> <span class="hljs-attr">plain</span>&gt;</span>\u5355\u8272\u6309\u94AE<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;linear-gradient(to right, #ff6034, #ee0a24)&quot;</span>&gt;</span>
+  \u6E10\u53D8\u8272\u6309\u94AE
+<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+</code></pre><h2>API</h2><h3>Props</h3><table><thead><tr><th>\u53C2\u6570</th><th>\u8BF4\u660E</th><th>\u7C7B\u578B</th><th>\u9ED8\u8BA4\u503C</th></tr></thead><tbody><tr><td>type</td><td>\u7C7B\u578B\uFF0C\u53EF\u9009\u503C\u4E3A <code>primary</code> <code>info</code> <code>warning</code> <code>danger</code> <code>success</code></td><td>String</td><td><code>default</code></td></tr><tr><td>size</td><td>\u5C3A\u5BF8\uFF0C\u53EF\u9009\u503C\u4E3A <code>large</code> <code>small</code></td><td>String</td><td><code>normal</code></td></tr><tr><td>shape</td><td>\u5F62\u72B6\uFF0C\u53EF\u9009\u503C\u4E3A <code>square</code></td><td>String</td><td><code>round</code></td></tr><tr><td>color</td><td>\u6309\u94AE\u989C\u8272\uFF0C\u652F\u6301\u4F20\u5165 linear-gradient \u6E10\u53D8\u8272</td><td>String</td><td>-</td></tr><tr><td>plain</td><td>\u662F\u5426\u4E3A\u6734\u7D20\u6309\u94AE</td><td>Boolean</td><td><code>false</code></td></tr><tr><td>disabled</td><td>\u662F\u5426\u7981\u7528\u6309\u94AE</td><td>Boolean</td><td><code>false</code></td></tr><tr><td>block</td><td>\u662F\u5426\u4E3A\u5757\u7EA7\u5143\u7D20</td><td>Boolean</td><td><code>false</code></td></tr><tr><td>icon</td><td>\u6309\u94AE\u56FE\u6807\uFF0C\u540CIcon\u7EC4\u4EF6name\u5C5E\u6027</td><td>String</td><td>-</td></tr><tr><td>loading</td><td>\u6309\u94AEloading\u72B6\u6001</td><td>Boolean</td><td><code>false</code></td></tr></tbody></table><h3>Events</h3><table><thead><tr><th>\u4E8B\u4EF6\u540D</th><th>\u8BF4\u660E</th><th>\u56DE\u8C03\u53C2\u6570</th></tr></thead><tbody><tr><td>click</td><td>\u70B9\u51FB\u6309\u94AE\u65F6\u89E6\u53D1</td><td>event: MouseEvent</td></tr></tbody></table>`,36),c=[p],g={setup(o,{expose:s}){return s({frontmatter:{}}),(h,d)=>(t(),a("div",l,c))}};export{g as default};

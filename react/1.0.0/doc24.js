@@ -1,87 +1,42 @@
-import{e as a,o as n,y as t}from"./vendor.js";const e={class:"markdown-body"},l=t(`<h1>Range \u533A\u95F4\u9009\u62E9\u5668</h1><h3>\u4ECB\u7ECD</h3><p>\u6ED1\u52A8\u8F93\u5165\u6761\uFF0C\u7528\u4E8E\u5728\u7ED9\u5B9A\u7684\u8303\u56F4\u5185\u9009\u62E9\u4E00\u4E2A\u503C\u3002</p><h3>\u5B89\u88C5</h3><h2>\u4EE3\u7801\u6F14\u793A</h2><h3>\u57FA\u7840\u7528\u6CD5</h3><pre><code class="language-jsx">&lt;Range modelValue={<span class="hljs-number">40</span>}&gt;&lt;/Range&gt;
-</code></pre><h3>\u53CC\u6ED1\u5757</h3><pre><code class="language-jsx">&lt;Range
-  range
-  modelValue={[<span class="hljs-number">30</span>, <span class="hljs-number">60</span>]}
-  change={<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> {
-    change(value)
-  }}
-&gt;&lt;/Range&gt;
-</code></pre><h3>\u6307\u5B9A\u8303\u56F4</h3><pre><code class="language-jsx">&lt;Range
-  modelValue={<span class="hljs-number">0</span>}
-  max={<span class="hljs-number">10</span>}
-  min={-<span class="hljs-number">10</span>}
-  change={<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> {
-    change(value)
-  }}
-&gt;&lt;/Range&gt;
-</code></pre><h3>\u8BBE\u7F6E\u6B65\u957F</h3><pre><code class="language-jsx">&lt;Range
-  modelValue={value1}
-  step={<span class="hljs-number">5</span>}
-  change={<span class="hljs-function">(<span class="hljs-params">value: any</span>) =&gt;</span> {
-    change(value, <span class="hljs-string">&#39;value1&#39;</span>)
-  }}
-&gt;&lt;/Range&gt;
-</code></pre><h3>\u9690\u85CF\u8303\u56F4</h3><pre><code class="language-jsx">&lt;Range
-  modelValue={<span class="hljs-number">30</span>}
-  hiddenRange={<span class="hljs-literal">true</span>}
-  change={<span class="hljs-function">(<span class="hljs-params">value: any</span>) =&gt;</span> {
-    change(value)
-  }}
-&gt;&lt;/Range&gt;
-</code></pre><h3>\u9690\u85CF\u6807\u7B7E</h3><pre><code class="language-jsx">&lt;Range
-  modelValue={<span class="hljs-number">20</span>}
-  hiddenTag={<span class="hljs-literal">true</span>}
-  change={<span class="hljs-function">(<span class="hljs-params">value: any</span>) =&gt;</span> {
-    change(value)
-  }}
-&gt;&lt;/Range&gt;
-</code></pre><h3>\u7981\u7528</h3><pre><code class="language-jsx">&lt;Range
-  modelValue={<span class="hljs-number">50</span>}
-  disabled
-  change={<span class="hljs-function">(<span class="hljs-params">value: any</span>) =&gt;</span> {
-    change(value)
-  }}
-&gt;&lt;/Range&gt;
-</code></pre><h3>\u81EA\u5B9A\u4E49\u6837\u5F0F</h3><pre><code class="language-jsx">&lt;Range
-  modelValue={<span class="hljs-number">40</span>}
-  inactiveColor=<span class="hljs-string">&quot;rgba(163,184,255,1)&quot;</span>
-  buttonColor=<span class="hljs-string">&quot;rgba(52,96,250,1)&quot;</span>
-  activeColor=<span class="hljs-string">&quot;linear-gradient(315deg, rgba(73,143,242,1) 0%,rgba(73,101,242,1) 100%)&quot;</span>
-  change={<span class="hljs-function">(<span class="hljs-params">value: number</span>) =&gt;</span> {
-    change(value)
-  }}
-&gt;&lt;/Range&gt;
-</code></pre><h3>\u81EA\u5B9A\u4E49\u6309\u94AE</h3><pre><code class="language-jsx">&lt;Range
-  modelValue={value2}
-  button={<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;custom-button&quot;</span>&gt;</span>{value2}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>}
-  change={<span class="hljs-function">(<span class="hljs-params">value: number</span>) =&gt;</span> {
-    change(value, <span class="hljs-string">&#39;value2&#39;</span>)
-  }}
-&gt;&lt;/Range&gt;
-</code></pre><pre><code class="language-js"><span class="hljs-keyword">const</span> [value1, SetValue1] = useState(<span class="hljs-number">40</span>)
-<span class="hljs-keyword">const</span> [value2, SetValue2] = useState(<span class="hljs-number">60</span>)
-<span class="hljs-keyword">const</span> change = <span class="hljs-function">(<span class="hljs-params">value: number, name?: string</span>) =&gt;</span> {
-  Toast.text(<span class="hljs-string">&#39;\u5F53\u524D\u503C\uFF1A&#39;</span> + value)
-  <span class="hljs-keyword">switch</span> (name) {
-    <span class="hljs-keyword">case</span> <span class="hljs-string">&#39;value1&#39;</span>:
-      SetValue1(value)
-      <span class="hljs-keyword">break</span>
-    <span class="hljs-keyword">case</span> <span class="hljs-string">&#39;value2&#39;</span>:
-      SetValue2(value)
-      <span class="hljs-keyword">break</span>
-    <span class="hljs-attr">default</span>:
-      <span class="hljs-keyword">break</span>
-  }
+import{e as t,o as a,y as n}from"./vendor.js";const l={class:"markdown-body"},p=n(`<h1>Notify \u6D88\u606F\u901A\u77E5</h1><h3>\u4ECB\u7ECD</h3><p>\u5728\u9875\u9762\u9876\u90E8\u5C55\u793A\u6D88\u606F\u63D0\u793A</p><h3>\u5B89\u88C5</h3><pre><code class="language-javascript"><span class="hljs-keyword">import</span> { Notify } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;@nutui/nutui-react&#39;</span>;
+</code></pre><h2>\u4EE3\u7801\u6F14\u793A</h2><h3>\u57FA\u7840\u7528\u6CD5</h3><pre><code class="language-tsx"> &lt;Cell title=<span class="hljs-string">&quot;\u57FA\u7840\u7528\u6CD5&quot;</span>
+ click={<span class="hljs-function">(<span class="hljs-params">event: React.MouseEvent</span>) =&gt;</span> { 
+    baseNotify(<span class="hljs-string">&#39;\u57FA\u7840\u7528\u6CD5&#39;</span>)
+ }}
+&gt;&lt;/Cell&gt;
+<span class="hljs-keyword">const</span> baseNotify = <span class="hljs-function">(<span class="hljs-params">msg: <span class="hljs-built_in">string</span></span>) =&gt;</span> {
+    Notify.text(msg,{
+      <span class="hljs-attr">onClosed</span>: <span class="hljs-function">() =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#39;close&#39;</span>);
+      },
+      <span class="hljs-attr">onClick</span>: <span class="hljs-function">() =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#39;click&#39;</span>);
+      }
+    })
 }
-</code></pre><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
-  <span class="hljs-selector-class">.custom-button</span> {
-    <span class="hljs-attribute">width</span>: <span class="hljs-number">26px</span>;
-    <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
-    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">10px</span>;
-    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">18px</span>;
-    <span class="hljs-attribute">text-align</span>: center;
-    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ee0a24</span>;
-    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">100px</span>;
-  }
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
-</code></pre><h2>API</h2><h3>Props</h3><table><thead><tr><th>\u53C2\u6570</th><th>\u8BF4\u660E</th><th>\u7C7B\u578B</th><th>\u9ED8\u8BA4\u503C</th></tr></thead><tbody><tr><td>modelValue</td><td>\u5F53\u524D\u8FDB\u5EA6\u767E\u5206\u6BD4</td><td>Number\u3001Number[]</td><td><code>0</code></td></tr><tr><td>range</td><td>\u662F\u5426\u5F00\u542F\u53CC\u6ED1\u5757\u6A21\u5F0F</td><td>Boolean</td><td><code>false</code></td></tr><tr><td>max</td><td>\u6700\u5927\u503C</td><td>Number\u3001String</td><td><code>100</code></td></tr><tr><td>min</td><td>\u6700\u5C0F\u503C</td><td>Number\u3001String</td><td><code>0</code></td></tr><tr><td>step</td><td>\u6B65\u957F</td><td>Number\u3001String</td><td><code>1</code></td></tr><tr><td>disabled</td><td>\u662F\u5426\u7981\u7528\u6ED1\u5757</td><td>Boolean</td><td><code>false</code></td></tr><tr><td>hiddenRange</td><td>\u662F\u5426\u9690\u85CF\u8303\u56F4\u503C</td><td>Boolean</td><td><code>false</code></td></tr><tr><td>hiddenTag</td><td>\u662F\u5426\u9690\u85CF\u6807\u7B7E</td><td>Boolean</td><td><code>false</code></td></tr><tr><td>activeColor</td><td>\u8FDB\u5EA6\u6761\u6FC0\u6D3B\u6001\u989C\u8272</td><td>String</td><td><code>rgba(250, 44, 25, 1)</code></td></tr><tr><td>inactiveColor</td><td>\u8FDB\u5EA6\u6761\u975E\u6FC0\u6D3B\u6001\u989C\u8272</td><td>String</td><td><code>rgba(255, 163, 154, 1)</code></td></tr><tr><td>buttonColor</td><td>\u6309\u94AE\u989C\u8272</td><td>String</td><td><code>rgba(250, 44, 25, 1)</code></td></tr></tbody></table><h3>Events</h3><table><thead><tr><th>\u4E8B\u4EF6\u540D</th><th>\u8BF4\u660E</th><th>\u56DE\u8C03\u53C2\u6570</th></tr></thead><tbody><tr><td>change</td><td>\u8FDB\u5EA6\u53D8\u5316\u4E14\u7ED3\u675F\u62D6\u52A8\u540E\u89E6\u53D1</td><td>value: \u5F53\u524D\u8FDB\u5EA6</td></tr><tr><td>dragStart</td><td>\u5F00\u59CB\u62D6\u52A8\u65F6\u89E6\u53D1</td><td>-</td></tr><tr><td>dragEnd</td><td>\u7ED3\u675F\u62D6\u52A8\u65F6\u89E6\u53D1</td><td>-</td></tr></tbody></table><h3>Slots</h3><table><thead><tr><th>\u540D\u79F0</th><th>\u8BF4\u660E</th></tr></thead><tbody><tr><td>button</td><td>\u81EA\u5B9A\u4E49\u6ED1\u52A8\u6309\u94AE</td></tr></tbody></table>`,32),d=[l],g={setup(p,{expose:s}){return s({frontmatter:{}}),(r,h)=>(n(),a("div",e,d))}};export{g as default};
+</code></pre><h2>\u901A\u77E5\u7C7B\u578B</h2><h3>\u4E3B\u8981\u901A\u77E5</h3><pre><code class="language-tsx">Notify.primary(<span class="hljs-string">&#39;\u901A\u77E5\u5185\u5BB9&#39;</span>)
+</code></pre><h3>\u6210\u529F\u901A\u77E5</h3><pre><code class="language-tsx">
+Notify.success(<span class="hljs-string">&#39;\u901A\u77E5\u5185\u5BB9&#39;</span>)
+
+</code></pre><h3>\u5371\u9669\u901A\u77E5</h3><pre><code class="language-tsx">Notify.danger(msg)
+</code></pre><h3>\u8B66\u544A\u901A\u77E5</h3><pre><code class="language-tsx">Notify.warn(msg)
+
+<span class="hljs-keyword">const</span> cusBgNotify = <span class="hljs-function">(<span class="hljs-params">msg: <span class="hljs-built_in">string</span></span>) =&gt;</span> {
+    Notify.text(msg, { <span class="hljs-attr">color</span>: <span class="hljs-string">&#39;#ad0000&#39;</span>, <span class="hljs-attr">background</span>: <span class="hljs-string">&#39;#ffe1e1&#39;</span> })
+}
+<span class="hljs-keyword">const</span> timeNotify = <span class="hljs-function">(<span class="hljs-params">msg: <span class="hljs-built_in">string</span></span>) =&gt;</span> {
+    Notify.text(msg, { <span class="hljs-attr">duration</span>: <span class="hljs-number">10000</span> })
+}
+</code></pre><h2>\u81EA\u5B9A\u4E49</h2><h3>\u81EA\u5B9A\u4E49\u6837\u5F0F</h3><pre><code class="language-tsx">Notify.text(msg, { <span class="hljs-attr">color</span>: <span class="hljs-string">&#39;#ad0000&#39;</span>, <span class="hljs-attr">background</span>: <span class="hljs-string">&#39;#ffe1e1&#39;</span>,<span class="hljs-attr">className</span>:<span class="hljs-string">&#39;aa&#39;</span> })
+
+</code></pre><h3>\u81EA\u5B9A\u4E49\u65F6\u957F</h3><pre><code class="language-tsx">
+<span class="hljs-keyword">const</span> timeNotify = <span class="hljs-function">(<span class="hljs-params">msg: <span class="hljs-built_in">string</span></span>) =&gt;</span> {
+    Notify.text(msg, { <span class="hljs-attr">duration</span>: <span class="hljs-number">10000</span> })
+}
+
+&lt;Button <span class="hljs-keyword">type</span>=<span class="hljs-string">&quot;primary&quot;</span> onClick={<span class="hljs-function">()=&gt;</span>{
+    Notify.hide()
+}}&gt;
+\u70B9\u6211\u5173\u95ED\u901A\u544A\u680F
+&lt;/Button&gt;
+</code></pre><h2>API</h2><h3>Props</h3><table><thead><tr><th>\u5B57\u6BB5</th><th>\u8BF4\u660E</th><th>\u7C7B\u578B</th><th>\u9ED8\u8BA4\u503C</th></tr></thead><tbody><tr><td>type</td><td>\u63D0\u793A\u7684\u4FE1\u606F\u7C7B\u578B\uFF08primary\uFF0Csuccess \uFF0Cdanger\uFF0Cwarning\uFF09</td><td>String</td><td>\u2018danger\u2019</td></tr><tr><td>message</td><td>\u5C55\u793A\u6587\u6848\uFF0C\u652F\u6301\u901A\u8FC7\\n\u6362\u884C</td><td>Boolean</td><td>false</td></tr><tr><td>duration</td><td>\u5C55\u793A\u65F6\u957F(ms)\uFF0C\u503C\u4E3A 0 \u65F6\uFF0Cnotify \u4E0D\u4F1A\u6D88\u5931</td><td>String</td><td>3000</td></tr><tr><td>color</td><td>\u5B57\u4F53\u989C\u8272</td><td>String</td><td>\u7A7A</td></tr><tr><td>background</td><td>\u80CC\u666F\u989C\u8272</td><td>String</td><td>\u7A7A</td></tr><tr><td>className</td><td>\u81EA\u5B9A\u4E49\u7C7B\u540D</td><td>String/Number</td><td>1</td></tr></tbody></table><h3>Events</h3><table><thead><tr><th>\u4E8B\u4EF6\u540D</th><th>\u8BF4\u660E</th><th>\u56DE\u8C03\u53C2\u6570</th></tr></thead><tbody><tr><td>onClick</td><td>\u70B9\u51FB\u4E8B\u4EF6\u56DE\u8C03</td><td>\u65E0</td></tr><tr><td>onClosed</td><td>\u5173\u95ED\u4E8B\u4EF6\u56DE\u8C03</td><td>\u65E0</td></tr></tbody></table>`,27),c=[p],i={setup(r,{expose:s}){return s({frontmatter:{}}),(o,d)=>(a(),t("div",l,c))}};export{i as default};
