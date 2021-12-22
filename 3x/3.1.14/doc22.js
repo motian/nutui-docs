@@ -1,0 +1,26 @@
+import{e as a,o as t,y as n}from"./vendor.js";const p={class:"markdown-body"},l=n(`<h1>empty\u7EC4\u4EF6</h1><h3>\u4ECB\u7ECD</h3><p>\u7A7A\u72B6\u6001\u65F6\u7684\u5360\u4F4D\u63D0\u793A</p><h3>\u5B89\u88C5</h3><pre><code class="language-javascript"><span class="hljs-keyword">import</span> { createApp } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;vue&#39;</span>;
+<span class="hljs-comment">// vue</span>
+<span class="hljs-keyword">import</span> { Empty } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;@nutui/nutui&#39;</span>;
+
+<span class="hljs-comment">// taro</span>
+<span class="hljs-keyword">import</span> { Empty } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;@nutui/nutui-taro&#39;</span>;
+
+<span class="hljs-keyword">const</span> app = createApp();
+app.use(Empty);
+</code></pre><h3>\u57FA\u7840\u7528\u6CD5</h3><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">nut-empty</span> <span class="hljs-attr">description</span>=<span class="hljs-string">&quot;\u65E0\u6570\u636E&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">nut-empty</span>&gt;</span>
+</code></pre><h3>\u56FE\u7247\u7C7B\u578B\uFF0C\u5185\u7F6E 3 \u4E2A</h3><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">nut-empty</span> <span class="hljs-attr">image</span>=<span class="hljs-string">&quot;empty&quot;</span> <span class="hljs-attr">description</span>=<span class="hljs-string">&quot;\u65E0\u5185\u5BB9&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">nut-empty</span>&gt;</span>
+    
+<span class="hljs-tag">&lt;<span class="hljs-name">nut-empty</span> <span class="hljs-attr">image</span>=<span class="hljs-string">&quot;error&quot;</span> <span class="hljs-attr">description</span>=<span class="hljs-string">&quot;\u52A0\u8F7D\u5931\u8D25/\u9519\u8BEF&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">nut-empty</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">nut-empty</span> <span class="hljs-attr">image</span>=<span class="hljs-string">&quot;network&quot;</span> <span class="hljs-attr">description</span>=<span class="hljs-string">&quot;\u65E0\u7F51\u7EDC&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">nut-empty</span>&gt;</span>
+</code></pre><h3>\u81EA\u5B9A\u4E49\u56FE\u7247</h3><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">nut-empty</span> <span class="hljs-attr">description</span>=<span class="hljs-string">&quot;\u65E0\u4F18\u60E0\u5238&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">image</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://static-ftcms.jd.com/p/files/61a9e3313985005b3958672e.png&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nut-empty</span>&gt;</span>
+</code></pre><h3>\u5E95\u90E8\u5185\u5BB9</h3><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">nut-empty</span> <span class="hljs-attr">image</span>=<span class="hljs-string">&quot;error&quot;</span> <span class="hljs-attr">description</span>=<span class="hljs-string">&quot;\u52A0\u8F7D\u5931\u8D25&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-top: 10px&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">nut-button</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;refresh&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>\u91CD\u8BD5<span class="hljs-tag">&lt;/<span class="hljs-name">nut-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nut-empty</span>&gt;</span>
+</code></pre><h2>API</h2><h3>Props</h3><table><thead><tr><th>\u53C2\u6570</th><th>\u8BF4\u660E</th><th>\u7C7B\u578B</th><th>\u9ED8\u8BA4\u503C</th></tr></thead><tbody><tr><td>image</td><td>\u56FE\u7247\u7C7B\u578B\uFF0C\u53EF\u9009\u503C\u4E3A error network search\uFF0C\u652F\u6301\u4F20\u5165\u56FE\u7247 URL</td><td>String</td><td>empty</td></tr><tr><td>image-size</td><td>\u56FE\u7247\u5927\u5C0F\uFF0CNumber \u7C7B\u578B\u5355\u4F4D\u4E3A px</td><td>Number | String</td><td>-</td></tr><tr><td>description</td><td>\u56FE\u7247\u4E0B\u65B9\u7684\u63CF\u8FF0\u6587\u5B57</td><td>String</td><td>\u65E0\u5185\u5BB9</td></tr></tbody></table><h3>Slots</h3><table><thead><tr><th>\u4E8B\u4EF6\u540D</th><th>\u8BF4\u660E</th></tr></thead><tbody><tr><td>default</td><td>\u81EA\u5B9A\u4E49\u5E95\u90E8\u5185\u5BB9</td></tr><tr><td>image</td><td>\u81EA\u5B9A\u4E49\u56FE\u7247</td></tr><tr><td>description</td><td>\u81EA\u5B9A\u4E49\u63CF\u8FF0\u6587\u5B57</td></tr></tbody></table>`,18),e=[l],j={setup(c,{expose:s}){return s({frontmatter:{}}),(r,o)=>(t(),a("div",p,e))}};export{j as default};

@@ -3,7 +3,7 @@ import{e as a,o as n,y as t}from"./vendor.js";const l={class:"markdown-body"},p=
 
   <span class="hljs-keyword">const</span> app = createApp();
   app.use(InfiniteLoading);
-</code></pre><h2>\u4EE3\u7801\u6F14\u793A</h2><h3>\u57FA\u7840\u7528\u6CD5</h3><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;infiniteUl&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;scroll&quot;</span>&gt;</span>
+</code></pre><h2>\u4EE3\u7801\u6F14\u793A</h2><h3>\u57FA\u7840\u7528\u6CD5</h3><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;infiniteUl&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;scroll&quot;</span>  <span class="hljs-attr">style</span>=<span class="hljs-string">&#39;height: 300px;&#39;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">nut-infiniteloading</span>
         <span class="hljs-attr">containerId</span> = <span class="hljs-string">&#39;scroll&#39;</span>
         <span class="hljs-attr">:use-window</span>=<span class="hljs-string">&#39;false&#39;</span>
@@ -38,7 +38,7 @@ import{e as a,o as n,y as t}from"./vendor.js";const l={class:"markdown-body"},p=
     });
     <span class="hljs-keyword">return</span> { loadMore, hasMore, ...toRefs(data) };
 }
-</code></pre><h3>\u4E0B\u62C9\u5237\u65B0</h3><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;infiniteUl&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;refreshScroll&quot;</span>&gt;</span>
+</code></pre><h3>\u4E0B\u62C9\u5237\u65B0</h3><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;infiniteUl&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;refreshScroll&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#39;height: 300px;&#39;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">nut-infiniteloading</span>
     <span class="hljs-attr">pull-icon</span>=<span class="hljs-string">&quot;JD&quot;</span>
     <span class="hljs-attr">container-id</span>=<span class="hljs-string">&quot;refreshScroll&quot;</span>
@@ -90,7 +90,7 @@ import{e as a,o as n,y as t}from"./vendor.js";const l={class:"markdown-body"},p=
     });
     <span class="hljs-keyword">return</span> { refreshLoadMore, refreshHasMore, refresh, ...toRefs(data) };
 }
-</code></pre><h3>\u81EA\u5B9A\u4E49\u52A0\u8F7D\u6587\u6848</h3><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;infiniteUl&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;customScroll&quot;</span>&gt;</span>
+</code></pre><h3>\u81EA\u5B9A\u4E49\u52A0\u8F7D\u6587\u6848</h3><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;infiniteUl&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;customScroll&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#39;height: 300px;&#39;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">nut-infiniteloading</span>
         <span class="hljs-attr">container-id</span> = <span class="hljs-string">&#39;customScroll&#39;</span>
         <span class="hljs-attr">:use-window</span>=<span class="hljs-string">&#39;false&#39;</span>
