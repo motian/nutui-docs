@@ -37,7 +37,7 @@ app.use(Card);
   <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">tag</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">img</span>
         <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tag&quot;</span> 
-        <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;//img11.360buyimg.com/jdphoto/s58x28_jfs/t9451/359/415622649/15318/b0943e5d/59a78495N3bd2a9f8.png&quot;</span>
+        <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://img11.360buyimg.com/jdphoto/s58x28_jfs/t9451/359/415622649/15318/b0943e5d/59a78495N3bd2a9f8.png&quot;</span>
         <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span>
     /&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
