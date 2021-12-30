@@ -1,139 +1,90 @@
-import{e as n,o as a,y as t}from"./vendor.js";const l={class:"markdown-body"},e=t(`<h1>Infiniteloading \u6EDA\u52A8\u52A0\u8F7D</h1><h3>\u4ECB\u7ECD</h3><p>\u5217\u8868\u6EDA\u52A8\u5230\u5E95\u90E8\u81EA\u52A8\u52A0\u8F7D\u66F4\u591A\u6570\u636E\u3002</p><h3>\u5B89\u88C5</h3><pre><code class="language-javascript">  <span class="hljs-keyword">import</span> { InfiniteLoading } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;@nutui/nutui-react&#39;</span>;
-</code></pre><h2>\u4EE3\u7801\u6F14\u793A</h2><h3>\u57FA\u7840\u7528\u6CD5</h3><pre><code class="language-tsx">&lt;ul className=<span class="hljs-string">&quot;infiniteUl&quot;</span> id=<span class="hljs-string">&quot;scroll&quot;</span>&gt;
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Infiniteloading</span>
-    <span class="hljs-attr">containerId</span>=<span class="hljs-string">&quot;scroll&quot;</span>
-    <span class="hljs-attr">useWindow</span>=<span class="hljs-string">{false}</span>
-    <span class="hljs-attr">hasMore</span>=<span class="hljs-string">{hasMore}</span>
-    <span class="hljs-attr">loadMore</span>=<span class="hljs-string">{loadMore}</span>
-  &gt;</span>
-    {defultList.map((item, index) =&gt; {
-      return (
-        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;infiniteLi&quot;</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{index}</span>&gt;</span>
-          {item}
-        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-      )
-    })}
-  <span class="hljs-tag">&lt;/<span class="hljs-name">Infiniteloading</span>&gt;</span></span>
-&lt;/ul&gt;
-</code></pre><pre><code class="language-tsx"><span class="hljs-keyword">const</span> [defultList, setDefultList] = useState&lt;<span class="hljs-built_in">string</span>[]&gt;([])
-<span class="hljs-keyword">const</span> [hasMore, setHasMore] = useState(<span class="hljs-literal">true</span>)
-
-useEffect(<span class="hljs-function">() =&gt;</span> {
-  init()
-}, [])
-
-<span class="hljs-keyword">const</span> loadMore = <span class="hljs-function">(<span class="hljs-params">done: () =&gt; <span class="hljs-built_in">void</span></span>) =&gt;</span> {
-  <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
-    <span class="hljs-keyword">const</span> curLen = defultList.length
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = curLen; i &lt; curLen + <span class="hljs-number">10</span>; i++) {
-      defultList.push(<span class="hljs-string">\`<span class="hljs-subst">\${i}</span>\`</span>)
-    }
-    <span class="hljs-keyword">if</span> (defultList.length &gt;= <span class="hljs-number">30</span>) {
-      setHasMore(<span class="hljs-literal">false</span>)
-    } <span class="hljs-keyword">else</span> {
-      setDefultList([...defultList])
-    }
-    done()
-  }, <span class="hljs-number">500</span>)
-}
-
-<span class="hljs-keyword">const</span> init = <span class="hljs-function">() =&gt;</span> {
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
-    defultList.push(<span class="hljs-string">\`<span class="hljs-subst">\${i}</span>\`</span>)
+import{e as t,o as a,y as n}from"./vendor.js";const l={class:"markdown-body"},e=n(`<h1>FixedNav \u60AC\u6D6E\u5BFC\u822A</h1><h3>\u4ECB\u7ECD</h3><p>\u60AC\u6D6E\u6536\u9F50\u4F53\u9A8C\u4EA4\u4E92\uFF0C\u7528\u4E8E\u5FEB\u6377\u5BFC\u822A</p><h3>\u5B89\u88C5</h3><pre><code class="language-javascript"><span class="hljs-keyword">import</span> { FixedNav } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;@nutui/nutui-react&#39;</span>;
+</code></pre><h3>\u57FA\u7840\u7528\u6CD5</h3><pre><code class="language-tsx">&lt;FixedNav
+  navList={navList}
+  activeText=<span class="hljs-string">&quot;\u57FA\u7840\u7528\u6CD5&quot;</span>
+  overlay={<span class="hljs-literal">true</span>}
+  position={{ <span class="hljs-attr">top</span>: <span class="hljs-string">&#39;70px&#39;</span> }}
+  change={change}
+  visible={visible}
+  selected={selected}
+&gt;
+</code></pre><pre><code class="language-tsx"><span class="hljs-keyword">const</span> navList = [
+  {
+    <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">text</span>: <span class="hljs-string">&#39;\u9996\u9875&#39;</span>,
+    <span class="hljs-attr">icon</span>: <span class="hljs-string">&#39;https://img11.360buyimg.com/imagetools/jfs/t1/117646/2/11112/1297/5ef83e95E81d77f05/daf8e3b1c81e3c98.png&#39;</span>
+  },
+  {
+    <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-attr">text</span>: <span class="hljs-string">&#39;\u5206\u7C7B&#39;</span>,
+    <span class="hljs-attr">icon</span>: <span class="hljs-string">&#39;https://img12.360buyimg.com/imagetools/jfs/t1/119490/8/9568/1798/5ef83e95E968c69a6/dd029326f7d5042e.png&#39;</span>
+  },
+  {
+    <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>,
+    <span class="hljs-attr">text</span>: <span class="hljs-string">&#39;\u8D2D\u7269\u8F66&#39;</span>,
+    <span class="hljs-attr">num</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-attr">icon</span>: <span class="hljs-string">&#39;https://img14.360buyimg.com/imagetools/jfs/t1/130725/4/3157/1704/5ef83e95Eb976644f/b36c6cfc1cc1a99d.png&#39;</span>
+  },
+  {
+    <span class="hljs-attr">id</span>: <span class="hljs-number">4</span>,
+    <span class="hljs-attr">text</span>: <span class="hljs-string">&#39;\u6211\u7684&#39;</span>,
+    <span class="hljs-attr">icon</span>: <span class="hljs-string">&#39;https://img12.360buyimg.com/imagetools/jfs/t1/147573/29/1603/1721/5ef83e94E1393a678/5ddf1695ec989373.png&#39;</span>
   }
-  setDefultList([...defultList])
-}
-</code></pre><h3>\u4E0B\u62C9\u5237\u65B0</h3><pre><code class="language-tsx">&lt;ul className=<span class="hljs-string">&quot;infiniteUl&quot;</span> id=<span class="hljs-string">&quot;refreshScroll&quot;</span>&gt;
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Infiniteloading</span>
-    <span class="hljs-attr">pullIcon</span>=<span class="hljs-string">&quot;JD&quot;</span>
-    <span class="hljs-attr">containerId</span>=<span class="hljs-string">&quot;refreshScroll&quot;</span>
-    <span class="hljs-attr">useWindow</span>=<span class="hljs-string">{false}</span>
-    <span class="hljs-attr">isOpenRefresh</span>=<span class="hljs-string">{true}</span>
-    <span class="hljs-attr">hasMore</span>=<span class="hljs-string">{refreshHasMore}</span>
-    <span class="hljs-attr">loadMore</span>=<span class="hljs-string">{refreshLoadMore}</span>
-    <span class="hljs-attr">refresh</span>=<span class="hljs-string">{refresh}</span>
-  &gt;</span>
-    {refreshList.map((item, index) =&gt; {
-      return (
-        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;infiniteLi&quot;</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{index}</span>&gt;</span>
-          {item}
-        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-      )
-    })}
-  <span class="hljs-tag">&lt;/<span class="hljs-name">Infiniteloading</span>&gt;</span></span>
-&lt;/ul&gt;
-</code></pre><pre><code class="language-tsx"><span class="hljs-keyword">const</span> [refreshList, setRefreshList] = useState&lt;<span class="hljs-built_in">string</span>[]&gt;([])
-<span class="hljs-keyword">const</span> [refreshHasMore, setRefreshHasMore] = useState(<span class="hljs-literal">true</span>)
-
-useEffect(<span class="hljs-function">() =&gt;</span> {
-  init()
-}, [])
-
-<span class="hljs-keyword">const</span> refreshLoadMore = <span class="hljs-function">(<span class="hljs-params">done: () =&gt; <span class="hljs-built_in">void</span></span>) =&gt;</span> {
-  <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
-    <span class="hljs-keyword">const</span> curLen = refreshList.length
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = curLen; i &lt; curLen + <span class="hljs-number">10</span>; i++) {
-      refreshList.push(<span class="hljs-string">\`<span class="hljs-subst">\${i}</span>\`</span>)
-    }
-    <span class="hljs-keyword">if</span> (refreshList.length &gt;= <span class="hljs-number">30</span>) {
-      setRefreshHasMore(<span class="hljs-literal">false</span>)
-    } <span class="hljs-keyword">else</span> {
-      setRefreshList([...refreshList])
-    }
-    done()
-  }, <span class="hljs-number">500</span>)
-}
-
-<span class="hljs-keyword">const</span> init = <span class="hljs-function">() =&gt;</span> {
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
-    refreshList.push(<span class="hljs-string">\`<span class="hljs-subst">\${i}</span>\`</span>)
+];
+<span class="hljs-keyword">const</span> [visible, setVisible] = useState(<span class="hljs-literal">false</span>);
+<span class="hljs-keyword">const</span> change = <span class="hljs-function">(<span class="hljs-params">value: <span class="hljs-built_in">boolean</span></span>) =&gt;</span> {
+  setVisible(value);
+};
+<span class="hljs-keyword">const</span> selected = <span class="hljs-function">(<span class="hljs-params">item: <span class="hljs-built_in">any</span>, event: MouseEvent</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(item, event);
+};
+</code></pre><h3>\u5DE6\u4FA7\u6548\u679C</h3><pre><code class="language-tsx">&lt;FixedNav
+  navList={navList}
+  <span class="hljs-keyword">type</span>={<span class="hljs-string">&quot;left&quot;</span>}
+  position={{ <span class="hljs-attr">top</span>: <span class="hljs-string">&#39;140px&#39;</span> }}
+  visible={visible}
+  activeText={<span class="hljs-string">&quot;\u5DE6\u4FA7\u6536\u8D77&quot;</span>}
+  unActiveText={<span class="hljs-string">&quot;\u5DE6\u4FA7\u5C55\u5F00&quot;</span>}
+  change={change}
+  selected={selected}
+/&gt;
+</code></pre><h3>\u53D6\u6D88\u80CC\u666F\u906E\u7F69</h3><pre><code class="language-tsx">&lt;FixedNav
+  navList={navList}
+  position={{ <span class="hljs-attr">top</span>: <span class="hljs-string">&#39;210px&#39;</span> }}
+  overlay={<span class="hljs-literal">false</span>}
+  visible={visible}
+  change={change}
+  selected={selected}
+/&gt;
+</code></pre><h3>\u81EA\u5B9A\u4E49\u4F7F\u7528</h3><pre><code class="language-tsx">&lt;FixedNav
+  position={{ <span class="hljs-attr">top</span>: <span class="hljs-string">&#39;280px&#39;</span> }}
+  <span class="hljs-keyword">type</span>={<span class="hljs-string">&quot;left&quot;</span>}
+  visible={visible}
+  change={change}
+  selected={selected}
+  slotList={
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;nut-fixednav__list&quot;</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">{</span>&quot;<span class="hljs-attr">list</span>&quot;}&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;nut-fixednav__list-item&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;nut-fixednav__list-item&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;nut-fixednav__list-item&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;nut-fixednav__list-item&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;nut-fixednav__list-item&quot;</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>
   }
-  setRefreshList([...refreshList])
-}
-</code></pre><h3>\u81EA\u5B9A\u4E49\u52A0\u8F7D\u6587\u6848</h3><pre><code class="language-tsx">&lt;ul className=<span class="hljs-string">&quot;infiniteUl&quot;</span> id=<span class="hljs-string">&quot;scroll&quot;</span>&gt;
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Infiniteloading</span>
-    <span class="hljs-attr">containerId</span>=<span class="hljs-string">&quot;customScroll&quot;</span>
-    <span class="hljs-attr">useWindow</span>=<span class="hljs-string">{false}</span>
-    <span class="hljs-attr">loadTxt</span>=<span class="hljs-string">&quot;loading&quot;</span>
-    <span class="hljs-attr">loadMoreTxt</span>=<span class="hljs-string">&quot;\u6CA1\u6709\u5566\uFF5E&quot;</span>
-    <span class="hljs-attr">hasMore</span>=<span class="hljs-string">{customHasMore}</span>
-    <span class="hljs-attr">loadMore</span>=<span class="hljs-string">{customLoadMore}</span>
-  &gt;</span>
-    {customList.map((item, index) =&gt; {
-      return (
-        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;infiniteLi&quot;</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{index}</span>&gt;</span>
-          {item}
-        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-      )
-    })}
-  <span class="hljs-tag">&lt;/<span class="hljs-name">Infiniteloading</span>&gt;</span></span>
-&lt;/ul&gt;
-</code></pre><pre><code class="language-tsx"><span class="hljs-keyword">const</span> [customList, setCustomList] = useState&lt;<span class="hljs-built_in">string</span>[]&gt;([])
-<span class="hljs-keyword">const</span> [customHasMore, setCustomHasMore] = useState(<span class="hljs-literal">true</span>)
-
-useEffect(<span class="hljs-function">() =&gt;</span> {
-  init()
-}, [])
-
-<span class="hljs-keyword">const</span> customLoadMore = <span class="hljs-function">(<span class="hljs-params">done: () =&gt; <span class="hljs-built_in">void</span></span>) =&gt;</span> {
-  <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
-    <span class="hljs-keyword">const</span> curLen = customList.length
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = curLen; i &lt; curLen + <span class="hljs-number">10</span>; i++) {
-      customList.push(<span class="hljs-string">\`<span class="hljs-subst">\${i}</span>\`</span>)
-    }
-    <span class="hljs-keyword">if</span> (customList.length &gt;= <span class="hljs-number">30</span>) {
-      setCustomHasMore(<span class="hljs-literal">false</span>)
-    } <span class="hljs-keyword">else</span> {
-      setCustomList([...customList])
-    }
-    done()
-  }, <span class="hljs-number">500</span>)
-}
-
-<span class="hljs-keyword">const</span> init = <span class="hljs-function">() =&gt;</span> {
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
-    customList.push(<span class="hljs-string">\`<span class="hljs-subst">\${i}</span>\`</span>)
+  slotBtn={
+    <span class="xml"><span class="hljs-tag">&lt;&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;retweet&quot;</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;#fff&quot;</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">Icon</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;text&quot;</span>&gt;</span>{ visible ? &#39;\u81EA\u5B9A\u4E49\u5F00&#39; : &#39;\u81EA\u5B9A\u4E49\u5173&#39; }<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/&gt;</span></span>
   }
-  setCustomList([...customList])
-}
-</code></pre><h2>API</h2><h3>Props</h3><table><thead><tr><th>\u53C2\u6570</th><th>\u8BF4\u660E</th><th>\u7C7B\u578B</th><th>\u9ED8\u8BA4\u503C</th></tr></thead><tbody><tr><td>hasMore</td><td>\u662F\u5426\u8FD8\u6709\u66F4\u591A\u6570\u636E</td><td>Boolean</td><td><code>true</code></td></tr><tr><td>threshold</td><td>\u8DDD\u79BB\u5E95\u90E8\u591A\u8FDC\u52A0\u8F7D</td><td>Number</td><td><code>200</code></td></tr><tr><td>useWindow</td><td>\u5C06\u6EDA\u52A8\u4FA6\u542C\u5668\u6DFB\u52A0\u5230 window \u5426\u5219\u4FA6\u542C\u7EC4\u4EF6\u7684\u7236\u8282\u70B9</td><td>Boolean</td><td><code>true</code></td></tr><tr><td>useCapture</td><td>\u662F\u5426\u4F7F\u7528\u6355\u83B7\u6A21\u5F0F true \u6355\u83B7 false \u5192\u6CE1</td><td>Boolean</td><td><code>false</code></td></tr><tr><td>containerId</td><td>\u5728 useWindow \u5C5E\u6027\u4E3A false \u7684\u65F6\u5019\uFF0C\u81EA\u5B9A\u4E49\u8BBE\u7F6E\u8282\u70B9ID</td><td>String</td><td><code>&#39;&#39;</code></td></tr><tr><td>loadMoreTxt</td><td>\u201C\u6CA1\u6709\u66F4\u591A\u6570\u201D\u636E\u5C55\u793A\u6587\u6848</td><td>String</td><td><code>&#39;\u54CE\u5440\uFF0C\u8FD9\u91CC\u662F\u5E95\u90E8\u4E86\u5566&#39;</code></td></tr><tr><td>isOpenRefresh</td><td>\u662F\u5426\u5F00\u542F\u4E0B\u62C9\u5237\u65B0</td><td>Boolean</td><td><code>false</code></td></tr><tr><td>pullIcon</td><td>\u4E0B\u62C9\u5237\u65B0<a href="#/icon">\u56FE\u6807\u540D\u79F0</a></td><td>String</td><td><img src="https://img10.360buyimg.com/imagetools/jfs/t1/169863/6/4565/6306/60125948E7e92774e/40b3a0cf42852bcb.png" width="40/"></td></tr><tr><td>pullTxt</td><td>\u4E0B\u62C9\u5237\u65B0\u63D0\u793A\u6587\u6848</td><td>String</td><td><code>\u677E\u624B\u5237\u65B0</code></td></tr><tr><td>loadIcon</td><td>\u4E0A\u62C9\u52A0\u8F7D<a href="#/icon">\u56FE\u6807\u540D\u79F0</a></td><td>Boolean</td><td><img src="https://img10.360buyimg.com/imagetools/jfs/t1/169863/6/4565/6306/60125948E7e92774e/40b3a0cf42852bcb.png" width="40"></td></tr><tr><td>loadTxt</td><td>\u4E0A\u62C9\u52A0\u8F7D\u63D0\u793A\u6587\u6848</td><td>String</td><td><code>\u52A0\u8F7D\u4E2D...</code></td></tr></tbody></table><h3>Events</h3><table><thead><tr><th>\u4E8B\u4EF6\u540D</th><th>\u8BF4\u660E</th><th>\u56DE\u8C03\u53C2\u6570</th></tr></thead><tbody><tr><td>loadMore</td><td>\u7EE7\u7EED\u52A0\u8F7D\u7684\u56DE\u8C03\u51FD\u6570</td><td>done \u51FD\u6570\uFF0C\u7528\u4E8E\u5173\u95ED\u52A0\u8F7D\u4E2D\u72B6\u6001</td></tr><tr><td>scrollChange</td><td>\u5B9E\u65F6\u76D1\u542C\u6EDA\u52A8\u9AD8\u5EA6</td><td>\u6EDA\u52A8\u9AD8\u5EA6</td></tr><tr><td>refresh</td><td>\u4E0B\u62C9\u5237\u65B0\u4E8B\u4EF6\u56DE\u8C03</td><td>done \u51FD\u6570\uFF0C\u7528\u4E8E\u5173\u95ED\u52A0\u8F7D\u4E2D\u72B6\u6001</td></tr></tbody></table>`,20),p=[e],d={setup(c,{expose:s}){return s({frontmatter:{}}),(o,h)=>(a(),n("div",l,p))}};export{d as default};
+/&gt;
+</code></pre><h3>\u652F\u6301\u62D6\u62FD</h3><pre><code class="language-tsx"><span class="hljs-comment">// \u914D\u5408 Drag \u652F\u6301\u62D6\u62FD \uFF0C\u5C0F\u7A0B\u5E8F\u6682\u4E0D\u652F\u6301</span>
+&lt;Drag direction={<span class="hljs-string">&quot;y&quot;</span>} style={{ <span class="hljs-attr">right</span>: <span class="hljs-string">&#39;0px&#39;</span>, <span class="hljs-attr">bottom</span>: <span class="hljs-string">&#39;240px&#39;</span> }}&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">FixedNav</span>
+    <span class="hljs-attr">navList</span>=<span class="hljs-string">{navList}</span>
+    <span class="hljs-attr">unActiveText</span>=<span class="hljs-string">&quot;\u652F\u6301\u62D6\u62FD&quot;</span>
+    <span class="hljs-attr">visible</span>=<span class="hljs-string">{visible}</span> 
+    <span class="hljs-attr">change</span>=<span class="hljs-string">{change}</span>
+    <span class="hljs-attr">selected</span>=<span class="hljs-string">{selected}</span> /&gt;</span></span>
+&lt;/Drag&gt;
+</code></pre><h3>Prop</h3><table><thead><tr><th style="text-align:left;">\u5B57\u6BB5</th><th style="text-align:left;">\u8BF4\u660E</th><th style="text-align:left;">\u7C7B\u578B</th><th style="text-align:left;">\u9ED8\u8BA4\u503C</th></tr></thead><tbody><tr><td style="text-align:left;">fixednavClass</td><td style="text-align:left;">\u81EA\u5B9A\u4E49\u7C7B\u540D</td><td style="text-align:left;">String</td><td style="text-align:left;">fixednav</td></tr><tr><td style="text-align:left;">visible</td><td style="text-align:left;">\u662F\u5426\u6253\u5F00</td><td style="text-align:left;">Boolean</td><td style="text-align:left;">false</td></tr><tr><td style="text-align:left;">navList</td><td style="text-align:left;">\u60AC\u6D6E\u5217\u8868\u5185\u5BB9\u6570\u636E</td><td style="text-align:left;">Array</td><td style="text-align:left;">[]</td></tr><tr><td style="text-align:left;">activeText</td><td style="text-align:left;">\u6536\u8D77\u5217\u8868\u6309\u94AE\u6587\u6848</td><td style="text-align:left;">String</td><td style="text-align:left;">\u6536\u8D77\u5BFC\u822A</td></tr><tr><td style="text-align:left;">unActiveText</td><td style="text-align:left;">\u5C55\u5F00\u5217\u8868\u6309\u94AE\u6587\u6848</td><td style="text-align:left;">String</td><td style="text-align:left;">\u5FEB\u901F\u5BFC\u822A</td></tr><tr><td style="text-align:left;">type</td><td style="text-align:left;">\u5BFC\u822A\u65B9\u5411,\u53EF\u9009\u503C left right</td><td style="text-align:left;">String</td><td style="text-align:left;">right</td></tr><tr><td style="text-align:left;">overlay</td><td style="text-align:left;">\u5C55\u5F00\u65F6\u662F\u5426\u663E\u793A\u906E\u7F69</td><td style="text-align:left;">Boolean</td><td style="text-align:left;">true</td></tr><tr><td style="text-align:left;">position</td><td style="text-align:left;">fixed \u5782\u76F4\u4F4D\u7F6E</td><td style="text-align:left;">Object</td><td style="text-align:left;">{top: \u2018auto\u2019,bottom: \u2018auto\u2019}</td></tr><tr><td style="text-align:left;">slotList</td><td style="text-align:left;">\u81EA\u5B9A\u4E49\u5C55\u5F00\u5217\u8868\u5185\u5BB9</td><td style="text-align:left;">HTMLElement</td><td style="text-align:left;">-</td></tr><tr><td style="text-align:left;">slotBtn</td><td style="text-align:left;">\u81EA\u5B9A\u4E49\u6309\u94AE</td><td style="text-align:left;">HTMLElement</td><td style="text-align:left;">-</td></tr></tbody></table><h3>Event</h3><table><thead><tr><th>\u5B57\u6BB5</th><th>\u8BF4\u660E</th><th>\u56DE\u8C03\u53C2\u6570</th></tr></thead><tbody><tr><td>change</td><td>\u5C55\u5F00\u6536\u8D77\u6309\u94AE\u56DE\u8C03</td><td>{value:boolean}</td></tr><tr><td>selected</td><td>\u9009\u62E9\u4E4B\u540E\u89E6\u53D1</td><td>{item:item, event:MouseEvent}</td></tr></tbody></table>`,20),p=[e],r={setup(c,{expose:s}){return s({frontmatter:{}}),(h,g)=>(a(),t("div",l,p))}};export{r as default};

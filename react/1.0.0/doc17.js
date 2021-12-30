@@ -1,26 +1,183 @@
-import{e as a,o as n,y as t}from"./vendor.js";const l={class:"markdown-body"},p=t(`<h1>Icon \u56FE\u6807\u7EC4\u4EF6</h1><h3>\u4ECB\u7ECD</h3><p>\u57FA\u4E8E IconFont \u5B57\u4F53\u7684\u56FE\u6807\u96C6\uFF0C\u53EF\u4EE5\u901A\u8FC7 Icon \u7EC4\u4EF6\u4F7F\u7528\u3002</p><h3>\u5B89\u88C5</h3><pre><code class="language-javascript"><span class="hljs-keyword">import</span> { Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;@nutui/nutui-react&#39;</span>;
-</code></pre><h2>\u4EE3\u7801\u6F14\u793A</h2><h3>\u57FA\u7840\u7528\u6CD5</h3><p><code>Icon</code> \u7684 <code>name</code> \u5C5E\u6027\u652F\u6301\u4F20\u5165\u56FE\u6807\u540D\u79F0\u6216\u56FE\u7247\u94FE\u63A5\u3002</p><pre><code class="language-tsx">&lt;Icon name=<span class="hljs-string">&quot;dongdong&quot;</span>&gt;&lt;/Icon&gt;
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;JD&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Icon</span>&gt;</span></span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;40&quot;</span>  <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;https://img11.360buyimg.com/imagetools/jfs/t1/137646/13/7132/1648/5f4c748bE43da8ddd/a3f06d51dcae7b60.png&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Icon</span>&gt;</span></span>
-</code></pre><h3>\u56FE\u6807\u989C\u8272</h3><p><code>Icon</code> \u7684 <code>color</code> \u5C5E\u6027\u7528\u6765\u8BBE\u7F6E\u56FE\u6807\u7684\u989C\u8272\u3002</p><pre><code class="language-tsx">&lt;Icon name=<span class="hljs-string">&quot;dongdong&quot;</span> color=<span class="hljs-string">&quot;#fa2c19&quot;</span>&gt;&lt;/Icon&gt;
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;dongdong&quot;</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;#64b578&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Icon</span>&gt;</span></span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;JD&quot;</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;#fa2c19&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Icon</span>&gt;</span></span>
-</code></pre><h3>\u56FE\u6807\u5927\u5C0F</h3><p><code>Icon</code> \u7684 <code>size</code> \u5C5E\u6027\u7528\u6765\u8BBE\u7F6E\u56FE\u6807\u7684\u5C3A\u5BF8\u5927\u5C0F\uFF0C\u9ED8\u8BA4\u5355\u4F4D\u4E3A <code>px</code>\u3002</p><pre><code class="language-tsx">&lt;Icon name=<span class="hljs-string">&quot;dongdong&quot;</span>&gt;&lt;/Icon&gt;
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;dongdong&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;24&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Icon</span>&gt;</span></span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;dongdong&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;16&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Icon</span>&gt;</span></span>
-</code></pre><h3>\u81EA\u5B9A\u4E49\u56FE\u6807</h3><p>\u5982\u679C\u9700\u8981\u5728\u73B0\u6709 Icon \u7684\u57FA\u7840\u4E0A\u4F7F\u7528\u66F4\u591A\u56FE\u6807\uFF0C\u53EF\u4EE5\u5F15\u5165\u7B2C\u4E09\u65B9 iconfont \u5BF9\u5E94\u7684\u5B57\u4F53\u6587\u4EF6\u548C CSS \u6587\u4EF6\uFF0C\u4E4B\u540E\u5C31\u53EF\u4EE5\u5728 Icon \u7EC4\u4EF6\u4E2D\u76F4\u63A5\u4F7F\u7528\u3002</p><pre><code class="language-css"><span class="hljs-comment">/* \u5F15\u5165\u7B2C\u4E09\u65B9\u6216\u81EA\u5B9A\u4E49\u7684\u5B57\u4F53\u56FE\u6807\u6837\u5F0F */</span>
-<span class="hljs-keyword">@font-face</span> {
-  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&#39;my-icon&#39;</span>;
-  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&#39;./my-icon.ttf&#39;</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">&#39;truetype&#39;</span>);
+import{e as n,o as a,y as l}from"./vendor.js";const t={class:"markdown-body"},p=l(`<h1>Elevator \u7535\u68AF\u697C\u5C42</h1><h3>\u4ECB\u7ECD</h3><p>\u7528\u4E8E\u5217\u8868\u5FEB\u901F\u5B9A\u4F4D\u4EE5\u53CA\u7D22\u5F15\u7684\u663E\u793A</p><h3>\u5B89\u88C5</h3><pre><code class="language-javascript"><span class="hljs-keyword">import</span> { Elevator } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;@nutui/nutui-react&#39;</span>
+</code></pre><h2>\u4EE3\u7801\u6F14\u793A</h2><h3>\u57FA\u7840\u7528\u6CD5</h3><pre><code class="language-tsx"><span class="hljs-keyword">const</span> dataList = [
+  {
+    <span class="hljs-attr">title</span>: <span class="hljs-string">&#39;A&#39;</span>,
+    <span class="hljs-attr">list</span>: [
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u5B89\u5FBD&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,
+      },
+    ],
+  },
+  {
+    <span class="hljs-attr">title</span>: <span class="hljs-string">&#39;B&#39;</span>,
+    <span class="hljs-attr">list</span>: [
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u5317\u4EAC&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>,
+      },
+    ],
+  },
+  {
+    <span class="hljs-attr">title</span>: <span class="hljs-string">&#39;G&#39;</span>,
+    <span class="hljs-attr">list</span>: [
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u5E7F\u897F&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u5E7F\u4E1C&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">4</span>,
+      },
+    ],
+  },
+  {
+    <span class="hljs-attr">title</span>: <span class="hljs-string">&#39;H&#39;</span>,
+    <span class="hljs-attr">list</span>: [
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u6E56\u5357&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">5</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u6E56\u5317&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">6</span>,
+      },
+      ,
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u7425\u73C0&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">7</span>,
+      },
+    ],
+  },
+]
+<span class="hljs-keyword">const</span> clickItem = <span class="hljs-function">(<span class="hljs-params">key: <span class="hljs-built_in">string</span>, item: <span class="hljs-built_in">any</span></span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(key, <span class="hljs-built_in">JSON</span>.stringify(item))
 }
 
-<span class="hljs-selector-class">.my-icon</span> {
-  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&#39;my-icon&#39;</span>;
+<span class="hljs-keyword">const</span> clickIndex = <span class="hljs-function">(<span class="hljs-params">key: <span class="hljs-built_in">string</span></span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(key)
 }
 
-<span class="hljs-selector-class">.my-icon-extra</span><span class="hljs-selector-pseudo">::before</span> {
-  <span class="hljs-attribute">content</span>: <span class="hljs-string">&#39;\\e626&#39;</span>;
+&lt;Elevator
+  indexList={dataList}
+  height=<span class="hljs-string">&quot;260&quot;</span>
+  clickItem={<span class="hljs-function">(<span class="hljs-params">key: <span class="hljs-built_in">string</span>, item: <span class="hljs-built_in">any</span></span>) =&gt;</span> clickItem(key, item)}
+  clickIndex={<span class="hljs-function">(<span class="hljs-params">key: <span class="hljs-built_in">string</span></span>) =&gt;</span> clickIndex(key)}
+&gt;&lt;/Elevator&gt;
+</code></pre><h3>\u81EA\u5B9A\u4E49\u7D22\u5F15</h3><h2>API</h2><pre><code class="language-tsx"><span class="hljs-keyword">const</span> dataList = [
+  {
+    <span class="hljs-attr">num</span>: <span class="hljs-string">&#39;\u4E00&#39;</span>,
+    <span class="hljs-attr">list</span>: [
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u5317\u4EAC&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u4E0A\u6D77&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u6DF1\u5733&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u5E7F\u5DDE&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">4</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u676D\u5DDE&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">5</span>,
+      },
+    ],
+  },
+  {
+    <span class="hljs-attr">num</span>: <span class="hljs-string">&#39;\u4E8C&#39;</span>,
+    <span class="hljs-attr">list</span>: [
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u6210\u90FD&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">6</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u897F\u5B89&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">7</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u5929\u6D25&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">8</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u6B66\u6C49&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">9</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u957F\u6C99&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">10</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u91CD\u5E86&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">11</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u82CF\u5DDE&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">12</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u5357\u4EAC&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">13</span>,
+      },
+    ],
+  },
+  {
+    <span class="hljs-attr">num</span>: <span class="hljs-string">&#39;\u4E09&#39;</span>,
+    <span class="hljs-attr">list</span>: [
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u897F\u5B81&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">14</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u5170\u5DDE&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">15</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u77F3\u5BB6\u5E84&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">16</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u79E6\u7687\u5C9B&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">17</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u5927\u8FDE&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">18</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u54C8\u5C14\u6EE8&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">19</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u957F\u6625&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">20</span>,
+      },
+      {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#39;\u592A\u539F&#39;</span>,
+        <span class="hljs-attr">id</span>: <span class="hljs-number">21</span>,
+      },
+    ],
+  },
+]
+<span class="hljs-keyword">const</span> clickItem = <span class="hljs-function">(<span class="hljs-params">key: <span class="hljs-built_in">string</span>, item: <span class="hljs-built_in">any</span></span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(key, <span class="hljs-built_in">JSON</span>.stringify(item))
 }
-</code></pre><pre><code class="language-tsx">&lt;!-- \u901A\u8FC7 <span class="hljs-class"><span class="hljs-keyword">class</span>-<span class="hljs-title">prefix</span> \u6307\u5B9A\u7C7B\u540D\u4E3A <span class="hljs-title">my</span>-<span class="hljs-title">icon</span> --&gt;
-&lt;<span class="hljs-title">Icon</span> <span class="hljs-title">class</span>-<span class="hljs-title">prefix</span></span>=<span class="hljs-string">&quot;my-icon&quot;</span> name=<span class="hljs-string">&quot;extra&quot;</span> /&gt;
-</code></pre><h2>API</h2><h3>Props</h3><table><thead><tr><th>\u53C2\u6570</th><th>\u8BF4\u660E</th><th>\u7C7B\u578B</th><th>\u9ED8\u8BA4\u503C</th></tr></thead><tbody><tr><td>name</td><td>\u56FE\u6807\u540D\u79F0\u6216\u56FE\u7247\u94FE\u63A5</td><td>String</td><td>-</td></tr><tr><td>color</td><td>\u56FE\u6807\u989C\u8272</td><td>String</td><td>-</td></tr><tr><td>size</td><td>\u56FE\u6807\u5927\u5C0F\uFF0C\u5982 <code>20px</code> <code>2em</code> <code>2rem</code></td><td>String or Number</td><td>-</td></tr><tr><td>class-prefix</td><td>\u7C7B\u540D\u524D\u7F00\uFF0C\u7528\u4E8E\u4F7F\u7528\u81EA\u5B9A\u4E49\u56FE\u6807</td><td>String</td><td><code>nutui-iconfont</code></td></tr><tr><td>tag</td><td>tsx \u6807\u7B7E</td><td>String</td><td><code>i</code></td></tr></tbody></table><h3>Events</h3><table><thead><tr><th>\u4E8B\u4EF6\u540D</th><th>\u8BF4\u660E</th><th>\u56DE\u8C03\u53C2\u6570</th></tr></thead><tbody><tr><td>click</td><td>\u70B9\u51FB\u56FE\u6807\u65F6\u89E6\u53D1</td><td>event: Event</td></tr></tbody></table>`,24),c=[p],g={setup(o,{expose:s}){return s({frontmatter:{}}),(h,d)=>(n(),a("div",l,c))}};export{g as default};
+
+<span class="hljs-keyword">const</span> clickIndex = <span class="hljs-function">(<span class="hljs-params">key: <span class="hljs-built_in">string</span></span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(key)
+}
+
+&lt;Elevator
+  indexList={dataList2}
+  height=<span class="hljs-string">&quot;220&quot;</span>
+  acceptKey=<span class="hljs-string">&quot;num&quot;</span>
+  clickItem={<span class="hljs-function">(<span class="hljs-params">key: <span class="hljs-built_in">string</span>, item: <span class="hljs-built_in">any</span></span>) =&gt;</span> clickItem(key, item)}
+  clickIndex={<span class="hljs-function">(<span class="hljs-params">key: <span class="hljs-built_in">string</span></span>) =&gt;</span> clickIndex(key)}
+&gt;&lt;/Elevator&gt;
+</code></pre><h3>Props</h3><table><thead><tr><th>\u5B57\u6BB5</th><th>\u8BF4\u660E</th><th>\u7C7B\u578B</th><th>\u9ED8\u8BA4\u503C</th></tr></thead><tbody><tr><td>height</td><td>\u7535\u68AF\u533A\u57DF\u7684\u9AD8\u5EA6</td><td>Number\u3001String</td><td><code>200px</code></td></tr><tr><td>acceptKey</td><td>\u7D22\u5F15 key \u503C</td><td>String</td><td><code>title</code></td></tr><tr><td>indexList</td><td>\u7D22\u5F15\u5217\u8868</td><td>Array\uFF08item \u9700\u5305\u542B id\u3001name \u5C5E\u6027, name \u652F\u6301\u4F20\u5165 html \u7ED3\u6784\uFF09</td><td><code>[{id: 0, name: &#39;&#39;}]</code></td></tr></tbody></table><h3>Event</h3><table><thead><tr><th>\u540D\u79F0</th><th>\u8BF4\u660E</th><th>\u56DE\u8C03\u53C2\u6570</th></tr></thead><tbody><tr><td>clickItem</td><td>\u70B9\u51FB\u5185\u5BB9</td><td>key: string, item: { id: 0, name: \u2018\u2019 }</td></tr><tr><td>clickIndex</td><td>\u70B9\u51FB\u7D22\u5F15</td><td>key: string</td></tr></tbody></table>`,15),c=[p],d={setup(h,{expose:s}){return s({frontmatter:{}}),(i,e)=>(a(),n("div",t,c))}};export{d as default};

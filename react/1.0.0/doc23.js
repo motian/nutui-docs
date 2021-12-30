@@ -1,83 +1,121 @@
-import{e as t,o as a,y as n}from"./vendor.js";const l={class:"markdown-body"},p=n(`<h1>NoticeBar\u901A\u544A\u680F</h1><h3>\u4ECB\u7ECD</h3><p>\u7528\u4E8E\u5FAA\u73AF\u64AD\u653E\u5C55\u793A\u4E00\u7EC4\u6D88\u606F\u901A\u77E5\u3002</p><h3>\u5B89\u88C5</h3><pre><code class="language-javascript"><span class="hljs-keyword">import</span> { NoticeBar } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;@nutui/nutui-react&#39;</span>;
-</code></pre><h2>\u4EE3\u7801\u6F14\u793A</h2><h3>\u57FA\u672C\u7528\u6CD5</h3><pre><code class="language-tsx">&lt;NoticeBar text={text} background={<span class="hljs-string">\`rgba(251, 248, 220, 1)\`</span>} color={<span class="hljs-string">\`#D9500B\`</span>}&gt;&lt;/NoticeBar&gt;
-</code></pre><pre><code class="language-javascript"><span class="hljs-keyword">const</span> text = <span class="hljs-string">&#39;\u534E\u4E3A\u7545\u4EAB9\u65B0\u54C1\u5373\u5C06\u4E0A\u5E02\uFF0C\u6D3B\u52A8\u671F\u95F40\u5143\u9884\u7EA6\u53EF\u53C2\u4E0E\u62BD\u5956\uFF0C\u8D62HUAWEI WATCH\u7B49\u597D\u793C\uFF0C\u66F4\u591A\u4EA7\u54C1\u4FE1\u606F\u8BF7\u6301\u7EED\u5173\u6CE8\uFF01&#39;</span>
-</code></pre><h3>\u7981\u7528\u6EDA\u52A8</h3><p>\u6587\u5B57\u5185\u5BB9\u591A\u4E8E\u4E00\u884C\u65F6\uFF0C\u53EF\u901A\u8FC7scrollable\u53C2\u6570\u63A7\u5236\u662F\u5426\u5F00\u542F\u6EDA\u52A8</p><pre><code class="language-tsx">&lt;NoticeBar
-    text=<span class="hljs-string">&quot;\u534E\u4E3A\u7545\u4EAB9\u65B0\u54C1\u5373\u5C06\u4E0A\u5E02\uFF0C\u6D3B\u52A8\u671F\u95F40\u5143\u9884\u7EA6\u53EF\u53C2\u4E0E\u62BD\u5956\uFF0C\u8D62HUAWEI WATCH\u7B49\u597D\u793C\uFF0C\u66F4\u591A\u4EA7\u54C1\u4FE1\u606F\u8BF7\u6301\u7EED\u5173\u6CE8\uFF01&quot;</span>
-    scrollable={<span class="hljs-literal">false</span>}
-    background={<span class="hljs-string">\`rgba(251, 248, 220, 1)\`</span>}
-    color={<span class="hljs-string">\`#D9500B\`</span>}
-&gt;&lt;/NoticeBar&gt;
-</code></pre><h3>\u901A\u544A\u680F\u6A21\u5F0F\u2013\u5173\u95ED\u6A21\u5F0F</h3><pre><code class="language-tsx">&lt;NoticeBar
-    closeMode={<span class="hljs-literal">true</span>}
-    click={hello}
-    background={<span class="hljs-string">\`rgba(251, 248, 220, 1)\`</span>}
-    color={<span class="hljs-string">\`#D9500B\`</span>}
-&gt;
-    \u534E\u4E3A\u7545\u4EAB<span class="hljs-number">9</span>\u65B0\u54C1\u5373\u5C06\u4E0A\u5E02\uFF0C\u6D3B\u52A8\u671F\u95F4<span class="hljs-number">0</span>\u5143\u9884\u7EA6\u53EF\u53C2\u4E0E\u62BD\u5956\uFF0C\u8D62HUAWEI
-    WATCH\u7B49\u597D\u793C\uFF0C\u66F4\u591A\u4EA7\u54C1\u4FE1\u606F\u8BF7\u6301\u7EED\u5173\u6CE8\uFF01
-&lt;/NoticeBar&gt;
-</code></pre><pre><code class="language-javascript"><span class="hljs-keyword">const</span> hello = <span class="hljs-function">() =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#39;hello world&#39;</span>)
-  }
-</code></pre><h3>\u901A\u544A\u680F\u6A21\u5F0F\u2013\u94FE\u63A5\u6A21\u5F0F</h3><pre><code class="language-tsx">&lt;NoticeBar
-    leftIcon={
-    <span class="hljs-string">&#39;https://img13.360buyimg.com/imagetools/jfs/t1/72082/2/3006/1197/5d130c8dE1c71bcd6/e48a3b60804c9775.png&#39;</span>
-    }
-    background={<span class="hljs-string">\`rgba(251, 248, 220, 1)\`</span>}
-    color={<span class="hljs-string">\`#D9500B\`</span>}
-&gt;
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://www.jd.com&quot;</span>&gt;</span>\u4EAC\u4E1C\u5546\u57CE<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>
-&lt;/NoticeBar&gt;
-</code></pre><h3>\u7EB5\u5411\u6EDA\u52A8</h3><pre><code class="language-tsx"> &lt;NoticeBar
-    direction=<span class="hljs-string">&quot;vertical&quot;</span>
-    list={horseLamp1}
-    speed={<span class="hljs-number">10</span>}
-    standTime={<span class="hljs-number">1000</span>}
-    click={<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> {
-        go(item)
-    }}
-    closeMode={<span class="hljs-literal">true</span>}
-    background={<span class="hljs-string">\`rgba(251, 248, 220, 1)\`</span>}
-    color={<span class="hljs-string">\`#D9500B\`</span>}
- &gt;&lt;/NoticeBar&gt;
-</code></pre><pre><code class="language-javascript">
-<span class="hljs-keyword">const</span> horseLamp1 = [<span class="hljs-string">&#39;\u60CA\u559C\u7EA2\u5305\u514D\u8D39\u9886&#39;</span>, <span class="hljs-string">&#39;\u7206\u6B3E\u51C6\u70B9\u79D2&#39;</span>, <span class="hljs-string">&#39;\u4E70\u8D85\u503C\u4F18\u60E0&#39;</span>, <span class="hljs-string">&#39;\u8D62\u767E\u4E07\u4EAC\u8C46&#39;</span>],
-
-<span class="hljs-keyword">const</span> go = <span class="hljs-function">(<span class="hljs-params">item: any</span>) =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(item)
-}
-</code></pre><h3>\u590D\u6742\u6EDA\u52A8\u52A8\u753B</h3><pre><code class="language-tsx">&lt;NoticeBar
-    direction=<span class="hljs-string">&quot;vertical&quot;</span>
-    list={horseLamp2}
-    speed={<span class="hljs-number">10</span>}
-    standTime={<span class="hljs-number">2000</span>}
-    complexAm={<span class="hljs-literal">true</span>}
-&gt;&lt;/NoticeBar&gt;
-</code></pre><pre><code class="language-javascript"><span class="hljs-keyword">const</span> horseLamp2 = [<span class="hljs-string">&#39;\u60CA\u559C\u7EA2\u5305\u514D\u8D39\u9886&#39;</span>, <span class="hljs-string">&#39;\u7206\u6B3E\u51C6\u70B9\u79D2&#39;</span>, <span class="hljs-string">&#39;\u4E70\u8D85\u503C\u4F18\u60E0&#39;</span>, <span class="hljs-string">&#39;\u8D62\u767E\u4E07\u4EAC\u8C46&#39;</span>],
-
-}
-</code></pre><h3>\u81EA\u5B9A\u4E49\u6EDA\u52A8\u5185\u5BB9</h3><pre><code class="language-tsx">&lt;NoticeBar direction=<span class="hljs-string">&quot;vertical&quot;</span> height={<span class="hljs-number">50</span>} speed={<span class="hljs-number">10</span>} standTime={<span class="hljs-number">1000</span>}&gt;
-    {horseLamp3.map(<span class="hljs-function">(<span class="hljs-params">item, index</span>) =&gt;</span> {
-        <span class="hljs-keyword">return</span> (
-        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
-            <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;custom-item&quot;</span>
-            <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">height:</span> &#39;<span class="hljs-attr">50px</span>&#39;, <span class="hljs-attr">lineHeight:</span> &#39;<span class="hljs-attr">50px</span>&#39; }}
-            <span class="hljs-attr">key</span>=<span class="hljs-string">{index}</span>
-        &gt;</span>
-            {item}
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
-        )
-    })}
-    &lt;/NoticeBar&gt;
-</code></pre><pre><code class="language-javascript"><span class="hljs-keyword">const</span>  horseLamp3 = [<span class="hljs-string">&#39;\u60CA\u559C\u7EA2\u5305\u514D\u8D39\u98861&#39;</span>, <span class="hljs-string">&#39;\u7206\u6B3E\u51C6\u70B9\u79D22&#39;</span>, <span class="hljs-string">&#39;\u4E70\u8D85\u503C\u4F18\u60E03&#39;</span>, <span class="hljs-string">&#39;\u8D62\u767E\u4E07\u4EAC\u8C464&#39;</span>]
-}
-</code></pre><h3>\u7EB5\u5411\u81EA\u5B9A\u4E49\u53F3\u4FA7\u56FE\u6807</h3><pre><code class="language-tsx"> &lt;NoticeBar
-    className={<span class="hljs-string">&#39;custom&#39;</span>}
-    direction=<span class="hljs-string">&quot;vertical&quot;</span>
-    list={horseLamp4}
-    speed={<span class="hljs-number">10</span>}
-    standTime={<span class="hljs-number">1000</span>}
-    rightIcon={<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">name</span>=<span class="hljs-string">{</span>&#39;<span class="hljs-attr">fabulous</span>&#39;} <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;16&quot;</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;#f0250f&quot;</span> /&gt;</span></span>}
-&gt;&lt;/NoticeBar&gt;
-</code></pre><pre><code class="language-javascript"><span class="hljs-keyword">const</span> horseLamp4 = [<span class="hljs-string">&#39;\u60CA\u559C\u7EA2\u5305\u514D\u8D39\u9886&#39;</span>, <span class="hljs-string">&#39;\u7206\u6B3E\u51C6\u70B9\u79D2&#39;</span>, <span class="hljs-string">&#39;\u4E70\u8D85\u503C\u4F18\u60E0&#39;</span>, <span class="hljs-string">&#39;\u8D62\u767E\u4E07\u4EAC\u8C46&#39;</span>]
-</code></pre><h2>API</h2><h3>Prop</h3><table><thead><tr><th>\u5B57\u6BB5</th><th>\u8BF4\u660E</th><th>\u7C7B\u578B</th><th>\u9ED8\u8BA4\u503C</th></tr></thead><tbody><tr><td>direction</td><td>\u6EDA\u52A8\u7684\u65B9\u5411\uFF0C\u53EF\u9009 across\u3001vertical</td><td>String</td><td>across</td></tr><tr><td>text</td><td>\u63D0\u793A\u7684\u4FE1\u606F</td><td>String</td><td>\u7A7A</td></tr><tr><td>closeMode</td><td>\u662F\u5426\u542F\u7528\u5173\u95ED\u6A21\u5F0F</td><td>Boolean</td><td>false</td></tr><tr><td>leftIcon</td><td>close\u4E3A\u6CA1\u6709\u5DE6\u8FB9icon,\u5176\u4ED6\u4E3A\u81EA\u5B9A\u4E49\u7684\u56FE\u7247\u94FE\u63A5\uFF0C\u6CA1\u6709\u4E3A\u9ED8\u8BA4\u56FE\u7247</td><td>String</td><td>\u7A7A</td></tr><tr><td>color</td><td>\u5BFC\u822A\u680F\u7684\u6587\u5B57\u989C\u8272</td><td>String</td><td>\u7A7A</td></tr><tr><td>background</td><td>\u5BFC\u822A\u680F\u7684\u80CC\u666F\u989C\u8272</td><td>String</td><td>\u7A7A</td></tr><tr><td>delay</td><td>\u5EF6\u65F6\u591A\u5C11\u79D2</td><td>String/Number</td><td>1</td></tr><tr><td>scrollable</td><td>\u662F\u5426\u53EF\u4EE5\u6EDA\u52A8</td><td>Boolean</td><td>true</td></tr><tr><td>speed</td><td>\u6EDA\u52A8\u901F\u7387 (px/s)</td><td>Number</td><td>50</td></tr></tbody></table><h3>Prop\uFF08direction=vertical\uFF09</h3><table><thead><tr><th>\u53C2\u6570</th><th>\u8BF4\u660E</th><th>\u7C7B\u578B</th><th>\u9ED8\u8BA4\u503C</th></tr></thead><tbody><tr><td>list</td><td>\u7EB5\u5411\u6EDA\u52A8\u6570\u636E\u5217\u8868</td><td>Array</td><td>[]</td></tr><tr><td>speed</td><td>\u6EDA\u52A8\u7684\u901F\u5EA6</td><td>Number</td><td>50</td></tr><tr><td>standTime</td><td>\u505C\u7559\u65F6\u95F4(\u6BEB\u79D2)</td><td>Number</td><td>1000</td></tr><tr><td>complexAm</td><td>\u7A0D\u590D\u6742\u7684\u52A8\u753B\uFF0C\u8017\u80FD\u4F1A\u9AD8</td><td>Boolean</td><td>false</td></tr><tr><td>height</td><td>\u6BCF\u4E00\u4E2A\u6EDA\u52A8\u5217\u7684\u9AD8\u5EA6(px)\uFF0C\u6CE8\u610F\uFF1A\u5728\u4F7F\u7528 slot \u63D2\u69FD\u5B9A\u4E49\u6EDA\u52A8\u5355\u5143\u65F6\uFF0C\u6309\u7167\u5B9E\u9645\u9AD8\u5EA6\u4FEE\u6539\u6B64\u503C</td><td>Number</td><td>40</td></tr><tr><td>closeMode</td><td>\u662F\u5426\u542F\u7528\u53F3\u4FA7\u5173\u95ED\u56FE\u6807\uFF0C\u53EF\u4EE5\u901A\u8FC7slot[name=rightIcon]\u81EA\u5B9A\u4E49\u56FE\u6807</td><td>Boolean</td><td>false</td></tr></tbody></table><h3>Event</h3><table><thead><tr><th>\u5B57\u6BB5</th><th>\u8BF4\u660E</th><th>\u56DE\u8C03\u53C2\u6570</th></tr></thead><tbody><tr><td>click</td><td>\u5916\u5C42\u70B9\u51FB\u4E8B\u4EF6\u56DE\u8C03</td><td>event: Event</td></tr><tr><td>close</td><td>\u5173\u95ED\u901A\u77E5\u680F\u65F6\u89E6\u53D1</td><td>event: Event</td></tr></tbody></table>`,36),e=[p],i={setup(r,{expose:s}){return s({frontmatter:{}}),(d,o)=>(a(),t("div",l,e))}};export{i as default};
+import{e as a,o as n,y as l}from"./vendor.js";const t={class:"markdown-body"},p=l(`<h1>Layout\u5E03\u5C40</h1><h3>\u4ECB\u7ECD</h3><p>\u7528\u4E8E\u5FEB\u901F\u8FDB\u884C\u5E03\u5C40</p><h3>\u5B89\u88C5</h3><pre><code class="language-javascript"><span class="hljs-keyword">import</span> { Layout,Row,Col } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;@nutui/nutui-react&#39;</span>
+</code></pre><h2>\u4EE3\u7801\u6F14\u793A</h2><h3>\u57FA\u7840\u5E03\u5C40</h3><pre><code class="language-tsx">&lt;Row&gt;
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;24&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:24<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span></span>
+&lt;/Row&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Row</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;12&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:12<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;12&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content flex-content-light&quot;</span>&gt;</span>span:12<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">Row</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Row</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;8&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:8<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;8&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content flex-content-light&quot;</span>&gt;</span>span:8<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;8&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content flex-content-light&quot;</span>&gt;</span>span:8<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">Row</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Row</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Row</span>&gt;</span></span>
+</code></pre><h3>\u5206\u680F\u95F4\u9694</h3><pre><code class="language-tsx">&lt;Row gutter=<span class="hljs-string">&quot;10&quot;</span>&gt;
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;8&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:8<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span></span>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;8&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content flex-content-light&quot;</span>&gt;</span>span:8<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span></span> 
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;8&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content flex-content-light&quot;</span>&gt;</span>span:8<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span></span> 
+&lt;/Row&gt;
+</code></pre><h3>Flex\u5E03\u5C40</h3><pre><code class="language-tsx">&lt;Row <span class="hljs-keyword">type</span>=<span class="hljs-string">&quot;flex&quot;</span> wrap=<span class="hljs-string">&quot;nowrap&quot;</span>&gt;
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span></span>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span></span>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span></span>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span></span>
+&lt;/Row&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Row</span> <span class="hljs-attr">ttype</span>=<span class="hljs-string">&quot;flex&quot;</span> <span class="hljs-attr">justify</span>=<span class="hljs-string">&quot;center&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Row</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Row</span> <span class="hljs-attr">ttype</span>=<span class="hljs-string">&quot;flex&quot;</span> <span class="hljs-attr">justify</span>=<span class="hljs-string">&quot;end&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Row</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Row</span> <span class="hljs-attr">ttype</span>=<span class="hljs-string">&quot;flex&quot;</span> <span class="hljs-attr">justify</span>=<span class="hljs-string">&quot;space-between&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Row</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Row</span> <span class="hljs-attr">ttype</span>=<span class="hljs-string">&quot;flex&quot;</span> <span class="hljs-attr">justify</span>=<span class="hljs-string">&quot;space-around&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;flex-content&quot;</span>&gt;</span>span:6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Row</span>&gt;</span></span>
+</code></pre><h2>API</h2><h3>row</h3><table><thead><tr><th>\u5B57\u6BB5</th><th>\u8BF4\u660E</th><th>\u7C7B\u578B</th><th>\u9ED8\u8BA4\u503C</th></tr></thead><tbody><tr><td>type</td><td>\u5E03\u5C40\u65B9\u5F0F\uFF0C\u53EF\u9009\u503C\u4E3Aflex</td><td>String</td><td>-</td></tr><tr><td>gutter</td><td>\u5217\u5143\u7D20\u4E4B\u95F4\u7684\u95F4\u8DDD\uFF08\u5355\u4F4D\u4E3Apx\uFF09</td><td>String\u3001Number</td><td>0</td></tr><tr><td>justify</td><td>Flex \u4E3B\u8F74\u5BF9\u9F50\u65B9\u5F0F\uFF0C\u53EF\u9009\u503C\u4E3A start end center space-around space-between</td><td>String</td><td>start</td></tr><tr><td>align</td><td>Flex \u4EA4\u53C9\u8F74\u5BF9\u9F50\u65B9\u5F0F\uFF0C\u53EF\u9009\u503C\u4E3A flex-start center flex-end</td><td>String</td><td>flex-start</td></tr><tr><td>wrap</td><td>Flex\u662F\u5426\u6362\u884C\uFF0C\u53EF\u9009\u503C\u4E3A nowrap wrap reverse</td><td>String</td><td>nowrap</td></tr></tbody></table><h3>col</h3><table><thead><tr><th>\u5B57\u6BB5</th><th>\u8BF4\u660E</th><th>\u7C7B\u578B</th><th>\u9ED8\u8BA4\u503C</th></tr></thead><tbody><tr><td>span</td><td>\u5217\u5143\u7D20\u5BBD\u5EA6\uFF08\u5171\u5206\u4E3A24\u4EFD\uFF0C\u4F8B\u5982\u8BBE\u7F6E\u4E00\u884C3\u4E2A\uFF0C\u90A3\u4E48span\u503C\u4E3A8\uFF09</td><td>String\u3001Number</td><td>24</td></tr><tr><td>offset</td><td>\u5217\u5143\u7D20\u504F\u79FB\u8DDD\u79BB</td><td>String\u3001Number</td><td>0</td></tr></tbody></table>`,17),c=[p],r={setup(h,{expose:s}){return s({frontmatter:{}}),(g,e)=>(n(),a("div",t,c))}};export{r as default};
