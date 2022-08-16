@@ -956,11 +956,11 @@ export default defineComponent({
     background: #fafafa;
 
     .content-left {
-      background: url(https://storage.360buyimg.com/imgtools/7cd27ba3eb-686f76e0-6ec9-11ec-8cd6-b10a2c66b169.png)
+      background: url(https://img10.360buyimg.com/imagetools/jfs/t1/49482/4/21717/213471/62fb4eb2Ede06ec5d/472da889e6270355.png)
         no-repeat;
-      background-size: 1126px 568px;
-      background-position-x: right;
-      background-position-y: 136px;
+      background-size: 1126px 816px;
+      background-position-x: 600px;
+      background-position-y: 6px;
 
       .content-title,
       .content-subTitle {

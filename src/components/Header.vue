@@ -133,7 +133,7 @@ export default defineComponent({
         return;
       }
       RefData.getInstance().currentRoute.value = '/';
-      window.location.href = '#';
+      window.location.href = `${location.href.includes('jagile') ? '#?jagile=true' : '#'}`;
     };
 
     const toLink = (item: any) => {
