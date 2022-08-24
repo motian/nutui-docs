@@ -1,7 +1,7 @@
 <template>
   <doc-header></doc-header>
   <div class="doc-content" :class="themeName()">
-    <div :class="['doc-content-index', `${language.toLowerCase() === 'react' ? 'doc-content-index-react' : ''}`]">
+    <div :class="docContentIndex">
       <div :class="bannerName()">
         <div class="content-title"> NutUI<span v-if="language === 'react'" class="sub-content-title">-React</span></div>
         <div class="content-smile"> </div>
@@ -314,6 +314,13 @@ export default defineComponent({
         return RefData.getInstance().themeColor.value;
       };
     });
+    const docContentIndex = computed(() => {
+      let docContentIndexClass = `doc-content-index ${
+        language.toLowerCase() === 'react' ? 'doc-content-index-react' : ''
+      } ${location.hash.includes('jagile') ? 'jagile' : ''}`;
+
+      return docContentIndexClass;
+    });
     const toLink = (id: number) => {
       window.open('//jelly.jd.com/article/' + id);
     };
@@ -332,6 +339,7 @@ export default defineComponent({
       ...toRefs(data),
       themeName,
       themeNameValue,
+      docContentIndex,
       toLink,
       onLeft,
       language,
@@ -939,6 +947,29 @@ export default defineComponent({
               no-repeat;
             background-size: cover;
           }
+        }
+      }
+    }
+  }
+
+  &.jagile {
+    background: #fafafa;
+
+    .content-left {
+      background: url(https://img10.360buyimg.com/imagetools/jfs/t1/49482/4/21717/213471/62fb4eb2Ede06ec5d/472da889e6270355.png)
+        no-repeat;
+      background-size: 1126px 816px;
+      background-position-x: 600px;
+      background-position-y: 6px;
+
+      .content-title,
+      .content-subTitle {
+        color: #000;
+      }
+
+      .content-button {
+        .rightButton {
+          background-color: #fff;
         }
       }
     }
