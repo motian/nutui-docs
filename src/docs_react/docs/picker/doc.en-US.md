@@ -1,95 +1,60 @@
-#  Picker 选择器
+#  Picker
 
-### 介绍
+### Intro
 
-提供多个选项集合供用户选择其中一项。
+The picker component is usually used with Popup Component.
 
-### 安装
+### Install
 ```ts
 import { Picker } from '@nutui/nutui-react';
 ```
 
 
-## 代码演示
-
-### 基础用法
+### Basic Usage
 
 :::demo
 ```tsx
-import  React, { useState, useRef  } from "react";
+import  React, { useState  } from "react";
 import { Picker,Cell } from '@nutui/nutui-react';
 
-interface pickerRefState {
-  updateChooseValue: (index: number, value: string, cacheValueData: any[]) => void
-}
 const App = () => {
   const [isVisible1, setIsVisible1] = useState(false)
-  const pickerRef1 = useRef<pickerRefState>(null)
+  const [baseDesc, setBaseDesc] = useState('')
   const listData1 = [
     [
-      {
-        label: 1,
-        value: '南京市',
-      },
-      {
-        label: 2,
-        value: '无锡市',
-      },
-      {
-        label: 3,
-        value: '海北藏族自治区',
-      },
-      {
-        label: 4,
-        value: '北京市',
-      },
-      {
-        label: 5,
-        value: '连云港市',
-      },
-      {
-        label: 6,
-        value: '浙江市',
-      },
-      {
-        label: 7,
-        value: '江苏市',
-      },
-      {
-        label: 8,
-        value: '大庆市',
-      },
-      {
-        label: 9,
-        value: '绥化市',
-      },
-      {
-        label: 10,
-        value: '潍坊市',
-      },
-      {
-        label: 11,
-        value: '请按市',
-      },
-      {
-        label: 12,
-        value: '乌鲁木齐市',
-      },
+      { value: 1, text: 'NanJing',},
+      { value: 2, text: 'WuXi',},
+      { value: 3, text: 'ZangZu',},
+      { value: 4, text: 'BeiJing',},
+      { value: 5, text: 'LianYunGang',},
+      { value: 6, text: 'ZheJiang',},
+      { value: 7, text: 'JiangSu',},
+      { value: 8, text: 'DaQing',},
+      { value: 9, text: 'SuiHua',},
+      { value: 10,text: 'WeiFang',},
+      { value: 11,text: 'Please Choose',},
+      { value: 12,text: 'Urumqi Municipality'},
     ],
   ]
+  const changePicker = (columnIndex: number, option: any, list: any[]) => {
+    console.log(columnIndex, option)
+  }
+  const confirmPicker = (values: (string | number)[],options: PickerOption[]) => {
+    let desc = ''
+    options.forEach((option: any) => {
+      desc += option.text
+    })
+    setBaseDesc(desc)
+  }
   return ( 
     <>   
-      <Cell isLink onClick={() => setIsVisible1(!isVisible1)}>
-        <span>
-          <label>基础用法</label>
-        </span>
-      </Cell>
+      <Cell title="Choose City" desc={baseDesc} onClick={() => setIsVisible1(!isVisible1)}/>
       <Picker
         isVisible={isVisible1}
         listData={listData1}
+        onConfirm={(values, list) => confirmPicker(values, list)}
         onClose={() => setIsVisible1(false)}
-        defaultValueData={[]}
-        ref={pickerRef1}
+        onChange={changePicker}
        />
     </>
   );
@@ -98,37 +63,100 @@ export default App;
 
 ```
 :::
-### 多列用法
+
+
+### Default Index
 
 :::demo
 ```tsx
-import  React, { useState, useRef  } from "react";
+import  React, { useState  } from "react";
 import { Picker,Cell } from '@nutui/nutui-react';
 
-interface pickerRefState {
-  updateChooseValue: (index: number, value: string, cacheValueData: any[]) => void
-}
 const App = () => {
-  const [isVisible2, setIsVisible2] = useState(false)
-  const pickerRef2 = useRef<pickerRefState>(null)
-  const listData2 = [
-    ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
-    ['上午', '下午', '晚上'],
+  const [isVisible1, setIsVisible1] = useState(false)
+  const [baseDefault, setbaseDefault] = useState('')
+  const listData1 = [
+    [
+      { value: 1, text: 'NanJing',},
+      { value: 2, text: 'WuXi',},
+      { value: 3, text: 'ZangZu',},
+      { value: 4, text: 'BeiJing',},
+      { value: 5, text: 'LianYunGang',},
+      { value: 6, text: 'ZheJiang',},
+      { value: 7, text: 'JiangSu',},
+      { value: 8, text: 'DaQing',},
+      { value: 9, text: 'SuiHua',},
+      { value: 10,text: 'WeiFang',},
+      { value: 11,text: 'Please Choose',},
+      { value: 12,text: 'Urumqi Municipality'},
+    ],
   ]
+  const confirmPicker = (values: (string | number)[],options: PickerOption[]) => {
+    let desc = ''
+    options.forEach((option: any) => {
+      desc += option.text
+    })
+    setbaseDefault(desc)
+  }
   return ( 
     <>   
-    <Cell isLink onClick={() => setIsVisible2(!isVisible2)}>
-      <span>
-        <label>多列用法</label>
-      </span>
-    </Cell>
+      <Cell title="Choose City" desc={baseDefault} onClick={() => setIsVisible1(!isVisible1)}/>
+      <Picker
+        isVisible={isVisible1}
+        listData={listData1}
+        onConfirm={(values, list) => confirmPicker(values, list)}
+        onClose={() => setIsVisible1(false)}
+       />
+    </>
+  );
+};  
+export default App;
+
+```
+:::
+
+### Multiple Columns
+
+:::demo
+```tsx
+import  React, { useState  } from "react";
+import { Picker,Cell } from '@nutui/nutui-react';
+
+const App = () => {
+  const [isVisible2, setIsVisible2] = useState(false)
+  const [mutilDesc, setMutilDesc] = useState('')
+  const listData2 = [
+    // 第一列
+    [
+      { text: 'Monday', value: 'Monday' },
+      { text: 'Tuesday', value: 'Tuesday' },
+      { text: 'Wednesday', value: 'Wednesday' },
+      { text: 'Thursday', value: 'Thursday' },
+      { text: 'Friday', value: 'Friday' },
+    ],
+    // 第二列
+    [
+      { text: 'Morning', value: 'Morning' },
+      { text: 'Afternoon', value: 'Afternoon' },
+      { text: 'Evening', value: 'Evening' },
+    ],
+  ]
+  const confirmPicker = (values: (string | number)[],options: PickerOption[]) => {
+    let desc = ''
+    options.forEach((option: any) => {
+      desc += option.text
+    })
+    setbaseDefault(desc)
+  }
+  return ( 
+    <>   
+    <Cell title="Multiple Columns" desc={mutilDesc} onClick={() => setIsVisible2(!isVisible2)} />
     <Picker
       isVisible={isVisible2}
       listData={listData2}
       onClose={() => setIsVisible2(false)}
-      defaultValueData={['周四', '下午']}
-      onConfirm={(list: any[]) => console.log('多列用法选中项：', list)}
-      ref={pickerRef2}
+      defaultValueData={['Wednesday']}
+      onConfirm={(values, list) => confirmPicker(values, list)}
      />
     </>
   );
@@ -137,159 +165,186 @@ export default App;
 
 ```
 :::
-### 多级联动
+
+### Tile
 
 :::demo
 ```tsx
-import  React, { useState, useRef  } from "react";
+import  React, { useState  } from "react";
 import { Picker,Cell } from '@nutui/nutui-react';
 
-interface pickerRefState {
-  updateChooseValue: (index: number, value: string, cacheValueData: any[]) => void
-}
 const App = () => {
-  const [isVisible3, setIsVisible3] = useState(false)
-  const [cityCustmer, setCityCustmer] = useState('')
-  const pickerRef3 = useRef<pickerRefState>(null)
-  const APIData = [
-    {
-      label: 1,
-      array: [
-        {
-          label: 1,
-          value: '朝阳区',
-        },
-        {
-          label: 2,
-          value: '海淀区',
-        },
-        {
-          label: 3,
-          value: '大兴区',
-        },
-        {
-          label: 4,
-          value: '东城区',
-        },
-        {
-          label: 5,
-          value: '西城区',
-        },
-        {
-          label: 6,
-          value: '丰台区',
-        },
-      ],
-    },
-    {
-      label: 2,
-      array: [
-        {
-          label: 1,
-          value: '黄浦区',
-        },
-        {
-          label: 2,
-          value: '长宁区',
-        },
-        {
-          label: 3,
-          value: '普陀区',
-        },
-        {
-          label: 4,
-          value: '杨浦区',
-        },
-        {
-          label: 5,
-          value: '浦东新区',
-        },
-      ],
-    },
-  ]
-  
-  const [custmerCityData, setCustmerCityData] = useState([
+  const [isVisible, setIsVisible] = useState(false)
+  const [tileDesc, settileDesc] = useState('')
+  const listData = [
     [
-      {
-        label: 1,
-        value: '北京',
-      },
-      {
-        label: 2,
-        value: '上海',
-      },
+      { value: 1, text: 'NanJing',},
+      { value: 2, text: 'WuXi',},
+      { value: 3, text: 'ZangZu',},
+      { value: 4, text: 'BeiJing',},
+      { value: 5, text: 'LianYunGang',},
+      { value: 6, text: 'ZheJiang',},
+      { value: 7, text: 'JiangSu',},
+      { value: 8, text: 'DaQing',},
+      { value: 9, text: 'SuiHua',},
+      { value: 10,text: 'WeiFang',},
+      { value: 11,text: 'Please Choose',},
+      { value: 12,text: 'Urumqi Municipality'},
     ],
+  ]
+  const confirmPicker = (values: (string | number)[],options: PickerOption[]) => {
+    let desc = ''
+    options.forEach((option: any) => {
+      desc += option.text
+    })
+    settileDesc(desc)
+  }
+  return ( 
+    <>   
+      <Cell title="Choose City" desc={settileDesc} onClick={() => setIsVisible(!isVisible)}/>
+      <Picker
+        isVisible={isVisible}
+        listData={listData}
+        threeDimensional={false}
+        onConfirm={(values, list) => confirmPicker(values, list)}
+        onClose={() => setIsVisible(false)}
+       />
+    </>
+  );
+};  
+export default App;
+
+```
+:::
+### Cascade
+
+:::demo
+```tsx
+import  React, { useState  } from "react";
+import { Picker,Cell } from '@nutui/nutui-react';
+
+
+const App = () => {
+  const [isVisible, setIsVisible] = useState(false)
+  const [cityCustmer, setCityCustmer] = useState('')
+  const [custmerCityData, setCustmerCityData] = useState([
+    {
+      value: 1,
+      text: 'BeiJing',
+      children: [
+        { value: 1, text: 'ChaoYang',},
+        { value: 2, text: 'HaiDian',},
+        { value: 3, text: 'DaXing',},
+        { value: 4, text: 'DongCheng',},
+        { value: 5, text: 'XiCheng',},
+        { value: 6, text: 'FengTai',},
+      ],
+    },
+    {
+      value: 2,
+      text: 'ShangHai',
+      children: [
+        { value: 1, text: 'HuangPu',},
+        { value: 2, text: 'ChangNing',},
+        { value: 3, text: 'PuTuo',},
+        { value: 4, text: 'YangPu',},
+        { value: 5, text: 'PuDong',},
+      ],
+    },
   ])
 
-  const setChooseValueCustmer = (chooseData: any[]) => {
-    const str = chooseData.map((item) => item.value).join('-')
+  const setChooseValueCustmer = (values: (string | number)[],chooseData: PickerOption[]) => {
+    const str = chooseData.map((item) => item.text).join('-')
     setCityCustmer(str)
-    console.log('多级联动用法选中项：', str)
+  }
+ 
+  return ( 
+    <>   
+      <Cell title="Cascade" desc={cityCustmer} onClick={() => setIsVisible(!isVisible)}/>
+      <Picker
+        isVisible={isVisible}
+        listData={custmerCityData}
+        onClose={() => setIsVisible(false)}
+        onConfirm={(values, list: PickerOption[]) =>
+          setChooseValueCustmer(values, list)
+        }
+        onChange={(index: number, value: PickerOption, list: any[]) =>
+          console.log('选择用户')
+        }
+       />
+    </>
+  );
+};  
+export default App;
+
+```
+:::
+
+### Async
+
+:::demo
+```tsx
+import  React, { useState  } from "react";
+import { Picker,Cell } from '@nutui/nutui-react';
+
+const App = () => {
+  const [isVisible, setIsVisible] = useState(false)
+  const [asyncDesc, setasyncDesc] = useState('')
+  const [asyncData, setCustmerCityData] = useState([
+    {
+      value: 1,
+      text: 'BeiJing',
+      children: [
+        { value: 1, text: 'ChaoYang',},
+        { value: 2, text: 'HaiDian',},
+        { value: 3, text: 'DaXing',},
+        { value: 4, text: 'DongCheng',},
+        { value: 5, text: 'XiCheng',},
+        { value: 6, text: 'FengTai',},
+      ],
+    },
+    {
+      value: 2,
+      text: 'ShangHai',
+      children: [],
+    },
+  ])
+
+  const setAsyncConfirm = (values: (string | number)[],chooseData: PickerOption[]) => {
+    const str = chooseData.map((item) => item.text).join('-')
+    setasyncDesc(str)
   }
 
-  const closeUpdateChooseValueCustmer = (chooseData: any[], ref) => {
-    // 此处模拟查询API，如果数据缓存了不需要再重新请求
-    setTimeout(() => {
-      const { label, value } = chooseData[0]
-      const resItems = APIData.find((item) => item.label == label)
-      if (resItems && resItems.array.length) {
-        setCustmerCityData((data) => {
-          const result = [...data]
-          result[1] = resItems?.array || []
-          return result
-        })
-
-        // 复原位置
-        ref.current?.updateChooseValue(0, chooseData[0])
-        ref.current?.updateChooseValue(1, chooseData[1])
-      }
-    }, 100)
-  }
-
-  const updateChooseValueCustmer = (index: number, resValue: IResValue, cacheValueData: any[]) => {
-    // 本demo为二级联动，所以限制只有首列变动的时候触发事件
-    if (index === 0) {
-      // 此处模拟查询API，如果数据缓存了不需要再重新请求
-      const { label, value } = resValue
+  const updateChooseValueCustmer = ( columnIndex: number, option: PickerOption) => {
+    if (columnIndex === 0 && option.value === 2) {
       setTimeout(() => {
-        const resItems = APIData.find((item) => item.label == label)
-        if (resItems && resItems.array.length) {
-          let cityData: any[] = []
-          setCustmerCityData((data) => {
-            const result = [...data]
-            result[1] = resItems?.array || []
-            cityData = [...result]
-            return result
-          })
-          setTimeout(() => {
-            // 更新第二列位置
-            pickerRef3.current?.updateChooseValue(index + 1, cityData[1]?.[0], cacheValueData)
-          }, 200)
+        if(asyncData[1].children.length === 0){
+          asyncData[1].children = [
+            { value: 1, text: 'HuangPu',},
+            { value: 2, text: 'ChangNing',},
+            { value: 3, text: 'PuTuo',},
+            { value: 4, text: 'YangPu',},
+            { value: 5, text: 'PuDong',}]
+            
+            setAsyncData([...asyncData])
         }
       }, 100)
     }
   }
+ 
   return ( 
     <>   
-      <Cell isLink onClick={() => setIsVisible3(!isVisible3)}>
-        <span>
-          <label>
-            多级联动
-            <span>{cityCustmer}</span>
-          </label>
-        </span>
-      </Cell>
+      <Cell title="Choose City" desc={asyncDesc} onClick={() => setIsVisible(!isVisible)}/>
       <Picker
-        isVisible={isVisible3}
-        listData={custmerCityData}
-        onClose={() => setIsVisible3(false)}
-        defaultValueData={[]}
-        onConfirm={(list: any[]) => setChooseValueCustmer(list)}
-        onChoose={(index: number, value: IResValue, list: any[]) =>
-          updateChooseValueCustmer(index, value, list)
+        isVisible={isVisible}
+        listData={asyncData}
+        onClose={() => setIsVisible(false)}
+        onConfirm={(values, list: PickerOption[]) =>
+          setAsyncConfirm(values, list)
         }
-        onCloseUpdate={(list: any[]) => closeUpdateChooseValueCustmer(list, pickerRef3)}
-        ref={pickerRef3}
+        onChange={(columnIndex: number, option: PickerOption) =>
+          updateChooseValueCustmer(columnIndex, option)
+        }
        />
     </>
   );
@@ -304,18 +359,28 @@ export default App;
 
 ### Props
 
-| 字段 | 说明 | 类型 | 默认值
-|----- | ----- | ----- | ----- 
-| isVisible | 是否可见 | Boolean | false
-| title | 设置标题 | String | null
-| listData | 列表数据 | Array | []
-| defaultValueData | 默认选中 | Array | []
+| Attribute         | Description                             | Type   | Default           |
+| ----- | ----- | ----- | ----- |
+| isVisible | Is Show  | Boolean | false
+| title | Toolbar title | String | null
+| listData |  Columns data | Array | []
+| defaultValueData | Default Index  | Array | []
+| threeDimensional          | Turn on 3D effects                | Boolean  | true   |
+
+
+## listData 
+| Attribute         | Description                             | Type   | Default           |
+|--------------|----------------------------------|--------|------------------|
+| text        | Text of column               | String|Number |               |
+| value          | Value of column              | String|Number |            |
+| children         | Cascader Option               | Array | -                |
+
 
 ## Events
 
-| 字段 | 说明 | 回调参数 
-|----- | ----- | ----- 
-| onConfirm | 点击确认按钮时候回调 | 返回选中值
-| onChoose | 每一列值变更时调用 | 依次返回this、改变的列数，改变值，当前选中值
-| onCloseUpdate | 联动时，关闭时回调 | 依次返回this、当前选中值
-| onClose | 关闭时触发 | -
+| Event | Description           | Arguments     |
+|-----          | ----- | ----- |
+| onConfirm     | Emitted when click confirm button. | { selectedValue, selectedOptions } |
+| onChange      | Emitted when current option changed. | { columnIndex, selectedValue, selectedOptions } |
+| onCloseUpdate | Emitted when cascade changed.   | selectedValue |
+| onClose       | Emitted when click close button. | { selectedValue, selectedOptions }  |
