@@ -598,6 +598,6 @@ export default App;
 
 ### Events
 
-| 事件名 | 说明           | 回调参数                                      |
-|--------|----------------|-------------------------------------------|
-| onSorter  | 点击排序按钮触发 | `item: TableColumnProps, data: Array<any>` |
+| 事件名 | 说明           | 回调参数     |
+|--------|----------------|--------------|
+| onSorter  | 点击排序按钮触发 | item: TableColumnProps, data: Array<any> |

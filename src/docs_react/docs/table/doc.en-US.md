@@ -1,4 +1,4 @@
-#  Table组件
+#  Table
 
 ### Intro
 
@@ -596,6 +596,6 @@ export default App;
 
 ### Events
 
-| Event | Description           | Arguments                                |
-|--------|----------------|------------------------------------------|
-| onSorter  | Click the sort button to trigger | `item: TableColumnProps, data: Array<any>` |
+| Event | Description           | Arguments     |
+|--------|----------------|--------------|
+| onSorter  | Click the sort button to trigger | item: TableColumnProps, data: Array<any> |

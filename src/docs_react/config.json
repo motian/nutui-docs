@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.3.1",
   "nav": [
     {
       "name": "基础组件",
@@ -132,6 +132,27 @@
           "show": true,
           "taro": true,
           "author": "vickyYE"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Grid",
+          "type": "component",
+          "cName": "宫格",
+          "desc": "宫格",
+          "sort": 5,
+          "show": true,
+          "author": "yangxiaolu"
+        },
+        {
+          "version": "1.0.0",
+          "name": "GridItem",
+          "type": "component",
+          "cName": "宫格子组件",
+          "desc": "宫格子组件",
+          "sort": 6,
+          "show": false,
+          "exportEmpty": true,
+          "author": "yangxiaolu"
         }
       ]
     },
@@ -270,6 +291,27 @@
           "sort": 11,
           "show": false,
           "author": "hx"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Menu",
+          "type": "component",
+          "cName": "菜单",
+          "desc": "向下弹出的菜单列表",
+          "sort": 13,
+          "show": true,
+          "author": "oasis-cloud"
+        },
+        {
+          "version": "1.0.0",
+          "name": "MenuItem",
+          "type": "component",
+          "cName": "菜单子项",
+          "desc": "菜单子项",
+          "sort": 14,
+          "exportEmpty": true,
+          "show": false,
+          "author": "oasis-cloud"
         }
       ]
     },
@@ -285,7 +327,7 @@
           "desc": "滑动输入条，用于在给定的范围内选择一个值。",
           "sort": 3,
           "show": true,
-          "taro": false,
+          "taro": true,
           "author": "vickyYe"
         },
         {
@@ -414,7 +456,7 @@
           "desc": "短密码输入框",
           "sort": 10,
           "show": true,
-          "taro": false,
+          "taro": true,
           "author": "Drjingfubo"
         },
         {
@@ -440,6 +482,16 @@
           "author": "swag~jun"
         },
         {
+          "version": "0.1.0",
+          "name": "Cascader",
+          "type": "component",
+          "cName": "级联选择器",
+          "desc": "级联选择，用于多层级数据的选择，典型场景为省市区选择。",
+          "sort": 1,
+          "show": true,
+          "author": "ailululu"
+        },
+        {
           "version": "1.0.0",
           "name": "SearchBar",
           "type": "component",
@@ -447,7 +499,7 @@
           "desc": "用于搜索场景的输入框组件",
           "sort": 16,
           "show": true,
-          "taro": false,
+          "taro": true,
           "author": "Ymm0008"
         },
         {
@@ -554,6 +606,16 @@
           "show": true,
           "taro": false,
           "author": "VickyYe"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Swipe",
+          "type": "component",
+          "cName": "滑动手势",
+          "desc": "可以左右滑动来展示操作按钮的组件",
+          "sort": 9,
+          "show": true,
+          "author": "Ymm0008"
         }
       ]
     },
@@ -800,6 +862,26 @@
           "show": true,
           "taro": true,
           "author": "ailululu"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Audio",
+          "type": "component",
+          "cName": "音频播放器",
+          "desc": "原生audio实现的音频播放器",
+          "sort": 21,
+          "show": true,
+          "author": "libin"
+        },
+        {
+          "version": "1.0.0",
+          "name": "ImagePreview",
+          "type": "component",
+          "cName": "图片预览",
+          "desc": "图片预览",
+          "sort": 23,
+          "show": true,
+          "author": "yangjinjun3"
         }
       ]
     },
