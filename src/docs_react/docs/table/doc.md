@@ -124,10 +124,10 @@ const App = () => {
   ])
 
   return <Table
-        columns={columns2}
-        data={data1}
-        bordered={false}
-    />;
+    columns={columns2}
+    data={data1}
+    bordered={false}
+  />;
 };
 export default App;
 ```
@@ -193,7 +193,7 @@ const App = () => {
     columns={columns1}
     data={data1}
     summary="这是总结栏"
-/>;
+  />;
 };
 export default App;
 ```
@@ -255,10 +255,10 @@ const App = () => {
   ])
 
   return <Table
-        columns={columns1}
-        data={data1}
-        striped
-    />;
+    columns={columns1}
+    data={data1}
+    striped
+  />;
 };
 export default App;
 ```
@@ -305,12 +305,12 @@ const App = () => {
 
   return (
     <>
-        <Table columns={columns1} data={data2} />
-        <Table
-          columns={columns1}
-          data={data2}
-          noData="这里是自定义展示"
-        />
+      <Table columns={columns1} data={data2} />
+      <Table
+        columns={columns1}
+        data={data2}
+        noData="这里是自定义展示"
+      />
     </>
   );
 };
@@ -322,18 +322,10 @@ export default App;
 :::demo
 ```tsx
 import  React, { useState } from "react";
-import { Table } from '@nutui/nutui-react';
-
-interface TableColumnProps {
-  key?: string
-  title?: string
-  align?: string
-  sorter?: ((a: any, b: any) => number) | boolean | string
-  render?: (rowData?: any, rowIndex?: number) => string | React.ReactNode
-}
+import { Table, Button, Icon } from '@nutui/nutui-react';
 
 const App = () => {
-  const [columns4, setColumns4] = useState<Array<TableColumnProps>>([
+  const [columns4, setColumns4] = useState([
     {
       title: '姓名',
       key: 'name',
@@ -406,18 +398,10 @@ export default App;
 :::demo
 ```tsx
 import  React, { useState } from "react";
-import { Table } from '@nutui/nutui-react';
-
-interface TableColumnProps {
-  key?: string
-  title?: string
-  align?: string
-  sorter?: ((a: any, b: any) => number) | boolean | string
-  render?: (rowData?: any, rowIndex?: number) => string | React.ReactNode
-}
+import { Table, Button, Icon } from '@nutui/nutui-react';
 
 const App = () => {
-  const [columns4, setColumns4] = useState<Array<TableColumnProps>>([
+  const [columns4, setColumns4] = useState([
     {
       title: '姓名',
       key: 'name',
@@ -490,18 +474,10 @@ export default App;
 :::demo
 ```tsx
 import  React, { useState } from "react";
-import { Table } from '@nutui/nutui-react';
-
-interface TableColumnProps {
-  key?: string
-  title?: string
-  align?: string
-  sorter?: ((a: any, b: any) => number) | boolean | string
-  render?: (rowData?: any, rowIndex?: number) => string | React.ReactNode
-}
+import { Table, Button, Icon } from '@nutui/nutui-react';
 
 const App = () => {
-  const [columns4, setColumns4] = useState<Array<TableColumnProps>>([
+  const [columns4, setColumns4] = useState([
     {
       title: '姓名',
       key: 'name',
@@ -600,4 +576,4 @@ export default App;
 
 | 事件名 | 说明           | 回调参数     |
 |--------|----------------|--------------|
-| onSorter  | 点击排序按钮触发 | item: TableColumnProps, data: Array<any> |
+| onSorter  | 点击排序按钮触发 | `item: TableColumnProps, data: Array<any>` |
