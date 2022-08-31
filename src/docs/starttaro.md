@@ -18,7 +18,8 @@
 
 ## 安装
 
-* 通过 Npm 或 Yarn 安装
+* 通过 Npm 或 Yarn 安装  
+* node版本>=12.10.0
 
 ### 安装 Taro 脚手架
 
@@ -44,6 +45,7 @@ npm install -g mirror-config-china
 ``` bash
 taro -v
 ```
+<img src="https://img12.360buyimg.com/imagetools/jfs/t1/113013/14/29712/8279/630ec921Ee898abbc/30d0945a08fc4c22.png" />
 
 ### 项目初始化
 
@@ -55,9 +57,9 @@ taro init myApp
 
 ### 按照下方图片依次选择，选择 Vue3 + NutUI 模板
 
-<img src="https://storage.360buyimg.com/jdc-article/taro.jpg" />
+<img src="https://img13.360buyimg.com/imagetools/jfs/t1/132905/13/28449/96619/630ec93bE666f060e/4bb0e2bc051d90a9.png" />
 
-> 注意：如果非模板方式，单独安装的 nutui-taro npm 包，需要按以下步骤进行配置
+> 注意：如果非模板方式，单独安装的 nutui-taro npm 包，需要按以下步骤进行配置(完整项目请参考NutUI-Demo)
 
 ### 配置 taro 插件 @tarojs/plugin-html
 
@@ -97,11 +99,17 @@ config = {
 > 注意：这种方式将会导入所有组件，打包文件大小会很大
 
 ```javascript
-import { createApp } from "vue";
-import App from "./App.vue";
-import NutUI from "@nutui/nutui-taro";
+// app.ts
+import { createApp } from 'vue'
+import NutUI from "@nutui/nutui-taro" // 在入口文件处引用NutUI
 import "@nutui/nutui-taro/dist/style.css";
-createApp(App).use(NutUI);
+
+const App = createApp({
+  onShow (options) {},
+  // 入口组件不需要实现 render 方法，即使实现了也会被 taro 所覆盖
+})
+App.use(NutUI);
+export default App
 ```
 
 
@@ -142,9 +150,12 @@ npm install babel-plugin-import --save-dev
 
 ```javascript
 import { createApp } from "vue";
-import App from "./App.vue";
 import { Button, Cell, Icon } from "@nutui/nutui-taro";
-createApp(App).use(Button).use(Cell).use(Icon);
+const App = createApp({
+  onShow (options) {},
+  // 入口组件不需要实现 render 方法，即使实现了也会被 taro 所覆盖
+})
+App.use(Button).use(Cell).use(Icon);
 ```
 
 
@@ -155,11 +166,14 @@ createApp(App).use(Button).use(Cell).use(Icon);
 
 ```javascript
 import { createApp } from "vue";
-import App from "./App.vue";
 import { Button, Cell, Icon } from "@nutui/nutui-taro";
 // 全量引入NutUI 需要引入此scss文件 ，按需加载方式不需要引入此文件
 // import '@nutui/nutui-taro/dist/styles/themes/default.scss';
-createApp(App).use(Button).use(Cell).use(Icon);
+const App = createApp({
+  onShow (options) {},
+  // 入口组件不需要实现 render 方法，即使实现了也会被 taro 所覆盖
+})
+App.use(Button).use(Cell).use(Icon);
 ```
 
 创建定制化主题样式文件 ```assets/styles/custom_theme.scss``` ，样式变量覆盖表参考 [nutui variables](https://github.com/jdf2e/nutui/blob/next/src/packages/styles/variables.scss)
