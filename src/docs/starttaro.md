@@ -59,7 +59,7 @@ taro init myApp
 
 <img src="https://img13.360buyimg.com/imagetools/jfs/t1/132905/13/28449/96619/630ec93bE666f060e/4bb0e2bc051d90a9.png" />
 
-> 注意：如果非模板方式，单独安装的 nutui-taro npm 包，需要按以下步骤进行配置(完整项目请参考NutUI-Demo)
+> 注意：如果非模板方式，单独安装的 nutui-taro npm 包，需要按以下步骤进行配置(完整项目请参考[NutUI-Demo](https://github.com/jdf2e/nutui-demo/tree/master/taro3.5.4/) )
 
 ### 配置 taro 插件 @tarojs/plugin-html
 
