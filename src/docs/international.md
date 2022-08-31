@@ -15,6 +15,15 @@ import enUS from '@nutui/nutui/dist/packages/locale/lang/en-US';
 // import { Locale } from '@nutui/nutui-taro';
 // import enUS from '@nutui/nutui-taro/dist/packages/locale/lang/en-US';
 Locale.use('en-US', enUS);
+
+// 通过 Locale.merge 方法可以实现文案的修改和扩展，示例如下：
+Locale.merge('en-US', {
+  confirm: "custom",
+  // 修改某个组件内部语言
+  shortpassword : {
+    title: 'custom',
+  }
+});
 ```
 
 ## 目前支持的语言:
