@@ -1,15 +1,15 @@
-# Indicator
+# Indicator 指示器
 
-### Intro
+### 介绍
 
-Displays the progress of a task or process, often used for provisioning processes
+显示一个任务或流程的进度，常用于开通流程。
 
-### Install
+### 安装
 
 ```javascript
 import { Indicator } from '@nutui/nutui-react'
 ```
-### Basic Usage
+### 基础用法
 :::demo
 ```tsx
 import  React from "react";
@@ -25,7 +25,7 @@ const App = () => {
         <Row>
           <Col span="12">
             <Button size="small" type="primary">
-              Button
+              主要按钮
             </Button>
           </Col>
           <Col span="12">
@@ -39,8 +39,8 @@ const App = () => {
 export default App;
 ```
 :::
-### Block usage
-When `block` is true, it will be displayed as a block-level element, and the alignment can be set through `align`
+### block用法
+在`block`为true时，将表现为块级元素，可通过`align`，设置对齐方式
 :::demo
 ```tsx
 import  React from "react";
@@ -64,7 +64,7 @@ const App = () => {
 export default App;
 ```
 :::
-### Do not add 0
+### 不补0
 :::demo
 ```tsx
 import  React from "react";
@@ -80,8 +80,7 @@ const App = () => {
 export default App;
 ```
 :::
-
-### Vertical display
+### 竖向展示
 :::demo
 ```tsx
 import  React from "react";
@@ -106,15 +105,17 @@ const App = () => {
 export default App;
 ```
 :::
+
+
 ## API
 
 ### Props
 
-| Attribute           | Description                             | Type                      | Default            |
+| 参数         | 说明                             | 类型   | 默认值           |
 |--------------|----------------------------------|--------|------------------|
-| current  | current step               | Number | 1              |
-| size       | step length                         | Number | 3               |
-| block | Whether to enable block level layout     | Boolean | false |
-| align | Alignment, only valid when block is true, optional values 'left', 'right', 'center' | String | left |
-| fillZero     | Whether to add 0 in front of the singular number                      | Boolean | true        |
-| vertical | Whether to display vertically     | Boolean | false |
+| current  | 当前步骤               | Number | 1              |
+| size       | 步骤长度                         | Number | 3               |
+| block | 是否启用块级布局     | Boolean | false |
+| align | 对齐方式，仅在block为true时生效, 可选值 'left', 'right', 'center'| String | left |
+| fillZero     | 单数前面是否补0                      | Boolean | true        |
+| vertical | 是否竖向展示     | Boolean | false |

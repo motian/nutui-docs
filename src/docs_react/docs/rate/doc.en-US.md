@@ -1,18 +1,18 @@
-#  Rate 
+#  Rate 评分
 
-### introduce
+### 介绍
 
-Use for quick rating actions, or to showcase reviews.
+用于快速的评级操作，或对评价进行展示。
 
-### Install
+### 安装
 
 ```ts
 import { Rate } from '@nutui/nutui-react';
 ```
 
-## Code demonstration
+## 代码演示
 
-### Basic usage
+### 基础用法  
 
 :::demo
 ```tsx
@@ -31,7 +31,7 @@ export default App;
 ```
 :::
         
-### half star  
+### 半星  
 
 :::demo
 ```tsx
@@ -49,7 +49,7 @@ export default App;
 
 ```
 :::
-### customize icon   
+### 自定义 icon   
 
 :::demo
 ```tsx
@@ -67,7 +67,7 @@ export default App;
 
 ```
 :::
-### custom quantity  
+### 自定义数量  
 
 :::demo
 ```tsx
@@ -85,7 +85,7 @@ export default App;
 
 ```
 :::
-### Select the minimum quantity (support half star)  
+### 最少选中数量（支持半星）  
 
 :::demo
 ```tsx
@@ -103,7 +103,7 @@ export default App;
 
 ```
 :::
-### custom color 
+### 自定义颜色 
 
 :::demo
 ```tsx
@@ -121,7 +121,7 @@ export default App;
 
 ```
 :::
-### disabled state  
+### 禁用状态  
 
 :::demo
 ```tsx
@@ -139,7 +139,7 @@ export default App;
 
 ```
 :::
-### readonly state  
+### 只读状态  
 
 :::demo
 ```tsx
@@ -157,7 +157,7 @@ export default App;
 
 ```
 :::
-### bind event  
+### 绑定事件  
 
 :::demo
 ```tsx
@@ -178,7 +178,7 @@ export default App;
 
 ```
 :::
-### custom iconSize 35px  
+### 自定义尺寸 35px  
 
 :::demo
 ```tsx
@@ -201,22 +201,22 @@ export default App;
 
 ## Prop
 
-| field           | explain                                 | type    | default    |
-|----------------|-------------------------------------------|---------|-------------|
-| modelValue     | The current number of stars <= count     | Number    | -           |
-| count          | total number of stars                    | Number  | 5           |
-| minimizeValue  | At least the number of STAR              | Number  | 0           |
-| iconSize      | size of star                              | Number  | 18          |
-| activeColor   | Icon selection color                      | String  | #fa200c     |
-| voidColor     | Icon unselected color                    | String  | #ccc        |
-| uncheckedIcon | Use icon (unchecked)                    | String  | star-n      |
-| checkedIcon   | Use icon (checked)                       | String  | star-fill-n |
-| allowHalf     | Half star or not                         | Boolean | false       |
-| readonly       |Read only                              | Boolean | false       |
-| disabled       | Disable or not                          | Boolean | false       |
-| spacing        | spacing                                  | Number  | 20          |
+| 字段                     | 说明                                      | 类型    | 默认值      |
+|------------------------|-------------------------------------------|---------|-------------|
+| modelValue             | 当前 star 数不能大于count | Number  | -           |
+| count                  | star 总数                                 | Number  | 5           |
+| minimizeValue `v1.2.0` | 最少选中star数量                           | Number  | 0           |
+| iconSize               | star 大小                                 | Number  | 18          |
+| activeColor            | 图标选中颜色                              | String  | #fa200c     |
+| voidColor              | 图标未选中颜色                            | String  | #ccc        |
+| uncheckedIcon          | 使用图标(未选中)                          | String  | star-n      |
+| checkedIcon            | 使用图标(选中)                            | String  | star-fill-n |
+| allowHalf              | 是否半星                                  | Boolean | false       |
+| readonly               | 是否只读                                  | Boolean | false       |
+| disabled               | 是否禁用                                  | Boolean | false       |
+| spacing                | 间距                                      | Number  | 20          |
 
 ## Event
-| field   | explain                                          | Callback Arguments  |
+| 字段   | 说明                       | 回调参数 |
 |--------|----------------------------|----------|
-| change | Event triggered when the current score is modified | Current value   |
+| change | 当前分值修改时时触发的事件 | 当前值   |

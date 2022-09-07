@@ -1,19 +1,19 @@
-# Cascader
+# Cascader 级联选择
 
-### Introduce
+### 介绍
 
-The cascader component is used for the selection of multi-level data. The typical scene is the selection of provinces and cities.
+级联选择器，用于多层级数据的选择，典型场景为省市区选择。
 
-### Install
+### 安装
 
 ```js
 import { Cascader, Tabs, TabPane } from '@nutui/nutui-react';
 ```
 
-## Demo
-### Basic Usage
+## 代码演示
+### 基础用法
 
-Pass in the `options` list.
+传入`options`列表。
 :::demo
 ```jsx
 import  React from "react";
@@ -120,9 +120,9 @@ export default App;
 ```
 :::
 
-### Custom attribute name
+### 自定义属性名称
 
-use `textKey`、`valueKey`、`childrenKey`Specify the property name.
+可通过`textKey`、`valueKey`、`childrenKey`指定属性名。
 
 :::demo
 ```jsx
@@ -233,9 +233,9 @@ export default App;
 ```
 :::
 
-### Async loading
+### 动态加载
 
-Use `lazy` to identify whether data needs to be obtained dynamically. At this time, not transmitting `options` means that all data needs to be loaded through `lazyload` . The first loading is distinguished by the `root` attribute. When a non leaf node is encountered, the `lazyload` method will be called. The parameters are the current node and the `resolve` method. Note that the `resolve` method must be called. If it is not transmitted to a child node, it will be treated as a leaf node.
+使用`lazy`标识是否需要动态获取数据，此时不传`options`代表所有数据都需要通过`lazyLoad`加载，首次加载通过`root`属性区分，当遇到非叶子节点时会调用`lazyLoad`方法，参数为当前节点和`resolve`方法，注意`resolve`方法必须调用，不传子节点时会被当做叶子节点处理。
 
 :::demo
 ```jsx
@@ -304,7 +304,7 @@ export default App;
 :::
 
 
-### Async loading of partial data
+### 部分数据动态加载
 
 :::demo
 ```jsx
@@ -376,9 +376,9 @@ export default App;
 ```
 :::
 
-### Automatic data conversion
+### 自动转换
 
-If your data is a flat structure that can be converted into a tree structure, you can tell the component that automatic conversion is required through `convertConfig`, ` convertConfig` accepts four parameters, `topid` is the parent ID of the top-level node, `idkey` is the unique ID of the node, `pidkey` is the attribute name pointing to the parent node ID, and if there is a `sortkey`, `Array.prototype.sort()` to sort at the same level.
+如果你的数据为可转换为树形结构的扁平结构时，可以通过`convertConfig`告诉组件需要进行自动转换，`convertConfig`接受4个参数，`topId`为顶层节点的父级id，`idKey`为节点唯一id，`pidKey`为指向父节点id的属性名，存在`sortKey`将根据指定字段调用Array.prototype.sort()进行同层排序。
 
 :::demo
 ```jsx
@@ -441,25 +441,25 @@ export default App;
 
 ### Props
 
-| Props           | Description                                     | Type     | Default |
-| ------------- | --------------------------------------------- | -------- | ------ |
-| value         | Selected value                                | Array    | -      |
-| options       | Cascade data                                  | Array    | -      |
-| visible       | Cascading show hidden states                  | Boolean  | false  |
-| lazy          | Whether to enable dynamic loading             | Boolean  | false  |
-| lazyLoad      | Dynamic loading callback, which takes effect when dynamic loading is enabled   | Function | -      |
-| valueKey      | Customize the field of `value` in the `options` structure     | String   | -      |
-| textKey       | Customize the fields of `text` in the `options` structure     | String   | -      |
-| childrenKey   | Customize the fields of `children` in the `options` structure | String   | -      |
-| convertConfig | When options is a flat structure that can be converted into a tree structure, configure the conversion rules | Object   | -      |
-| title          | Title | String   | ''      |
-| closeIconPosition | Cancel the button position and inherit the popup component | String   | "top-right"      |
-| close-icon | Customize the close button and inherit the popup component | String   | "close"     |
-| closeable | Whether to display the close button and inherit the popup component | Boolean   | true     |
+| 参数           | 说明                                            | 类型     | 默认值 |
+| ------------- | ---------------------------------------------- | -------- | ------ |
+| value         | 选中值                                          | Array    | -      |
+| options       | 级联数据                                         | Array    | -      |
+| visible       | 级联显示隐藏状态                                  | Boolean  | false  |
+| lazy          | 是否开启动态加载                                  | Boolean  | false  |
+| lazyLoad      | 动态加载回调，开启动态加载时生效                   | Function | -      |
+| valueKey      | 自定义`options`结构中`value`的字段               | String   | -      |
+| textKey       | 自定义`options`结构中`text`的字段                | String   | -      |
+| childrenKey   | 自定义`options`结构中`children`的字段            | String   | -      |
+| convertConfig | 当options为可转换为树形结构的扁平结构时，配置转换规则 | Object   | -      |
+| title          | 标题 | String   | ''      |
+| closeIconPosition | 取消按钮位置，继承 Popup 组件 | String   | "top-right"      |
+| close-icon | 自定义关闭按钮，继承 Popup 组件 | String   | "close"     |
+| closeable | 是否显示关闭按钮，继承 Popup 组件 | Boolean   | true     |
 
 ### Events
 
-| Event | Description           | Callback parameters |
+| 事件名     | 说明             | 回调参数           |
 | ---------- | ---------------- | ------------------ |
-| onChange     | Triggered when the selected value changes | (value, pathNodes) |
-| onPathChange | Triggered when the selected item changes | (pathNodes)        |
+| onChange     | 选中值改变时触发 | (value, pathNodes) |
+| onPathChange | 选中项改变时触发 | (pathNodes)        |

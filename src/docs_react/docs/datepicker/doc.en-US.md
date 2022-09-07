@@ -1,17 +1,18 @@
-#  DatePicker
+#  DatePicker 日期选择器
 
-### Intro
+### 介绍
     
-Used to select time, support date and time dimensions, usually used with the Popup component.
+时间选择器，支持日期、年月、时分等维度，通常与弹出层组件配合使用。
     
-### Install
+### 安装
     
 ```javascript
 import { DatePicker } from '@nutui/nutui';
 ```
     
-### Choose Date
-
+## 代码演示
+    
+### 选择日期
 :::demo
 ```tsx
 import  React, { useState  } from "react";
@@ -19,15 +20,15 @@ import { DatePicker,Cell,Popup,Picker } from '@nutui/nutui-react';
 
 const App = () => {
   const [show1, setShow1] = useState(false)
-  const [desc1, setDesc1] = useState('2012-01-01')
+  const [desc1, setDesc1] = useState('2012年 01月 01日')
   const confirm1 = (values:(string|number)[],options:PickerOption[])=>{
     setDesc1(options.map((option) => option.text).join(' '))
   }
   return ( 
     <>   
-      <Cell title="Show Chinese" desc={desc1} onClick={() => setShow1(true)} />
+      <Cell title="显示中文" desc={desc1} onClick={() => setShow1(true)} />
       <DatePicker
-        title="Choose Date"
+        title="日期选择"
         visible={show1}
         isShowChinese
         onCloseDatePicker={() => setShow1(false)}
@@ -40,7 +41,9 @@ export default App;
 
 ```
 :::
-### Choose Month-Day
+### 选择月日
+
+DatetimePicker 通过 type 属性来定义需要选择的时间类型。将 type 设置为 year-month 即可选择年份和月份，设置为 month-day 即可选择月份和日期。
 
 :::demo
 ```tsx
@@ -55,9 +58,9 @@ const App = () => {
   }
   return ( 
     <>   
-      <Cell title="Limit the start and end time" desc={desc2} onClick={() => setShow2(true)} />
+      <Cell title="日期选择" desc={desc2} onClick={() => setShow2(true)} />
       <DatePicker
-          title="Choose Time"
+          title="日期选择"
           minDate={new Date(2022, 0, 1)}
           maxDate={new Date(2022, 7, 1)}
           type="month-day"
@@ -72,7 +75,9 @@ export default App;
 
 ```
 :::
-### Choose DateTime
+### 选择年月日时分
+
+将 type 设置为 datetime 即可选择完整的时间。
 
 :::demo
 ```tsx
@@ -91,9 +96,9 @@ const App = () => {
   }
   return ( 
     <>   
-      <Cell title="Choose Time" desc={desc3} onClick={() => setShow3(true)} />
+      <Cell title="日期时间选择" desc={desc3} onClick={() => setShow3(true)} />
       <DatePicker
-          title="Choose Time"
+          title="日期时间选择"
           minDate={minDate}
           maxDate={maxDate}
           visible={show3}
@@ -108,8 +113,7 @@ export default App;
 
 ```
 :::
-### Choose Time
-
+### 选择时分秒
 :::demo
 ```tsx
 import  React, { useState  } from "react";
@@ -126,9 +130,9 @@ const App = () => {
 
   return ( 
     <>   
-      <Cell title="Choose Time" desc={desc4} onClick={() => setShow4(true)} />
+      <Cell title="时间选择" desc={desc4} onClick={() => setShow4(true)} />
       <DatePicker
-          title="Choose Time"
+          title="时间选择"
           type="time"
           minDate={minDate}
           maxDate={maxDate}
@@ -143,7 +147,9 @@ export default App;
 
 ```
 :::
-### Option Formatter
+### 格式化选项
+
+通过传入 formatter 函数，可以对选项文字进行格式化处理。 isShowChinese 属性同样是也为选项后面添加文案，但 formatter 函数的优先级高于 isShowChinese 属性。
 
 :::demo
 ```tsx
@@ -154,7 +160,7 @@ const App = () => {
   const minDate = new Date(2020, 0, 1)
   const maxDate = new Date(2025, 10, 1)
   const [show5, setShow5] = useState(false)
-  const [desc5, setDesc5] = useState('2020-05-10 10:10')
+  const [desc5, setDesc5] = useState('2020年 05月 10日 10:10')
 
   const confirm5 = (values:(string|number)[],options:PickerOption[])=>{
     const date = options.slice(1, 3).map((op) => op.text).join('');
@@ -162,7 +168,7 @@ const App = () => {
     .slice(3)
     .map((op) => op.value)
     .join(':');
-    setDesc5(`${options[0].text}Year${date} ${time}`)
+    setDesc5(`${options[0].text}年${date} ${time}`)
   }
   const formatter = (type: string, option:PickerOption) => {
     switch (type) {
@@ -170,16 +176,16 @@ const App = () => {
         option.text += '';
         break;
       case 'month':
-        option.text += 'Month';
+        option.text += '月';
         break;
       case 'day':
-        option.text += 'Day';
+        option.text += '日';
         break;
       case 'hour':
-        option.text += 'Hour';
+        option.text += '时';
         break;
       case 'minute':
-        option.text += 'Minute';
+        option.text += '分';
         break;
       default:
         option.text += '';
@@ -189,9 +195,9 @@ const App = () => {
 
   return ( 
     <>   
-      <Cell title="Choose Time" desc={desc5} onClick={() => setShow5(true)} />
+      <Cell title="时间选择" desc={desc5} onClick={() => setShow5(true)} />
       <DatePicker
-          title="Choose Time"
+          title="时间选择"
           type="datetime"
           minDate={new Date(2022, 0, 1)}
           maxDate={new Date(2022, 10, 1)}
@@ -208,8 +214,7 @@ export default App;
 ```
 :::
 
-
-### Option Steps
+### 分钟数递增步长设置
 :::demo
 ```tsx
 import  React, { useState  } from "react";
@@ -226,9 +231,9 @@ const App = () => {
   }
   return ( 
     <>   
-      <Cell title="Choose Time" desc={desc6} onClick={() => setShow6(true)} />
+      <Cell title="时间选择" desc={desc6} onClick={() => setShow6(true)} />
       <DatePicker
-          title="Choose Time"
+          title="时间选择"
           type="time"
           minDate={minDate}
           maxDate={maxDate}
@@ -245,7 +250,9 @@ export default App;
 ```
 :::
 
-### Option Filter
+### 过滤选项
+
+通过 filter 函数可以对选项数组进行过滤，实现自定义时间间隔。
 
 :::demo
 ```tsx
@@ -256,7 +263,7 @@ const App = () => {
   const minDate = new Date(2020, 0, 1)
   const maxDate = new Date(2025, 10, 1)
   const [show7, setShow7] = useState(false)
-  const [desc7, setDesc7] = useState('2022-05-10 00')
+  const [desc7, setDesc7] = useState('2022年05月10日 00时')
 
   const confirm7 = (values:(string|number)[],options:PickerOption[])=>{
     setDesc7(options.map((option) => option.text).join(' '))
@@ -270,16 +277,16 @@ const App = () => {
   const formatter1 = (type: string, option:PickerOption) => {
     switch (type) {
       case 'year':
-        option.text += `Year`;
+        option.text += `年`;
         break;
       case 'month':
-        option.text += `Month`;
+        option.text += `月`;
         break;
       case 'day':
-        option.text += `Day`;
+        option.text += `日`;
         break;
       case 'hour':
-        option.text += `Hour`;
+        option.text += `时`;
         break;
       default:
         option.text += '';
@@ -288,9 +295,9 @@ const App = () => {
   };
   return ( 
     <>   
-      <Cell title="Choose Time" desc={desc6} onClick={() => setShow6(true)} />
+      <Cell title="时间选择" desc={desc6} onClick={() => setShow6(true)} />
       <DatePicker
-          title="Choose Time"
+          title="时间选择"
           type="datehour"
           minDate={minDate}
           maxDate={maxDate}
@@ -314,25 +321,26 @@ export default App;
     
 ### Props
     
-| Attribute         | Description                             | Type   | Default           |
+| 参数                        | 说明                                              | 类型    | 默认值   |
 |---------------------------|---------------------------------------------------|---------|----------|
-| modelValue                | Default Date                                                | Date    | `null`   |
-| visible                   | Is Show                                          | Boolean | `false`  |
-| type                      | Can be set to date time year-month month-day datehour | String  | `'date'` |
-| minuteStep                | Option minute step                                        | Number  | `1`      |
-| isShowChinese             | Show Chinese                                  | Boolean | `false`  |
-| title                     | Title                                          | String  | `null`   |
-| minDate                   | Start date                                          | Date    | `Ten years ago on January 1` |
-| maxDate                   | End date                                         | Date    | `Ten years later on December 31` |
-| formatter`v1.2.2`         | Option text formatter                                           | (type: string, option: PickerOption) => PickerOption    |  |
-| filter`v1.2.2`            | Option filter                                          | (type: string, option: PickerOption) => PickerOption[]    |  |
-| three-dimensional`v1.2.2` | Turn on 3D effects               | Boolean  | true   |
+| modelValue                | 初始值                                            | Date    | `null`   |
+| visible                   | 是否可见                                          | Boolean | `false`  |
+| type                      | 类时间类型，可选值 date time year-month month-day datehour datetime | String  | `'date'` |
+| minuteStep                | 分钟步进值                                        | Number  | `1`      |
+| isShowChinese             | 每列是否展示中文                                  | Boolean | `false`  |
+| title                     | 设置标题                                          | String  | `null`   |
+| minDate                   | 开始日期                                          | Date    | `十年前` |
+| maxDate                   | 结束日期                                          | Date    | `十年后` |
+| formatter`v1.2.2`         | 选项格式化函数                                          | (type: string, option: PickerOption) => PickerOption    |  |
+| filter`v1.2.2`            | 选项过滤函数                                          | (type: string, option: PickerOption) => PickerOption[]    |  |
+| three-dimensional`v1.2.2` | 是否开启3D效果               | Boolean  | true   |
 
 
 ### Events
     
-| Event | Description           | Arguments     |
+| 事件名                         | 说明               | 回调参数     |
 |-----------------------------|--------------------|--------------|
-| onConfirmDatePicker`v1.2.2` | Emitted when click confirm button.  | values, options |
-| onCloseDatePicker           | Emitted when click close button.          | -- |
-| onChange`v1.2.2`            | Emitted when current option changed.         |  columnIndex, values, options  |
+| confirm`v1.2.2(废弃)`         | 点击确定按钮时触发 | event: Event |
+| onConfirmDatePicker`v1.2.2` | 点击确定按钮时触发 | values, options |
+| onCloseDatePicker           | 关闭时触发         | -- |
+| onChange`v1.2.2`                  | 选项改变时触发         |  columnIndex, values, options  |

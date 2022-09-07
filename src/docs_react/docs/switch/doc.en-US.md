@@ -1,18 +1,18 @@
-#  Switch 
+#  Switch 开关
 
-### Introduction
+### 介绍
 
-Used to open or close the options.
+用来打开或关闭选项。
 
-### Install
+### 安装
 
 ```ts
 import { Switch } from '@nutui/nutui-react';
 ```
 
-## Code demonstration
+## 代码演示
 
-### Basic usage
+### 基础用法
 
 :::demo
 ```tsx
@@ -32,7 +32,7 @@ export default App;
 :::
 
 
-### disable status
+### 禁用状态
 
 :::demo
 ```tsx
@@ -51,7 +51,7 @@ export default App;
 ```
 :::
 
-### change event
+### change事件
 
 :::demo
 ```tsx
@@ -60,7 +60,7 @@ import { Switch } from '@nutui/nutui-react';
 
 const App = () => {
   const change = (value: boolean, event: Event) => {
-    alert(`Triggering the change event, the switch status：${value}`)
+    alert(`触发了change事件，开关状态：${value}`)
   }
   return ( 
     <>   
@@ -72,7 +72,7 @@ export default App;
 
 ```
 :::
-### Asynchronous control
+### 异步控制
 
 :::demo
 ```tsx
@@ -83,7 +83,7 @@ const App = () => {
   const [checkedAsync, setCheckedAsync] = useState(true)
   
   const changeAsync = (value: boolean, event: Event) => {
-    alert(`Asynchronous trigger after 2 seconds ${value}`)
+    alert(`2秒后异步触发 ${value}`)
     setTimeout(() => {
       setCheckedAsync(value)
     }, 2000)
@@ -102,7 +102,7 @@ export default App;
 
 ```
 :::
-### Custom color
+### 自定义颜色
 
 :::demo
 ```tsx
@@ -120,7 +120,7 @@ export default App;
 
 ```
 :::
-### Support text
+### 支持文字
 
 :::demo
 ```tsx
@@ -130,7 +130,7 @@ import { Switch } from '@nutui/nutui-react';
 const App = () => {
   return ( 
     <>   
-    <Switch activeText="open" inactiveText="close" />
+    <Switch activeText="开" inactiveText="关" />
     </>
   );
 };  
@@ -146,19 +146,19 @@ export default App;
 
 ### Props
 
-| parameter            | illustrate             | type    | Defaults   |
+| 参数           | 说明             | 类型    | 默认值                |
 |----------------|------------------|---------|-----------------------|
-| checked        | switch status              | Boolean | `false`    |
-| disable        | Disable                     | Boolean | `false`   |
-| activeColor   | Background color when opening | String  | `#fa2c19`|
-| inactiveColor | Background color when closed | String  | `#ebebeb` |
-| activeText    | Text description when opening | String  | -        |
-| inactiveText  | Text description when closed  | String  | -        |
-| isAsync  | Whether the switch state is modified asynchronous   | Boolean  | `false`                     |
+| checked        | 开关状态         | Boolean | `false`               |
+| disable        | 禁用状态         | Boolean | `false`               |
+| activeColor   | 打开时的背景颜色 | String  | `#fa2c19`    |
+| inactiveColor | 关闭时的背景颜色 | String  | `#ebebeb` |
+| activeText    | 打开时文字描述   | String  | -                     |
+| inactiveText  | 关闭时文字描述   | String  | -                     |
+| isAsync  | 开关状态是否异步修改   | Boolean  | `false`                     |
 
 
 ### Events
 
-| Incident name | illustrate           | Callback parameter       |
+| 事件名 | 说明           | 回调参数                      |
 |--------|----------------|-------------------------------|
-| change | Trigger when switching switches | (value: boolean,event: Event) |
+| change | 切换开关时触发 | (value: boolean,event: Event) |

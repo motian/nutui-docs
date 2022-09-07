@@ -1,16 +1,18 @@
-#  Picker
+#  Picker 选择器
 
-### Intro
+### 介绍
 
-The picker component is usually used with Popup Component.
+提供多个选项集合供用户选择其中一项。
 
-### Install
+### 安装
 ```ts
 import { Picker } from '@nutui/nutui-react';
 ```
 
 
-### Basic Usage
+## 代码演示
+
+### 基础用法
 
 :::demo
 ```tsx
@@ -22,18 +24,18 @@ const App = () => {
   const [baseDesc, setBaseDesc] = useState('')
   const listData1 = [
     [
-      { value: 1, text: 'NanJing',},
-      { value: 2, text: 'WuXi',},
-      { value: 3, text: 'ZangZu',},
-      { value: 4, text: 'BeiJing',},
-      { value: 5, text: 'LianYunGang',},
-      { value: 6, text: 'ZheJiang',},
-      { value: 7, text: 'JiangSu',},
-      { value: 8, text: 'DaQing',},
-      { value: 9, text: 'SuiHua',},
-      { value: 10,text: 'WeiFang',},
-      { value: 11,text: 'Please Choose',},
-      { value: 12,text: 'Urumqi Municipality'},
+      { value: 1, text: '南京市',},
+      { value: 2, text: '无锡市',},
+      { value: 3, text: '海北藏族自治区',},
+      { value: 4, text: '北京市',},
+      { value: 5, text: '连云港市',},
+      { value: 6, text: '浙江市',},
+      { value: 7, text: '江苏市',},
+      { value: 8, text: '大庆市',},
+      { value: 9, text: '绥化市',},
+      { value: 10,text: '潍坊市',},
+      { value: 11,text: '请按市',},
+      { value: 12,text: '乌鲁木齐市'},
     ],
   ]
   const changePicker = (columnIndex: number, option: any, list: any[]) => {
@@ -48,7 +50,7 @@ const App = () => {
   }
   return ( 
     <>   
-      <Cell title="Choose City" desc={baseDesc} onClick={() => setIsVisible1(!isVisible1)}/>
+      <Cell title="请选择城市" desc={baseDesc} onClick={() => setIsVisible1(!isVisible1)}/>
       <Picker
         isVisible={isVisible1}
         listData={listData1}
@@ -65,7 +67,7 @@ export default App;
 :::
 
 
-### Default Index
+### 默认选中项
 
 :::demo
 ```tsx
@@ -77,18 +79,18 @@ const App = () => {
   const [baseDefault, setbaseDefault] = useState('')
   const listData1 = [
     [
-      { value: 1, text: 'NanJing',},
-      { value: 2, text: 'WuXi',},
-      { value: 3, text: 'ZangZu',},
-      { value: 4, text: 'BeiJing',},
-      { value: 5, text: 'LianYunGang',},
-      { value: 6, text: 'ZheJiang',},
-      { value: 7, text: 'JiangSu',},
-      { value: 8, text: 'DaQing',},
-      { value: 9, text: 'SuiHua',},
-      { value: 10,text: 'WeiFang',},
-      { value: 11,text: 'Please Choose',},
-      { value: 12,text: 'Urumqi Municipality'},
+      { value: 1, text: '南京市',},
+      { value: 2, text: '无锡市',},
+      { value: 3, text: '海北藏族自治区',},
+      { value: 4, text: '北京市',},
+      { value: 5, text: '连云港市',},
+      { value: 6, text: '浙江市',},
+      { value: 7, text: '江苏市',},
+      { value: 8, text: '大庆市',},
+      { value: 9, text: '绥化市',},
+      { value: 10,text: '潍坊市',},
+      { value: 11,text: '请按市',},
+      { value: 12,text: '乌鲁木齐市'},
     ],
   ]
   const confirmPicker = (values: (string | number)[],options: PickerOption[]) => {
@@ -100,7 +102,7 @@ const App = () => {
   }
   return ( 
     <>   
-      <Cell title="Choose City" desc={baseDefault} onClick={() => setIsVisible1(!isVisible1)}/>
+      <Cell title="请选择城市" desc={baseDefault} onClick={() => setIsVisible1(!isVisible1)}/>
       <Picker
         isVisible={isVisible1}
         listData={listData1}
@@ -115,7 +117,7 @@ export default App;
 ```
 :::
 
-### Multiple Columns
+### 多列用法
 
 :::demo
 ```tsx
@@ -128,17 +130,17 @@ const App = () => {
   const listData2 = [
     // 第一列
     [
-      { text: 'Monday', value: 'Monday' },
-      { text: 'Tuesday', value: 'Tuesday' },
-      { text: 'Wednesday', value: 'Wednesday' },
-      { text: 'Thursday', value: 'Thursday' },
-      { text: 'Friday', value: 'Friday' },
+      { text: '周一', value: 'Monday' },
+      { text: '周二', value: 'Tuesday' },
+      { text: '周三', value: 'Wednesday' },
+      { text: '周四', value: 'Thursday' },
+      { text: '周五', value: 'Friday' },
     ],
     // 第二列
     [
-      { text: 'Morning', value: 'Morning' },
-      { text: 'Afternoon', value: 'Afternoon' },
-      { text: 'Evening', value: 'Evening' },
+      { text: '上午', value: 'Morning' },
+      { text: '下午', value: 'Afternoon' },
+      { text: '晚上', value: 'Evening' },
     ],
   ]
   const confirmPicker = (values: (string | number)[],options: PickerOption[]) => {
@@ -150,7 +152,7 @@ const App = () => {
   }
   return ( 
     <>   
-    <Cell title="Multiple Columns" desc={mutilDesc} onClick={() => setIsVisible2(!isVisible2)} />
+    <Cell title="多列用法" desc={mutilDesc} onClick={() => setIsVisible2(!isVisible2)} />
     <Picker
       isVisible={isVisible2}
       listData={listData2}
@@ -166,7 +168,9 @@ export default App;
 ```
 :::
 
-### Tile
+### 平铺展示
+
+通过设置 `threeDimensional` 取消 3D 展示效果，并且通过设置 `swipeDuration` 可以控制快速滚动的时长。
 
 :::demo
 ```tsx
@@ -178,18 +182,18 @@ const App = () => {
   const [tileDesc, settileDesc] = useState('')
   const listData = [
     [
-      { value: 1, text: 'NanJing',},
-      { value: 2, text: 'WuXi',},
-      { value: 3, text: 'ZangZu',},
-      { value: 4, text: 'BeiJing',},
-      { value: 5, text: 'LianYunGang',},
-      { value: 6, text: 'ZheJiang',},
-      { value: 7, text: 'JiangSu',},
-      { value: 8, text: 'DaQing',},
-      { value: 9, text: 'SuiHua',},
-      { value: 10,text: 'WeiFang',},
-      { value: 11,text: 'Please Choose',},
-      { value: 12,text: 'Urumqi Municipality'},
+      { value: 1, text: '南京市',},
+      { value: 2, text: '无锡市',},
+      { value: 3, text: '海北藏族自治区',},
+      { value: 4, text: '北京市',},
+      { value: 5, text: '连云港市',},
+      { value: 6, text: '浙江市',},
+      { value: 7, text: '江苏市',},
+      { value: 8, text: '大庆市',},
+      { value: 9, text: '绥化市',},
+      { value: 10,text: '潍坊市',},
+      { value: 11,text: '请按市',},
+      { value: 12,text: '乌鲁木齐市'},
     ],
   ]
   const confirmPicker = (values: (string | number)[],options: PickerOption[]) => {
@@ -201,11 +205,12 @@ const App = () => {
   }
   return ( 
     <>   
-      <Cell title="Choose City" desc={settileDesc} onClick={() => setIsVisible(!isVisible)}/>
+      <Cell title="请选择城市" desc={settileDesc} onClick={() => setIsVisible(!isVisible)}/>
       <Picker
         isVisible={isVisible}
         listData={listData}
         threeDimensional={false}
+        swipeDuration={1000}
         onConfirm={(values, list) => confirmPicker(values, list)}
         onClose={() => setIsVisible(false)}
        />
@@ -216,7 +221,7 @@ export default App;
 
 ```
 :::
-### Cascade
+### 多级联动
 
 :::demo
 ```tsx
@@ -230,25 +235,25 @@ const App = () => {
   const [custmerCityData, setCustmerCityData] = useState([
     {
       value: 1,
-      text: 'BeiJing',
+      text: '北京',
       children: [
-        { value: 1, text: 'ChaoYang',},
-        { value: 2, text: 'HaiDian',},
-        { value: 3, text: 'DaXing',},
-        { value: 4, text: 'DongCheng',},
-        { value: 5, text: 'XiCheng',},
-        { value: 6, text: 'FengTai',},
+        { value: 1, text: '朝阳区',},
+        { value: 2, text: '海淀区',},
+        { value: 3, text: '大兴区',},
+        { value: 4, text: '东城区',},
+        { value: 5, text: '西城区',},
+        { value: 6, text: '丰台区',},
       ],
     },
     {
       value: 2,
-      text: 'ShangHai',
+      text: '上海',
       children: [
-        { value: 1, text: 'HuangPu',},
-        { value: 2, text: 'ChangNing',},
-        { value: 3, text: 'PuTuo',},
-        { value: 4, text: 'YangPu',},
-        { value: 5, text: 'PuDong',},
+        { value: 1, text: '黄浦区',},
+        { value: 2, text: '长宁区',},
+        { value: 3, text: '普陀区',},
+        { value: 4, text: '杨浦区',},
+        { value: 5, text: '浦东新区',},
       ],
     },
   ])
@@ -260,7 +265,7 @@ const App = () => {
  
   return ( 
     <>   
-      <Cell title="Cascade" desc={cityCustmer} onClick={() => setIsVisible(!isVisible)}/>
+      <Cell title="多级联动" desc={cityCustmer} onClick={() => setIsVisible(!isVisible)}/>
       <Picker
         isVisible={isVisible}
         listData={custmerCityData}
@@ -280,7 +285,7 @@ export default App;
 ```
 :::
 
-### Async
+### 动态获取
 
 :::demo
 ```tsx
@@ -293,19 +298,19 @@ const App = () => {
   const [asyncData, setCustmerCityData] = useState([
     {
       value: 1,
-      text: 'BeiJing',
+      text: '北京',
       children: [
-        { value: 1, text: 'ChaoYang',},
-        { value: 2, text: 'HaiDian',},
-        { value: 3, text: 'DaXing',},
-        { value: 4, text: 'DongCheng',},
-        { value: 5, text: 'XiCheng',},
-        { value: 6, text: 'FengTai',},
+        { value: 1, text: '朝阳区',},
+        { value: 2, text: '海淀区',},
+        { value: 3, text: '大兴区',},
+        { value: 4, text: '东城区',},
+        { value: 5, text: '西城区',},
+        { value: 6, text: '丰台区',},
       ],
     },
     {
       value: 2,
-      text: 'ShangHai',
+      text: '上海',
       children: [],
     },
   ])
@@ -320,11 +325,11 @@ const App = () => {
       setTimeout(() => {
         if(asyncData[1].children.length === 0){
           asyncData[1].children = [
-            { value: 1, text: 'HuangPu',},
-            { value: 2, text: 'ChangNing',},
-            { value: 3, text: 'PuTuo',},
-            { value: 4, text: 'YangPu',},
-            { value: 5, text: 'PuDong',}]
+            { value: 1, text: '黄浦区',},
+            { value: 2, text: '长宁区',},
+            { value: 3, text: '普陀区',},
+            { value: 4, text: '杨浦区',},
+            { value: 5, text: '浦东新区',}]
             
             setAsyncData([...asyncData])
         }
@@ -334,7 +339,7 @@ const App = () => {
  
   return ( 
     <>   
-      <Cell title="Choose City" desc={asyncDesc} onClick={() => setIsVisible(!isVisible)}/>
+      <Cell title="请选择城市" desc={asyncDesc} onClick={() => setIsVisible(!isVisible)}/>
       <Picker
         isVisible={isVisible}
         listData={asyncData}
@@ -359,28 +364,30 @@ export default App;
 
 ### Props
 
-| Attribute         | Description                             | Type   | Default           |
-| ----- | ----- | ----- | ----- |
-| isVisible | Is Show  | Boolean | false
-| title | Toolbar title | String | null
-| listData |  Columns data | Array | []
-| defaultValueData | Default Index  | Array | []
-| threeDimensional          | Turn on 3D effects                | Boolean  | true   |
+| 字段                     | 说明 | 类型 | 默认值 |
+|------------------------| ----- | ----- | ----- |
+| isVisible              | 是否可见 | Boolean | false |
+| title                  | 设置标题 | String | null |
+| listData               | 列表数据 | Array | [] |
+| defaultValueData       | 默认选中 | Array | [] |
+| threeDimensional`v1.2.2` | 是否开启3D效果               | Boolean  | true   |
+| swipeDuration`v1.3.0` | 快速滑动时惯性滚动的时长，单位 ms               | String \| Number  | 1000   |
 
 
-## listData 
-| Attribute         | Description                             | Type   | Default           |
+## listData 数据结构
+| 参数         | 说明                             | 类型   | 默认值           |
 |--------------|----------------------------------|--------|------------------|
-| text        | Text of column               | String|Number |               |
-| value          | Value of column              | String|Number |            |
-| children         | Cascader Option               | Array | -                |
+| text`v1.2.2`        | 选项的文字内容               | String|Number |               |
+| value`v1.2.2`          | 选项对应的值，且唯一               | String|Number |            |
+| children`v1.2.2`        | 用于级联选项               | Array | -                |
 
 
 ## Events
 
-| Event | Description           | Arguments     |
-|-----          | ----- | ----- |
-| onConfirm     | Emitted when click confirm button. | { selectedValue, selectedOptions } |
-| onChange      | Emitted when current option changed. | { columnIndex, selectedValue, selectedOptions } |
-| onCloseUpdate | Emitted when cascade changed.   | selectedValue |
-| onClose       | Emitted when click close button. | { selectedValue, selectedOptions }  |
+| 字段                   | 说明 | 回调参数 |
+|----------------------| ----- | ----- |
+| onConfirm            | 点击确认按钮时候回调 | 返回选中值 value，选中值对象 |
+| onChoose`v1.2.2(废弃)` | 每一列值变更时调用 | 依次返回this、改变的列数，改变值，当前选中值 |
+| onChange`v1.2.2`     | 每一列值变更时调用   | 改变的列数，改变值 value，当前选中值 |
+| onCloseUpdate        | 联动时，关闭时回调   | 当前选中值，依次返回this |
+| onClose              | 关闭时触发          | 返回选中值 value，选中值对象 |

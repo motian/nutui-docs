@@ -1,17 +1,18 @@
-#  Grid
+#  Grid 宫格
 
-### Intro
+### 介绍
 
-Used to separate into equal-width blocks for page navigation.
+用于分隔成等宽区块进行页面导航。
 
-### Install
+### 安装
 
 ```javascript
 import { Grid ,GridItem } from '@nutui/nutui-react'
 ```
 
+## 代码演示
 
-###  Basic Usage
+### 基础用法
 
 :::demo
 ```tsx
@@ -21,14 +22,14 @@ import { Grid,GridItem } from '@nutui/nutui-react'
 const App = () => {
   return (
     <Grid>
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
     </Grid>
   )
 }
@@ -36,7 +37,7 @@ export default App
 ```
 :::
 
-### Column Num
+### 自定义列数
 
 :::demo
 ```tsx
@@ -46,12 +47,12 @@ import { Grid,GridItem } from '@nutui/nutui-react'
 const App = () => {
   return (
     <Grid columnNum={3}>
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
     </Grid>
   )
 }
@@ -59,7 +60,7 @@ export default App
 ```
 :::
 
-### Square
+### 正方形格子
 
 :::demo
 ```tsx
@@ -69,9 +70,9 @@ import { Grid,GridItem } from '@nutui/nutui-react'
 const App = () => {
   return (
     <Grid columnNum={3} square>
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
     </Grid>
   )
 }
@@ -80,7 +81,7 @@ export default App
 :::
 
 
-### Gutter
+### 格子间距
 
 :::demo
 ```tsx
@@ -90,14 +91,14 @@ import { Grid,GridItem } from '@nutui/nutui-react'
 const App = () => {
   return (
      <Grid gutter={3}>
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
     </Grid>
   )
 }
@@ -105,7 +106,7 @@ export default App
 ```
 :::
 
-### Reverse
+### 内容翻转
 
 :::demo
 ```tsx
@@ -115,10 +116,10 @@ import { Grid,GridItem } from '@nutui/nutui-react'
 const App = () => {
   return (
     <Grid reverse>
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
     </Grid>
   )
 }
@@ -126,7 +127,7 @@ export default App
 ```
 :::
 
-### Horizontal
+### 内容横向
 
 :::demo
 ```tsx
@@ -136,10 +137,10 @@ import { Grid,GridItem } from '@nutui/nutui-react'
 const App = () => {
   return (
     <Grid direction="horizontal">
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
-        <GridItem icon="dongdong" text="text" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
+        <GridItem icon="dongdong" text="文字" />
     </Grid>
   )
 }
@@ -147,7 +148,7 @@ export default App
 ```
 :::
 
-### Icon Style
+### 图标颜色/大小
 
 :::demo
 ```tsx
@@ -157,14 +158,14 @@ import { Grid,GridItem } from '@nutui/nutui-react'
 const App = () => {
   return (
     <Grid columnNum="3" iconColor="#fa2c19">
-        <GridItem icon="dongdong" text="text" />
+        <GridItem icon="dongdong" text="文字" />
         <GridItem
         icon="dongdong"
-        text="text"
+        text="文字"
         iconColor="#478EF2"
         iconSize="40"
         />
-        <GridItem icon="dongdong" text="text" />
+        <GridItem icon="dongdong" text="文字" />
     </Grid>
   )
 }
@@ -172,7 +173,7 @@ export default App
 ```
 :::
 
-### Custom Content
+### 自定义内容
 
 :::demo
 ```tsx
@@ -221,23 +222,23 @@ export default App
 
 ### Props
 
-| Attribute   | Description                                              | Type   | Default |
+| 参数          | 说明                                      | 类型                    | 默认值      |
 |---------------|------------------------------------------|------------------------|------------|
-| columnNum    | Column Num                                     | number \| string         | `4`        |
-| iconSize     | Icon size,for example `20px` `2em` `2rem`          | number \| string        | `28px`     |
-| iconColor    | Icon color                                  | string                 | -          |
-| border        | Whether to show border                               | boolean                | `true`     |
-| gutter        | Gutter,The default unit is `px`               | number \| string        | `0`        |
-| center        | Whether to center content                      | boolean                | `true`      |
-| square        | 	Whether to be square shape                      | boolean                | `false`     |
-| reverse       | 	Whether to reverse the position of icon and text       | boolean                | `false`     |
-| direction     | 	Content arrangement direction, can be set to  `horizontal`    | string                 | `vertical`  |
+| columnNum    | 列数                                     | number \| string         | `4`        |
+| iconSize     | 图标大小，如 `20px` `2em` `2rem`          | number \| string        | `28px`     |
+| iconColor    | 图标颜色                                  | string                 | -          |
+| border        | 是否显示边框                               | boolean                | `true`     |
+| gutter        | 格子之间的间距，默认单位为`px`               | number \| string        | `0`        |
+| center        | 是否将格子内容居中显示                      | boolean                | `true`      |
+| square        | 是否将格子固定为正方形                      | boolean                | `false`     |
+| reverse       | 内容翻转                                  | boolean                | `false`     |
+| direction     | 格子内容排列的方向，可选值为 `horizontal`    | string                 | `vertical`  |
 
 ### GridItem Props
 
-| Attribute   | Description                                              | Type   | Default |
+| 参数                  | 说明                                                                                     | 类型               | 默认值      |
 |----------------------|-----------------------------------------------------------------------------------------|--------------------|------------|
-| text                 | text                                                                                     | string\| ReactNode              | -          |
-| icon                 | Icon name or URL                                                            | string \| ReactNode     | -          |
-| iconSize            | Icon size,for example `20px` `2em` `2rem`      | number \| string  |`28px`  |
-| iconColor           | Icon color              | string            | -           |
+| text                 | 文字                                                                                     | string \| ReactNode   | -          |
+| icon                 | [图标名称](#/icon) 或图片链接                                                              | string  \| ReactNode   | -          |
+| iconSize            | 图标大小，如 `20px` `2em` `2rem`                                                          | number \| string   | `28px`     |
+| iconColor           | 图标颜色                                                                                  | string            | -           |

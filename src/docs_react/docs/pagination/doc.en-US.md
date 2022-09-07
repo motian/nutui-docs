@@ -1,19 +1,17 @@
-#  Pagination
+#  Pagination 分页
 
-### Intro
+### 介绍
     
-When the amount of data is too much, use pagination to separate the data.
+当数据量较多时，采用分页的形式分隔长列表。
     
-### Install
+### 安装
 ``` javascript
 import { Pagination } from '@nutui/nutui-react';
 ```    
 
-### Basic Usage
-
-When the current page number is bound by modelValue, the component is in a controlled state, and the paging display depends on the incoming modelValue, which is generally used with onChange.
-When it does not need to be controlled, the current page number can be specified through defaultCurrentPage
-
+### 基础用法
+通过modelValue来绑定当前页码时，组件为受控状态，分页显示取决于传入的modelValue，一般搭配onChange使用。
+不需要受控时，可通过defaultCurrentPage指定当前页码
 :::demo
 ``` tsx
 import React, { useState } from 'react'
@@ -37,8 +35,8 @@ const App = () => {
 export default App;
 ```
 :::
-### Simple mode
-Pagination can be switched to simple mode with simple mode attribute, and pagination cann't display specific page buttons.
+### 简单模式
+将 mode 设置为 "simple" 来切换到简单模式，此时分页器不会展示具体的页码按钮。
 :::demo
 ``` tsx
 import React, { useState } from 'react'
@@ -63,8 +61,8 @@ export default App;
 ```
 :::
 
-### Show ellipses 
-The ellipses button will display after with force-ellipses attribute, click it can jump quickly.
+### 显示省略号
+设置 force-ellipses 后会展示省略号按钮，点击后可以快速跳转。
 :::demo
 ``` tsx
 import React, { useState } from 'react'
@@ -89,8 +87,8 @@ const App = () => {
 export default App;
 ```
 :::
-### Custom Button
-Pass in a custom method through pageNodeRender, parameters: { number: "page number", text: "page text", active: "active page" }
+### 自定义按钮
+通过pageNodeRender传入自定义方法，入参数为page:{ number:页数, text:"文本", active:"选中状态" } 
 :::demo
 ``` tsx
 import React, { useState } from 'react'
@@ -125,22 +123,22 @@ export default App;
     
 ### Props
     
-| Attribute           | Description                             | Type                      | Default            |
+| 参数           | 说明                             | 类型                      | 默认值            |
 | -------------- | -------------------------------- | ------------------------- | ----------------- |
-| modelValue     | current page number                         | Number                    | -                 |
-| defaultValue   | default page number                         | Number                    | 1                 |
-| mode           | Display mode, optional values are: `multi`,`simple` | String                    | multi             |
-| prevText       | Customize previous page button content             | String \| React.ReactNode | Previous            |
-| nextText       | Customize next page button content             | String \| React.ReactNode | Next             |
-| pageCount      | total pages                           | String \| Number          | Incoming/calculating based on page count |
-| totalItems     | total                         | String \| Number          | 0                 |
-| itemsPerPage   | records per page                       | String \| Number          | 10                |
-| showPageSize   | number of pages displayed                   | String \| Number          | 5                 |
-| forceEllipses  | Whether to show ellipsis                   | Boolean                   | false             |
-| pageNodeRender | Used to customize page number content             | (page) => React.ReactNode | -                 |
+| modelValue     | 当前页码                         | Number                    | -                 |
+| defaultValue   | 当前页码                         | Number                    | 1                 |
+| mode           | 显示模式,可选值为：multi，simple | String                    | multi             |
+| prevText       | 自定义上一页按钮内容             | String \| React.ReactNode | 上一页            |
+| nextText       | 自定义下一页按钮内容             | String \| React.ReactNode | 下一页            |
+| pageCount      | 总页数                           | String \| Number          | 传入/根据页数计算 |
+| totalItems     | 总记录数                         | String \| Number          | 0                 |
+| itemsPerPage   | 每页记录数                       | String \| Number          | 10                |
+| showPageSize   | 显示的页码个数                   | String \| Number          | 5                 |
+| forceEllipses  | 是否显示省略号                   | Boolean                   | false             |
+| pageNodeRender | 用于自定义页码的结构             | (page) => React.ReactNode | -                 |
     
 ### Events
     
-| Event | Description           | Arguments |
+| 事件名   | 说明           | 回调参数 |
 | -------- | -------------- | -------- |
-| onChange |  when the page number changes | value    |
+| onChange | 页码改变时触发 | value    |

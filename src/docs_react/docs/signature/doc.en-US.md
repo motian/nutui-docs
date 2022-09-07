@@ -1,18 +1,18 @@
-# Signature 
+# Signature 签名
 
-### Intro
+### 介绍
 
-Signature component based on canvas.
+基于 Canvas 的签名组件
 
-### Install
+### 安装
 
 ```javascript
 import { Signature } from '@nutui/nutui-react'
 ```
 
-## Demo
+## 代码演示
 
-### Basic usage
+### 基础用法
 
 :::demo
 
@@ -38,7 +38,7 @@ const App = () => {
     <>
         <Signature confirm={confirm} clear={clear} />
         <p className="demo-tips demo" style={demoStyles}>
-           Tips: click the confirm button, and the signature image is displayed below
+            Tips: 点击确认按钮,下方显示签名图片
         </p>
     </>
     );
@@ -48,7 +48,7 @@ export default App;
 
 :::
 
-### Modify color and signature thickness
+### 修改颜色和签字粗细
 
 :::demo
 
@@ -79,7 +79,7 @@ const App = () => {
             clear={clear}
          />
         <p className="demo-tips demo" style={demoStyles}>
-            Tips: click the confirm button, and the signature image is displayed below
+            Tips: 点击确认按钮,下方显示签名图片
         </p>
     </>
     );
@@ -93,17 +93,17 @@ export default App;
 
 ### Props
 
-| Attribute           | Description                           | Type   | Default                                              |
+| 参数           | 说明                           | 类型   | 默认值                                              |
 | -------------- | ------------------------------ | ------ | --------------------------------------------------- |
-| customClass   |  Custom class                 | String | -                                                   |
-| lineWidth     | Width of line                    | Number | 3                                                   |
-| strokeStyle   | Drawing stroke color                   | String | '#000'                                              |
-| type           | Picture format                       | String | 'png'                                               |
-| unSupportTpl |  Display copy without canvas | String | 'sorry, the current browser doesn't support canvas, so we can't use this control! ' |
+| customClass   | 自定义 class                   | String | -                                                   |
+| lineWidth     | 线条的宽度                     | Number | 3                                                   |
+| strokeStyle   | 绘图笔触颜色                   | String | '#000'                                              |
+| type           | 图片格式                       | String | 'png'                                               |
+| unSupportTpl | 不支持 Canvas 情况下的展示文案 | String | '对不起，当前浏览器不支持 Canvas，无法使用本控件！' |
 
 ## Event
 
 | 字段    | 说明                         | 回调参数                         |
 | ------- | ---------------------------- | -------------------------------- |
-| confirm | Click the confirm button to trigger the event callback function | Canvas and data URI displayed by signature imageURI |
-| clear   | Click the re sign button to trigger the event callback function | -                               |
+| confirm | 点击确认按钮触发事件回调函数 | canvas 和签名图片展示的 data URI |
+| clear   | 点击重签按钮触发事件回调函数 | -                              |

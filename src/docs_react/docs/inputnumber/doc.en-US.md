@@ -1,18 +1,17 @@
-# InputNumber
+# InputNumber 数字输入框
 
-### Intro
+### 介绍
 
-Control the number increase or decrease by clicking the button.
+通过点击按钮控制数字增减。
 
-### Install
+### 安装
 
 ``` ts
 import { InputNumber } from '@nutui/nutui-react';
 ```
+### 基础用法
 
-### Basic Usage
-
-Initialize a default value
+初始化一个默认值
 
 :::demo
 ```tsx
@@ -40,9 +39,9 @@ export default App;
 ```
 :::
 
-### Step size setting
+### 步长设置
 
-Set step  `step` 5 
+设置步长 `step` 5 
 
 :::demo
 ```tsx
@@ -70,9 +69,9 @@ export default App;
 ```
 :::
 
-### Limit input range
+### 限制输入范围
 
-`min` and `max` attributes represent the minimum and maximum values respectively
+`min` 和 `max` 属性分别表示最小值和最大值
 
 :::demo
 ```tsx
@@ -92,7 +91,7 @@ const App = () => {
   })
   const overlimit = (e: MouseEvent) => {
     console.log(e)
-    Toast.warn('Exceeded limit event triggered')
+    Toast.warn('超出限制事件触发')
   }
   return (
     <>
@@ -104,9 +103,9 @@ export default App;
 ```
 :::
 
-### Disabled state
+### 禁用状态
 
-`disabled` When disabled, you cannot click the button or modify the input box.
+`disabled` 禁用状态下无法点击按钮或修改输入框。
 
 :::demo
 ```tsx
@@ -134,9 +133,9 @@ export default App;
 ```
 :::
 
-### Read only disable input box
+### 只读禁用输入框
 
-`readonly` Set read-only disable input box input behavior
+`readonly` 设置只读禁用输入框输入行为
 
 :::demo
 ```tsx
@@ -164,9 +163,9 @@ export default App;
 ```
 :::
 
-### Support decimal point
+### 支持小数点
 
-Set step size `step` 0.1  `decimal-places` keep 1 decimal place
+设置步长 `step` 0.1  `decimal-places` 小数保留1位
 
 :::demo
 ```tsx
@@ -193,9 +192,9 @@ const App = () => {
 export default App;
 ```
 :::
-### Support asynchronous modification
+### 支持异步修改
 
-Asynchronous modification through `change` event and `model-value`
+通过 `change` 事件和 `model-value` 进行异步修改
 
 :::demo
 ```tsx
@@ -214,7 +213,7 @@ const App = () => {
     val8: 1,
   })
   const onChange = (value: string | number) => {
-    Toast.loading('Asynchronous demo changes after 2 seconds')
+    Toast.loading('异步演示 2 秒后更改')
     setTimeout(() => {
       inputState.val7 = Number(value)
       setInputState({ ...inputState })
@@ -231,7 +230,7 @@ export default App;
 ```
 :::
 
-### Custom button size
+### 自定义按钮大小
 
 :::demo
 ```tsx
@@ -263,26 +262,26 @@ export default App;
 
 ### Props
 
-| Attribute           | Description                       | Type           | Default     |
+| 参数           | 说明                       | 类型           | 默认值     |
 |----------------|----------------------------|----------------|------------|
-| modelValue        | Initial value                     | String、Number | -          |
-| inputWidth    | Input box width                 | String         | `40px`     |
-| buttonSize    | Operators +, - Dimensions             | String         | `20px`     |
-| min            | Minimum limit                 | String、Number | `1`        |
-| max            | Maximum limit                 | String、Number | `9999` |
-| step           | step                       | String、Number | `1`        |
-| decimalPlaces | Set reserved decimal places           | String、Number | `0`        |
-| disabled       | Disable all features               | Boolean        | false      |
-| readonly       | Read only status disables input box operation behavior | Boolean        | false      |
-| isAsync       | Support for asynchronous modification | Boolean        | false      |
+| modelValue        | 初始值                     | String、Number | -          |
+| inputWidth    | 输入框宽度                 | String         | `40px`     |
+| buttonSize    | 操作符+、-尺寸             | String         | `20px`     |
+| min            | 最小值限制                 | String、Number | `1`        |
+| max            | 最大值限制                 | String、Number | `9999` |
+| step           | 步长                       | String、Number | `1`        |
+| decimalPlaces | 设置保留的小数位           | String、Number | `0`        |
+| disabled       | 禁用所有功能               | Boolean        | false      |
+| readonly       | 只读状态禁用输入框操作行为 | Boolean        | false      |
+| isAsync       | 支持异步修改 | Boolean        | false      |
 
 ### Events
 
-| Event    | Description                   | Arguments                       |
+| 事件名    | 说明                   | 回调参数                       |
 |-----------|------------------------|--------------------------------|
-| add       | Triggered when the Add button is clicked     | event: Event                   |
-| reduce    | Triggered when the decrease button is clicked     | event: Event                   |
-| overlimit | Triggered when an unavailable button is clicked | event: Event                   |
-| change    | Triggered when the value changes           | value:  number , event : Event |
-| blur      | Triggered when the input box blur   | event: Event                   |
-| focus     | Triggered when the input box focus   | event: Event                   |
+| add       | 点击增加按钮时触发     | event: Event                   |
+| reduce    | 点击减少按钮时触发     | event: Event                   |
+| overlimit | 点击不可用的按钮时触发 | event: Event                   |
+| change    | 值改变时触发           | value:  number , event : Event |
+| blur      | 输入框失去焦点时触发   | event: Event                   |
+| focus     | 输入框获得焦点时触发   | event: Event                   |

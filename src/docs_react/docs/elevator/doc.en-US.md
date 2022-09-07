@@ -1,19 +1,18 @@
-# Elevator
+# Elevator 电梯楼层
 
-### Intro
-
+### 介绍
 
 用于列表快速定位以及索引的显示
 
-### Install
+### 安装
 
 ```javascript
 import { Elevator } from '@nutui/nutui-react'
 ```
 
-## Demo
+## 代码演示
 
-### Basic Usage
+### 基本用法
 
 :::demo
 
@@ -27,7 +26,7 @@ const App = () => {
       title: 'A',
       list: [
         {
-          name: 'AnHui',
+          name: '安徽',
           id: 1,
         },
       ],
@@ -36,7 +35,7 @@ const App = () => {
       title: 'B',
       list: [
         {
-          name: 'BeiJing',
+          name: '北京',
           id: 2,
         },
       ],
@@ -45,11 +44,11 @@ const App = () => {
       title: 'G',
       list: [
         {
-          name: 'GuangXi',
+          name: '广西',
           id: 3,
         },
         {
-          name: 'GuangDong',
+          name: '广东',
           id: 4,
         },
       ],
@@ -58,33 +57,33 @@ const App = () => {
       title: 'H',
       list: [
         {
-          name: 'HuNan',
+          name: '湖南',
           id: 5,
         },
         {
-          name: 'HuBei',
+          name: '湖北',
           id: 6,
         },
         {
-          name: 'Henan',
+          name: '河南',
           id: 7,
         },
       ],
     },
   ]
-  const clickItem = (key: string, item: any) => {
+  const onClickItem = (key: string, item: any) => {
     console.log(key, JSON.stringify(item))
   }
 
-  const clickIndex = (key: string) => {
+  const onClickIndex = (key: string) => {
     console.log(key)
   }
   return (
     <Elevator
       indexList={dataList}
       height="260"
-      clickItem={(key: string, item: any) => clickItem(key, item)}
-      clickIndex={(key: string) => clickIndex(key)}
+      onClickItem={(key: string, item: any) => onClickItem(key, item)}
+      onClickIndex={(key: string) => onClickIndex(key)}
     />
   )
 }
@@ -93,7 +92,8 @@ export default App
 
 :::
 
-### Custom index
+### 自定义索引
+
 
 :::demo
 
@@ -104,110 +104,110 @@ import { Elevator } from '@nutui/nutui-react'
 const App = () => {
   const dataList = [
     {
-      num: 'One',
+      num: '一',
       list: [
         {
-          name: 'BeiJing',
+          name: '北京',
           id: 1,
         },
         {
-          name: 'ShangHai',
+          name: '上海',
           id: 2,
         },
         {
-          name: 'ShenZhen',
+          name: '深圳',
           id: 3,
         },
         {
-          name: 'GuangZhou',
+          name: '广州',
           id: 4,
         },
         {
-          name: 'HangZhou',
+          name: '杭州',
           id: 5,
         },
       ],
     },
     {
-      num: 'Two',
+      num: '二',
       list: [
         {
-          name: 'ChengDu',
+          name: '成都',
           id: 6,
         },
         {
-          name: 'XiAn',
+          name: '西安',
           id: 7,
         },
         {
-          name: 'TianJin',
+          name: '天津',
           id: 8,
         },
         {
-          name: 'WuHan',
+          name: '武汉',
           id: 9,
         },
         {
-          name: 'ChangSha',
+          name: '长沙',
           id: 10,
         },
         {
-          name: 'ChongQin',
+          name: '重庆',
           id: 11,
         },
         {
-          name: 'SuZhou',
+          name: '苏州',
           id: 12,
         },
         {
-          name: 'NanJing',
+          name: '南京',
           id: 13,
         },
       ],
     },
     {
-      num: 'Three',
+      num: '三',
       list: [
         {
-          name: 'XiNing',
+          name: '西宁',
           id: 14,
         },
         {
-          name: 'LanZhou',
+          name: '兰州',
           id: 15,
         },
         {
-          name: 'ShiJiaZhuang',
+          name: '石家庄',
           id: 16,
         },
         {
-          name: 'QinHuangDao',
+          name: '秦皇岛',
           id: 17,
         },
         {
-          name: 'DaLian',
+          name: '大连',
           id: 18,
         },
         {
-          name: 'HaErBin',
+          name: '哈尔滨',
           id: 19,
         },
         {
-          name: 'ChangChun',
+          name: '长春',
           id: 20,
         },
         {
-          name: 'TaiYuan',
+          name: '太原',
           id: 21,
         },
       ],
     },
   ]
-  const clickItem = (key: string, item: any) => {
+  const onClickItem = (key: string, item: any) => {
     console.log(key, JSON.stringify(item))
   }
 
-  const clickIndex = (key: string) => {
+  const onClickIndex = (key: string) => {
     console.log(key)
   }
   return (
@@ -215,8 +215,8 @@ const App = () => {
       indexList={dataList}
       height="220"
       acceptKey="num"
-      clickItem={(key: string, item: any) => clickItem(key, item)}
-      clickIndex={(key: string) => clickIndex(key)}
+      onClickItem={(key: string, item: any) => onClickItem(key, item)}
+      onClickIndex={(key: string) => onClickIndex(key)}
     />
   )
 }
@@ -225,7 +225,8 @@ export default App
 
 :::
 
-### Index ceiling
+### 吸顶索引
+
 
 :::demo
 
@@ -239,7 +240,7 @@ const App = () => {
       title: 'A',
       list: [
         {
-          name: 'AnHui',
+          name: '安徽',
           id: 1,
         },
       ],
@@ -248,7 +249,7 @@ const App = () => {
       title: 'B',
       list: [
         {
-          name: 'BeiJing',
+          name: '北京',
           id: 2,
         },
       ],
@@ -257,7 +258,7 @@ const App = () => {
       title: 'C',
       list: [
         {
-          name: 'ChongQin',
+          name: '重庆',
           id: 3,
         },
       ],
@@ -266,7 +267,7 @@ const App = () => {
       title: 'F',
       list: [
         {
-          name: 'FuJian',
+          name: '福建',
           id: 4,
         },
       ],
@@ -275,19 +276,19 @@ const App = () => {
       title: 'G',
       list: [
         {
-          name: 'GuangXi',
+          name: '广西',
           id: 5,
         },
         {
-          name: 'GuangDong',
+          name: '广东',
           id: 6,
         },
         {
-          name: 'GanSu',
+          name: '甘肃',
           id: 7,
         },
         {
-          name: 'GuiZhou',
+          name: '贵州',
           id: 8,
         },
       ],
@@ -296,27 +297,27 @@ const App = () => {
       title: 'H',
       list: [
         {
-          name: 'HuNan',
+          name: '湖南',
           id: 9,
         },
         {
-          name: 'HuBei',
+          name: '湖北',
           id: 10,
         },
         {
-          name: 'HaiNan',
+          name: '海南',
           id: 11,
         },
         {
-          name: 'HeBei',
+          name: '河北',
           id: 12,
         },
         {
-          name: 'HeNan',
+          name: '河南',
           id: 13,
         },
         {
-          name: 'HeiLongJiang',
+          name: '黑龙江',
           id: 14,
         },
       ],
@@ -325,15 +326,15 @@ const App = () => {
       title: 'J',
       list: [
         {
-          name: 'JiLin',
+          name: '吉林',
           id: 15,
         },
         {
-          name: 'JiangSu',
+          name: '江苏',
           id: 16,
         },
         {
-          name: 'JiangXi',
+          name: '江西',
           id: 17,
         },
       ],
@@ -342,17 +343,17 @@ const App = () => {
       title: 'L',
       list: [
         {
-          name: 'LiaoNing',
+          name: '辽宁',
           id: 18,
         },
       ],
     },
   ]
-  const clickItem = (key: string, item: any) => {
+  const onClickItem = (key: string, item: any) => {
     console.log(key, JSON.stringify(item))
   }
 
-  const clickIndex = (key: string) => {
+  const onClickIndex = (key: string) => {
     console.log(key)
   }
   return (
@@ -360,8 +361,8 @@ const App = () => {
       indexList={dataList}
       height="220"
       isSticky
-      clickItem={(key: string, item: any) => clickItem(key, item)}
-      clickIndex={(key: string) => clickIndex(key)}
+      onClickItem={(key: string, item: any) => onClickItem(key, item)}
+      onClickIndex={(key: string) => onClickIndex(key)}
     />
   )
 }
@@ -371,7 +372,7 @@ export default App
 :::
 
 
-### Custom Content
+### 自定义内容
 
 :::demo
 
@@ -385,7 +386,7 @@ const App = () => {
       title: 'A',
       list: [
         {
-          name: 'AnHui',
+          name: '安徽',
           id: 1,
         },
       ],
@@ -394,7 +395,7 @@ const App = () => {
       title: 'B',
       list: [
         {
-          name: 'BeiJing',
+          name: '北京',
           id: 2,
         },
       ],
@@ -403,11 +404,11 @@ const App = () => {
       title: 'G',
       list: [
         {
-          name: 'GuangXi',
+          name: '广西',
           id: 3,
         },
         {
-          name: 'GuangDong',
+          name: '广东',
           id: 4,
         },
       ],
@@ -416,33 +417,33 @@ const App = () => {
       title: 'H',
       list: [
         {
-          name: 'HuNan',
+          name: '湖南',
           id: 5,
         },
         {
-          name: 'HuBei',
+          name: '湖北',
           id: 6,
         },
         {
-          name: 'Henan',
+          name: '河南',
           id: 7,
         },
       ],
     },
   ]
-  const clickItem = (key: string, item: any) => {
+  const onClickItem = (key: string, item: any) => {
     console.log(key, JSON.stringify(item))
   }
 
-  const clickIndex = (key: string) => {
+  const onClickIndex = (key: string) => {
     console.log(key)
   }
   return (
     <Elevator
       indexList={dataList}
       height="260"
-      clickItem={(key: string, item: any) => clickItem(key, item)}
-      clickIndex={(key: string) => clickIndex(key)}
+      onClickItem={(key: string, item: any) => onClickItem(key, item)}
+      onClickIndex={(key: string) => onClickIndex(key)}
     >
       <elevatorContext.Consumer>
         {(value) => {
@@ -466,18 +467,21 @@ export default App
 
 ### Props
 
-| Attribute                   | Description                                                             | Type    | Default |
-|------------------------|----------------------------------------------------------------|---------|------|
-| height                 | Height of elevator area                                                    | Number、String  | `200px`
-| acceptKey             | Index key value                                                      | String  | `title` |
-| indexList             | Index list                                                         | Array（`item` needs to contain `id` and `name` attributes, and `name` supports passing in `html` structure）  | `[{id: 0, name: ''}]` |
-| isSticky            | Whether the index is ceiling                                                    | Boolean  | `false` |
-| spaceHeight             | Up and down spacing of right anchor point              | Number  | `23` |
-| titleHeight             | Height of left index                                                     | Number  | `35` |
+| 字段                  | 说明           | 类型                                                        | 默认值                |
+|---------------------| -------------- | ----------------------------------------------------------- | --------------------- |
+| height              | 电梯区域的高度 | Number、String                                              | `200px`               |
+| acceptKey           | 索引 key 值    | String                                                      | `title`               |
+| indexList           | 索引列表       | Array（item 需包含 id、name 属性, name 支持传入 html 结构） | `[{id: 0, name: ''}]` |
+| isSticky`v1.2.1`    | 索引是否吸顶                                                    | Boolean  | `false` |
+| spaceHeight`v1.2.1` | 右侧锚点的上下间距                                                   | Number  | `23` |
+| titleHeight`v1.2.1`   | 左侧索引的高度                                                     | Number  | `35` |
 
 ### Event
 
-| Event  | Description     | Arguments    |
-|-------|----------|-------------|
-| click-item | Click content | key: string, item: { id: 0, name: '' } |
-| click-index | Click index | key: string |
+| 名称       | 说明     | 回调参数                               |
+| ---------- | -------- | -------------------------------------- |
+| onClickItem`v1.3.2`  | 点击内容 | key: string, item: { id: 0, name: '' } |
+| onClickIndex`v1.3.2` | 点击索引 | key: string                            |
+| clickItem`v1.3.2(废弃)`  | 点击内容 | key: string, item: { id: 0, name: '' } |
+| clickIndex`v1.3.2(废弃)` | 点击索引 | key: string                            |
+

@@ -124,10 +124,10 @@ const App = () => {
   ])
 
   return <Table
-    columns={columns2}
-    data={data1}
-    bordered={false}
-  />;
+        columns={columns2}
+        data={data1}
+        bordered={false}
+    />;
 };
 export default App;
 ```
@@ -193,7 +193,7 @@ const App = () => {
     columns={columns1}
     data={data1}
     summary="这是总结栏"
-  />;
+/>;
 };
 export default App;
 ```
@@ -255,10 +255,10 @@ const App = () => {
   ])
 
   return <Table
-    columns={columns1}
-    data={data1}
-    striped
-  />;
+        columns={columns1}
+        data={data1}
+        striped
+    />;
 };
 export default App;
 ```
@@ -305,12 +305,12 @@ const App = () => {
 
   return (
     <>
-      <Table columns={columns1} data={data2} />
-      <Table
-        columns={columns1}
-        data={data2}
-        noData="这里是自定义展示"
-      />
+        <Table columns={columns1} data={data2} />
+        <Table
+          columns={columns1}
+          data={data2}
+          noData="这里是自定义展示"
+        />
     </>
   );
 };

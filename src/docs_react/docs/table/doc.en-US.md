@@ -1,16 +1,18 @@
-#  Table
+#  Table组件
 
-### Intro
+### 介绍
 
-Used to display the basic table
+用于展示基础表格
 
-### Install
+### 安装
 ```ts
 import { Table } from '@nutui/nutui-react';
 ```
 
 
-### Basic Usage
+## 代码演示
+
+### 基本用法
 
 :::demo
 ```tsx
@@ -26,7 +28,7 @@ interface TableColumnProps {
 }
 
 const App = () => {
-  const [columns1, setColumns1] = useState([
+  const [columns1, setColumns1] = useState<Array<TableColumnProps>>([
     {
       title: '姓名',
       key: 'name',
@@ -72,7 +74,7 @@ export default App;
 ```
 :::
 
-### Whether to display border and align text
+### 是否显示边框，文字对齐
 :::demo
 ```tsx
 import  React, { useState } from "react";
@@ -87,7 +89,7 @@ interface TableColumnProps {
 }
 
 const App = () => {
-  const [columns2, setColumns2] = useState([
+  const [columns2, setColumns2] = useState<Array<TableColumnProps>>([
     {
       title: '姓名',
       key: 'name',
@@ -132,14 +134,22 @@ export default App;
 :::
 
 
-### Show summary bar
+### 显示总结栏
 :::demo
 ```tsx
 import  React, { useState } from "react";
-import { Table, Button, Icon } from '@nutui/nutui-react';
+import { Table } from '@nutui/nutui-react';
+
+interface TableColumnProps {
+  key?: string
+  title?: string
+  align?: string
+  sorter?: ((a: any, b: any) => number) | boolean | string
+  render?: (rowData?: any, rowIndex?: number) => string | React.ReactNode
+}
 
 const App = () => {
-  const [columns1, setColumns1] = useState([
+  const [columns1, setColumns1] = useState<Array<TableColumnProps>>([
     {
       title: '姓名',
       key: 'name',
@@ -147,7 +157,7 @@ const App = () => {
     {
       title: '性别',
       key: 'sex',
-      render: (record) => {
+      render: (record: any) => {
         return (
           <span style={{ color: record.sex === '女' ? 'blue' : 'green' }}>
             {record.sex}
@@ -189,7 +199,7 @@ export default App;
 ```
 :::
 
-### Stripes, alternating light and shade
+### 条纹、明暗交替
 :::demo
 ```tsx
 import  React, { useState } from "react";
@@ -204,7 +214,7 @@ interface TableColumnProps {
 }
 
 const App = () => {
-  const [columns1, setColumns1] = useState([
+  const [columns1, setColumns1] = useState<Array<TableColumnProps>>([
     {
       title: '姓名',
       key: 'name',
@@ -254,7 +264,7 @@ export default App;
 ```
 :::
 
-### No data is displayed by default, and customization is supported
+### 无数据默认展示，支持自定义
 :::demo
 ```tsx
 import  React, { useState } from "react";
@@ -269,7 +279,7 @@ interface TableColumnProps {
 }
 
 const App = () => {
-  const [columns1, setColumns1] = useState([
+  const [columns1, setColumns1] = useState<Array<TableColumnProps>>([
     {
       title: '姓名',
       key: 'name',
@@ -308,7 +318,7 @@ export default App;
 ```
 :::
 
-### Custom cell
+### 自定义单元格
 :::demo
 ```tsx
 import  React, { useState } from "react";
@@ -384,7 +394,7 @@ export default App;
 ```
 :::
 
-### Support asynchronous rendering
+### 支持异步渲染(5s之后看效果)
 :::demo
 ```tsx
 import  React, { useState } from "react";
@@ -460,7 +470,7 @@ export default App;
 ```
 :::
 
-### Support sorting
+### 支持排序
 :::demo
 ```tsx
 import  React, { useState } from "react";
@@ -541,29 +551,29 @@ export default App;
 
 ### Props
 
-| Attribute         | Description                             | Type   | Default           |
+| 参数         | 说明                             | 类型   | 默认值           |
 |--------------|----------------------------------|--------|------------------|
-| bordered         | Show border | 	Boolean | true                |
-| columns         | Header data | 	TableColumnProps[] | []                |
-| data         | Table data | 	Object[] | []                |
-| summary         | Show profile | 	React.ReactNode | -                |
-| striped         | Whether the stripes alternate light and dark | 	Boolean | false                |
-| noData         | Custom noData | 	React.ReactNode | -                |
+| bordered         | 是否显示边框 | 	Boolean | true                |
+| columns         | 表头数据 | 	TableColumnProps[] | []                |
+| data         | 表格数据 | 	Object[] | []                |
+| summary         | 是否显示简介 | 	React.ReactNode | -                |
+| striped         | 条纹是否明暗交替 | 	Boolean | false                |
+| noData         | 自定义无数据 | 	React.ReactNode | -                |
 
 ### TableColumnProps
 
-| Attribute         | Description                             | Type   | Default           |
+| 参数         | 说明                             | 类型   | 默认值           |
 |--------------|----------------------------------|--------|------------------|
-| key         | Unique identification of the column | 	String | ''                |
-| title         | Header title | 	String | ''                |
-| align         |Alignment of columns, optional values`left`,`center`,`right`  | 	String | left                |
-| sorter         | sort，optional values `true`,`function`, `default`, Where `default` means that you may depend on the interface after clicking, `function` you can return a specific sorting function, `default` indicates that the default sorting algorithm is adopted | 	Boolean、Function、String | -                |
-| render         | Custom render column data, high priority | 	Function(record) | -                |
+| key         | 列的唯一标识 | 	String | ''                |
+| title         | 表头标题 | 	String | ''                |
+| align         | 列的对齐方式，可选值left,center,right | 	String | left                |
+| sorter         | 排序，可选值有 true,function, default, 其中 default表示点击之后可能会依赖接口, function可以返回具体的排序函数, default表示采用默认的排序算法 | 	Boolean、Function、String | -                |
+| render         | 自定义渲染列数据，优先级高 | 	Function(record) | -                |
 
 
 
 ### Events
 
-| Event | Description           | Arguments     |
+| 事件名 | 说明           | 回调参数     |
 |--------|----------------|--------------|
-| onSorter  | Click the sort button to trigger | `item: TableColumnProps, data: Array<any>` |
+| onSorter  | 点击排序按钮触发 | `item: TableColumnProps, data: Array<any>` |

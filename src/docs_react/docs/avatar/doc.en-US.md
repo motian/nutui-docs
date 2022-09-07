@@ -1,16 +1,19 @@
-# Avatar
+# Avatar 头像
 
-### Intro
+### 介绍
 
-Avatars can be used to represent people or objects. It supports images, Icons, or letters.
+用来代表用户或事物，支持图片、图标或字符展示。
 
-### Install
+### 安装
 ``` ts
 import { Avatar } from '@nutui/nutui-react';
 ```
-### Basic usage
 
-Support three sizes：small、normal、large
+## 代码示例
+
+### 基本用法
+
+支持三种尺寸：small、normal、large
 
 :::demo
 ``` tsx
@@ -33,9 +36,9 @@ export default App;
 ```
 :::
 
-### Shape
+### 头像形状
 
-Support two shapes：square、round
+支持两种形状：square、round
 
 :::demo
 ``` tsx
@@ -54,9 +57,9 @@ export default App;
 ```
 :::
 
-### Type
+### 头像类型
 
-Support three types：picture、icon、letter
+支持三种类型：图片、Icon 以及字符
 
 :::demo
 ``` tsx
@@ -76,9 +79,9 @@ export default App;
 ```
 :::
 
-### Custom colors and background colors
+### 自定义颜色及背景色
 
-Icon and letter types can have custom colors and background colors
+Icon 和字符型可以自定义图标颜色及背景色
 
 :::demo
 ``` tsx
@@ -97,7 +100,7 @@ export default App;
 ```
 :::
 
-### Avatar with badge
+### 带徽标的头像
 
 :::demo
 ``` tsx
@@ -120,7 +123,7 @@ export default App;
 ```
 :::
 
-### Avatar group display
+### 头像组合展现
 
 :::demo
 ``` tsx
@@ -153,7 +156,7 @@ export default App;
 ```
 :::
 
-### Avatar group to control hierarchy direction
+### 组合头像可控制层级方向
 
 :::demo
 ``` tsx
@@ -178,7 +181,7 @@ export default App;
 ```
 :::
 
-### Click on the avatar to trigger the event
+### 点击头像触发事件
 
 :::demo
 ``` tsx
@@ -187,7 +190,7 @@ import { Avatar } from '@nutui/nutui-react';
 
 const App = () => {
   const activeAvatar = () => {
-    console.log('Trigger click on avatar')
+    console.log('触发点击头像')
   }
   return (
     <>
@@ -201,30 +204,30 @@ export default App;
 
 ### Prop
 
-| Attribute     | Description                                                 | Type   | Default |
+| 字段     | 说明                                                             | 类型   | 默认值 |
 | -------- | ---------------------------------------------------------------- | ------ | ------ |
-| size     | The size of the avatar,eg：`large`、`normal`、`small`,and numbers   | String | normal |
-| shape    | The shape of avatar，eg：`square`、`round`           | String | round  |
-| bgColor | The colors of Icon and letter types                   | String | #eee   |
-| color    | The background colors of Icon and letter types                     | String | #666   |
-| url      | The address of the image for an image avatar or image element       | String | -   |
-| alt      | This attribute defines the alternative text describing the image    | String | -   |
-| icon     | Custom icon type for an icon avatar, Refer to the name attribute of Icon component  | String | -     |
+| size     | 设置头像的大小，可选值为：large、normal、small，支持直接输入数字   | String | normal |
+| shape    | 设置头像的形状，可选值为：square、round            | String | round  |
+| bgColor | 设置 Icon、字符类型头像的背景色                    | String | #eee   |
+| color    | 设置 Icon、字符类型头像的颜色                     | String | #666   |
+| url      | 设置图片类型头像的地址                           | String | -   |
+| alt      | 设置图片类型头像无法显示时的替代文本                | String | -   |
+| icon     | 设置 Icon 类型头像图标, 类似 Icon 组件的 name 属性  | String | -     |
 
 ### avatarGroup
-| Attribute     | Description                                                 | Type   | Default |
+| 字段     | 说明                                                             | 类型   | 默认值 |
 | -------- | ---------------------------------------------------------------- | ------ | ------ |
-| maxCount     | Max avatars to show   | Number、String | - |
-| maxContent  | When the number of avatars exceeds, a avatar folding element will appear，The content of this element can be `...`、`more`、`+N`。默认为 +N | 
-| size         | The size of the avatar，eg：`large`、`normal`、`small`，supports direct input of numbers   | String | +N |
-| shape        | The shape of avatar，eg：`square`、`round`            | String | round  |
-| maxBgColor  | The colors of Icon and letter types                   | String | #eee   |
-| maxColor    | The background colors of Icon and letter types                   | String | #666 |
-| span         | Distance between avatars               | String | -8   |
-| zIndex       | Hierarchy direction between avatar group，eg：`left`、`right` | String | left     |
+| maxCount     | 显示的最大头像个数   | Number、String | - |
+| maxContent  | 头像数量超出时，会出现一个头像折叠元素。该元素内容可为...、more、+N。默认为 +N | 
+| size         | 设置头像的大小，可选值为：large、normal、small，支持直接输入数字   | String | +N |
+| shape        | 设置头像的形状，可选值为：square、round            | String | round  |
+| maxBgColor  | 设置 Icon、字符类型头像的背景色                    | String | #eee   |
+| maxColor    | 设置 Icon、字符类型头像的颜色                   | String | #666 |
+| span         | 设置头像之间的间距               | String | -8   |
+| zIndex       | 头像之间的层级关系，可选值为：left、right  | String | left     |
 ### Events
 
-| Event            | Description    | Type     | Arguments |
+| 字段             | 说明         | 类型     | 回调参数 |
 | ---------------- | ------------ | -------- | -------- |
-| activeAvatar | Emitted when cell is clicked    | Function | event    |
-| onError       | Handler when img load error   | Function | event    |
+| activeAvatar | 点击头像触发事件    | Function | event    |
+| onError       | 图片加载失败的事件   | Function | event    |

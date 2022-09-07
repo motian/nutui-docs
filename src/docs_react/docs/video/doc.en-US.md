@@ -1,16 +1,18 @@
-#  Video 
+#  Video 视频播放器
 
-### Intro
+### 介绍
 
-Video player implemented by native video
+原生video实现的视频播放器
 
-### Install
+### 安装
 
 ``` ts
 import { Video } from '@nutui/nutui-react';
 ```
 
-### Basic Usage
+## 代码演示
+
+### 基础用法
 
 :::demo
 ```tsx
@@ -30,7 +32,7 @@ const App = () => {
   const playend = (elm: HTMLVideoElement) => console.log('playend', elm)
   return (
     <>
-      <h2>Basic Usage</h2>
+      <h2>基础用法</h2>
       <Cell className='cell'>
         <Video
           source={source}
@@ -47,8 +49,8 @@ export default App;
 ```
 :::
 
-### Auto play
-autoplay Property to set video autoplay
+### 自动播放
+autoplay 属性设置视频自动播放
 
 :::demo
 ```tsx
@@ -70,7 +72,7 @@ const App = () => {
   const playend = (elm: HTMLVideoElement) => console.log('playend', elm)
   return (
     <>
-      <h2>Auto play</h2>
+      <h2>自动播放</h2>
       <Cell className='cell'>
         <Video
           source={source}
@@ -87,8 +89,8 @@ export default App;
 ```
 :::
 
-### Initialize mute
-The muted property sets the initial mute of the video
+### 初始化静音
+muted属性设置视频初始化静音
 
 :::demo
 ```tsx
@@ -109,7 +111,7 @@ const App = () => {
   const playend = (elm: HTMLVideoElement) => console.log('playend', elm)
   return (
     <>
-      <h2>Initialize mute</h2>
+      <h2>初始化静音</h2>
       <Cell className='cell'>
         <Video
           source={source}
@@ -126,8 +128,8 @@ export default App;
 ```
 :::
 
-### Video cover poster settings
-The poster property sets the video poster
+### 视频封面海报设置
+poster 属性设置视频海报
 
 :::demo
 ```tsx
@@ -149,7 +151,7 @@ const App = () => {
   const playend = (elm: HTMLVideoElement) => console.log('playend', elm)
   return (
     <>
-      <h2>Video cover poster settings</h2>
+      <h2>视频封面海报设置</h2>
       <Cell className='cell'>
         <Video
           source={source}
@@ -167,8 +169,8 @@ export default App;
 
 :::
 
-### play inline
-The playsinline property sets the mobile terminal video to play in line and prevents the newly opened page from playing (compatible with IOS and some Android machines)
+### 行内播放
+playsinline 属性设置移动端视频行内播放，阻止新打开页面播放（兼容 ios，兼容部分安卓机）
 
 :::demo
 ```tsx
@@ -189,7 +191,7 @@ const App = () => {
   const playend = (elm: HTMLVideoElement) => console.log('playend', elm)
   return (
     <>
-      <h2>play inline</h2>
+      <h2>行内播放</h2>
       <Cell className='cell'>
         <Video
           source={source}
@@ -206,8 +208,8 @@ export default App;
 ```
 :::
 
-### Set video as background
-When setting the video as the background image, it is necessary to set muted, disabled, operation prohibited, loop, loop and autoplay to true, and the mobile terminal needs to set playinline for in-line display
+### 视频背景图
+当设置视频为背景图时需要将 muted 静音、 disabled 禁止操作、loop 循环播放、autoplay 自动播放设置为 true，移动端需要设置 playsinline 行内展示
 
 :::demo
 ```tsx
@@ -232,7 +234,7 @@ const App = () => {
   const playend = (elm: HTMLVideoElement) => console.log('playend', elm)
   return (
     <>
-      <h2>Set video as background</h2>
+      <h2>设置视频为背景图</h2>
       <Cell className='cell'>
         <Video
           source={source}
@@ -249,8 +251,8 @@ export default App;
 ```
 :::
 
-### Video switching
-Reset the video when the video address changes
+### 视频切换
+当视频地址发生变化时，重置视频
 
 :::demo
 ```tsx
@@ -274,7 +276,7 @@ const App = () => {
   }
   return (
     <>
-      <h2>Video switching</h2>
+      <h2>视频切换</h2>
       <Cell className='cell'>
         <Video
           source={source1}
@@ -284,7 +286,7 @@ const App = () => {
           playend={playend}
          />
       </Cell>
-      <Button type="primary" className="m-b" onClick={changeVideo}>Video switching</Button>
+      <Button type="primary" className="m-b" onClick={changeVideo}>视频切换</Button>
     </>
   )
 }
@@ -297,21 +299,21 @@ export default App;
 
 ### Props
 
-| Attribute                | Description                                       | Type    | Default   |
+| 字段                | 说明                                       | 类型    | 默认值   |
 | ------------------- | ------------------------------------------ | ------- | -------- |
-| source             | Video url and type settings                         | Object   | -        |
-| options             | Control video playback properties                          | Object  | required |
-| options.autoplay    | Auto play                               | Boolean | false    |
-| options.poster      | Poster settings                                | String  | -        |
-| options.loop        | Poster loop                             | Boolean | false    |
-| options.controls    | Show operation control                             | Boolean | true     |
-| options.muted       | Mute                                   | Boolean | false    |
-| options.playsinline | Whether to set as inline playback element (solve Android compatibility problem) | Boolean | false    |
+| source             | 视频地址和类型设置                         | Object   | -        |
+| options             | 控制视频播放属性                           | Object  | required |
+| options.autoplay    | 是否自动播放                               | Boolean | false    |
+| options.poster      | 海报设置                                   | String  | -        |
+| options.loop        | 是否循环播放                               | Boolean | false    |
+| options.controls    | 是否展示操作栏                             | Boolean | true     |
+| options.muted       | 是否静音                                   | Boolean | false    |
+| options.playsinline | 是否设置为行内播放元素（解决安卓兼容问题） | Boolean | false    |
 
 ### Events
 
-| Event | Description	         | Arguments |
+| 事件名称 | 说明         | 回调参数 |
 | -------- | ------------ | -------- |
-| play     | play event         | --       |
-| pause    | pause event         | --       |
-| playend  | Playback completion callback | --       |
+| play     | 播放         | --       |
+| pause    | 暂停         | --       |
+| playend  | 播放完成回调 | --       |

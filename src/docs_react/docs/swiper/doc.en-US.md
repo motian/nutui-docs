@@ -1,23 +1,24 @@
-# Swiper
+# Swiper 轮播
 
-### Intro
+### 介绍
 
-Often used in a group of pictures or card rotation.
+常用于一组图片或卡片轮播，当内容空间不足时，可以用走马灯的形式进行收纳，进行轮播展现。
 
-### Install
+### 安装
 
 ```javascript
 import { Swiper,SwiperItem } from '@nutui/nutui-react';
 ```
 
+## 代码演示
 
-### Basic Usage
+### 基础用法
 
-`autoPlay` Duration of automatic rotation
-`initPage` Initial index value
-`paginationVisible` Show paging indicator
-`paginationColor` Indicator color customization
-`onChange` When the card changes
+`autoPlay` 自动轮播的时长
+`initPage` 初始索引值
+`paginationVisible` 是否显示分页指示器
+`paginationColor` 指示器颜色自定义
+`onChange` 当卡片发生变化
 
 :::demo
 ``` tsx
@@ -59,7 +60,7 @@ const App = () => {
 export default App;
 ```
 :::
-### Asynchronous loading
+### 异步加载
 
 :::demo
 ``` tsx
@@ -105,9 +106,9 @@ export default App;
 ```
 :::
 
-### Dynamic loading
+### 动态加载
 
-Support dynamic addition / deletion of pictures
+支持动态增加/删除图片
 
 :::demo
 ``` tsx
@@ -154,9 +155,9 @@ export default App;
 ```
 :::
 
-### Custom size
-`width` Custom rotation size
+### 自定义大小
 
+`width` 自定义轮播大小
 :::demo
 ``` tsx
 import React, { useState } from 'react'
@@ -192,9 +193,9 @@ export default App;
 ```
 :::
 
-### Custom paging indicator
+### 自定义分页指示器
 
-`pageContent` Custom indicator
+`pageContent` 表示自定义指示器
 
 :::demo
 ``` tsx
@@ -236,9 +237,9 @@ export default App;
 ```
 :::
 
-### Manual switching
+### 手动切换
 
-You can manually switch through `api` (`prev`, `next`)
+可通过 `API`(`prev`,`next`)进行手动切换
 
 :::demo
 ``` tsx
@@ -328,9 +329,9 @@ export default App;
 ```
 :::
 
-### Vertical direction
+### 垂直方向
 
-`direction` Custom rotation direction
+`direction` 自定义轮播方向
 
 :::demo
 ``` tsx
@@ -374,9 +375,9 @@ export default App;
 :::
 
 
-### Horizontal center display
+### 水平居中展示
 
-`isCenter` means it can be centered, and `width` must be passed at the same time
+`isCenter` 代表可居中，同时必须传 `width`
 
 :::demo
 ``` tsx
@@ -416,9 +417,9 @@ const App = () => {
 export default App;
 ```
 :::
-### Vertically centered display
+### 垂直居中展示
 
-`isCenter` means that it can be centered, and `height` must be passed
+`isCenter` 代表可居中，同时必须传 `height`
 
 :::demo
 ``` tsx
@@ -434,7 +435,7 @@ const App = () => {
     'https://storage.360buyimg.com/jdc-article/fristfabu.jpg'
   ]
   return (
-    <div className="demo-box vertical-center" style={{ height: '150px' }}>
+   <div className="demo-box vertical-center" style={{ height: '150px' }}>
       <Swiper
         loop={false}
         initPage={initPage9}
@@ -464,37 +465,37 @@ export default App;
 
 ### Props
 
-| Attribute                   | Description          | Type           | Default      |
+| 参数              | 说明                                   | 类型                      | 默认值            |
 | ----------------- | -------------------------------------- | ------------------------- | ----------------- |
-| width             | Width of rotation car                         | Number \| String          | window.innerWidth |
-| height            | Height of rotation card                         | String \| Number          | 0                 |
-| direction         | Rotation direction, optional value：`horizontal`,`vertical` | String                    | 'horizontal'      |
-| paginationVisible | Whether the pagination indicator is displayed                     | Boolean                   | false             |
-| paginationColor   | Pagination indicator selected color                   | String                    | '#fff'            |
-| loop              | Whether to rotate                             | Boolean                   | true              |
-| duration          | Animation duration（Unit ms                 | Number \| String          | 500               |
-| autoPlay          | Automatic rotation duration, 0 means no automatic        | Number \| String          | 0                 |
-| initPage          | Initialize index value                          | Number \| String          | 0                 |
-| touchable         | Is it possible to touch swipe                         | Boolean                   | true              |
-| pageContent       | Custom indicator                           | String \| React.ReactNode | -                 |
-| isPreventDefault  | Whether to disable default events during swipe             | Boolean                   | true              |
-| isStopPropagation | Whether to prohibit bubbling during sliding                 | Boolean                   | true              |
-| isCenter | Whether to display in the center, the corresponding `width` and `height` must be passed                 | Boolean                   | false              |
+| width             | 轮播卡片的宽度                         | Number \| String          | window.innerWidth |
+| height            | 轮播卡片的高度                         | String \| Number          | 0                 |
+| direction         | 轮播方向,可选值`horizontal`,`vertical` | String                    | 'horizontal'      |
+| paginationVisible | 分页指示器是否展示                     | Boolean                   | false             |
+| paginationColor   | 分页指示器选中的颜色                   | String                    | '#fff'            |
+| loop              | 是否循环轮播                           | Boolean                   | true              |
+| duration          | 动画时长（单位是ms）                   | Number \| String          | 500               |
+| autoPlay          | 自动轮播时长，0表示不会自动轮播        | Number \| String          | 0                 |
+| initPage          | 初始化索引值                           | Number \| String          | 0                 |
+| touchable         | 是否可触摸滑动                         | Boolean                   | true              |
+| pageContent       | 自定义指示器                           | String \| React.ReactNode | -                 |
+| isPreventDefault  | 滑动过程中是否禁用默认事件             | Boolean                   | true              |
+| isStopPropagation | 滑动过程中是否禁止冒泡                 | Boolean                   | true              |
+| isCenter`v1.3.0` | 是否居中展示，必须传对应的`width` 和 `height`                  | Boolean                   | false              |
 
 
 
 ### Events
 
-| Event           | Description                   | Arguments     |
+| 事件名   | 说明             | 回调参数        |
 | -------- | ---------------- | --------------- |
-| onChange | Callback after card switching | Current index value |
+| onChange | 卡片切换后的回调 | 当前索引值index |
 
 
 
 ### API
 
-| Event           | Description                   | Arguments     |
+| 事件名 | 说明           | 参数         |
 | ------ | -------------- | ------------ |
-| prev   | Switch to previous page   | -            |
-| next   | Switch to next page    | -            |
-| to     | Switch to the specified rotation | index:number |
+| prev   | 切换到上一页   | -            |
+| next   | 切换到下一页   | -            |
+| to     | 切换到指定轮播 | index:number |

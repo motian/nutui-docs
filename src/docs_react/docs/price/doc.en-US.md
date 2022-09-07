@@ -1,18 +1,18 @@
-# Price 
+# Price 价格
 
-### Intro
+### 介绍
 
-It is used to apply different styles to the parts before and after the decimal point of the commodity price value, and also supports functions such as the RMB symbol, thousands separator, and setting the number of decimal points.
+用来对商品价格数值的小数点前后部分应用不同样式，还支持人民币符号、千位分隔符、设置小数点位数等功能。
 
-### Install
+### 安装
 
 ```javascript
 import { Price } from '@nutui/nutui-react'
 ```
 
-## Demo
+## 代码演示
 
-### Basic Usage
+### 基本用法
 
 :::demo
 
@@ -32,7 +32,7 @@ export default App;
 
 :::
 
-### With RMB symbol, no thousands separator
+### 有人民币符号，无千位分隔
 
 :::demo
 
@@ -52,7 +52,7 @@ export default App;
 
 :::
 
-### With RMB symbol, separated by thousands, keep three decimal places
+### 带人民币符号，有千位分隔，保留小数点后三位
 
 :::demo
 
@@ -72,7 +72,7 @@ export default App;
 
 :::
 
-### Asynchronous random changes
+### 异步随机变更
 
 :::demo
 
@@ -106,10 +106,10 @@ export default App;
 
 ### Props
 
-| Attribute      | Description                                                | Type            | Default |
-|----------------|------------------------------------------------------------|------------------|--------|
-| price          | Price                 | Number  | 0      |
-| needSymbol    | Add symbol | Boolean | true   |
-| symbol         | Symbol type                 | String  | &yen;  |
-| decimalDigits | Decimal digits               | Number  | 2      |
-| thousands      | Thousands separation   | Boolean | false  |
+| 参数           | 说明                     | 类型    | 默认值 |
+| -------------- | ------------------------ | ------- | ------ |
+| price          | 价格数量                 | Number  | 0      |
+| needSymbol    | 是否需要加上 symbol 符号 | Boolean | true   |
+| symbol         | 符号类型                 | String  | &yen;  |
+| decimalDigits | 小数位位数               | Number  | 2      |
+| thousands      | 是否按照千分号形式显示   | Boolean | false  |

@@ -1,16 +1,18 @@
-# Menu
+# Menu 菜单
 
-### Intro
+### 介绍
 
-The menu list that pops down downwards.
+向下弹出的菜单列表
 
-### Install
+### 安装
 
 ``` javascript
 import { Menu, MenuItem } from '@nutui/nutui-react';
 ```
 
-### Basic Usage
+## 代码演示
+
+### 基础用法
 
 :::demo
 
@@ -20,19 +22,18 @@ import { Menu, MenuItem } from '@nutui/nutui-react';
 
 const App = () => {
   const [options] = useState([
-    { text: 'All Products', value: 0 },
-    { text: 'New Products', value: 1 },
-    { text: 'Activity Products', value: 2 }
+    { text: '全部商品', value: 0 },
+    { text: '新款商品', value: 1 },
+    { text: '活动商品', value: 2 },
   ])
   const [options1] = useState([
-    { text: 'Default Sort', value: 'a' },
-    { text: 'Praise Sort', value: 'b' },
-    { text: 'Sales Volume Sort', value: 'c' }
+    { text: '默认排序', value: 'a' },
+    { text: '好评排序', value: 'b' },
+    { text: '销量排序', value: 'c' },
   ])
   return (
     <>
       <div className="demo full">
-        <h2>Basic Usage</h2>
         <Menu>
           <MenuItem options={options} value={0} />
           <MenuItem options={options1} value={'a'} />
@@ -47,9 +48,9 @@ export default App
 
 :::
 
-### Custom Menu Content
+### 自定义菜单内容
 
-Popup can be closed with toggle method in menu instance.
+使用实例上的 toggle 方法可以手动关闭弹框。
 
 :::demo
 
@@ -59,9 +60,14 @@ import { Menu, MenuItem } from '@nutui/nutui-react';
 
 const App = () => {
   const [options] = useState([
-    { text: 'All Products', value: 0 },
-    { text: 'New Products', value: 1 },
-    { text: 'Activity Products', value: 2 }
+    { text: '全部商品', value: 0 },
+    { text: '新款商品', value: 1 },
+    { text: '活动商品', value: 2 },
+  ])
+  const [options1] = useState([
+    { text: '默认排序', value: 'a' },
+    { text: '好评排序', value: 'b' },
+    { text: '销量排序', value: 'c' },
   ])
   return (
     <>
@@ -69,8 +75,8 @@ const App = () => {
         <Menu>
           <MenuItem options={options} value={0} />
           <MenuItem title="筛选">
-            <div>Custom content</div>
-            <Button>Confirm</Button>
+            <div>自定义内容</div>
+            <Button>确认</Button>
           </MenuItem>
         </Menu>
       </div>
@@ -83,7 +89,7 @@ export default App
 
 :::
 
-### Two Cols In One Line
+### 一行两列
 
 :::demo
 
@@ -93,24 +99,9 @@ import { Menu, MenuItem } from '@nutui/nutui-react';
 
 const App = () => {
   const [options] = useState([
-    { text: 'All Products', value: 0 },
-    { text: 'Product1', value: 1 },
-    { text: 'Product2', value: 2 },
-    { text: 'Product3', value: 3 },
-    { text: 'Product4', value: 4 },
-    { text: 'Product5', value: 5 },
-    { text: 'Product6', value: 6 },
-    { text: 'Product7', value: 7 },
-    { text: 'Product8', value: 8 },
-    { text: 'Product9', value: 9 },
-    { text: 'Product10', value: 10 },
-    { text: 'Product11', value: 11 },
-    { text: 'Product12', value: 12 },
-    { text: 'Product13', value: 13 },
-    { text: 'Product14', value: 14 },
-    { text: 'Product15', value: 15 },
-    { text: 'Product16', value: 16 },
-    { text: 'Product17', value: 17 }
+    { text: '全部商品', value: 0 },
+    { text: '新款商品', value: 1 },
+    { text: '活动商品', value: 2 },
   ])
   
   return (
@@ -129,7 +120,7 @@ export default App
 
 :::
 
-### Custom Active Color
+### 自定义选中态颜色
 
 :::demo
 
@@ -139,14 +130,14 @@ import { Menu, MenuItem } from '@nutui/nutui-react';
 
 const App = () => {
   const [options] = useState([
-    { text: 'All Products', value: 0 },
-    { text: 'New Products', value: 1 },
-    { text: 'Activity Products', value: 2 }
+    { text: '全部商品', value: 0 },
+    { text: '新款商品', value: 1 },
+    { text: '活动商品', value: 2 },
   ])
   const [options1] = useState([
-    { text: 'Default Sort', value: 'a' },
-    { text: 'Praise Sort', value: 'b' },
-    { text: 'Sales Volume Sort', value: 'c' }
+    { text: '默认排序', value: 'a' },
+    { text: '好评排序', value: 'b' },
+    { text: '销量排序', value: 'c' },
   ])
   return (
     <>
@@ -165,7 +156,7 @@ export default App
 
 :::
 
-### Custom Icons
+### 自定义图标
 
 :::demo
 
@@ -175,14 +166,14 @@ import { Menu, MenuItem } from '@nutui/nutui-react';
 
 const App = () => {
   const [options] = useState([
-    { text: 'All Products', value: 0 },
-    { text: 'New Products', value: 1 },
-    { text: 'Activity Products', value: 2 }
+    { text: '全部商品', value: 0 },
+    { text: '新款商品', value: 1 },
+    { text: '活动商品', value: 2 },
   ])
   const [options1] = useState([
-    { text: 'Default Sort', value: 'a' },
-    { text: 'Praise Sort', value: 'b' },
-    { text: 'Sales Volume Sort', value: 'c' }
+    { text: '默认排序', value: 'a' },
+    { text: '好评排序', value: 'b' },
+    { text: '销量排序', value: 'c' },
   ])
   return (
     <>
@@ -201,7 +192,7 @@ export default App
 
 :::
 
-### Expand Directions
+### 向上展开
 
 :::demo
 
@@ -211,14 +202,14 @@ import { Menu, MenuItem } from '@nutui/nutui-react';
 
 const App = () => {
   const [options] = useState([
-    { text: 'All Products', value: 0 },
-    { text: 'New Products', value: 1 },
-    { text: 'Activity Products', value: 2 }
+    { text: '全部商品', value: 0 },
+    { text: '新款商品', value: 1 },
+    { text: '活动商品', value: 2 },
   ])
   const [options1] = useState([
-    { text: 'Default Sort', value: 'a' },
-    { text: 'Praise Sort', value: 'b' },
-    { text: 'Sales Volume Sort', value: 'c' }
+    { text: '默认排序', value: 'a' },
+    { text: '好评排序', value: 'b' },
+    { text: '销量排序', value: 'c' },
   ])
   return (
     <>
@@ -237,7 +228,7 @@ export default App
 
 :::
 
-### Disable Menu
+### 禁用菜单
 
 :::demo
 
@@ -247,14 +238,14 @@ import { Menu, MenuItem } from '@nutui/nutui-react';
 
 const App = () => {
   const [options] = useState([
-    { text: 'All Products', value: 0 },
-    { text: 'New Products', value: 1 },
-    { text: 'Activity Products', value: 2 }
+    { text: '全部商品', value: 0 },
+    { text: '新款商品', value: 1 },
+    { text: '活动商品', value: 2 },
   ])
   const [options1] = useState([
-    { text: 'Default Sort', value: 'a' },
-    { text: 'Praise Sort', value: 'b' },
-    { text: 'Sales Volume Sort', value: 'c' }
+    { text: '默认排序', value: 'a' },
+    { text: '好评排序', value: 'b' },
+    { text: '销量排序', value: 'c' },
   ])
   return (
     <>
@@ -277,30 +268,31 @@ export default App
 
 ### Menu Props
 
-| 参数                             | 说明                           | 类型                    | 默认值  |
-|----------------------------------|--------------------------------|-------------------------|---------|
-| activeColor                     | Active color of title and option           | String                  | #F2270C |
-| closeOnClickOverlay | Whether to close when overlay is clicked     | Boolean                 | true    |
-| lockScroll            | Whether the background is locked                   | Boolean                 | true    |
-| titleIcon               | Custome title icon                 | String                  | -       |
+| 参数                  | 说明                           | 类型                    | 默认值  |
+|---------------------|--------------------------------|-------------------------|---------|
+| activeColor         | 选项的选中态图标颜色           | String                  | #F2270C |
+| closeOnClickOverlay | 是否在点击遮罩层后关闭菜单     | Boolean                 | true    |
+| lockScroll          | 背景是否锁定                   | Boolean                 | true    |
+| scrollFixed         | 滚动后是否固定，可设置固定位置                   | Boolean、String、Number                 | true    |
+| titleIcon           | 自定义标题图标                 | String                  | -       |
 
 ### MenuItem Props
 
 | 参数                          | 说明                                    | 类型    | 默认值           |
 |-------------------------------|-----------------------------------------|---------|------------------|
-| title                         | Item title                              | String  | 当前选中项文字   |
-| options                       | Options                                | Array   | -                |
-| disabled                      | Whether to disable dropdown item                            | Boolean | false            |
-| columns                          | Display how many options in one line          | Number  | 1                |
-| optionsIcon          | Custome option icon                          | String  | 'Check'          |
-| direction            | Expand direction, can be set to up                | String  | 'down'           |
-| activeClassName    | Active custome title class              | String  | -                |
-| inactiveClassName  | Inactive custome title class            | String  | -                |
-| fontClassName       | Custom icon font base class name                 | string  | `nutui-iconfont` |
-| iconClassPrefix          | Custom icon class name prefix for using custom icons | string  | `nut-icon`       |
+| title                         | 菜单项标题                              | String  | 当前选中项文字   |
+| options                       | 选项数组                                | Array   | -                |
+| disabled                      | 是否禁用菜单                            | Boolean | false            |
+| columns                          | 可以设置一行展示多少列 options          | Number  | 1                |
+| optionsIcon          | 自定义选项图标                          | String  | 'Check'          |
+| direction            | 菜单展开方向，可选值为up                | String  | 'down'           |
+| activeClassName    | 选项选中时自定义标题样式类              | String  | -                |
+| inactiveClassName  | 选项非选中时自定义标题样式类            | String  | -                |
+| fontClassName       | 自定义icon 字体基础类名                 | string  | `nutui-iconfont` |
+| iconClassPrefix          | 自定义icon 类名前缀，用于使用自定义图标 | string  | `nut-icon`       |
 
 ### MenuItem Events
 
-| Event      | Description                 | Arguments     |
+| 事件名      | 说明                 | 回调参数     |
 |----------|----------------------|--------------|
-| onChange | Emitted select option changed | Selected value |
+| onChange | 选择 option 之后触发 | 选择的 value |

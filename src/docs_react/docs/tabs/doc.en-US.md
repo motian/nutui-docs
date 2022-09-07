@@ -93,6 +93,40 @@ export default App;
 
 :::
 
+### Tabpane 自动高度
+
+自动高度。设置为 true 时，nut-tabs 和 nut-tabs__content 会随着当前 nut-tabpane 的高度而发生变化。
+
+:::demo
+
+```tsx
+import React, { useState } from "react";
+import { Tabs, TabPane } from '@nutui/nutui-react';
+
+const App = () => {
+  const [tab2value, setTab2value] = useState('0');
+  return (
+    <>
+      <Tabs value={tab2value} autoHeight onChange={({ paneKey }) => {
+        setTab2value(paneKey)
+      }}>
+        <TabPane title="Tab 1" pane-key="0">
+            <p>Tab 1</p>
+            <p>Tab 1</p>
+            <p>Tab 1</p>
+            <p>Tab 1</p>
+        </TabPane>
+        <TabPane title="Tab 2" pane-key="1"> Tab 2 </TabPane>
+        <TabPane title="Tab 3" pane-key="2"> Tab 3 </TabPane>
+      </Tabs>
+    </>
+  );
+};
+export default App;
+```
+
+:::
+
 ### 数据异步渲染 3s
 
 :::demo
@@ -310,19 +344,20 @@ export default App;
 
 ### Tabs Props
 
-| 参数          | 说明                                          | 类型          | 默认值     |
-|---------------|-----------------------------------------------|---------------|------------|
-| value         | 绑定当前选中标签的标识符                      | number,string | 0          |
-| color         | 标签选中色                                    | string        | #1a1a1a    |
-| background    | 标签栏背景颜色                                | string        | #f5f5f5    |
-| direction     | 使用横纵方向 可选值 horizontal、vertical      | string        | horizontal |
-| type          | 选中底部展示样式 可选值 line、smile           | string        | line       |
-| titleScroll  | 标签栏是否可以滚动                            | boolean       | false      |
-| ellipsis      | 是否省略过长的标题文字                        | boolean       | true       |
-| animatedTime | 切换动画时长,单位 ms 0 代表无动画              | number,string | 300        |
-| titleGutter  | 标签间隙                                      | number,string | 0          |
-| titleNode    | 自定义导航区域                                 | () => JSX.Element[] | 0          |
-| size         | 标签栏字体尺寸大小 可选值 large normal small | string        | normal     |
+| 参数             | 说明                                          | 类型          | 默认值     |
+|----------------|-----------------------------------------------|---------------|------------|
+| value          | 绑定当前选中标签的标识符                      | number,string | 0          |
+| color          | 标签选中色                                    | string        | #1a1a1a    |
+| background     | 标签栏背景颜色                                | string        | #f5f5f5    |
+| direction      | 使用横纵方向 可选值 horizontal、vertical      | string        | horizontal |
+| type           | 选中底部展示样式 可选值 line、smile           | string        | line       |
+| titleScroll    | 标签栏是否可以滚动                            | boolean       | false      |
+| ellipsis       | 是否省略过长的标题文字                        | boolean       | true       |
+| animatedTime   | 切换动画时长,单位 ms 0 代表无动画              | number,string | 300        |
+| titleGutter    | 标签间隙                                      | number,string | 0          |
+| titleNode      | 自定义导航区域                                 | () => JSX.Element[] | 0          |
+| size           | 标签栏字体尺寸大小 可选值 large normal small | string        | normal     |
+| autoHeight`v1.2.1` | 自动高度。设置为 true 时，nut-tabs 和 nut-tabs__content 会随着当前 nut-tabpane 的高度而发生变化。 | boolean        | false     |
 
 ## Tabs Children
 
@@ -342,5 +377,5 @@ export default App;
 
 | 事件名 | 说明                     | 回调参数                 |
 |--------|--------------------------|--------------------------|
-| click  | 点击标签时触发           | {title,paneKey,disabled} |
-| change | 当前激活的标签改变时触发 | {title,paneKey,disabled} |
+| onClick  | 点击标签时触发           | {title,paneKey,disabled} |
+| onChange | 当前激活的标签改变时触发 | {title,paneKey,disabled} |

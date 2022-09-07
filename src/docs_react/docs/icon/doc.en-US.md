@@ -1,20 +1,20 @@
-# Icon
+# Icon 图标
 
-### Introduce
+### 介绍
 
-Icon set based on IconFont fonts, which can be used through the Icon component.
+基于 IconFont 字体的图标集，可以通过 Icon 组件使用。
 
-### Install
+### 安装
 
 ``` javascript
 import { Icon } from '@nutui/nutui-react';
 ```
 
-## Demo
+## 代码演示
 
-### Basic usage
+### 基础用法
 
-The `name` attribute of `Icon` supports passing in icon names or image links.
+`Icon` 的 `name` 属性支持传入图标名称或图片链接。
 
 :::demo
 ```tsx
@@ -24,20 +24,18 @@ import { Icon } from '@nutui/nutui-react';
 const App = () => {
   return <>
     <Icon name="dongdong" />
-    <Icon name="JD" />
-    <Icon size="40"
-          name="https://img11.360buyimg.com/imagetools/jfs/t1/137646/13/7132/1648/5f4c748bE43da8ddd/a3f06d51dcae7b60.png" />
-
+    <Icon name="JD"/>
+    <Icon size="40"  name="https://img11.360buyimg.com/imagetools/jfs/t1/137646/13/7132/1648/5f4c748bE43da8ddd/a3f06d51dcae7b60.png"/>
   </>
 }
-
 export default App;
+
 ```
 :::
 
-### Color
+### 图标颜色
 
-The 'color' property of 'Icon' is used to set the color of the icon.
+`Icon` 的 `color` 属性用来设置图标的颜色。
 
 :::demo
 ```tsx
@@ -56,10 +54,9 @@ export default App;
 ```
 :::
 
-### Size
+### 图标大小
 
-The 'size' property of 'Icon' is used to set the size of the icon, with the
-default unit being 'px'.
+`Icon` 的 `size` 属性用来设置图标的尺寸大小，默认单位为 `px`。
 
 :::demo
 ```tsx
@@ -77,14 +74,13 @@ const App = () => {
 export default App;
 ```
 :::
+### 自定义图标
 
-### custom iconfont
+如果需要在现有 Icon 的基础上使用更多图标，可以引入第三方 iconfont 对应的字体文件和 CSS 文件，之后就可以在 Icon 组件中直接使用。
 
-If you need to use more icons based on the existing Icon, you can import the font file and CSS file corresponding to the third-party iconfont, and then you can use it directly in the Icon component.
+> 方案一 引入 [iconfont](https://www.iconfont.cn/)   推荐此方案
 
-> use [iconfont](https://www.iconfont.cn/)   recommend
-
-1：first in [iconfont](https://www.iconfont.cn/) generate your custom Icon file and download it to the local project  [Docs](https://www.iconfont.cn/help/detail?spm=a313x.7781069.1998910419.d8d11a391&helptype=code)
+第一步：首先在 [iconfont](https://www.iconfont.cn/) 生成你自定义的Icon文件下载存放至本地项目  [详细使用说明](https://www.iconfont.cn/help/detail?spm=a313x.7781069.1998910419.d8d11a391&helptype=code)
 
 ``` bash
 /assets/font/demo.css
@@ -97,32 +93,31 @@ If you need to use more icons based on the existing Icon, you can import the fon
 /assets/font/iconfont.woff2
 ```
 
-2：project entry file main.js add `iconfont.css`
+第二步：项目入口文件 main.js 引用 `iconfont.css`
 
 
 ``` javascript
 import './assets/font/iconfont.css';
 ```
 
-3：use
+第三步:
 
 ```tsx
 // fontClassName 指定类名为默认 iconfont
 // classPrefix 指定默认 icon
-// name 值根据 iconfont.css 中值对应填写
+// name 值根据 iconfont.css 中值对应填写 
 import React from 'react'
 import Icon from '@nutui/nutui-react'
 
 const App = () => {
-return <Icon fontClassName="iconfont" classPrefix='icon' name="close"/>
+  return <Icon fontClassName="iconfont" classPrefix='icon' name="close"/>
 }
 ```
 
-
-> Use a third-party custom font library
+> 方案二 第三方自定义字体库
 
 ```css
-/* Introduce third-party or custom font icon styles */
+/* 引入第三方或自定义的字体图标样式 */
 @font-face {
   font-family: 'my-icon';
   src: url('./my-icon.ttf') format('truetype');
@@ -154,16 +149,17 @@ export default App;
 
 ### Props
 
-| Props        | Description                                                  | Type             | Default          |
-|--------------|-----------------------------------------------------|------------------|------------------|
-| name         | Icon name or picture link                           | String           | -                |
-| color        | Icon color                                          | String           | -                |
-| size         | Icon size, such as:  `20px` `2em` `2rem`            | String or Number | -                |
-| class-prefix | A class name prefix that is used to use custom icons | String           | `nutui-iconfont` |
-| tag          | tsx tag                                             | String           | `i`              |
+| 参数          | 说明                             | 类型             | 默认值           |
+|-------------|----------------------------------|------------------|------------------|
+| name        | 图标名称或图片链接               | String           | -                |
+| color       | 图标颜色                         | String           | -                |
+| size        | 图标大小，如 `20px` `2em` `2rem` | String or Number | -                |
+| classPrefix | 类名前缀，用于使用自定义图标     | String           | `nut-iconfont` |
+| fontClassName           | 自定义 icon 字体基础类名                        | String           | `nutui-iconfonti`              |
+| tag         | tsx 标签                        | String           | `i`              |
 
 ### Events
 
-| Event | Description           | callback parameters |
-|-------|----------------|---------------------|
-| click | Triggered when the icon is tapped | event: Event        |
+| 事件名 | 说明           | 回调参数     |
+|--------|----------------|--------------|
+| click  | 点击图标时触发 | event: Event |
