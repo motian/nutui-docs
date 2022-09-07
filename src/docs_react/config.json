@@ -1,5 +1,5 @@
 {
-  "version": "1.3.1",
+  "version": "1.3.2",
   "nav": [
     {
       "name": "基础组件",
@@ -992,8 +992,14 @@
       },
       {
         "name": "start-react",
-        "cName": "快速上手",
+        "cName": "H5快速上手",
         "show": true
+      },
+      {
+        "name": "starttaro-react",
+        "cName": "小程序开发",
+        "eName": "WeChat",
+        "show": false
       },
       {
         "name": "theme-react",
