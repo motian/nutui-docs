@@ -15,6 +15,15 @@ import enUS from '@nutui/nutui/dist/packages/locale/lang/en-US';
 // import { Locale } from '@nutui/nutui-taro';
 // import enUS from '@nutui/nutui-taro/dist/packages/locale/lang/en-US';
 Locale.use('en-US', enUS);
+
+// The Locale.merge method can be used to modify and expand the text, examples are as follows:
+Locale.merge('en-US', {
+  confirm: "custom",
+  // Modify the internal language of a component
+  shortpassword : {
+    title: 'custom',
+  }
+});
 ```
 
 ## Current supported languages:
