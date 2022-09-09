@@ -371,9 +371,9 @@ export default defineComponent({
   .content-left {
     background: url(https://storage.360buyimg.com/imgtools/a423faab46-8b142e80-8bb1-11eb-853a-6fded8704e77.png)
       no-repeat;
-    background-size: 1126px 568px;
+    background-size: 1050px 540px;
     background-position-x: right;
-    background-position-y: 150px;
+    background-position-y: 110px;
     .content-title {
       animation: fadeInLeft 1s both;
     }
@@ -398,9 +398,9 @@ export default defineComponent({
   .react-content-left {
     background: url(https://storage.360buyimg.com/imgtools/7cd27ba3eb-686f76e0-6ec9-11ec-8cd6-b10a2c66b169.png)
       no-repeat;
-    background-size: 1126px 568px;
+    background-size: 1050px 540px;
     background-position-x: right;
-    background-position-y: 136px;
+    background-position-y: 116px;
   }
 }
 </style>
@@ -431,8 +431,9 @@ export default defineComponent({
     font-size: 26px;
   }
   &-features {
+    position: relative;
     width: 1200px;
-    margin: 0 auto 90px;
+    margin: 50px auto 90px;
     .features-list {
       display: flex;
       justify-content: space-between;
@@ -837,14 +838,17 @@ export default defineComponent({
   }
 }
 .doc-content-index {
+  position: relative;
   display: flex;
-  height: 926px;
+  height: 780px;
   /* margin-bottom: 70px; */
   background-color: #070505;
+
   min-width: 1200px;
+
   .content-left {
-    padding: 15% 0 0 8.8%;
-    // margin: auto 0;
+    padding: 13% 0 0 8.8%;
+    margin-right: 50px;
     flex: 1;
     min-width: 550px;
     .content-title {
@@ -950,6 +954,10 @@ export default defineComponent({
         }
       }
     }
+
+    &.react-content-left {
+      margin-right: 0;
+    }
   }
 
   &.jagile {
@@ -975,29 +983,7 @@ export default defineComponent({
     }
   }
 }
-//.doc-content-index-react {
-//  height: 1012px;
-//  margin-bottom: 20px;
-//  .content-left {
-//    padding: 17.5% 0 0 8.8%;
-//    .content-title {
-//      font-size: 56px;
-//    }
-//    .content-subTitle {
-//      font-size: 36px;
-//    }
-//    .content-button {
-//      .leftButton,
-//      .rightButton {
-//        width: 170px;
-//        height: 50px;
-//      }
-//      .rightButton {
-//        margin-left: 40px;
-//      }
-//    }
-//  }
-//}
+
 .doc-content-black {
   background: $theme-black-content-bg;
   color: white;
