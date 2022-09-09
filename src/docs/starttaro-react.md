@@ -18,7 +18,7 @@
 * 通过 Npm 或 Yarn 安装  
 * node版本>=12.10.0
 
-``` bash
+```bash
 # 使用 npm 安装 CLI
 npm install -g @tarojs/cli
 
@@ -31,13 +31,13 @@ cnpm install -g @tarojs/cli
 
 > 值得一提的是，如果安装过程出现sass相关的安装错误，请在安装 mirror-config-china 后重试。
 
-``` bash
+```bash
 npm install -g mirror-config-china
 ```
 
 #### 2. 检查是否安装成功
 
-``` bash
+```bash
 taro -v
 ```
 当前版本为3.5.4。
@@ -46,13 +46,13 @@ taro -v
 
 使用命令创建模板：
 
-``` bash
+```bash
 taro init myApp
 ```
 这里使用 react 框架的默认模板构建，css 预处理器使用scss编译。
 
 #### 4. 运行你的项目
-```
+```bash
 npm run dev:weapp
 ```
 并在小程序的IDE下运行该项目，运行目录要指向 dist 文件夹下。
@@ -61,12 +61,12 @@ npm run dev:weapp
 ## 引入 NutUI-React 组件库
 #### 1. 安装 taro 内置组件的支持插件 @tarojs/plugin-html
 
-``` bash
+```bash
 yarn add @tarojs/plugin-html
 ```
 
 #### 2. 配置该内置组件
-``` javascript
+```javascript
 // config/index.js
 config = {
   // ...
@@ -75,12 +75,12 @@ config = {
 ```
 
 #### 3. 添加@nuiui-react-taro组件库
-```
+```bash
 yarn add @nutui/nutui-react-taro
 ```
 
 #### 4. 代码中引入nutui-react-taro库，进行测试
-```
+```js
 import { Button } from '@nutui/nutui-react-taro';
 render () {
   return (
@@ -95,7 +95,7 @@ render () {
 1）因为nutui-react 使用的是 scss 预处理器，同时，支持主题定制，所以需要在配置文件里，增加对样式变量的引入。
 
 // config/index.js
-```
+```js
 sass:{
   data: `@import "@nutui/nutui-react/dist/styles/variables.scss";`
 }
@@ -103,7 +103,7 @@ sass:{
 
 2) 同时，我们需要在babel配置文件里，增加 import 插件:
 // babel.config.js
-```
+```js
 plugins: [
   [
     "import",
@@ -119,13 +119,13 @@ plugins: [
 ```
 记得，安装babel-plugin-import 插件。
 
-```
+```bash
 yarn add babel-plugin-import
 ```
 
 3) 使用pxconfig，忽略对组件库的单位的转换。
 // config/index.js
-```
+```js
 pxtransform: {
   config: {
     selectorBlackList: ['nut-']

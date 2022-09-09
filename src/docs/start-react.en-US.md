@@ -1,18 +1,18 @@
-# 快速上手
+# Quickstart
 
-## 预览
+## Preview
 
-> 扫描下方二维码体验，体验 React 组件库示例
+> Scan the below QR code, experience React component library demos.
 
 <img src="https://img12.360buyimg.com/imagetools/jfs/t1/202336/18/18586/7437/61b832ccE0b13d53d/18605da7232a5a0e.png" width="200" alt="NutUI">
 
-## NPM 安装
+## Install
 
 ```bash
 npm i @nutui/nutui-react
 ```
 
-### NPM 使用示例
+### Demo
 
 ```javascript
 import * as React from "react";
@@ -29,18 +29,19 @@ ReactDOM.render(
 
 ```
 
-#### 为什么只按需引入样式
+#### Why only import styles on demand
 
-NutUI-React 默认支持基于 ES modules 的 tree shaking，对于 JS 部分，直接引入 `import { Button } from '@nutui/nutui-react'` 就会有按需加载的效果。因此仅样式不是按需导入的，因此只需按需导入样式即可。
+NutUI-React supports tree shaking based on ES modules by default. For the JS part, directly importing `import { Button } from '@nutui/nutui-react'` will have the effect of on-demand loading. So only styles are not imported on demand, so just import styles on demand.
 
-#### WebPack 构建工具 通过 babel 使用按需加载
+#### WebPack build tools use on-demand loading via babel
 
-[babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 是一款 babel 插件，它会在编译过程中将 import 语句自动转换为按需引入的方式。
-##### 安装插件
+[babel-plugin-import](https://github.com/ant-design/babel-plugin-import), it is a babel plugin that automatically converts import statements into on-demand import during the compilation process.
+
+##### Install plugin
 ``` bash
 npm install babel-plugin-import --save-dev
 ```
-在 `.babelrc` 或 `babel.config.js` 中添加配置：
+Add configuration in `.babelrc` or `babel.config.js`:
 
 ``` javascript
 {
@@ -59,34 +60,34 @@ npm install babel-plugin-import --save-dev
   ]
 }
 ```
-在 webpack 配置中配置 sass-loader ，将 nutui-react 样式变量导入全局
+Configure sass-loader in webpack config to import nutui-react style variables globally
 ```javascript
 //...
-// 给 sass-loader 传递选项
+// Pass options to sass-loader
 scss: {
     data: `@import "@nutui/nutui-react/dist/styles/variables.scss";`,
 }
 //...
 ```
 
-### Create React App 通过 craco 使用按需加载
+### Create React App using on-demand loading via craco
 
-#### 创建项目
+#### create project
 
-```shell
+```bash
 npx create-react-app myNutUI-React
-```
+````
 
-#### 安装 craco 以及相关插件
+#### Install craco and related plugins
 
-```shell
-// 示例采用最新版本的 @craco/craco
+```bash
+# The example uses the latest version of @craco/craco
 npm i --save-dev @craco/craco
 npm i --save-dev sass
 npm i --save-dev babel-plugin-import
 ```
 
-#### 添加 craco 配置，`craco.config.js`
+#### Add craco configuration, `craco.config.js`
 
 ```js
 module.exports = {
@@ -117,17 +118,17 @@ module.exports = {
 
 ```
 
-#### Vite 构建工具 通过 vite-plugin 使用按需加载
+#### Vite build tools use on-demand loading via vite-plugin
 
-由于 vite 本身已按需导入了组件库，因此仅样式不是按需导入的，因此只需按需导入样式即可。
+Since vite itself has imported the component library on demand, only styles are not imported on demand, so just import styles on demand.
 
-[Vite](https://vitejs.dev/) 构建工具，使用 [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import) 实现按需引入。
+[Vite](https://vitejs.dev/) build tool, use [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import) to import on demand.
 
-#### 安装插件
+#### Install plugin
 
 `npm install vite-plugin-style-import --save-dev`
 
-在 vite.config 中添加配置：
+Add configuration in vite.config:
 
 ```typescript
 import { defineConfig } from "vite";
@@ -138,7 +139,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // 配置 nutui 全局 scss 变量
+        // Configure nutui global scss variables
         additionalData: `@import "@nutui/nutui-react/dist/styles/variables.scss";`,
       },
     },
@@ -162,9 +163,9 @@ export default defineConfig({
 ```
 
 
-#### CDN 安装使用示例
+#### CDN installation usage example
 
-> 可以通过 CDN 的方式引入， 可以在 **jsdelivr** 和 **unpkg** 等公共 CDN 上获取到 NutUI。
+> Can be imported through CDN, and NutUI can be obtained on public CDNs such as **jsdelivr** and **unpkg**.
 
 ```html
 <!DOCTYPE html>
@@ -172,22 +173,20 @@ export default defineConfig({
 <head>
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-  <!-- 引入样式 -->
+  <!-- import style -->
   <link rel='stylesheet'
         href='https://cdn.jsdelivr.net/npm/@nutui/nutui-react/dist/style.css' />
-  <!-- 引入React -->
+  <!-- import React -->
   <script crossorigin
           src='https://unpkg.com/react@17/umd/react.production.min.js'></script>
   <script crossorigin
           src='https://unpkg.com/react-dom@17/umd/react-dom.production.min.js'></script>
-  <!-- 引入NutUI组件库 -->
+  <!-- import NutUI-React -->
   <script
     src='https://cdn.jsdelivr.net/npm/@nutui/nutui-react/dist/nutui.react.umd.js'></script>
 </head>
 <body>
-<div id='app'>
-
-</div>
+<div id='app'></div>
 <script>
   // 在 #app 标签下渲染一个按钮组件
   ReactDOM.render(
@@ -203,14 +202,14 @@ export default defineConfig({
 </html>
 ```
 
-> 在页面中直接引入，将无法使用 **主题定制** 等功能。我们推荐使用 *NPM* 或 *YARN* 方式安装，不推荐在页面中直接引入的用法
+> If it is directly introduced in the page, functions such as **theme customization** will not be available. We recommend using *NPM* or *YARN* to install, and we do not recommend the usage directly introduced in the page
 
-## 使用注意事项
-- NutUI-React 基于 [react@^17.0.0](https://www.npmjs.com/package/react) 构建
-- NutUI-React 版本提供的 `.scss` 文件建议使用 [Dart Sass ^1.40.0](https://www.npmjs.com/package/sass) 以上版本
-- 组件 css 单位使用的是 **px**，如果你的项目中需要 **rem**
-  单位，可借助一些工具进行转换，比如 [webpack](https://www.webpackjs.com/)
-  的 [px2rem-loader](https://www.npmjs.com/package/px2rem-loader)、[postcss](https://github.com/postcss/postcss)
-  的 [postcss-plugin-px2rem](https://www.npmjs.com/package/postcss-plugin-px2rem)
-  插件等
+## Precautions for use
+- NutUI-React is built on [react@^17.0.0](https://www.npmjs.com/package/react)
+- The `.scss` file provided by NutUI-React version is recommended to use [Dart Sass ^1.40.0](https://www.npmjs.com/package/sass) or above
+- The component css unit uses **px**, if you need **rem** in your project
+  Units can be converted with the help of some tools, such as [webpack](https://www.webpackjs.com/)
+  The [px2rem-loader](https://www.npmjs.com/package/px2rem-loader), [postcss](https://github.com/postcss/postcss)
+  The [postcss-plugin-px2rem](https://www.npmjs.com/package/postcss-plugin-px2rem)
+  plug-ins, etc.
 
