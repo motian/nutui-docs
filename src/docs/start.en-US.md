@@ -50,14 +50,18 @@ npm install vite-plugin-style-import --save-dev
 Configure the plugin in `vite.config.js`:
 ``` javascript
 import vue from '@vitejs/plugin-vue'
-import { createStyleImportPlugin, NutuiResolve } from 'vite-plugin-style-import'
+import { createStyleImportPlugin } from 'vite-plugin-style-import'
 export default {
   plugins: [
     vue(),
     createStyleImportPlugin({
-      resolves: [
-        NutuiResolve(),
-      ]
+      resolves: [{
+          libraryName: '@nutui/nutui',
+          libraryNameChangeCase: 'pascalCase',
+          resolveStyle: (name) => {
+            return `@nutui/nutui/dist/packages/${name.toLowerCase()}/index.scss`
+          },
+      }]
     }),
   ],
   css: {

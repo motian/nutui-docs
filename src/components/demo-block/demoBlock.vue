@@ -1,6 +1,6 @@
 <template>
   <div class="online-code" ref="onlineCode" :class="{ scroll: scroll, isExpand: expand, win: win }">
-    <div class="expand fixed" @click="expand = !expand">
+    <div class="expand fixed" @click="expand = !expand" title="展开全部代码">
       <img
         class="icon-expand"
         :style="{ display: expand ? 'block' : 'none' }"
