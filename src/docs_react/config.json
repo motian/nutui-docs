@@ -999,7 +999,7 @@
         "name": "starttaro-react",
         "cName": "小程序开发",
         "eName": "WeChat",
-        "show": true
+        "show": false
       },
       {
         "name": "theme-react",
