@@ -141,6 +141,7 @@
           "desc": "宫格",
           "sort": 5,
           "show": true,
+          "taro": true,
           "author": "yangxiaolu"
         },
         {
@@ -151,6 +152,7 @@
           "desc": "宫格子组件",
           "sort": 6,
           "show": false,
+          "taro": true,
           "exportEmpty": true,
           "author": "yangxiaolu"
         }
