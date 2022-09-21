@@ -1,8 +1,59 @@
 <template>
   <doc-header></doc-header>
+
   <div class="doc-content" :class="themeName()">
     <div :class="docContentIndex">
-      <div :class="bannerName()">
+      <!-- vue -->
+      <div class="doc-content-banner-box" v-if="language === 'vue'">
+        <div :class="bannerName()">
+          <div class="content-title">
+            NutUI<span v-if="language === 'react'" class="sub-content-title">-React</span></div
+          >
+          <div class="content-smile"> </div>
+          <div class="content-subTitle"
+            >京东风格的轻量级移动端 {{ language.replace(/^\S/, (s) => s.toUpperCase()) }} 组件库</div
+          >
+          <div class="content-button">
+            <div class="leftButton" @click="toIntro">
+              <div class="leftButtonText">开始使用</div>
+            </div>
+            <div class="rightButton">
+              <div class="rightButtonText">扫码体验</div>
+
+              <div class="qrcodepart">
+                <div class="qrcode-text"> 请使用手机扫码体验 </div>
+                <div :class="['qrcode', `qrcode-${language.toLowerCase()}`]"> </div>
+              </div>
+            </div>
+            <iframe
+              style="margin-left: 20px"
+              :src="homePage.gitstar"
+              frameborder="0"
+              scrolling="0"
+              width="170"
+              height="30"
+              title="GitHub"
+            ></iframe>
+          </div>
+        </div>
+
+        <div :class="['doc-content-banner-img', bannerList.length > 0 ? 'doc-content-banner-imgcover' : '']">
+          <div class="skew-box">
+            <div class="doc-content-banner-swiper">
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide" v-for="(arr, index) in bannerList" :key="index">
+                    <div class="swiper-slide-item" @click="goBannerList(arr)"><img :src="arr.cover_image" /></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- react -->
+      <div :class="bannerName()" v-if="language === 'react'">
         <div class="content-title"> NutUI<span v-if="language === 'react'" class="sub-content-title">-React</span></div>
         <div class="content-smile"> </div>
         <div class="content-subTitle"
@@ -32,6 +83,7 @@
         </div>
       </div>
     </div>
+
     <div class="doc-content-features" v-if="homePage.platform.length">
       <div class="doc-content-hd">
         <h4 class="doc-content-title">平台特色</h4>
@@ -198,7 +250,8 @@ export default defineComponent({
       currentCaseIndex: 0,
       localTheme: localStorage.getItem('nutui-theme-color'),
       showAwait: false,
-      qrcodeList: []
+      qrcodeList: [],
+      bannerList: []
     });
     let caseSwiper: any = null;
     let qrcodeSwiper: any = null;
@@ -207,7 +260,25 @@ export default defineComponent({
       if (homePage.article.show) getArticle();
       if (homePage.cases.show) getCasesImages();
       if (homePage.qrcodeShow) getQRCode();
+
+      initBannerSwiper();
     });
+
+    const initBannerSwiper = () => {
+      const apiService = new ApiService();
+      apiService.getBannerList().then((res) => {
+        if (res?.state == 0 && res?.value.data.length != 0) {
+          data.bannerList = [].concat(res.value.data.arrays);
+
+          setTimeout(() => {
+            new Swiper('.doc-content-banner-swiper .swiper-container', {
+              autoplay: true,
+              loop: true
+            });
+          }, 500);
+        }
+      });
+    };
     //获取案例二维码
     const getQRCode = () => {
       const apiService = new ApiService();
@@ -334,6 +405,10 @@ export default defineComponent({
     const toDetail = () => {
       window.open('/cat');
     };
+
+    const goBannerList = (banner: any) => {
+      if (banner && banner.link) window.open(banner.link);
+    };
     return {
       toIntro,
       ...toRefs(data),
@@ -351,7 +426,8 @@ export default defineComponent({
       hideAwait,
       bannerName,
       onQRLeft,
-      onQRRight
+      onQRRight,
+      goBannerList
     };
   }
 });
@@ -368,12 +444,12 @@ export default defineComponent({
   }
 }
 .doc-content-index {
-  .content-left {
-    background: url(https://storage.360buyimg.com/imgtools/a423faab46-8b142e80-8bb1-11eb-853a-6fded8704e77.png)
+  /* background: url(https://storage.360buyimg.com/imgtools/a423faab46-8b142e80-8bb1-11eb-853a-6fded8704e77.png)
       no-repeat;
     background-size: 1050px 540px;
     background-position-x: right;
-    background-position-y: 110px;
+    background-position-y: 110px; */
+  .content-left {
     .content-title {
       animation: fadeInLeft 1s both;
     }
@@ -394,13 +470,6 @@ export default defineComponent({
         animation: fadeInLeft 1s both 1.2s;
       }
     }
-  }
-  .react-content-left {
-    background: url(https://storage.360buyimg.com/imgtools/7cd27ba3eb-686f76e0-6ec9-11ec-8cd6-b10a2c66b169.png)
-      no-repeat;
-    background-size: 1050px 540px;
-    background-position-x: right;
-    background-position-y: 116px;
   }
 }
 </style>
@@ -839,20 +908,26 @@ export default defineComponent({
 }
 .doc-content-index {
   position: relative;
-  display: flex;
   height: 780px;
-  /* margin-bottom: 70px; */
   background-color: #070505;
 
-  min-width: 1200px;
+  &.doc-content-index-react {
+    display: flex;
+
+    .react-content-left {
+      flex: 1;
+      padding: 13% 0 0 8.8%;
+      background: url(https://storage.360buyimg.com/imgtools/7cd27ba3eb-686f76e0-6ec9-11ec-8cd6-b10a2c66b169.png)
+        no-repeat;
+      background-size: 1050px 540px;
+      background-position-x: right;
+      background-position-y: 116px;
+    }
+  }
 
   .content-left {
-    padding: 13% 0 0 8.8%;
-    margin-right: 50px;
-    flex: 1;
-    min-width: 550px;
+    padding-top: 6%;
     .content-title {
-      // line-height: 36px;
       font-size: 42px;
       color: rgba(255, 255, 255, 1);
     }
@@ -957,6 +1032,58 @@ export default defineComponent({
 
     &.react-content-left {
       margin-right: 0;
+    }
+  }
+
+  .doc-content-banner-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 8% 0 0 10%;
+
+    .doc-content-banner-img {
+      position: relative;
+      transform: translateX(-100px);
+      flex: 1;
+      height: 540px;
+      background: url(https://storage.360buyimg.com/imgtools/a423faab46-8b142e80-8bb1-11eb-853a-6fded8704e77.png)
+        no-repeat;
+      background-size: 1050px 540px;
+      background-position-x: right;
+
+      &.doc-content-banner-imgcover {
+        background: url(https://img13.360buyimg.com/imagetools/jfs/t1/200677/31/26740/366866/632a80ffE1c1caed0/9fed939eca38b0ae.png)
+          no-repeat;
+        background-size: 1050px 540px;
+        background-position-x: right;
+      }
+
+      .skew-box {
+        position: absolute;
+        right: 88px;
+        top: 95px;
+        transform: skew(60deg, -27deg);
+
+        cursor: pointer;
+      }
+      .doc-content-banner-swiper {
+        .swiper-container {
+          width: 330px;
+          height: 150px;
+          box-shadow: 0 0 2px 2px rgb(0 0 0 / 10%);
+          border-radius: 10px;
+        }
+
+        .swiper-slide-item {
+          width: 330px;
+          height: 150px;
+          overflow: hidden;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
   }
 
