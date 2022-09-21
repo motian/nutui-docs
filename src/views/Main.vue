@@ -272,7 +272,7 @@ export default defineComponent({
 
           setTimeout(() => {
             new Swiper('.doc-content-banner-swiper .swiper-container', {
-              autoplay: true,
+              autoplay: data.bannerList.length > 1 ? true : false,
               loop: true
             });
           }, 500);
