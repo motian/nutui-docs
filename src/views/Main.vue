@@ -40,7 +40,7 @@
         <div :class="['doc-content-banner-img', bannerList.length > 0 ? 'doc-content-banner-imgcover' : '']">
           <div class="skew-box">
             <div class="doc-content-banner-swiper">
-              <div class="swiper-container">
+              <div class="swiper-container" v-if="bannerList.length > 0">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide" v-for="(arr, index) in bannerList" :key="index">
                     <div class="swiper-slide-item" @click="goBannerList(arr)"><img :src="arr.cover_image" /></div>
