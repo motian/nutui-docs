@@ -1,18 +1,18 @@
-# AnimatingNumbers 数字动画
+# AnimatingNumbers 
 
-### 介绍
+### Intro
 
-数字动画集合
+Digital animation collection
 
-### 安装
+### Install
 
 ```javascript
 import { AnimatingNumbers } from '@nutui/nutui-react'
 ```
 
-## 代码演示
+## Demo
 
-### AnimatingNumbers.CountUp-基础用法
+### AnimatingNumbers.CountUp - Basic Usage
 
 :::demo
 
@@ -28,7 +28,7 @@ export default App
 
 :::
 
-### AnimatingNumbers.CountUp-自定义样式，动态修改数据（需要指定最大位数）
+### AnimatingNumbers.CountUp - Custom styles to dynamically modify data (maximum number of bits required)
 
 :::demo
 
@@ -65,10 +65,10 @@ export default App
 
 ### AnimatingNumbers.CountUp Props
 
-| 参数       | 说明                               | 类型    | 默认值 |
+| Props    | Description                             | Type   | Default           |
 | ---------- | ---------------------------------- | ------- | ------ |
-| maxLen     | 设置最大展示长度，长度不够按位补 0 | Number  | 0      |
-| endNumer   | 结束值,必填项                      | String  | ''     |
-| delaySpeed | 等待动画执行时间，单位 ms          | Number  | 300    |
-| easeSpeed  | 动画执行时间，单位 s               | Number  | 1      |
-| thousands  | 是否有千位分隔符                   | Boolean | false  |
+| maxLen     | Set the maximum display length. If the length is insufficient, make up 0 bit by bit | Number  | 0      |
+| endNumer   | The end value,                       | String  | ''     |
+| delaySpeed | Wait time for animation execution, in ms          | Number  | 300    |
+| easeSpeed  | Animation execution time, in s               | Number  | 1      |
+| thousands  | 是否有千位分隔符  Whether there are thousands separators                  | Boolean | false  |

@@ -1,18 +1,18 @@
-#  CountDown 倒计时
+#  CountDown
 
-### 介绍
+### Introduce
 
-用于实时展示倒计时数值，支持毫秒精度。
+Used to display the countdown value in real time, and precision supports milliseconds.
 
-### 安装
+### Install
 
 ```javascript
 import { CountDown } from '@nutui/nutui-react'
 ```
 
-## 代码演示
+## Demo
 
-### 基础用法
+### Basic Usage
 
 :::demo
 
@@ -37,7 +37,7 @@ export default App;
 ```
 
 :::
-### 自定义格式
+### Custom format
 
 :::demo
 
@@ -51,7 +51,7 @@ const App = () => {
   })
   return (
      <Cell>
-        <CountDown endTime={stateRef.current.endTime} format="DD 天 HH 时 mm 分 ss 秒"/>
+        <CountDown endTime={stateRef.current.endTime} format="DD Day HH : mm : ss" />
     </Cell>
   );
 };
@@ -60,7 +60,7 @@ export default App;
 
 :::
 
-### 毫秒级渲染
+### Millisecond
 
 :::demo
 
@@ -85,8 +85,7 @@ export default App;
 :::
 
 
-
-### 以服务端的时间为准
+### Server Time Prevails
 
 :::demo
 
@@ -110,7 +109,7 @@ export default App;
 
 :::
 
-### 异步更新结束时间
+### End-Time of Asyn Update
 
 :::demo
 
@@ -143,7 +142,7 @@ export default App;
 
 :::
 
-### 控制开始和暂停的倒计时
+### Controls start and pause countdowns
 
 :::demo
 
@@ -189,7 +188,7 @@ export default App;
 
 :::
 
-### 自定义展示
+### Custom Presentation
 
 :::demo
 
@@ -260,8 +259,9 @@ export default App;
 
 :::
 
-### 手动控制
-通过 ref 获取到组件实例后，可以调用 start、pause、reset 方法。在使用手动控制时，通过 time 属性实现倒计时总时长，单位为毫秒。startTime、endTime 属性失效。
+###  Manual Control
+
+Paused and restarted the countdown with the paused attribute
 
 :::demo
 
@@ -297,17 +297,17 @@ const App = () => {
         <Grid columnNum="3">
           <GridItem>
             <Button type="primary" onClick={start}>
-              开始
+              start
             </Button>
           </GridItem>
           <GridItem>
             <Button type="primary" onClick={pause}>
-              暂停
+              paused
             </Button>
           </GridItem>
           <GridItem>
             <Button type="primary" onClick={reset}>
-              重置
+              reset
             </Button>
           </GridItem>
         </Grid>
@@ -324,47 +324,43 @@ export default App;
 
 ### Props
 
-| 字段 | 说明 | 类型 | 默认值
+| Attribute | Description | Type | Default
 | ----- | ----- | ----- | -----
-| startTime | 开始时间 | Number | Date.now()
-| endTime | 结束时间 |  Number | Date.now()
-| paused | 是否暂停 | Boolean | false
-| format `v1.3.3` |  时间格式 | String | HH:mm:ss
-| millisecond `v1.3.3` |  是否开启毫秒级渲染 | Boolean | false
-| autoStart `v1.3.3` |  是否自动开始倒计时 | Boolean | true
-| time `v1.3.3` | 倒计时显示时间，单位是毫秒。autoStart 为 false 时生效 | Number | 0
-| showDays `v1.3.3废弃` | 是否显示天 | Boolean | false
-| showPlainText `v1.3.3废弃` | 显示为纯文本 | Boolean | false
+| startTime | Start Time |  Number | Date.now()
+| endTime | End Time | Number | Date.now()
+| paused | Paused | Boolean | false
+| format `v1.3.3` |  Format Time | String | HH:mm:ss
+| millisecond `v1.3.3` |  Whether to enable millisecond render | Boolean | false
+| autoStart `v1.3.3` |  Whether to auto start count down | Boolean | true
+| time `v1.3.3` | Total time, unit milliseconds | Number | 0
+| showDays `v1.3.3(Abandon)` | Show Text Day | Boolean | false
+| showPlainText `v1.3.3(Abandon)` | Show Text | Boolean | false
 
-### format 格式
+### Format
 
-| 格式 | 说明 | 
+| Name | Description | 
 | ----- | ----- | 
-| DD | 天数 | 
-| HH | 小时 | 
-| mm | 分钟 | 
-| ss | 秒数 | 
-| S | 毫秒（1位） | 
-| SS | 毫秒（2位） | 
-| SSS | 毫秒（3位） | 
+| DD | Day | 
+| HH | Hour | 
+| mm | Minute | 
+| ss | Second | 
+| S | Millisecond, 1-digit | 
+| SS | Millisecond, 2-digits | 
+| SSS | Millisecond, 3-digits | 
 
 ### Event
 
-| 字段 | 说明 | 回调参数
+| Event | Description | Arguments
 | ----- | ----- | ----- 
-| onEnd | 倒计时结束时回调函数 | 无
-| onPaused | 暂停倒计时回调函数 | 剩余时间戳
-| onRestart | 重新开始倒计时回调函数 | 剩余时间戳
-| onUpdate | 自定义展示内容时，实时更新倒计时数据回调函数 | 倒计时实时数据
+| onEnd | Emitted when count down end | Residual Timestamp
+| onPaused | Emitted when count down paused | Residual Timestamp
+| onRestart | Emitted when count down restart | Residual Timestamp
+| onUpdate | Real-time update of the countdown data callback function | Real-time countdown data
 
+### Ref
 
-### 方法
-
-通过 ref 可以获取到 CountDown 实例并调用实例方法。
-
-| 方法明 | 说明 |
+| Name | Description |
 | ----- | ----- | 
-| start | 开始倒计时 | 
-| pause | 暂停倒计时 | 
-| reset | 重设倒计时，若 auto-start 为 true，重设后会自动开始倒计时 | 
-
+| start | Count Down Start | 
+| pause | Count Down Pause | 
+| reset | Count Down Reset | 

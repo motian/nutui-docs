@@ -1,10 +1,10 @@
-# TextArea 文本域
+# TextArea
 
-### 介绍
+### Intro
 
-文本框内输入或编辑文字，支持限制输入数量。
+Enter or edit text in the text box, and limit the number of entries is supported.
 
-### 安装
+### Install
 
 ```javascript
 
@@ -12,9 +12,9 @@ import { TextArea } from '@nutui/nutui-react';
 
 ```
 
-## 代码演示
+## Demo
 
-### 基础用法
+### Basic Usage
 
 :::demo
 
@@ -50,7 +50,8 @@ export default App
 ```
 :::
 
-### 显示字数统计
+
+### Display word count
 
 :::demo
 
@@ -70,7 +71,7 @@ export default App
 ```
 :::
 
-### 高度自定义，拉伸
+### Height customization, stretching
 
 :::demo
 
@@ -90,7 +91,7 @@ export default App
 ```
 :::
 
-### 只读、禁用
+### read-only，disabled
 
 :::demo
 
@@ -101,8 +102,8 @@ import { TextArea } from '@nutui/nutui-react';
 const App = () => {
     return (
         <>
-            <TextArea readonly defaultValue="textarea只读状态" />
-            <TextArea disabled defaultValue="textarea禁用状态" limitShow maxlength="20" />
+            <TextArea readonly defaultValue="textarea readonly" />
+            <TextArea disabled defaultValue="textarea disabled" limitShow maxlength="20" />
         </>
     )
 };
@@ -110,7 +111,7 @@ export default App
 ```
 :::
 
-### 文本位置
+### TextAlign
 
 :::demo
 
@@ -121,7 +122,7 @@ import { TextArea } from '@nutui/nutui-react';
 const App = () => {
     return (
         <>
-            <TextArea defaultValue="文本居右" textAlign="right" />
+            <TextArea defaultValue="TextAlign Right" textAlign="right" />
         </>
     )
 };
@@ -133,25 +134,22 @@ export default App
 
 ### Props
 
-| 参数         | 说明                                              | 类型           | 默认值         |
-| ------------ | ------------------------------------------------- | -------------- | -------------- |
-| defaultValue | 初始默认值，支持双向绑定                          | String         | -              |
-| placeholder  | 设置占位提示文字                                  | String         | `'请输入内容'` |
-| maxlength    | 限制最长输入字符                                  | String、Number | -              |
-| rows         | textarea 的高度                                   | String、Number | `2`            |
-| limitShow    | textarea 是否展示输入字符。须配合`max-length`使用 | Boolean        | `false`        |
-| autosize     | 高度是否可拉伸                                    | Boolean        | `false`        |
-| textAlign    | 文本位置,可选值`left`,`center`,`right`            | String         | `left`         |
-| readonly     | 只读属性                                          | Boolean        | `false`        |
-| disabled     | 禁用属性                                          | Boolean        | `false`        |
+| Attribute     | Description            | Type   | Default       |
+| ------------ | ----------------------------------- | -------------- | -------------- |
+| defaultValue | input value, support two-way binding              | String         | -              |
+| placeholder  | set placeholder prompt text             | String         | ` 'please enter content' ` |
+| maxlength    | limit the maximum input characters              | String、Number | -              |
+| rows         | height of textarea, with priority higher than autosize attribute `Only H5 is supported`                                  | String、Number | `2`            |
+| limitShow    | whether textarea displays the input characters. Use | Boolean        | `false`        |
+| autosize     | whether to adapt the content height. You can also pass in objects, such as {maxheight: 200, minheight: 100}. The unit is PX          | Boolean        | `false`    |
+| textAlign    | text position, optional values ` left ,  center,  right `     | String         | `left`         |
+| readonly     | read only attribute          | Boolean        | `false`        |
+| disabled     | disable attribute           | Boolean        | `false`        |
 
 ### Events
 
-| 名称                 | 说明           | 回调参数 |
-|--------------------| -------------- | -------- |
-| change`v1.2.0（废弃）` | 输入内容时触发 | val      |
-| focus`v1.2.0（废弃）`             | 聚焦时触发     | val      |
-| blur`v1.2.0（废弃）`             | 失焦时触发     | val      |
-| onChange           | 输入内容时触发 | val      |
-| onFocus            | 聚焦时触发     | val      |
-| onBlur             | 失焦时触发     | val      |
+| Event   | Description           |Arguments  |
+| ------ | -------------- | -------- |
+| onChange | Triggered when the value of the input box changes | val      |
+| onFocus  | Triggered when focusing     | val      |
+| onBlur   | Triggered when out of focus     | val      |

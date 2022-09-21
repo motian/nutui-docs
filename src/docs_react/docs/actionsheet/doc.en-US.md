@@ -1,17 +1,17 @@
-# ActionSheet 动作面板
+# ActionSheet 
 
 
-### 介绍
-从底部弹出的动作菜单面板。
+### Intro
+Action menu panel that pops up from the bottom.
 
-### 安装
+### Install
 
 ```ts
 import { ActionSheet } from '@nutui/nutui-react';
 ```
-## 代码示例
+## Demo
 
-### 基本用法
+### Basic usage
 
 :::demo
 ```tsx
@@ -28,13 +28,13 @@ const App = () => {
   const [isVisible1, setIsVisible1] = useState(false)
   const menuItemsOne: ItemType<string>[] = [
     {
-      name: '选项一',
+      name: 'Option One',
     },
     {
-      name: '选项二',
+      name: 'Option Two',
     },
     {
-      name: '选项三',
+      name: 'Option Three',
     },
   ]
   const chooseItem = (itemParams: any) => {
@@ -47,7 +47,7 @@ const App = () => {
     <>   
     <Cell isLink onClick={() => setIsVisible1(!isVisible1)}>
       <span>
-        <label>基础用法</label>
+        <label>Basic Usage</label>
       </span>
       <div className="selected-option">{val1}</div>
     </Cell>
@@ -65,7 +65,7 @@ export default App;
 
 ```
 :::
-### 展示取消按钮
+### Show Cancel Button
 
 :::demo
 ```tsx
@@ -77,13 +77,13 @@ const App = () => {
   const [val2, setVal2] = useState('')
   const menuItemsOne: ItemType<string>[] = [
     {
-      name: '选项一',
+      name: 'Option One',
     },
     {
-      name: '选项二',
+      name: 'Option Two',
     },
     {
-      name: '选项三',
+      name: 'Option Three',
     },
   ]
   const chooseItemTwo = (itemParams: Item) => {
@@ -94,14 +94,14 @@ const App = () => {
     <>   
     <Cell isLink onClick={() => setIsVisible2(!isVisible2)}>
       <span>
-        <label>展示取消按钮</label>
+        <label>Show Cancel Button</label>
       </span>
       <div className="selected-option">{val2}</div>
     </Cell>
             
     <ActionSheet
       visible={isVisible2}
-      cancelTxt="取消"
+      cancelTxt="Cancel"
       menuItems={menuItemsOne}
       onChoose={chooseItemTwo}
       onCancel={() => setIsVisible2(false)}
@@ -113,7 +113,7 @@ export default App;
 
 ```
 :::
-### 展示描述信息
+### Display Description Information
 
 :::demo
 ```tsx
@@ -125,14 +125,14 @@ const App = () => {
   const [val3, setVal3] = useState('')
   const menuItemsTwo: ItemType<string>[] = [
     {
-      name: '选项一',
+      name: 'Option One',
     },
     {
-      name: '选项二',
+      name: 'Option Two',
     },
     {
-      name: '选项三',
-      subname: '描述信息',
+      name: 'Option Three',
+      subname: 'Description Information',
     },
   ]
   const chooseItemThree = (itemParams: Item) => {
@@ -143,17 +143,17 @@ const App = () => {
     <>   
     <Cell isLink onClick={() => setIsVisible3(!isVisible3)}>
       <span>
-        <label>展示描述信息</label>
+        <label>Display Description Information</label>
       </span>
       <div className="selected-option">{val3}</div>
     </Cell>
     <ActionSheet
       visible={isVisible3}
-      title='ActionSheet'
-      description="这是一段描述信息"
-      cancelTxt="取消"
+      description="This is a descriptive message"
+      cancelTxt="Cancel"
       menuItems={menuItemsTwo}
       onChoose={chooseItemThree}
+      
       onCancel={() => setIsVisible3(false)}
      />
     </>
@@ -163,7 +163,7 @@ export default App;
 
 ```
 :::
-### 选项状态
+### Option Status
 
 :::demo
 ```tsx
@@ -174,10 +174,10 @@ const App = () => {
   const [isVisible4, setIsVisible4] = useState(false)
   const menuItemsThree: ItemType<string | boolean>[] = [
     {
-      name: '着色选项',
+      name: 'Shading Options',
     },
     {
-      name: '禁用选项',
+      name: 'Disable Option',
       disable: true,
     },
   ]
@@ -185,15 +185,16 @@ const App = () => {
     <>   
     <Cell isLink onClick={() => setIsVisible4(!isVisible4)}>
       <span>
-        <label>选项状态</label>
+        <label>Option Status</label>
       </span>
     </Cell>
     <ActionSheet
       visible={isVisible4}
-      cancelTxt="取消"
+      cancelTxt="Cancel"
       menuItems={menuItemsThree}
-      chooseTagValue="着色选项"
+      chooseTagValue="Shading Options"
       onCancel={() => setIsVisible4(false)}
+      
       onChoose={() => {
         setIsVisible4(false)
       }}
@@ -208,22 +209,22 @@ export default App;
 
 ## Prop
 
-| 字段             | 说明                                   | 类型    | 默认值    |
+| Attribute             | Description                                   | Type    | Default    |
 |------------------|----------------------------------------|---------|-----------|
-| visible       | 遮罩层可见 | Boolean | false     |
-| cancelTxt       | 取消文案 | String  | '取消'    |
-| menuItems       | 列表项 | Array   | [ ]       |
-| optionTag       | 设置列表项展示使用参数 | String  | 'name'    |
-| optionSubTag   | 设置列表项描述展示使用参数 | String  | 'subname' |
-| title            | 设置列表面板标题 | String  | ''        |
-| description      | 设置列表面板副标题/描述 | String  | ''        |
-| chooseTagValue | 设置选中项的值，和'option-tag'的值对应 | String  | ''        |
-| color            | 高亮颜色 | String  | '#ee0a24' |
+| visible       | Mask layer visible  | Boolean | false     |
+| cancelTxt       | Cancel Text                               | String  | 'Cancel'    |
+| menuItems       | Menu Item                                 | Array   | [ ]       |
+| optionTag       | Set menu item display usage parameters                 | String  | 'name'    |
+| optionSubTag   | Set menu item description display usage parameters             | String  | 'subname' |
+| title            | Set panel title                         | String  | ''        |
+| description      | Set panel subtitle/description                  | String  | ''        |
+| chooseTagValue | Set selected item'value, corresponds to the value of 'option-tag' | String  | ''        |
+| color            | highlight color                               | String  | '#ee0a24' |
 
 
 ## Event
 
-| 字段   | 说明               | 回调参数                          |
+| Attribute   | Description               | Arguments                          |
 |--------|--------------------|-----------------------------------|
-| onChoose`v1.3.2` | 选择之后触发       | 选中列表项item, 选中的索引值index |
-| onCancel`v1.3.2` | 点击取消文案时触发 | 无                                |
+| onChoose`v1.3.2` | Triggered after selection       | Selected list item item, selected index value index |
+| onCancel`v1.3.2` | Triggered when onCancel copy is clicked | none                                |

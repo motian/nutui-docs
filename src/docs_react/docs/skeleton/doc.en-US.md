@@ -1,36 +1,18 @@
-#  Skeleton 骨架屏组件
+#  Skeleton
 
-### 介绍
+### Intro
 
-在页面上待加载区域填充灰色的占位图，本质上是界面加载过程中的过渡效果。
+Filling gray bitmap in the area to be loaded on the page is essentially the transition effect in the process of interface loading.
 
-### 安装
+### Install
 ``` ts
 import { Skeleton } from '@nutui/nutui-react';
 ```
 
 
-## 代码演示
+## Code demonstration
 
-### 基础用法
-
-:::demo
-```tsx
-import React from "react";
-import { Skeleton } from '@nutui/nutui-react';
-
-const App = () => {
-  return (
-    <>
-      <Skeleton width="250px" height="15px" animated />
-    </>
-  )
-}
-export default App;
-```
-:::
-
-### 传入多行
+### Basic usage
 
 :::demo
 ```tsx
@@ -40,7 +22,7 @@ import { Skeleton } from '@nutui/nutui-react';
 const App = () => {
   return (
     <>
-      <Skeleton width="250px" height="15px" row={3} title animated />
+      <Skeleton width={250} height={15} animated />
     </>
   )
 }
@@ -48,7 +30,7 @@ export default App;
 ```
 :::
 
-### 显示头像
+### Incoming multiline
 
 :::demo
 ```tsx
@@ -58,7 +40,7 @@ import { Skeleton } from '@nutui/nutui-react';
 const App = () => {
   return (
     <>
-      <Skeleton width="250px" height="15px" row={3} title animated avatar avatarSize="100px" />
+      <Skeleton width={250} height={15} row={3} title animated />
     </>
   )
 }
@@ -66,7 +48,7 @@ export default App;
 ```
 :::
 
-### 标题段落圆角风格
+### Show Faces
 
 :::demo
 ```tsx
@@ -76,7 +58,7 @@ import { Skeleton } from '@nutui/nutui-react';
 const App = () => {
   return (
     <>
-      <Skeleton width="250px" height="15px" animated round />
+      <Skeleton width={250} height={15} row={3} title animated avatar />
     </>
   )
 }
@@ -84,7 +66,25 @@ export default App;
 ```
 :::
 
-### 显示子组件
+### Title paragraph fillet style
+
+:::demo
+```tsx
+import React from "react";
+import { Skeleton } from '@nutui/nutui-react';
+
+const App = () => {
+  return (
+    <>
+      <Skeleton width={250} height={15} animated round />
+    </>
+  )
+}
+export default App;
+```
+:::
+
+### Display subcomponents
 
 :::demo
 ```tsx
@@ -131,15 +131,15 @@ export default App;
 
 ### Prop  
 
-| 字段       | 说明                                             | 类型    | 默认值    |
+| Attribute       | Description                                             | Type    | Default    |
 |------------|-------------------------------------------------|---------|----------|
-| loading    | 是否显示骨架屏(true不显示骨架屏，false显示骨架屏)                                    | Boolean | `true`    | 
-| width       | 每行宽度(px单位)                                       | String  | `100px` |
-| height      | 每行高度(px单位)                                        | String  | `100px`   |
-| animated    | 是否开启骨架屏动画                                | Boolean  | `false`  |
-| avatar      | 是否显示头像                                     | Boolean | `false`   |
-| avatarShape      | 头像形状：正方形/圆形                        | String | `round`   |
-| avatarSize       | 头像大小                                   | String | `50px`    |
-| round  | 标题/段落是否采用圆角风格                                | Boolean | `false`  |
-| row    | 设置段落行数                                           | String | `1`       |
-| title  | 是否显示段落标题                                        | Boolean | `true`   |
+| loading    | Whether to display skeleton screen                                    | Boolean | `false`    | 
+| width       | Width per row                                        | Number  | 100 |
+| height      | Height of each row                                        | Number  | 100   |
+| animated    | Whether to turn on skeleton screen animation                                | Boolean  | `false`  |
+| avatar      | Show avatar                                     | Boolean | `false`   |
+| avatarShape      | Avatar shape: square / round                        | String | `round`   |
+| avatarSize       | Avatar size                                   | String | `50px`    |
+| round  | Is the title / paragraph rounded                                | Boolean | `false`  |
+| row    | Set the number of paragraph lines                                           | Number | 1       |
+| title  | Show paragraph titles                                        | Boolean | `false`   |

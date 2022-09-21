@@ -1,18 +1,18 @@
-#  Layout 布局
+# Layout layout
 
-### 介绍
+### introduce
 
-用于快速进行布局
+for quick layout
 
-### 安装
-```javascript
-import { Row, Col } from '@nutui/nutui-react'
-```
+### Install
+````javascript
+import { Layout,Row,Col } from '@nutui/nutui-react'
+````
 
 
-## 代码演示
+## code demo
 
-### 基础布局
+### Basic layout
 
 :::demo
 ``` tsx
@@ -68,7 +68,8 @@ export default App;
 ```
 
 :::demo
-### 分栏间隔
+### column interval
+
 
 ``` tsx
 import React from "react";
@@ -92,8 +93,9 @@ const App = () => {
 export default App;
 ```
 
-:::demo
-### Flex布局
+
+### Flex layout
+
 
 ``` tsx
 import React from "react";
@@ -179,34 +181,34 @@ export default App;
 ```
 
 
+
 ## API
 
 ### row
 
-| 字段         | 说明                             | 类型   | 默认值           |
-|--------------|----------------------------------|--------|------------------|
-| type         | 布局方式，可选值为flex              | String | -                |
-| gutter        | 列元素之间的间距（单位为px）         | String、Number | 0      |
-| justify       | Flex 主轴对齐方式，可选值为 start end center space-around space-between| String | start               |
-| align	 | Flex 交叉轴对齐方式，可选值为 flex-start center flex-end     | String | flex-start |
-| wrap          | Flex是否换行，可选值为 nowrap wrap reverse    | String | nowrap              |
+| Field | Description | Type | Default Value |
+|---------------|---------------------------------- |---------|-----------------|
+| type | Layout mode, optional value is flex | String | - |
+| gutter | The spacing between column elements (in px) | String, Number | 0 |
+| justify | Flex main axis alignment, optional value is start end center space-around space-between| String | start |
+| align | Flex cross-axis alignment, optional value is flex-start center flex-end | String | flex-start |
+| wrap | Whether Flex wraps, the optional value is nowrap wrap reverse | String | nowrap |
 
 ### col
 
-| 字段 | 说明           | 类型     | 默认值           |
-|--------|----------------|--------------| ------------------|
-| span  | 列元素宽度（共分为24份，例如设置一行3个，那么span值为8） | String、Number| 24|
-| offset  | 列元素偏移距离 | String、Number| 0 |
+| Field | Description | Type | Default Value |
+|---------|----------------|-------------| ------------------|
+| span | Column element width (divided into 24 parts, for example, if a row is set to 3, then the span value is 8) | String, Number| 24|
+| offset | Column element offset distance | String, Number| 0|
 
 ### row events
 
-| 字段 | 说明 | 回调参数 |
-|----- | ----- | ----- |
-| onClick`v1.3.0` | 点击时触发 | event: MouseEvent, type: 'row' | 'col' |
+| Fields | Description | Callback Parameters
+|----- | ----- | -----
+| onClick | Fired when clicked | event: MouseEvent, type: 'row' | 'col'
 
 ### col events
 
-| 字段 | 说明 | 回调参数 |
-|----- | ----- | ----- |
-| onClick`v1.3.0` | 点击时触发 | event: MouseEvent, type: 'row' | 'col' |
-
+| Fields | Description | Callback Parameters
+|----- | ----- | -----
+| onClick | Fired when clicked | event: MouseEvent, type: 'row' | 'col'

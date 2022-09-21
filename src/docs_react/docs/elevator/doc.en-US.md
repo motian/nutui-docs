@@ -1,18 +1,19 @@
-# Elevator 电梯楼层
+# Elevator
 
-### 介绍
+### Intro
 
-用于列表快速定位以及索引的显示
 
-### 安装
+It is used to quickly locate the list and display the index
+
+### Install
 
 ```javascript
 import { Elevator } from '@nutui/nutui-react'
 ```
 
-## 代码演示
+## Demo
 
-### 基本用法
+### Basic Usage
 
 :::demo
 
@@ -26,7 +27,7 @@ const App = () => {
       title: 'A',
       list: [
         {
-          name: '安徽',
+          name: 'AnHui',
           id: 1,
         },
       ],
@@ -35,7 +36,7 @@ const App = () => {
       title: 'B',
       list: [
         {
-          name: '北京',
+          name: 'BeiJing',
           id: 2,
         },
       ],
@@ -44,11 +45,11 @@ const App = () => {
       title: 'G',
       list: [
         {
-          name: '广西',
+          name: 'GuangXi',
           id: 3,
         },
         {
-          name: '广东',
+          name: 'GuangDong',
           id: 4,
         },
       ],
@@ -57,15 +58,15 @@ const App = () => {
       title: 'H',
       list: [
         {
-          name: '湖南',
+          name: 'HuNan',
           id: 5,
         },
         {
-          name: '湖北',
+          name: 'HuBei',
           id: 6,
         },
         {
-          name: '河南',
+          name: 'Henan',
           id: 7,
         },
       ],
@@ -92,8 +93,7 @@ export default App
 
 :::
 
-### 自定义索引
-
+### Custom index
 
 :::demo
 
@@ -104,100 +104,100 @@ import { Elevator } from '@nutui/nutui-react'
 const App = () => {
   const dataList = [
     {
-      num: '一',
+      num: 'One',
       list: [
         {
-          name: '北京',
+          name: 'BeiJing',
           id: 1,
         },
         {
-          name: '上海',
+          name: 'ShangHai',
           id: 2,
         },
         {
-          name: '深圳',
+          name: 'ShenZhen',
           id: 3,
         },
         {
-          name: '广州',
+          name: 'GuangZhou',
           id: 4,
         },
         {
-          name: '杭州',
+          name: 'HangZhou',
           id: 5,
         },
       ],
     },
     {
-      num: '二',
+      num: 'Two',
       list: [
         {
-          name: '成都',
+          name: 'ChengDu',
           id: 6,
         },
         {
-          name: '西安',
+          name: 'XiAn',
           id: 7,
         },
         {
-          name: '天津',
+          name: 'TianJin',
           id: 8,
         },
         {
-          name: '武汉',
+          name: 'WuHan',
           id: 9,
         },
         {
-          name: '长沙',
+          name: 'ChangSha',
           id: 10,
         },
         {
-          name: '重庆',
+          name: 'ChongQin',
           id: 11,
         },
         {
-          name: '苏州',
+          name: 'SuZhou',
           id: 12,
         },
         {
-          name: '南京',
+          name: 'NanJing',
           id: 13,
         },
       ],
     },
     {
-      num: '三',
+      num: 'Three',
       list: [
         {
-          name: '西宁',
+          name: 'XiNing',
           id: 14,
         },
         {
-          name: '兰州',
+          name: 'LanZhou',
           id: 15,
         },
         {
-          name: '石家庄',
+          name: 'ShiJiaZhuang',
           id: 16,
         },
         {
-          name: '秦皇岛',
+          name: 'QinHuangDao',
           id: 17,
         },
         {
-          name: '大连',
+          name: 'DaLian',
           id: 18,
         },
         {
-          name: '哈尔滨',
+          name: 'HaErBin',
           id: 19,
         },
         {
-          name: '长春',
+          name: 'ChangChun',
           id: 20,
         },
         {
-          name: '太原',
+          name: 'TaiYuan',
           id: 21,
         },
       ],
@@ -225,8 +225,7 @@ export default App
 
 :::
 
-### 吸顶索引
-
+### Index ceiling
 
 :::demo
 
@@ -240,7 +239,7 @@ const App = () => {
       title: 'A',
       list: [
         {
-          name: '安徽',
+          name: 'AnHui',
           id: 1,
         },
       ],
@@ -249,7 +248,7 @@ const App = () => {
       title: 'B',
       list: [
         {
-          name: '北京',
+          name: 'BeiJing',
           id: 2,
         },
       ],
@@ -258,7 +257,7 @@ const App = () => {
       title: 'C',
       list: [
         {
-          name: '重庆',
+          name: 'ChongQin',
           id: 3,
         },
       ],
@@ -267,7 +266,7 @@ const App = () => {
       title: 'F',
       list: [
         {
-          name: '福建',
+          name: 'FuJian',
           id: 4,
         },
       ],
@@ -276,19 +275,19 @@ const App = () => {
       title: 'G',
       list: [
         {
-          name: '广西',
+          name: 'GuangXi',
           id: 5,
         },
         {
-          name: '广东',
+          name: 'GuangDong',
           id: 6,
         },
         {
-          name: '甘肃',
+          name: 'GanSu',
           id: 7,
         },
         {
-          name: '贵州',
+          name: 'GuiZhou',
           id: 8,
         },
       ],
@@ -297,27 +296,27 @@ const App = () => {
       title: 'H',
       list: [
         {
-          name: '湖南',
+          name: 'HuNan',
           id: 9,
         },
         {
-          name: '湖北',
+          name: 'HuBei',
           id: 10,
         },
         {
-          name: '海南',
+          name: 'HaiNan',
           id: 11,
         },
         {
-          name: '河北',
+          name: 'HeBei',
           id: 12,
         },
         {
-          name: '河南',
+          name: 'HeNan',
           id: 13,
         },
         {
-          name: '黑龙江',
+          name: 'HeiLongJiang',
           id: 14,
         },
       ],
@@ -326,15 +325,15 @@ const App = () => {
       title: 'J',
       list: [
         {
-          name: '吉林',
+          name: 'JiLin',
           id: 15,
         },
         {
-          name: '江苏',
+          name: 'JiangSu',
           id: 16,
         },
         {
-          name: '江西',
+          name: 'JiangXi',
           id: 17,
         },
       ],
@@ -343,7 +342,7 @@ const App = () => {
       title: 'L',
       list: [
         {
-          name: '辽宁',
+          name: 'LiaoNing',
           id: 18,
         },
       ],
@@ -372,7 +371,7 @@ export default App
 :::
 
 
-### 自定义内容
+### Custom Content
 
 :::demo
 
@@ -386,7 +385,7 @@ const App = () => {
       title: 'A',
       list: [
         {
-          name: '安徽',
+          name: 'AnHui',
           id: 1,
         },
       ],
@@ -395,7 +394,7 @@ const App = () => {
       title: 'B',
       list: [
         {
-          name: '北京',
+          name: 'BeiJing',
           id: 2,
         },
       ],
@@ -404,11 +403,11 @@ const App = () => {
       title: 'G',
       list: [
         {
-          name: '广西',
+          name: 'GuangXi',
           id: 3,
         },
         {
-          name: '广东',
+          name: 'GuangDong',
           id: 4,
         },
       ],
@@ -417,15 +416,15 @@ const App = () => {
       title: 'H',
       list: [
         {
-          name: '湖南',
+          name: 'HuNan',
           id: 5,
         },
         {
-          name: '湖北',
+          name: 'HuBei',
           id: 6,
         },
         {
-          name: '河南',
+          name: 'Henan',
           id: 7,
         },
       ],
@@ -467,21 +466,21 @@ export default App
 
 ### Props
 
-| 字段                  | 说明           | 类型                                                        | 默认值                |
-|---------------------| -------------- | ----------------------------------------------------------- | --------------------- |
-| height              | 电梯区域的高度 | Number、String                                              | `200px`               |
-| acceptKey           | 索引 key 值    | String                                                      | `title`               |
-| indexList           | 索引列表       | Array（item 需包含 id、name 属性, name 支持传入 html 结构） | `[{id: 0, name: ''}]` |
-| isSticky`v1.2.1`    | 索引是否吸顶                                                    | Boolean  | `false` |
-| spaceHeight`v1.2.1` | 右侧锚点的上下间距                                                   | Number  | `23` |
-| titleHeight`v1.2.1`   | 左侧索引的高度                                                     | Number  | `35` |
+| Attribute                   | Description                                                             | Type    | Default |
+|------------------------|----------------------------------------------------------------|---------|------|
+| height                 | Height of elevator area                                                    | Number、String  | `200px`
+| acceptKey             | Index key value                                                      | String  | `title` |
+| indexList             | Index list                                                         | Array（`item` needs to contain `id` and `name` attributes, and `name` supports passing in `html` structure）  | `[{id: 0, name: ''}]` |
+| isSticky`v1.2.1`            | Whether the index is ceiling                                                    | Boolean  | `false` |
+| spaceHeight`v1.2.1`             | Up and down spacing of right anchor point              | Number  | `23` |
+| titleHeight`v1.2.1`             | Height of left index                                                     | Number  | `35` |
 
 ### Event
 
-| 名称       | 说明     | 回调参数                               |
-| ---------- | -------- | -------------------------------------- |
-| onClickItem`v1.3.2`  | 点击内容 | key: string, item: { id: 0, name: '' } |
-| onClickIndex`v1.3.2` | 点击索引 | key: string                            |
-| clickItem`v1.3.2(废弃)`  | 点击内容 | key: string, item: { id: 0, name: '' } |
-| clickIndex`v1.3.2(废弃)` | 点击索引 | key: string                            |
+| Event  | Description     | Arguments    |
+|-------|----------|-------------|
+| onClickItem`v1.3.2` | Click content | key: string, item: { id: 0, name: '' } |
+| onClickIndex`v1.3.2` | Click index | key: string |
+| clickItem`v1.3.2(废弃)` | Click content | key: string, item: { id: 0, name: '' } |
+| clickIndex`v1.3.2(废弃)` | Click index | key: string |
 

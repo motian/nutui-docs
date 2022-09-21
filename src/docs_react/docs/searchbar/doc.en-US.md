@@ -1,21 +1,21 @@
-#  SearchBar组件
+#  SearchBar
 
-### 介绍
+### introduce
 
-用于搜索场景的输入框组件。
+The input box component used to search the scene.
 
-### 安装
+### Install
 
 ```javascript
 import { SearchBar } from '@nutui/nutui-react';
 
 ```
 
-## 代码演示
+## Code demonstration
 
-### 基础用法
+### Basic usage
 
-`SearchBar` 的 `placeholder` 属性支持自定义。
+`SearchBar`'s `placeholder` 'attribute supports customization.
 
 :::demo
 ```tsx
@@ -24,16 +24,16 @@ import { SearchBar } from '@nutui/nutui-react';
 
 const App = () => {
   return <>
-    <SearchBar placeholder="上京东，购好物" />
+    <SearchBar placeholder="Go to jd.com and buy good things" />
   </>
 }
 export default App;
 ```
 :::
 
-### 搜索框形状及最大长度
+### Search box shape and maximum length
 
-`SearchBar` 的 `round` 属性支持定义圆角直角，`maxLength` 可控制输入字符的最大长度。
+`SearchBar`'s `round` Attribute supports defining fillet right angles，`maxLength` Can control the maximum length of input characters。
 
 :::demo
 ```tsx
@@ -50,10 +50,9 @@ export default App;
 :::
 
 
-### 搜索框内外背景设置
+### Background settings inside and outside the search box
 
-`SearchBar` 的 `background` 属性可以设置搜索框外部的背景色，`inputBackground` 属性可以设置搜索框的背景色，
-`align` 设置文本对齐方式
+`SearchBar`'s `background` Property to set the background color outside the search box，`inputBackground` Property to set the background color of the search box，`align` Set text alignment
 
 :::demo
 ```tsx
@@ -73,9 +72,9 @@ export default App;
 ```
 :::
 
-### 搜索框文本设置
+### Search box text settings
 
-`SearchBar` 的 `label` 属性可以设置搜索框左侧文本，`actionText` 属性可以设置取消按钮文本
+`SearchBar`’s `label` Property to set the text on the left side of the search box，`actionText` Property to set the Cancel button text
 
 :::demo
 ```tsx
@@ -84,7 +83,7 @@ import { SearchBar } from '@nutui/nutui-react';
 
 const App = () => {
   return <>
-    <SearchBar label="文本" actionText="测试" />
+    <SearchBar label="text" actionText="test" />
   </>
 }
 export default App;
@@ -93,9 +92,9 @@ export default App;
 :::
 
 
-### 自定义图标设置
+### Customize icon settings
 
-`SearchBar` 的 `leftoutIcon` `rightoutIcon` 属性可以设置左右的图标或者自定义内容
+`SearchBar`'s `leftoutIcon` `rightoutIcon` Property can set the left and right icons or customize the content
 
 :::demo
 ```tsx
@@ -117,9 +116,9 @@ export default App;
 
 
 
-### 数据改变监听
+### Data change monitoring
 
-`SearchBar` 的 `change` 可获取输入的内容。
+`SearchBar`'s `change` You can get the input content.
 
 :::demo
 ```tsx
@@ -148,38 +147,38 @@ export default App;
 
 ### Props
 
-| 参数         | 说明                             | 类型   | 默认值           |
+|Parameter | description | type | default value|
 |--------------|----------------------------------|--------|------------------|
-| value         | 当前输入的值               | _string_ | -                |
-| placeholder        | 输入框默认暗纹  | _string_ | `请输入`   |
-| className | 自定义class类名 | _string_ | '' |
-| shape | 搜索框形状，可选值为 `round` | _string_ | `square` |
-| disabled | 是否禁用输入框 | _boolean_ | `false` |
-| readonly | 输入框只读 | _boolean_ | `false` |
-| maxLength         | 最大输入长度   | _number_ | `9999`   |
-| clearable          | 是否展示清除按钮 | _boolean_ | `true`     |
-| background          | 搜索框外部背景色 | _string_ | -     |
-| inputBackground          | 搜索框背景色 | _string_ | -     |
-| inputAlign | 对齐方式，可选 `center` `right` | _string_ | `left` |
-| autofocus  | 是否自动聚焦 | _boolean_ | `false` |
-| label | 搜索框左侧文本 | _string_ | '' |
-| actionText | 取消按钮文本 | _ReactNode_ | '' |
-| leftinIcon     | 输入框内，左icon  | _ReactNode_ | `<Icon name="search" size="12" />` |
-| rightinIcon     | 输入框内，右icon | _ReactNode_ | - |
-| leftoutIcon     | 输入框外，左icon | _ReactNode_ | - |
-| rightoutIcon    | 输入框外，右icon | _ReactNode_ | - |
+|value | current input value | _string_ | - |
+|placeholder | input box default dark texture | _string_ | ` Please enter `|
+|classname | custom class name | _string_ | '' |
+|shape | search box shape, the optional value is 'round '| _string_ | ` square` |
+|disabled | whether to disable the input box | _boolean_ | ` false` |
+|readonly | the input box is read-only | _boolean_ | ` false` |
+|maxLength | maximum input length | _number_ | ` 9999` |
+|clearable | whether to display the clear button | _boolean_ | ` true` |
+|background | search box external background color |_string_ | - |
+|inputbackground | search box background color |_string_ | - |
+|inputalign | alignment, optional `center` `right` | _string_ | ` left` |
+|autofocus | auto focus | _boolean_ | ` false` |
+|label | left text of search box | _string_ | '' |
+|actiontext | cancel button text | _ReactNode_ | '' |
+|leftinicon | input box, left Icon | _ReactNode_ | `< Icon name="search" size="12" />` |
+|rightinicon | input box, right icon | _ReactNode_ | - |
+|leftouticon | outside the input box, left Icon | _ReactNode_ | - |
+|rightouticon | outside the input box, right icon | _ReactNode_ | - |
 
 ### Events
 
-| 事件名 | 说明           | 回调参数     |
+|Event name | description | callback parameters|
 |--------|----------------|--------------|
-| onChange  | 输入内容时触发 | _val: string, event: Event_ |
-| onFocus  | 聚焦时触发 | _val: string, event: Event_ |
-| onBlur  | 失焦时触发 | _val: string, event: Event_ |
-| onClear  | 点击清空时触发 | _event: Event_ |
-| onSearch  | 确定搜索时触发 | _val: string, event: Event_ |
-| onClickInput |	点击输入区域时触发	 |	_event: Event_ |
-| onClickLeftinIcon |	点击输入框`内左侧`图标时触发 |	_val: string, event: Event_ |
-| onClickLeftoutIcon |	点击输入框`外左侧`图标时触发 |	_val: string, event: Event_ |
-| onClickRightinIcon |	点击输入框`内右侧`图标时触发 |	_val: string, event: Event_ |
-| onClickRightoutIcon |	点击输入框`外右侧`图标时触发 |	_val: string, event: Event_ |
+|onChange | triggered when entering content | _val: string, event: Event_ |
+|onFocus | triggered when focusing | _val: string, event: Event_ |
+|onBlur | triggered when out of focus | _val: string, event: Event_ |
+|onClear | triggered when clicking clear | _event: Event_ |
+|onSearch | trigger when confirming search | _val: string, event: Event_ |
+|onClickInput | triggered when clicking the input area | _event: Event_ |
+|onClickLeftinIcon | triggered when clicking the icon on the left side of the input box | _val: string, event: Event_ |
+|onClickLeftoutIcon | triggered when clicking the icon on the left outside of the input box | _val: string, event: Event_ |
+|onClickRightinIcon | triggered when clicking the icon on the right side of the input box | _val: string, event: Event_ |
+|onClickRightoutIcon | triggered when clicking the icon on the right side of the input box | _val: string, event: Event_ |

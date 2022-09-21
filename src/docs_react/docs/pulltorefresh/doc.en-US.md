@@ -1,18 +1,18 @@
-# PullToRefresh 下拉刷新
+# PullToRefresh
 
-### 介绍
+### Intro
 
-在列表中通过手指下拉刷新加载新内容的交互操作。
+An interaction to load new content with a finger pull-to-refresh in a list.
 
-### 安装
+### Install
 
 ```js
 import { PullToRefresh } from '@nutui/nutui-react';
 ```
 
-## 代码演示
+## Demo
 
-### 基础用法
+### Basic usage
 
 :::demo
 
@@ -25,7 +25,6 @@ const App = () => {
   return (
     <>
       <div className="demo">
-        <h2>基础用法</h2>
         <PullToRefresh>
           {list.map((item) => (
             <Cell key={item}>{item}</Cell>
@@ -45,17 +44,17 @@ export default App
 
 ### Props
 
-| 字段 | 说明 | 类型 | 默认值 |
-|--------------|----------------------------------|-----------|--|
-| canReleaseText | 释放的提示文案 | `ReactNode` | `释放立即刷新` |
-| completeText | 完成时的提示文案 | ReactNode | `刷新成功` |
-| completeDelay | 完成后延迟消失的时间，单位为 ms | number | `500` |
-| disabled | 是否禁用下拉刷新 | boolean | `false` |
-| headHeight | 头部提示内容区的高度，单位为 px | number | `40` |
-| pullingText | 下拉的提示文案 | ReactNode | `下拉刷新` |
-| refreshingText | 刷新时的提示文案 | ReactNode | `加载中……` |
-| renderText | 根据下拉状态，自定义下拉提示文案 | ReactNode | `-` |
-| threshold | 触发刷新需要下拉多少距离，单位为 px | number | `60` |
+| Field | Description | Type | Default Value |
+|---------------|---------------------------------- |------------|--|
+| canReleaseText | Release prompt text | `ReactNode` | `Release immediate refresh` |
+| completeText | Prompt text when complete | ReactNode | `Refresh successful` |
+| completeDelay | The time for the delay to disappear after completion, in ms | number | `500` |
+| disabled | Whether to disable pull-to-refresh | boolean | `false` |
+| headHeight | The height of the head tip content area, in px | number | `40` |
+| pullingText | Pull down text | ReactNode | `Pull to refresh` |
+| refreshingText | Refresh text when refreshing | ReactNode | `Loading...` |
+| renderText | Customize the drop-down prompt text according to the drop-down state | ReactNode | `-` |
+| threshold | How far to pull down to trigger refresh, the unit is px | number | `60` |
 
 ### Events
 

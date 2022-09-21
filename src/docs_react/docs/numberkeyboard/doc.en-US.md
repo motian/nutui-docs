@@ -1,18 +1,18 @@
-#  NumberKeyboard 数字键盘
+#  NumberKeyboard 
 
-### 介绍
+### Introduce
 
-虚拟数字键盘，用于输入支付密码的场景。
+Virtual numeric keypad, used for scenarios where payment passwords are entered.
 
-### 安装
+### Install
 ```js
 import { NumberKeyboard } from '@nutui/nutui-react';
 ```
 
 
-## 代码演示
+## Demo
 
-### 基础用法
+### Default Keyboard
 :::demo
 ```tsx
 import React, { useState } from "react";
@@ -21,15 +21,15 @@ import { Cell,NumberKeyboard,Toast } from '@nutui/nutui-react';
 const App = () => {
   const [visible,setVisible] = useState(false)
   const onChange = (number: string) => {
-    Toast.text(`输入：${number}`)
+    Toast.text(`enter:${number}`)
   }
   const onDelete = () => {
-    Toast.text('删除')
+    Toast.text('delete')
   }
   return (
      <>
        <Cell
-        title="基础用法"
+        title="Default Keyboard"
         isLink
         onClick={() => {
           setVisible(true)
@@ -49,7 +49,7 @@ export default App;
 ```
 :::
 
-### 带右侧栏键盘
+### Keyboard With Sidebar
 :::demo
 ```tsx
 import React, { useState } from "react";
@@ -58,15 +58,15 @@ import { Cell,NumberKeyboard,Toast } from '@nutui/nutui-react';
 const App = () => {
   const [visible,setVisible] = useState(false)
   const onChange = (number: string) => {
-    Toast.text(`输入：${number}`)
+    Toast.text(`enter:${number}`)
   }
   const onDelete = () => {
-    Toast.text('删除')
+    Toast.text('delete')
   }
   return (
      <>
        <Cell
-        title="带右侧栏键盘"
+        title="Keyboard With Sidebar"
         isLink
         onClick={() => {
           setVisible(true)
@@ -88,7 +88,7 @@ export default App;
 ```
 :::
 
-### 随机数键盘
+###  Random Key Order
 :::demo
 ```tsx
 import React, { useState } from "react";
@@ -97,22 +97,22 @@ import { Cell,NumberKeyboard,Toast } from '@nutui/nutui-react';
 const App = () => {
   const [visible,setVisible] = useState(false)
   const onChange = (number: string) => {
-    Toast.text(`输入：${number}`)
+    Toast.text(`enter:${number}`)
   }
   const onDelete = () => {
-    Toast.text('删除')
+    Toast.text('delete')
   }
   return (
      <>
        <Cell
-        title="随机数键盘"
+        title=" Random Key Order"
         isLink
         onClick={() => {
           setVisible(true)
         }}
        />
         <NumberKeyboard
-         visible={visible}
+        visible={visible}
         randomKeys
         onChange={onChange}
         onDelete={onDelete}
@@ -125,7 +125,7 @@ export default App;
 
 ```
 :::
-### 带标题栏键盘
+### Show Keyboard With Title
 :::demo
 ```tsx
 import React, { useState } from "react";
@@ -134,15 +134,15 @@ import { Cell,NumberKeyboard,Toast } from '@nutui/nutui-react';
 const App = () => {
   const [visible,setVisible] = useState(false)
   const onChange = (number: string) => {
-    Toast.text(`输入：${number}`)
+    Toast.text(`enter:${number}`)
   }
   const onDelete = () => {
-    Toast.text('删除')
+    Toast.text('delete')
   }
   return (
      <>
        <Cell
-        title="带标题栏键盘"
+        title="Show Keyboard With Title"
         isLink
         onClick={() => {
           setVisible(true)
@@ -150,7 +150,7 @@ const App = () => {
        />
         <NumberKeyboard
         visible={visible}
-        title="标题"
+        title="title"
         customKey={['.']}
         onChange={onChange}
         onDelete={onDelete}
@@ -163,7 +163,7 @@ export default App;
 
 ```
 :::
-### 身份证键盘
+### Show IdNumber Keyboard
 :::demo
 ```tsx
 import React, { useState } from "react";
@@ -172,15 +172,15 @@ import { Cell,NumberKeyboard,Toast } from '@nutui/nutui-react';
 const App = () => {
   const [visible,setVisible] = useState(false)
   const onChange = (number: string) => {
-    Toast.text(`输入：${number}`)
+    Toast.text(`enter:${number}`)
   }
   const onDelete = () => {
-    Toast.text('删除')
+    Toast.text('delete')
   }
   return (
      <>
        <Cell
-        title="身份证键盘"
+        title="Show IdNumber Keyboard"
         isLink
         onClick={() => {
           setVisible(true)
@@ -207,21 +207,21 @@ export default App;
 
 ### Props
 
-| 字段 | 说明 | 类型 | 默认值 |
+| Attribute | Description | Type | Default |
 |----- | ----- | ----- | ----- |
-| visible | 是否显示键盘 | Boolean | false | 
-| title | 键盘标题 | String | - |
-| type | 键盘模式  | String | `default`：默认样式 `rightColumn`：带右侧栏 |
-| randomKeys | 随机数  | Boolean | false |
-| customKey | 自定义键盘额外的键  | String [] | 数组形式最多支持添加2个,超出默认取前2项 |
-| confirmText  | 自定义完成按钮文字，如"支付"，"下一步"，"提交"等 | String | 完成 |
-| pop-class    | 自定义弹框类名     | String         | -             |
+| visible | Whether to show keyboard  | Boolean | false | 
+| title | Keyboard title | String | - |
+| type | Keyboard type  | String | `default`, `rightColumn` |
+| randomKeys | Whether to shuffle the order of keys  | Boolean | false |
+| customKey | Content of bottom left key   | String [] |  Array form supports adding up to two |
+| confirmText  | Custom done button text,Such as "pay", "next", "submit" | String | done |
+| pop-class    | Custom bullet box classname     | String         | -             |
 
 
 ### Event
 
-| 字段 | 说明 | 回调参数
+| Event | Description | Arguments
 |----- | ----- | -----
-| onChange  | 点击按键时触发                 | value: string |
-| onDelete | 点击删除键时触发               | -             |
-| onClose  | 点击关闭按钮或非键盘区域时触发  | -             |
+| onChange  | Emitted when a key is pressed                   | value: string |
+| onDelete | 	Emitted when the delete key is pressed                | -             |
+| onClose  | Emitted when the close button or non-keyboard area is clicked is clicked   | -             |

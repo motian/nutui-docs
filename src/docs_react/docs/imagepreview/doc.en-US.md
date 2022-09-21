@@ -1,10 +1,10 @@
-#  ImagePreview组件
+#  ImagePreview
 
-### 介绍
+### Intro
 
-支持全屏预览视频和图片，可函数式调用
+Support full screen preview videos and images, support functional call.
 
-### 安装
+### Install
 
 
 ```js
@@ -12,9 +12,9 @@ import { ImagePreview } from '@nutui/nutui-react'
 ```
 
 
-## 代码演示
+## Code demonstration
 
-### 基础用法
+### Basic Usage
 
 :::demo
 ```tsx
@@ -49,7 +49,7 @@ const App = () => {
   return (
     <>
         <ImagePreview images={images} show={showPreview1} onClose={hideFn1} />
-        <Cell title="展示图片预览" isLink onClick={showFn1} />
+        <Cell title="Show preview" isLink onClick={showFn1} />
     </>
   );
 };
@@ -57,7 +57,7 @@ export default App;
 ```
 :::
 
-### 设置初始页码
+### With Init No
 
 :::demo
 ```tsx
@@ -92,7 +92,7 @@ const App = () => {
   return (
     <>
         <ImagePreview images={images} initNo={3} show={showPreview2} onClose={hideFn2} />
-        <Cell title="设置初始页码" isLink onClick={showFn2} />
+        <Cell title="With init no" isLink onClick={showFn2} />
     </>
   );
 };
@@ -100,7 +100,7 @@ export default App;
 ```
 :::
 
-### 设置轮播指示器及颜色
+### With Pagination
 
 :::demo
 ```tsx
@@ -135,7 +135,7 @@ const App = () => {
   return (
     <>
         <ImagePreview images={images} show={showPreview3} paginationVisible paginationColor="red" onClose={hideFn3} />
-        <Cell title="设置轮播指示器及颜色" isLink onClick={showFn3} />
+        <Cell title="With pagination" isLink onClick={showFn3} />
     </>
   );
 };
@@ -143,7 +143,7 @@ export default App;
 ```
 :::
 
-### 视频、图片预览
+### With Videos
 
 :::demo
 ```tsx
@@ -201,7 +201,7 @@ const App = () => {
   return (
     <>
         <ImagePreview images={images} videos={videos} show={showPreview4} onClose={hideFn4} />
-        <Cell title="视频、图片预览" isLink onClick={showFn4} />
+        <Cell title="With videos" isLink onClick={showFn4} />
     </>
   );
 };
@@ -215,19 +215,19 @@ export default App;
 
 ### Props
 
-| 参数         | 说明                             | 类型   | 默认值           |
+| Attribute         | Description                             | Type   | Default           |
 |--------------|----------------------------------|--------|------------------|
-| show | 是否展示预览图片 | Boolean | false
-| videos | 预览的视频数组（视频自动放到图片之前、taro场景暂不支持） | Array<`Object`> | []
-| images | 预览图片数组 | { src: String }[] | []
-| autoplay | 自动轮播时长，0表示不会自动轮播 | Number、String  | 3000  |
-| initNo | 初始页码 | Number | 1
-| paginationVisible | 分页指示器是否展示    | Boolean | false |
-| paginationColor   | 分页指示器选中的颜色    | String  | '#fff'  |
-| contentClose   | 点击图片可以退出预览    | Boolean  | false  |
+| show | Whether to show preview | Boolean | false
+| videos | Videos Array(Videos are before images, not support in taro) | Array<`Object`> | []
+| images | Images array | Array<`String`> | []
+| autoplay | Autoplay time, zero means not autoplay | Number、String  | 3000  |
+| initNo | Init no | Number | 1
+| paginationVisible | Whether to show pagination    | Boolean | false |
+| paginationColor   | Pagination color    | String  | '#fff'  |
+| contentClose   | Click image to exit preview    | Boolean  | false  |
 
 ### Events
 
-| 事件名 | 说明           | 回调参数     |
+| Event | Description           | Arguments     |
 |--------|----------------|--------------|
-|onClose|点击遮罩关闭图片预览时触发|无|
+|onClose|Emitted when closing ImagePreview|-|

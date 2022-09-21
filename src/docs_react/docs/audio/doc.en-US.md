@@ -1,18 +1,18 @@
-# Audio 音频播放器
+# Audio 
 
-### 介绍
+### introduce
 
-用于音频播放
+Used for audio playback
 
-### 安装
+### Install
 
 ```javascript
 import { Audio } from '@nutui/nutui-react'
 ```
 
-## 代码演示
+## Code demonstration
 
-### 基本用法
+### Basic usage
 
 :::demo
 
@@ -40,7 +40,7 @@ export default App;
 
 :::
 
-### 自定义
+### customize
 
 :::demo
 
@@ -76,7 +76,7 @@ export default App;
 
 :::
 
-### 进度条播放
+### Progressive Play
 
 :::demo
 
@@ -110,7 +110,7 @@ export default App;
 
 :::
 
-### 控件播放
+### Control
 
 :::demo
 
@@ -145,25 +145,25 @@ export default App;
 
 ### Props
 
-| 参数         | 说明                             | 类型   | 默认值           |
+| parameter         | illustrate                             | type   | Defaults           |
 |--------------|----------------------------------|--------|------------------|
-| className       | 类名               | String | ''              |
-| style       | css样式               | CSSProperties | {}           |
-| url         | 语音资源链接               | String | ''              |
-| muted        | 是否静音                         | Boolean | false             |
-| autoplay         | 是否自动播放 | Boolean | false               |
-| loop | 是否循环播放     | Boolean | false |
-| preload          | 是否预加载语音 枚举值：'none'、'metadata'、'auto'、''   | String | 'auto'              |
-| type         | 展示形式，可选值：controls 控制面板   progress 进度条  icon 图标 none 自定义 | String | 'progress'              |
+| className       | Classification               | String | ''              |
+| style       | CSS Properties              | CSSProperties | {}           |
+| url         | Voice resource link               | String | ''              |
+| muted        | Whether it is mute                         | Boolean | false             |
+| autoplay         | Whether to play automatically | Boolean | false               |
+| loop | Whether to circulate     | Boolean | false |
+| preload          | Whether the pronunciation is pre -loaded: 'None', 'Metadata', 'Auto', ''  | String | 'auto'              |
+| type         | Display form, optional value：controls、panel、progress、icon、none  | String | 'progress'              |
 
 
 ### Events
 
-| 事件名 | 说明           | 回调参数     |
+| Incident name | illustrate           | Callback parameter     |
 |--------|----------------|--------------|
-| onFastBack  | 语音快退回调,type=progress时生效 | event：HTMLAudioElement |
-| onForward  | 语音快进回调,type=progress时生效 | event：HTMLAudioElement |
-| onPause  | 暂停回调 | event：HTMLAudioElement |
-| onPlayEnd  | 语音播放完成，loop=false时生效 | event：HTMLAudioElement|
-| onMute  | 静音回调 | event：HTMLAudioElement|
-| onCanPlay  | 可以播放媒体时触发 | event：HTMLAudioElement |
+| onFastBack  | Voice will be retreated, type = progress takes effect | event：HTMLAudioElement |
+| onForward  | Voice fast -moving back, type = progress | event：HTMLAudioElement |
+| onPause  | Suspension | event：HTMLAudioElement |
+| onPlayEnd  | The voice playback is complete, loop=false takes effect | event：HTMLAudioElement|
+| onMute  | Mute | event：HTMLAudioElement|
+| onCanPlay  | Can be triggered when the media can be played | event：HTMLAudioElement |

@@ -1,18 +1,16 @@
-# ConfigProvider 全局配置
+# ConfigProvider
 
-### 介绍
+### Introduce
 
-用于全局配置 NutUI-React 组件，提供国际化支持。
+Used to configure NutUI-React components globally, providing internationalization support.
 
-### 安装
+### Install
 
 ``` javascript
 import { ConfigProvider } from '@nutui/nutui-react';
 ```
 
-## 代码演示
-
-### 基础用法
+## Demo
 
 :::demo
 
@@ -38,6 +36,6 @@ export default App;
 
 ### Props
 
-| 参数         | 说明                         | 类型   | 默认值           |
+| Props    | Description                             | Type   | Default          |
 |--------------|----------------------------|--------|-----------------|
-| locale         | 设置多语言包                     | BaseLang | zhCN                |
+| locale         | Set up multilingual packs                     | BaseLang | zhCN                |

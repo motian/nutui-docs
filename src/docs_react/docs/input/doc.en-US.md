@@ -1,19 +1,17 @@
-# Input 输入框
+# Input
 
-### 介绍
+### Intro
 
-用户可以在文本框里输入内容。
+The user can enter content in the text box.
 
-### 安装
+### Install
 
 ```javascript
 import { Input } from '@nutui/nutui-react';
 
 ```
 
-## 代码演示
-
-### 基础用法
+### Basic Usage
 
 :::demo
 ```tsx
@@ -21,10 +19,10 @@ import  React, { useState } from "react";
 import { Input } from '@nutui/nutui-react';
 
 const App = () => {
-    const [value1, UpdateValue1] = useState('')
+    const [value, UpdateValue] = useState('')
   return (
     <>
-      <Input label="文本" defaultValue="{value1}"  placeholder="文本" />
+      <Input label="Text" defaultValue={value} placeholder="Text" />
     </>
   );
 };
@@ -32,8 +30,7 @@ export default App;
 ```
 :::
 
-
-### 自定义类型
+### Custom Type
 
 :::demo
 ```tsx
@@ -51,31 +48,31 @@ const App = () => {
   return (
     <>
        <Input
-          label="文本" 
-          placeholder="文本" 
+          label="Text" 
+          placeholder="Text" 
           defaultValue={state.text}
         />
         <Input
-          label="密码" 
-          placeholder="密码"
+          label="Password" 
+          placeholder="Password"
           defaultValue={state.password}
           type="password"
         />
         <Input
-          label="数字" 
-          placeholder="数字"
+          label="Number" 
+          placeholder="Number"
           defaultValue={state.number}
           type="number"
         />
         <Input
-          label="整数" 
-          placeholder="整数"
+          label="Digit" 
+          placeholder="Digit"
           defaultValue={state.digit}
           type="digit"
         />
         <Input
-          label="手机号" 
-          placeholder="手机号"
+          label="Tel" 
+          placeholder="Tel"
           defaultValue={state.tel}
           type="tel"
         />
@@ -85,7 +82,9 @@ const App = () => {
 export default App;
 ```
 :::
-### 禁用和只读
+
+
+### Readonly And Disabled
 
 :::demo
 ```tsx
@@ -100,14 +99,14 @@ const App = () => {
   return (
     <>
        <Input
-          label="文本" 
-          placeholder="只读" 
+          label="Text" 
+          placeholder="Readonly" 
           defaultValue={state.readonly}
           readonly
         />
         <Input
-          label="文本" 
-          placeholder="禁用"
+          label="Text" 
+          placeholder="Disabled"
           defaultValue={state.disabled}
           disabled
         />
@@ -117,9 +116,10 @@ const App = () => {
 export default App;
 ```
 :::
-### 显示图标
 
-通过 `left-icon` 和 `right-icon` 配置输入框两侧的图标，通过设置 `clearable` 在输入过程中展示清除图标。需要引用 `Icon` 组件
+### Show Icon
+
+The user can enter content in the text box. Configure the icons on both sides of the input box through `left-icon` and `right-icon`, and display the clear icon during the input process by setting `clearable`. Need to reference the `Icon` component
 
 :::demo
 ```tsx
@@ -134,15 +134,15 @@ const App = () => {
   return (
     <>
        <Input
-          label="文本" 
-          placeholder="显示图标" 
+          label="Text" 
+          placeholder="Show Icon" 
           defaultValue={state.showIcon}
           leftIcon="dongdong"
           rightIcon="ask2"
         />
         <Input
-          label="文本" 
-          placeholder="显示清除图标"
+          label="Text" 
+          placeholder="Show Clear Icon"
           defaultValue={state.clear}
           clearable
           clearSize="14"
@@ -154,9 +154,9 @@ export default App;
 ```
 :::
 
-### 错误提示
+### Error Info
 
-:::demo
+`:::demo
 
 ```tsx
 import  React, { useState } from "react";
@@ -171,22 +171,22 @@ const App = () => {
   return (
     <>
        <Input
-          label="文本" 
-          placeholder="必填项" 
+          label="Text" 
+          placeholder="Required" 
           defaultValue={state.required}
           required
         />
         <Input
-          label="文本" 
-          placeholder="输入内容标红"
+          label="Text" 
+          placeholder="Error"
           defaultValue={state.error1}
           error
         />
          <Input
-          label="文本" 
-          placeholder="底部错误提示文案"
+          label="Text" 
+          placeholder="Error Message"
           defaultValue={state.error2}
-          errorMessage="底部错误提示文案"
+          errorMessage="Error Message"
         />
     </>
   )
@@ -194,7 +194,8 @@ const App = () => {
 export default App;
 ```
 :::
-### 插入按钮
+
+### Insert Button
 
 :::demo
 
@@ -206,16 +207,16 @@ const App = () => {
     const  [state, setState] = useState({
         buttonVal: '',
     })
-    
+  
   return (
     <>
        <Input
-          label="短信验证码"
-          placeholder="请输入短信验证码"
+          label="Code"
+          placeholder="Please enter code"
           defaultValue={state.buttonVal}
           clearable
           center
-          slotButton={<Button size="small" type="primary">发送验证码</Button>}
+          slotButton={<Button size="small" type="primary">Send</Button>}
         />
     </>
   )
@@ -223,7 +224,8 @@ const App = () => {
 export default App;
 ```
 :::
-### 格式化输入内容
+
+### Format Value
 
 :::demo
 
@@ -240,14 +242,14 @@ const App = () => {
   return (
     <>
        <Input
-          label="文本"
-          placeholder="在输入时执行格式化"
+          label="Text"
+          placeholder="Format On Change"
           defaultValue={state.format1}
           formatter={formatter}
         />
         <Input
-          label="文本"
-          placeholder="在失焦时执行格式化"
+          label="Text"
+          placeholder="Format On Blur"
           defaultValue={state.format2}
           formatter={formatter}
           formatTrigger="onBlur"
@@ -258,7 +260,8 @@ const App = () => {
 export default App;
 ```
 :::
-### 显示字数统计
+
+### Show Word Limit
 
 :::demo
 
@@ -273,8 +276,8 @@ const App = () => {
   return (
     <>
        <Input
-          label="留言"
-          placeholder="请输入留言"
+          label="Message"
+          placeholder="Message"
           defaultValue={state.textarea}
           type="textarea"
           showWordLimit
@@ -287,7 +290,8 @@ const App = () => {
 export default App;
 ```
 :::
-### 对齐方式
+
+### Input Align
 
 :::demo
 
@@ -303,14 +307,14 @@ const App = () => {
   return (
     <>
        <Input
-          label="文本"
-          placeholder="文本内容对齐"
+          label="Text"
+          placeholder="Label Align"
           defaultValue={state.align1}
           labelAlign="right"
         />
         <Input
-          label="文本"
-          placeholder="输入框内容对齐"
+          label="Text"
+          placeholder="Input Align"
           defaultValue={state.align2}
           labelAlign="right"
         />
@@ -320,7 +324,8 @@ const App = () => {
 export default App;
 ```
 :::
-### 无边框
+
+### No Border
 
 :::demo
 
@@ -336,15 +341,15 @@ const App = () => {
   return (
     <>
        <Input
-          label="无边框"
+          label="No Border"
           defaultValue={state.noBorder1}
-          placeholder="无边框"
+          placeholder="No Border"
           border={false}
         />
         <Input
-          label="无边框"
+          label="No Border"
           defaultValue={state.noBorder2}
-           placeholder="无边框"
+          placeholder="No Border"
           border={false}
         />
     </>
@@ -353,7 +358,8 @@ const App = () => {
 export default App;
 ```
 :::
-### 点击事件
+
+### Click Event
 
 :::demo
 
@@ -363,7 +369,7 @@ import { Input } from '@nutui/nutui-react';
 
 const App = () => {
     const  [state, setState] = useState({
-        event: '',
+        event:'',
     })
     const change = (value: string | number) => {
         console.log('change: ', value)
@@ -392,8 +398,8 @@ const App = () => {
   return (
     <>
        <Input
-          label="点击"
-          placeholder="点击"
+          label="Click"
+          placeholder="Click"
           defaultValue={state.event}
           leftIcon="dongdong"
           rightIcon="ask2"
@@ -415,51 +421,53 @@ export default App;
 :::
 ### Prop
 
-| 参数         | 说明                                   | 类型           | 默认值  |
+| Attribute         | Description                                   | Type           | Default  |
 | ------------ | -------------------------------------- | -------------- | ------- |
-| defaultValue | 初始默认值，双向绑定                   | String         | -       |
-| type         | 输入框类型，支持原生 `input` 标签的所有 `type` 属性，另外还支持 `textarea` `number` `digit`      | String         | `text`  |
-| placeholder  | 输入框为空时占位符                           | String         | -       |
-| label        | 左侧文本                               | String         | -       |
-| labelClass`v1.2.1`  | 左侧文本额外类名                        | String | -  |
-| labelWidth`v1.2.1`  | 左侧文本宽度，默认单位为 `px`            | String、Number | `80`    |
-| labelAlign`v1.2.1`  | 左侧文本对齐方式，可选值 `left`、`center`、`right`   | String | `left` |
-| inputAlign`v1.2.1`  | 输入框内容对齐方式，可选值 `left`、`center`、`right` | String | `left` |
-| colon`v1.2.1`        | 是否在 label 后面添加冒号               | Boolean        | `false` |
-| required`v1.2.1`     | 左侧*号是否展示                        | Boolean        | `false` |
-| border`v1.2.1`       | 是否显示下边框                         | Boolean        | `true` |
-| disabled     | 是否禁用                              | Boolean        | `false` |
-| readonly     | 是否只读                              | Boolean        | `false` |
-| autofocus`v1.2.1`    | 是否自动获得焦点，iOS 系统不支持该属性     | Boolean        | `false` |
-| maxlength      | 限制最长输入字符                       | String、Number  | -       |
-| clearable    | 展示清除 Icon                         | Boolean        | `false`  |
-| clearIcon`v1.2.1`   | 清除图标 Icon 名称或图片链接，[可参考 Icon 组件的 name 属性](#/icon)   | String        | `mask-close`  |
-| clearSize`v1.2.1`   | 清除图标的 `font-size` 大小           | String        | `14`  |
-| leftIcon`v1.2.1`    | 左侧 Icon 名称或图片链接，[可参考 Icon 组件的 name 属性](#/icon) | String        | - |
-| rightIcon`v1.2.1`   | 右侧 Icon 名称或图片链接，[可参考 Icon 组件的 name 属性](#/icon) | String        | - |
-| leftIconSize`v1.2.1`    | 左侧 Icon 的 `font-size` 大小           | String        | `14`  |
-| rightIconSize`v1.2.1`   | 右侧 Icon 的 `font-size` 大小           | String        | `14`  |
-| showWordLimit`v1.2.1` | 是否显示限制最长输入字符，需要设置 `max-length` 属性 | Boolean | `false`  |
-| error`v1.2.1`         | 是否标红                                | Boolean | `false`  |
-| errorMessage`v1.2.1` | 底部错误提示文案，为空时不展示            | String、Number | - |
-| errorMessageAlign`v1.2.1` | 底部错误提示文案对齐方式，可选值 `left`、`center`、`right`          | String | - |
-| formatter`v1.2.1`      | 输入内容格式化函数    | `(val: string) => string` | - |
-| formatTrigger`v1.2.1` | 格式化函数触发的时机，可选值为 `onChange`、`onBlur` | String | - |
+| defaultValue | Input value, two-way binding                   | String         | -       |
+| type         | Input type, support all native types and `textarea` `number` `digit` type    | String         | `text`  |
+| placeholder  | Placeholder when the input box is empty         | String         | -       |
+| label        | Left text                               | String         | -       |
+| labelClass  | Left text extra class name                      | String | -  |
+| labelWidth  | Label width, default unit is `px`            | String、Number | `80`    |
+| labelAlign  | Label align,  eg `left`、`center`、`right`   | String | `left` |
+| inputAlign  | Input align, eg `left`、`center`、`right` | String | `left` |
+| colon        | Whether to display colon after label     | Boolean        | `false` |
+| required     | Whether to show required mark            | Boolean        | `false` |
+| border       | Whether to show inner borde         | Boolean        | `true` |
+| disabled     | Whether to disable field            | Boolean        | `false` |
+| readonly     | Whether to be readonly              | Boolean        | `false` |
+| autofocus    | Whether to auto focus, unsupported in iOS     | Boolean        | `false` |
+| maxlength   | Max length of value                  | String、Number  | -       |
+| clearable    | Whether to be clearable              | Boolean        | `false`  |
+| clearIcon   | Clear Icon name, [name of icon](#/icon)           | String        | `mask-close`  |
+| clearSize   | Clear Icon `font-size`               | String        | `14`  |
+| leftIcon    | Left side Icon name, [name of icon](#/icon) | String        | - |
+| rightIcon   | Right side Icon name, [name of icon](#/icon) | String        | - |
+| leftIconSize    | Left side Icon `font-size`    | String        | `14`  |
+| rightIconSize   | Right side Icon `font-size`   | String        | `14`  |
+| showWordLimit | Whether to show word limit, need to set the `max-length` prop | Boolean | `false`  |
+| error         | Whether to mark the input content in red   | Boolean | `false`  |
+| errorMessage | Error message            | String、Number | - |
+| errorMessageAlign | Error message align, eg `left`、`center`、`right`          | String | - |
+| formatter      | Input value formatter    | `(val: string) => string` | - |
+| formatTrigger | When to format value, eg `onChange`、`onBlur` | String | - |
+
 ### Events
 
-| 名称   | 说明           | 回调参数    |
+| Event   | Description      | Arguments    |
 |--------|----------------|-------------|
-| change | 输入框内容变化时触发 | val ,event |
-| focus  | 输入框聚焦时触发     | val  ,event |
-| blur   | 输入框失焦时触发     | val ,event  |
-| clear  | 点击清除按钮时触发   | val ,event  |
-| click`v1.2.1`  | 点击组件时触发      | val ,event  |
-| clickInput`v1.2.1`     | 点击输入区域时触发      | val ,event  |
-| clickLeftIcon`v1.2.1`  | 点击左侧图标时触发      | val ,event  |
-| clickRightIcon`v1.2.1` | 点击右侧图标时触发      | val ,event  |
+| change | Emitted when input value changed | val ,event  |
+| focus  | Emitted when input is focused     | val  ,event |
+| blur   | Emitted when input is blurred     | val ,event  |
+| clear  | Emitted when the clear icon is clicked   | val ,event  |
+| click  | Emitted when component is clicked	      | val ,event  |
+| clickInput      | Emitted when the input is clicked      | val ,event  |
+| clickLeftIcon  | Emitted when the left icon is clicked      | val ,event  |
+| clickRightIcon | Emitted when the right icon is clicked      | val ,event  |
 
 ### Slots
-| 名称                 | 说明     | 
-|--------------------|----------|
-| slotButton`v1.2.1`       | 自定义输入框尾部按钮 |
-| slotInput`v1.2.1` | 自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效 |
+
+| Name  | Description     | 
+|-------|----------|
+| slotButton | Insert button |
+| slotInput `v3.1.22` | Custom input |

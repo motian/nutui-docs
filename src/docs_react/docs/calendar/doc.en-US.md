@@ -1,18 +1,18 @@
-# Calendar 日历
+# Calendar
 
-### 介绍
+### introduce
 
-日历，可平铺/弹窗展示
+Calendar, tileable/pop-up display
 
-### 安装
+### Install
 
 ```javascript
 import { Calendar } from '@nutui/nutui-react';
 ```
 
-## 代码演示
+## code demo
 
-### 基础用法
+### Basic usage
 
 :::demo
 ```tsx
@@ -38,7 +38,7 @@ const App = () => {
     }
     return (
         <>
-            <Cell title="选择单个日期" desc={ date ? `${date} ${dateWeek}` : '请选择' } onClick={ openSwitch } />
+            <Cell title="select a single date" desc={ date ? `${date} ${dateWeek}` : 'please choose' } onClick={ openSwitch } />
             <Calendar 
                 visible={ isVisible }
                 defaultValue={ date }
@@ -55,7 +55,7 @@ export default App;
 ```
 :::
 
-### 区间选择
+### interval selection
 
 :::demo
 ```tsx
@@ -80,7 +80,7 @@ const App = () => {
 
     return (
         <>
-            <Cell title="选择日期区间" desc={ date1 ? `${date1[0]}至${date1[1]}` : '请选择' } onClick={ openSwitch1 } />
+            <Cell title="Select date range" desc={ date1 ? `${date1[0]}to${date1[1]}` : 'please choose' } onClick={ openSwitch1 } />
             <Calendar 
                 visible={ isVisible1 }
                 defaultValue={ date1 }
@@ -98,7 +98,7 @@ export default App;
 ```
 :::
 
-### 选择多个日期
+### select multiple dates
 
 :::demo
 ```tsx
@@ -123,7 +123,7 @@ const App = () => {
 
     return (
         <>
-            <Cell title="选择多个日期" desc={ date3 && date3.length ? `已选择${date3.length}` : '请选择' } onClick={ openSwitch3 } />
+            <Cell title="select multiple dates" desc={ date3 && date3.length ? `chosen${date3.length}` : 'please choose' } onClick={ openSwitch3 } />
             <Calendar
                 visible={isVisible3}
                 defaultValue={date3}
@@ -141,7 +141,7 @@ export default App;
 ```
 :::
 
-### 快捷选择
+### quick selection
 
 :::demo
 ```tsx
@@ -166,7 +166,7 @@ const App = () => {
 
     return (
         <>
-            <Cell title="选择日期" desc={ date3 ? `${date3}` : '请选择' } onClick={ openSwitch3 } />
+            <Cell title="select date" desc={ date3 ? `${date3}` : 'please choose' } onClick={ openSwitch3 } />
             <Calendar
                 visible={isVisible3}
                 defaultValue={date3}
@@ -184,7 +184,7 @@ export default App;
 ```
 :::
 
-### 自定义日历-自定义时间文案
+### Custom Calendar - Custom Time Copy
 
 :::demo
 ```tsx
@@ -228,7 +228,7 @@ const App = () => {
 
     return (
         <>
-            <Cell title="选择日期" desc={ date3 ? `${date3[0]}至${date3[1]}` : '请选择' } onClick={ openSwitch3 } />
+            <Cell title="select date" desc={ date3 ? `${date3[0]}to${date3[1]}` : 'please choose' } onClick={ openSwitch3 } />
             
             <Calendar
                 visible={isVisible3}
@@ -252,7 +252,7 @@ export default App;
 ```
 :::
 
-### 自定义日历-自定义按钮
+### Custom Calendar - Custom Button
 
 :::demo
 ```tsx
@@ -355,13 +355,13 @@ const App = () => {
         return (
             <div className="wrapper" style={ { display: 'flex', padding: '0 40px' } }>
                 <div className="d_div" style={ { margin: '0px 5px' } }>
-                    <span className="d_btn" onClick={ goDate } style={ { background: '#fa3f19', color: '#fff', fontSize: '12px', padding: '2px 8px', borderRadius: '4px', display: 'inline-block', height: '20px' } }>去某个月</span>
+                    <span className="d_btn" onClick={ goDate } style={ { background: '#fa3f19', color: '#fff', fontSize: '12px', padding: '2px 8px', borderRadius: '4px', display: 'inline-block', height: '20px' } }>to a certain month</span>
                 </div>
                 <div className="d_div" style={ { margin: '0px 5px' } }>
-                    <span className="d_btn" style={ { background: '#fa3f19', color: '#fff', fontSize: '12px', padding: '2px 8px', borderRadius: '4px', display: 'inline-block', height: '20px' } } onClick={ clickBtn }>最近七天</span>
+                    <span className="d_btn" style={ { background: '#fa3f19', color: '#fff', fontSize: '12px', padding: '2px 8px', borderRadius: '4px', display: 'inline-block', height: '20px' } } onClick={ clickBtn }>last seven days</span>
                 </div>
                 <div className="d_div" style={ { margin: '0px 5px' } }>
-                    <span className="d_btn" style={ { background: '#fa3f19', color: '#fff', fontSize: '12px', padding: '2px 8px', borderRadius: '4px', display: 'inline-block', height: '20px' } } onClick={ clickBtn1 }>当月</span>
+                    <span className="d_btn" style={ { background: '#fa3f19', color: '#fff', fontSize: '12px', padding: '2px 8px', borderRadius: '4px', display: 'inline-block', height: '20px' } } onClick={ clickBtn1 }>current month</span>
                 </div>
             </div>
         )
@@ -369,7 +369,7 @@ const App = () => {
 
     return (
         <>
-            <Cell title="选择日期" desc={ date3 ? `${date3[0]}至${date3[1]}` : '请选择' } onClick={ openSwitch3 } />
+            <Cell title="select date" desc={ date3 ? `${date3[0]}to${date3[1]}` : 'please choose' } onClick={ openSwitch3 } />
             <Calendar
                 ref={ calendarRef }
                 visible={isVisible3}
@@ -389,7 +389,7 @@ export default App;
 ```
 :::
 
-### 平铺展示
+### Tiled display
 
 :::demo
 ```tsx
@@ -425,38 +425,38 @@ export default App;
 
 ### Props
 
-| 字段              | 说明                                              | 类型            | 默认值          |
+| Params              | Description                                              | Type            | Default          |
 |-------------------|---------------------------------------------------|-----------------|-----------------|
-| visible   | 是否可见                                          | Boolean         | false           |
-| type              | 类型，日期选择'one'，区间选择'range'              | String          | 'one'           |
-| poppable          | 是否弹窗状态展示                                  | Boolean         | true            |
-| isAutoBackFill | 自动回填                                          | Boolean         | false           |
-| title             | 显示标题                                          | String          | ‘日期选择’      |
-| defaultValue     | 默认值，日期选择 String 格式，区间选择 Array 格式 | String 、 Array | null            |
-| startDate        | 开始日期， 如果不限制开始日期传 null              | String          | 今天            |
-| endDate          | 结束日期，如果不限制结束日期传 null               | String          | 距离今天 365 天 |
-| showToday          | 是否展示今天标记               | Boolean          | true |
-| startText         | 范围选择，开始信息文案               | String          | ’开始‘ |
-| endText         | 范围选择，结束信息文案               | String          | ‘结束’ |
-| confirmText          | 底部确认按钮文案               | String          | ’确认‘ |
-| showTitle          | 是否在展示日历标题               | Boolean          | true |
-| showSubTitle          | 是否展示日期标题              | Boolean          | true |
-| toDateAnimation          | 是否启动滚动动画              | Boolean          | true |
-| onBtn | 自定义日历标题下部，可用以添加自定义操作              |  (() => string \| JSX.Element) 、 undefined      | - |
-| onDay  | 日期信息              |  ((date: Day) => string \| JSX.Element) 、 undefined                          | - |
-| onTopInfo  | 日期顶部信息             |  ((date: Day) => string \| JSX.Element) 、 undefined                          | - |
-| onBottomInfo  | 日期底部信息             |  ((date: Day) => string \| JSX.Element) 、 undefined                         | - |
+| visible   | Is it visible                                          | Boolean         | false           |
+| type              | Type, select 'one' for date and 'range' for interval              | String          | 'one'           |
+| poppable          | Whether to display the pop-up window status                                  | Boolean         | true            |
+| isAutoBackFill | Automatic backfill                                          | Boolean         | false           |
+| title             | show title                                          | String          | ‘Date Pick’      |
+| defaultValue     | Default value, select String format for date, select Array format for interval | String 、 Array | null            |
+| startDate        | The start date, or null if the start date is not limited              | String          | Today            |
+| endDate          | The end date, or null if the end date is not limited               | String          | 365 days from today |
+| showToday          | Whether to show today's mark               | Boolean          | true |
+| startText         | Scope selection, start message copying               | String          | ’开始‘ |
+| endText         | Scope selection, closing message copy               | String          | ‘结束’ |
+| confirmText          | Bottom confirm button copy               | String          | ’确认‘ |
+| showTitle          | Whether to show the calendar title               | Boolean          | true |
+| showSubTitle          | Whether to display the date title              | Boolean          | true |
+| toDateAnimation          | Whether to start scroll animation              | Boolean          | true |
+| onBtn | Below the custom calendar header, you can add custom actions              |  (() => string \| JSX.Element) 、 undefined      | - |
+| onDay  | date information              |  ((date: Day) => string \| JSX.Element) 、 undefined                          | - |
+| onTopInfo  | Date Top Information             |  ((date: Day) => string \| JSX.Element) 、 undefined                          | - |
+| onBottomInfo  | date bottom information             |  ((date: Day) => string \| JSX.Element) 、 undefined                         | - |
 
 ### Events
 
-| 事件名 | 说明                         | 回调参数                     |
+| Events | Description                         | callback parameter                     |
 |--------|------------------------------|------------------------------|
-| onChoose | 选择之后或是点击确认按钮触发 | 日期数组（包含年月日和星期） |
-| onClose  | 关闭时触发                   | -                            |
-| onSelected  | 点击/选择后触发              |  Day: Day                          |
+| onChoose | Triggered after selection or by clicking the confirm button | Array of dates (including year, month, day and week) |
+| onClose  | Triggered when closed                   | -                            |
+| onSelected  | Triggered after click/select              |  Day: Day                          |
 
 ### Day
-| 字段              | 类型            |
+| Params              | Description            |
 |-------------------|-----------------|
 | day   | string、number           |
 | type   | string          |
