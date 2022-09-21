@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="doc-content-document" :class="{ isComponent: isShow(), full: !isShow() }">
-        <div class="doc-content-tabs" v-if="isShow() && isShowTaroDoc && language == 'vue'">
+        <div class="doc-content-tabs" v-if="isShow() && isShowTaroDoc && (language == 'vue' || language == 'react')">
           <div
             class="tab-item"
             :class="{ cur: curKey === item.key }"
@@ -20,7 +20,10 @@
             >{{ item.text }}</div
           >
         </div>
-        <div class="doc-content-tabs single" v-if="isShow() && !isShowTaroDoc && language == 'vue'">
+        <div
+          class="doc-content-tabs single"
+          v-if="isShow() && !isShowTaroDoc && (language == 'vue' || language == 'react')"
+        >
           <div class="tab-item cur">vue / taro</div>
         </div>
 
