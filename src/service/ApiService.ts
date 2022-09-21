@@ -94,4 +94,16 @@ export class ApiService {
       pageSize: 100
     });
   }
+
+  /**
+   * 获取 banner 轮播
+   * @returns
+   * @memberof bannerApiService
+   */
+   getBannerList() {
+    return this.httpClient.request('/openapi/banner', 'get', {
+      pageIndex: 1,
+      pageSize: 10
+    });
+  }
 }
