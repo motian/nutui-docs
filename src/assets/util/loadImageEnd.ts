@@ -2,7 +2,7 @@ export function loadImageEnd(list: string[], callback: any, basePath?: string) {
   if (!list || list.length === 0) return;
 
   if (basePath) list = list.map((item) => basePath + item);
-  let img = new Image();
+  let img: any = new Image();
   img.data = {
     list: list,
     callback: callback,
