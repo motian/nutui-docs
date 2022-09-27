@@ -37,10 +37,15 @@
           </div>
         </div>
 
-        <div :class="['doc-content-banner-img', bannerList.length > 0 ? 'doc-content-banner-imgcover' : '']">
+        <div
+          :class="[
+            'doc-content-banner-img',
+            bannerList.length > 0 && !backgroundLoading ? 'doc-content-banner-imgcover' : ''
+          ]"
+        >
           <div class="skew-box">
             <div class="doc-content-banner-swiper">
-              <div class="swiper-container" v-if="bannerList.length > 0">
+              <div class="swiper-container" v-if="bannerList.length > 0 && !backgroundLoading">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide" v-for="(arr, index) in bannerList" :key="index">
                     <div class="swiper-slide-item"><img :src="arr.cover_image" /></div>
@@ -228,6 +233,7 @@ import { defineComponent, onMounted, reactive, toRefs, computed, ref } from 'vue
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import { RefData } from '@/assets/util/ref';
+import { loadImageEnd } from '@/assets/util/loadImageEnd';
 import { ApiService } from '@/service/ApiService';
 import 'swiper/swiper.min.css';
 import Swiper from 'swiper/swiper-bundle.min.js';
@@ -253,10 +259,12 @@ export default defineComponent({
       localTheme: localStorage.getItem('nutui-theme-color'),
       showAwait: false,
       qrcodeList: [],
-      bannerList: []
+      bannerList: [],
+      backgroundLoading: true
     });
     let caseSwiper: any = null;
     let qrcodeSwiper: any = null;
+    let bannerSwiper: any = null;
 
     onMounted(() => {
       if (homePage.article.show) getArticle();
@@ -268,33 +276,46 @@ export default defineComponent({
 
     const initBannerSwiper = () => {
       const apiService = new ApiService();
+
+      const imgArr = [
+        'https://img10.360buyimg.com/imagetools/jfs/t1/29781/3/19183/142442/6332a685Eb8ac2a85/9880cdaea3a1ca14.png'
+      ];
+      loadImageEnd(imgArr, () => {
+        console.log('加载完');
+        data.backgroundLoading = false;
+
+        if (bannerSwiper) renderBannerSwiper();
+      });
       apiService.getBannerList().then((res) => {
         if (res?.state == 0 && res?.value.data.length != 0) {
           data.bannerList = [].concat(res.value.data.arrays);
-          const self = data.bannerList;
-          setTimeout(() => {
-            new Swiper('.doc-content-banner-swiper .swiper-container', {
-              direction: 'horizontal',
-              autoplay: {
-                delay: 3000,
-                disableOnInteraction: false
-              },
-              loop: true,
-              // 如果需要分页器
-              pagination: {
-                el: '.swiper-pagination'
-              },
-              on: {
-                click: (event) => {
-                  // console.log('点击',event,event.realIndex)
-                  const banner = self[event.realIndex];
-                  if (banner && banner.link) window.open(banner.link);
-                }
-              }
-            });
-          }, 500);
+          if (data.backgroundLoading) renderBannerSwiper();
         }
       });
+    };
+
+    const renderBannerSwiper = () => {
+      const self = data.bannerList;
+      setTimeout(() => {
+        bannerSwiper = new Swiper('.doc-content-banner-swiper .swiper-container', {
+          direction: 'horizontal',
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+          },
+          loop: true,
+          // 如果需要分页器
+          pagination: {
+            el: '.swiper-pagination'
+          },
+          on: {
+            click: (event) => {
+              const banner = self[event.realIndex];
+              if (banner && banner.link) window.open(banner.link);
+            }
+          }
+        });
+      }, 500);
     };
     //获取案例二维码
     const getQRCode = () => {
