@@ -43,10 +43,12 @@
               <div class="swiper-container" v-if="bannerList.length > 0">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide" v-for="(arr, index) in bannerList" :key="index">
-                    <div class="swiper-slide-item" @click="goBannerList(arr)"><img :src="arr.cover_image" /></div>
+                    <div class="swiper-slide-item"><img :src="arr.cover_image" /></div>
                   </div>
                 </div>
               </div>
+              <!-- 如果需要分页器 -->
+              <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>
@@ -269,11 +271,26 @@ export default defineComponent({
       apiService.getBannerList().then((res) => {
         if (res?.state == 0 && res?.value.data.length != 0) {
           data.bannerList = [].concat(res.value.data.arrays);
-
+          const self = data.bannerList;
           setTimeout(() => {
             new Swiper('.doc-content-banner-swiper .swiper-container', {
-              autoplay: data.bannerList.length > 1 ? true : false,
-              loop: true
+              direction: 'horizontal',
+              autoplay: {
+                delay: 3000,
+                disableOnInteraction: false
+              },
+              loop: true,
+              // 如果需要分页器
+              pagination: {
+                el: '.swiper-pagination'
+              },
+              on: {
+                click: (event) => {
+                  // console.log('点击',event,event.realIndex)
+                  const banner = self[event.realIndex];
+                  if (banner && banner.link) window.open(banner.link);
+                }
+              }
             });
           }, 500);
         }
@@ -1051,7 +1068,7 @@ export default defineComponent({
       background-position-x: right;
 
       &.doc-content-banner-imgcover {
-        background: url(https://img13.360buyimg.com/imagetools/jfs/t1/200677/31/26740/366866/632a80ffE1c1caed0/9fed939eca38b0ae.png)
+        background: url(https://img10.360buyimg.com/imagetools/jfs/t1/29781/3/19183/142442/6332a685Eb8ac2a85/9880cdaea3a1ca14.png)
           no-repeat;
         background-size: 1050px 540px;
         background-position-x: right;
@@ -1071,6 +1088,7 @@ export default defineComponent({
           height: 150px;
           box-shadow: 0 0 2px 2px rgb(0 0 0 / 10%);
           border-radius: 10px;
+          background: #fff;
         }
 
         .swiper-slide-item {
@@ -1197,5 +1215,30 @@ export default defineComponent({
 }
 .a-l {
   text-align: center;
+}
+</style>
+
+<style lang="scss">
+.swiper-pagination {
+  position: absolute;
+  width: 100%;
+  bottom: 8px !important;
+  z-index: 9999;
+  text-align: center;
+}
+.swiper-pagination-bullet {
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 2px;
+  background: $white !important;
+  transition: all 0.3s ease-in-out;
+  width: 8px !important;
+  height: 3px;
+  opacity: 0.5;
+  box-shadow: 0 0 4px 1px rgb(0 0 0 / 10%);
+  &.swiper-pagination-bullet-active {
+    width: 12px !important;
+    opacity: 1;
+  }
 }
 </style>

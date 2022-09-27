@@ -37,8 +37,14 @@
       </div>
       <div class="tab-box" v-else>
         <h4 class="sub-title">视频</h4>
-        <div class="tab-bd" >
-          <div class="design-item" v-for="(vItem, i) in videoList" v-show="activeIndex === 0" :key="i" @click="toVideoLink(vItem.link)">
+        <div class="tab-bd">
+          <div
+            class="design-item"
+            v-for="(vItem, i) in videoList"
+            v-show="activeIndex === 0"
+            :key="i"
+            @click="toVideoLink(vItem.link)"
+          >
             <img class="img-design" :src="vItem.cover_image" />
             <p class="design-title" v-hover>{{ vItem.title }}</p>
             <div class="play"><img src="@/assets/images/play-start.png" alt="" /></div>
@@ -227,8 +233,8 @@ $mainRed: rgba($doc-default-color, 0.8);
     }
     .sub-desc {
       margin-bottom: 40px;
-      line-height: 22px;
-      font-size: 16px;
+      /* line-height: 22px; */
+      font-size: 14px;
       color: #959fb1;
     }
     .sub-red {
@@ -312,7 +318,7 @@ $mainRed: rgba($doc-default-color, 0.8);
     width: 280px;
     height: 44px;
     line-height: 22px;
-    font-size: 16px;
+    font-size: 14px;
     color: #1d1d21;
     text-overflow: ellipsis;
     white-space: nowrap;
