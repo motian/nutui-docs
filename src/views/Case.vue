@@ -246,7 +246,7 @@ $mainRed: #fa685d;
     .sub-desc {
       margin-bottom: 40px;
       line-height: 22px;
-      font-size: 16px;
+      font-size: 14px;
       color: #959fb1;
       .sub-ercode {
         width: 130px;
@@ -403,10 +403,11 @@ $mainRed: #fa685d;
     }
   }
   &-title {
-    width: 280px;
+    width: 180px;
     height: 44px;
     line-height: 22px;
-    font-size: 16px;
+    font-size: 14px;
+    text-align: center;
     color: #1d1d21;
     text-overflow: -o-ellipsis-lastline;
     overflow: hidden;

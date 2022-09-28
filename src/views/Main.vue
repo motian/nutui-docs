@@ -37,16 +37,23 @@
           </div>
         </div>
 
-        <div :class="['doc-content-banner-img', bannerList.length > 0 ? 'doc-content-banner-imgcover' : '']">
+        <div
+          :class="[
+            'doc-content-banner-img',
+            bannerList.length > 0 && !backgroundLoading ? 'doc-content-banner-imgcover' : ''
+          ]"
+        >
           <div class="skew-box">
             <div class="doc-content-banner-swiper">
-              <div class="swiper-container" v-if="bannerList.length > 0">
+              <div class="swiper-container" v-if="bannerList.length > 0 && !backgroundLoading">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide" v-for="(arr, index) in bannerList" :key="index">
-                    <div class="swiper-slide-item" @click="goBannerList(arr)"><img :src="arr.cover_image" /></div>
+                    <div class="swiper-slide-item"><img :src="arr.cover_image" /></div>
                   </div>
                 </div>
               </div>
+              <!-- 如果需要分页器 -->
+              <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>
@@ -226,6 +233,7 @@ import { defineComponent, onMounted, reactive, toRefs, computed, ref } from 'vue
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import { RefData } from '@/assets/util/ref';
+import { loadImageEnd } from '@/assets/util/loadImageEnd';
 import { ApiService } from '@/service/ApiService';
 import 'swiper/swiper.min.css';
 import Swiper from 'swiper/swiper-bundle.min.js';
@@ -251,10 +259,12 @@ export default defineComponent({
       localTheme: localStorage.getItem('nutui-theme-color'),
       showAwait: false,
       qrcodeList: [],
-      bannerList: []
+      bannerList: [],
+      backgroundLoading: true
     });
     let caseSwiper: any = null;
     let qrcodeSwiper: any = null;
+    let bannerSwiper: any = null;
 
     onMounted(() => {
       if (homePage.article.show) getArticle();
@@ -266,18 +276,48 @@ export default defineComponent({
 
     const initBannerSwiper = () => {
       const apiService = new ApiService();
+
+      const imgArr = [
+        'https://img10.360buyimg.com/imagetools/jfs/t1/29781/3/19183/142442/6332a685Eb8ac2a85/9880cdaea3a1ca14.png'
+      ];
+      loadImageEnd(imgArr, () => {
+        console.log('加载完');
+        data.backgroundLoading = false;
+
+        if (!bannerSwiper) renderBannerSwiper();
+      });
       apiService.getBannerList().then((res) => {
         if (res?.state == 0 && res?.value.data.length != 0) {
           data.bannerList = [].concat(res.value.data.arrays);
-
-          setTimeout(() => {
-            new Swiper('.doc-content-banner-swiper .swiper-container', {
-              autoplay: data.bannerList.length > 1 ? true : false,
-              loop: true
-            });
-          }, 500);
+          console.log(data.backgroundLoading);
+          if (!data.backgroundLoading) renderBannerSwiper();
         }
       });
+    };
+
+    const renderBannerSwiper = () => {
+      console.log('更新 banner');
+      const self = data.bannerList;
+      setTimeout(() => {
+        bannerSwiper = new Swiper('.doc-content-banner-swiper .swiper-container', {
+          direction: 'horizontal',
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+          },
+          loop: true,
+          // 如果需要分页器
+          pagination: {
+            el: '.swiper-pagination'
+          },
+          on: {
+            click: (event) => {
+              const banner = self[event.realIndex];
+              if (banner && banner.link) window.open(banner.link);
+            }
+          }
+        });
+      }, 500);
     };
     //获取案例二维码
     const getQRCode = () => {
@@ -926,6 +966,8 @@ export default defineComponent({
   }
 
   .content-left {
+    position: relative;
+    z-index: 999;
     padding-top: 6%;
     .content-title {
       font-size: 42px;
@@ -1041,7 +1083,10 @@ export default defineComponent({
     padding: 8% 0 0 10%;
 
     .doc-content-banner-img {
-      position: relative;
+      position: absolute;
+      top: 140px;
+      right: 0;
+      width: 1050px;
       transform: translateX(-100px);
       flex: 1;
       height: 540px;
@@ -1051,7 +1096,7 @@ export default defineComponent({
       background-position-x: right;
 
       &.doc-content-banner-imgcover {
-        background: url(https://img13.360buyimg.com/imagetools/jfs/t1/200677/31/26740/366866/632a80ffE1c1caed0/9fed939eca38b0ae.png)
+        background: url(https://img10.360buyimg.com/imagetools/jfs/t1/29781/3/19183/142442/6332a685Eb8ac2a85/9880cdaea3a1ca14.png)
           no-repeat;
         background-size: 1050px 540px;
         background-position-x: right;
@@ -1071,6 +1116,7 @@ export default defineComponent({
           height: 150px;
           box-shadow: 0 0 2px 2px rgb(0 0 0 / 10%);
           border-radius: 10px;
+          background: #fff;
         }
 
         .swiper-slide-item {
@@ -1197,5 +1243,30 @@ export default defineComponent({
 }
 .a-l {
   text-align: center;
+}
+</style>
+
+<style lang="scss">
+.swiper-pagination {
+  position: absolute;
+  width: 100%;
+  bottom: 8px !important;
+  z-index: 9999;
+  text-align: center;
+}
+.swiper-pagination-bullet {
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 2px;
+  background: $white !important;
+  transition: all 0.3s ease-in-out;
+  width: 8px !important;
+  height: 3px;
+  opacity: 0.5;
+  box-shadow: 0 0 4px 1px rgb(0 0 0 / 10%);
+  &.swiper-pagination-bullet-active {
+    width: 12px !important;
+    opacity: 1;
+  }
 }
 </style>

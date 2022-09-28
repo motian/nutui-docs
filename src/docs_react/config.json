@@ -1,5 +1,5 @@
 {
-  "version": "1.3.4",
+  "version": "1.3.5",
   "nav": [
     {
       "name": "基础组件",
@@ -505,6 +505,7 @@
           "desc": "级联选择，用于多层级数据的选择，典型场景为省市区选择。",
           "sort": 1,
           "show": true,
+          "taro": true,
           "author": "ailululu"
         },
         {
@@ -576,7 +577,7 @@
           "desc": "模态对话框",
           "sort": 12,
           "show": true,
-          "taro": false,
+          "taro": true,
           "author": "yangjinjun3"
         },
         {
@@ -595,11 +596,12 @@
           "version": "0.1.0",
           "name": "Notify",
           "type": "component",
+          "tarodoc": true,
           "cName": "消息通知",
           "desc": "在页面顶部展示消息提示",
           "sort": 11,
           "show": true,
-          "taro": false,
+          "taro": true,
           "author": "vickyYE"
         },
         {
@@ -835,7 +837,7 @@
           "desc": "带特效的数字",
           "sort": 7,
           "show": true,
-          "taro": false,
+          "taro": true,
           "author": "songsong"
         },
         {
@@ -868,6 +870,7 @@
           "desc": "表格",
           "sort": 21,
           "show": true,
+          "taro": true,
           "author": "yangjinjun3"
         },
         {
@@ -912,6 +915,7 @@
           "desc": "图片预览",
           "sort": 23,
           "show": true,
+          "taro": true,
           "author": "yangjinjun3"
         }
       ]
@@ -928,7 +932,7 @@
           "desc": "地址组件",
           "sort": 3,
           "show": true,
-          "taro": false,
+          "taro": true,
           "author": "yangxiaolu"
         },
         {

@@ -267,8 +267,8 @@ $mainRed: rgba($doc-default-color, 0.8);
     }
     .sub-desc {
       margin-bottom: 40px;
-      line-height: 22px;
-      font-size: 16px;
+      /* line-height: 22px; */
+      font-size: 14px;
       color: #959fb1;
     }
     .sub-box {
@@ -416,7 +416,7 @@ $mainRed: rgba($doc-default-color, 0.8);
     width: 280px;
     height: 44px;
     line-height: 22px;
-    font-size: 16px;
+    font-size: 14px;
     color: #1d1d21;
     text-overflow: ellipsis;
     white-space: nowrap;
