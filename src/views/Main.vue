@@ -284,17 +284,19 @@ export default defineComponent({
         console.log('加载完');
         data.backgroundLoading = false;
 
-        if (bannerSwiper) renderBannerSwiper();
+        if (!bannerSwiper) renderBannerSwiper();
       });
       apiService.getBannerList().then((res) => {
         if (res?.state == 0 && res?.value.data.length != 0) {
           data.bannerList = [].concat(res.value.data.arrays);
-          if (data.backgroundLoading) renderBannerSwiper();
+          console.log(data.backgroundLoading);
+          if (!data.backgroundLoading) renderBannerSwiper();
         }
       });
     };
 
     const renderBannerSwiper = () => {
+      console.log('更新 banner');
       const self = data.bannerList;
       setTimeout(() => {
         bannerSwiper = new Swiper('.doc-content-banner-swiper .swiper-container', {
@@ -964,6 +966,8 @@ export default defineComponent({
   }
 
   .content-left {
+    position: relative;
+    z-index: 999;
     padding-top: 6%;
     .content-title {
       font-size: 42px;
@@ -1079,7 +1083,10 @@ export default defineComponent({
     padding: 8% 0 0 10%;
 
     .doc-content-banner-img {
-      position: relative;
+      position: absolute;
+      top: 140px;
+      right: 0;
+      width: 1050px;
       transform: translateX(-100px);
       flex: 1;
       height: 540px;
