@@ -1,44 +1,73 @@
 <template>
   <doc-header></doc-header>
-  <div class="resource-main">
+  <div class="resource-main" :class="isJDT() ? 'jdt-main' : ''" :style="isJDT() ? mainJdtStyle : ''">
     <div class="resource-main-content">
       <h3 class="sub-title">资源</h3>
-      <p class="sub-desc"
-        >想要了解 NutUI 设计体系背后的故事？如何才能更好的应用？你可以查阅下述我们为你精挑细选的文章。也欢迎关注 NutUI
-        官方专栏，这里常有关于 NutUI 设计体系下相关话题内容的最新分享和讨论。</p
-      >
+      <p class="sub-desc">
+        {{
+          isJDT()
+            ? '这里提供NutUI-JDT 相关设计资源的下载，更多设计资源正在整理和完善中。'
+            : '想要了解 NutUI 设计体系背后的故事？如何才能更好的应用？你可以查阅下述我们为你精挑细选的文章。也欢迎关注 NutUI官方专栏，这里常有关于 NutUI 设计体系下相关话题内容的最新分享和讨论。'
+        }}
+      </p>
     </div>
   </div>
-  <!-- 设计资源 -->
   <div class="resource-content">
+    <!-- 设计资源 -->
     <div class="resource-block">
       <h4 class="sub-title">设计资源</h4>
-      <!-- <h4 class="sub-title">学习资料</h4> -->
-      <p class="sub-desc"
-        >NutUI 3x 基于 JD APP 10.0 视觉规范实现的组件库，在这里可以下载 sketch 设计资源。
-        <a class="download" download href="https://storage.360buyimg.com/nutui-static/NutUI3xStyleGuide.sketch"
-          >点击下载
-        </a>
+
+      <div class="sub-box" v-if="!isJDT()">
+        <img
+          src="//img10.360buyimg.com/imagetools/jfs/t1/222088/15/18123/5264/632c1c16Efeb7e568/e0d6b0b3d120c889.png"
+          alt=""
+        />
+        <span class="sub-box-tip">NutUI Sketch 组件包</span>
+        <span class="sub-box-desc left90">通过在Sketch中添加组件库，在设计/修改阶段快速完成项目建设交付</span>
+        <span class="sub-box-time">2021.08.24</span>
+        <a download href="https://storage.360buyimg.com/nutui-static/NutUI3xStyleGuide.sketch" class="sub-box-btn"
+          >下载资源</a
+        >
+      </div>
+      <div class="sub-box">
+        <img
+          src="//img10.360buyimg.com/imagetools/jfs/t1/222088/15/18123/5264/632c1c16Efeb7e568/e0d6b0b3d120c889.png"
+          alt=""
+        />
+        <span class="sub-box-tip">NutUI-JDT Sketch 组件包</span>
+        <span class="sub-box-desc">通过在Sketch中添加组件库，在设计/修改阶段快速完成项目建设交付</span>
+        <span class="sub-box-time">2022.06.29</span>
+        <a download href="https://storage.360buyimg.com/nutui-static/DTDMobileUIkits.sketch" class="sub-box-btn"
+          >下载资源</a
+        >
+      </div>
+
+      <!-- <p class="sub-desc">NutUI 3x 基于 JD APP 10.0 视觉规范实现的组件库，在这里可以下载 sketch 设计资源。
+        <a class="download" download href="https://storage.360buyimg.com/nutui-static/NutUI3xStyleGuide.sketch" >点击下载</a>
       </p>
-      <p class="sub-desc"
-        >NutUI-JDT 京东科技体系移动端设计规范，这里可以下载 sketch 设计资源。
-        <a class="download" download href="https://storage.360buyimg.com/nutui-static/DTDMobileUIkits.sketch"
-          >点击下载
-        </a>
-      </p>
+      <p class="sub-desc">NutUI-JDT 京东科技体系移动端设计规范，这里可以下载 sketch 设计资源。
+        <a class="download" download href="https://storage.360buyimg.com/nutui-static/DTDMobileUIkits.sketch">点击下载</a>
+      </p> -->
       <!-- <img
         src="https://img11.360buyimg.com/imagetools/jfs/t1/206767/18/7920/405226/6181e655E6b5be4de/47a13df50b92106b.jpg"
       /> -->
     </div>
-    <div class="resource-block">
+    <!-- 视频 -->
+    <div v-if="!isJDT()" class="resource-block">
       <div class="no-data" v-if="articleList.length === 0">
         <img class="nodata-img-joy" src="@/assets/images/img-joy.png" />
         <p class="nodata-desc">敬请期待</p>
       </div>
       <div class="tab-box" v-else>
         <h4 class="sub-title">视频</h4>
-        <div class="tab-bd" >
-          <div class="design-item" v-for="(vItem, i) in videoList" v-show="activeIndex === 0" :key="i" @click="toVideoLink(vItem.link)">
+        <div class="tab-bd">
+          <div
+            class="design-item"
+            v-for="(vItem, i) in videoList"
+            v-show="activeIndex === 0"
+            :key="i"
+            @click="toVideoLink(vItem.link)"
+          >
             <img class="img-design" :src="vItem.cover_image" />
             <p class="design-title" v-hover>{{ vItem.title }}</p>
             <div class="play"><img src="@/assets/images/play-start.png" alt="" /></div>
@@ -57,7 +86,7 @@
       </div>
     </div>
     <!-- 社区文章 -->
-    <div class="resource-block">
+    <div v-if="!isJDT()" class="resource-block">
       <h4 class="sub-title">社区文章</h4>
       <p class="sub-desc"></p>
       <ul class="article-box">
@@ -70,7 +99,7 @@
   <doc-footer></doc-footer>
 </template>
 <script lang="ts">
-import { defineComponent, onMounted, reactive, toRefs } from 'vue';
+import { computed, defineComponent, onMounted, reactive, toRefs } from 'vue';
 import { onBeforeRouteUpdate, RouteLocationNormalized, useRoute } from 'vue-router';
 import Header from '@/components/Header.vue';
 import HeaderJDT from '@/docs_jdt/Header.vue';
@@ -158,6 +187,13 @@ export default defineComponent({
     onBeforeRouteUpdate((to) => {
       watchDemoUrl(to);
     });
+    const mainJdtStyle = computed(() => {
+      return {
+        background:
+          'url(https://img11.360buyimg.com/imagetools/jfs/t1/212849/9/22014/314388/6333ee91E5b491ded/0e98e0ad2dc69be1.png)',
+        backgroundSize: ' 100% 100%'
+      };
+    });
     const clickTab = (index: number) => {
       data.activeIndex = index;
     };
@@ -171,7 +207,9 @@ export default defineComponent({
       ...toRefs(data),
       clickTab,
       toLink,
-      toVideoLink
+      toVideoLink,
+      isJDT,
+      mainJdtStyle
     };
   }
 });
@@ -198,6 +236,7 @@ $mainRed: rgba($doc-default-color, 0.8);
         color: $white;
       }
       .sub-desc {
+        height: 22px;
         line-height: 22px;
         font-size: 16px;
         color: $white;
@@ -212,6 +251,7 @@ $mainRed: rgba($doc-default-color, 0.8);
   &-block {
     margin-bottom: 50px;
     text-align: left;
+    width: 1200px;
     .download {
       color: #38f;
     }
@@ -231,8 +271,72 @@ $mainRed: rgba($doc-default-color, 0.8);
       font-size: 16px;
       color: #959fb1;
     }
+    .sub-box {
+      width: 1200px;
+      height: 160px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.02), 0 4px 10px 0 rgba(0, 0, 0, 0.03),
+        0 5px 12px 6px rgba(0, 0, 0, 0.04);
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      > img {
+        width: 80px;
+        height: 80px;
+      }
+      .sub-box-tip {
+        font-size: 24px;
+        font-family: PingFang SC;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.85);
+        margin-left: 20px;
+      }
+      .sub-box-desc {
+        width: 466px;
+        font-size: 14px;
+        font-family: PingFang SC;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.45);
+        margin-left: 36px;
+      }
+      .left90 {
+        margin-left: 90px;
+      }
+      .sub-box-time {
+        font-size: 14px;
+        font-family: PingFang SC;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.45);
+        margin-right: 28px;
+      }
+      .sub-box-btn {
+        width: 126px;
+        height: 38px;
+        background: rgba(44, 104, 255, 1);
+        border-radius: 19px;
+        font-size: 16px;
+        font-family: PingFang SC;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
     .sub-red {
       color: $doc-default-color;
+    }
+  }
+}
+.jdt-main {
+  .resource-main-content {
+    background: none;
+    .sub-title {
+      color: rgba(0, 0, 0, 1);
+    }
+    .sub-desc {
+      color: rgba(0, 0, 0, 0.45);
     }
   }
 }

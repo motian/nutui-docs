@@ -1,9 +1,11 @@
 <template>
   <doc-header></doc-header>
-  <div class="resource-main">
+  <div class="resource-main" :class="isJDT() ? 'jdt-main' : ''" :style="isJDT() ? mainJdtStyle : ''">
     <div class="resource-main-content">
       <h3 class="sub-title">案例</h3>
-      <p class="sub-desc">这里有 NutUI 开发的优秀项目案例，您也可以上传您的开发成果，期待您的投稿。</p>
+      <p class="sub-desc"
+        >这里有 {{ isJDT() ? 'NutUI-JDT' : 'NutUI' }} 开发的优秀项目案例，您也可以上传您的开发成果，期待您的投稿。</p
+      >
     </div>
   </div>
   <!-- 案例 -->
@@ -16,20 +18,22 @@
         <br />
         <img class="sub-ercode" src="@/assets/images/case-ercode.png" />
       </p>
-      <p class="sub-desc"
-        >我们将从所有案例中挑出一个优秀案例（每两月），送出一个<a
-          target="_blank"
-          class="download"
-          href="https://img12.360buyimg.com/imagetools/jfs/t1/170596/37/27410/2643716/61b72009Ec4332f11/f7ba0a1f661effac.jpg"
-          >小礼品。</a
-        >
-      </p>
-      <img
-        class="sub-gifs"
-        src="https://img12.360buyimg.com/imagetools/jfs/t1/170596/37/27410/2643716/61b72009Ec4332f11/f7ba0a1f661effac.jpg"
-        alt=""
-        srcset=""
-      />
+      <div v-if="!isJDT()">
+        <p class="sub-desc"
+          >我们将从所有案例中挑出一个优秀案例（每两月），送出一个<a
+            target="_blank"
+            class="download"
+            href="https://img12.360buyimg.com/imagetools/jfs/t1/170596/37/27410/2643716/61b72009Ec4332f11/f7ba0a1f661effac.jpg"
+            >小礼品。</a
+          >
+        </p>
+        <img
+          class="sub-gifs"
+          src="https://img12.360buyimg.com/imagetools/jfs/t1/170596/37/27410/2643716/61b72009Ec4332f11/f7ba0a1f661effac.jpg"
+          alt=""
+          srcset=""
+        />
+      </div>
     </div>
     <div class="resource-block">
       <div class="no-data" v-if="caseList.length === 0">
@@ -87,7 +91,7 @@
   <doc-footer></doc-footer>
 </template>
 <script lang="ts">
-import { defineComponent, onMounted, reactive, toRefs } from 'vue';
+import { computed, defineComponent, onMounted, reactive, toRefs } from 'vue';
 import { onBeforeRouteUpdate, RouteLocationNormalized, useRoute } from 'vue-router';
 import Header from '@/components/Header.vue';
 import HeaderJDT from '@/docs_jdt/Header.vue';
@@ -123,7 +127,11 @@ export default defineComponent({
       const apiService = new ApiService();
       apiService.getCases(0).then((res) => {
         if (res?.state == 0) {
-          (res.value.data.arrays as any[]).forEach((element) => {
+          let list = res.value.data.arrays;
+          if (isJDT()) {
+            list = list.filter((item: { first_department: number }) => item.first_department == 2);
+          }
+          (list as any[]).forEach((element: { create_time: string }) => {
             let year = element.create_time.split('-')[0];
             let index = data.caseList.findIndex((item) => item.year == year);
             if (index == -1) {
@@ -140,6 +148,13 @@ export default defineComponent({
     });
     onBeforeRouteUpdate((to) => {
       watchDemoUrl(to);
+    });
+    const mainJdtStyle = computed(() => {
+      return {
+        background:
+          'url(https://img11.360buyimg.com/imagetools/jfs/t1/212849/9/22014/314388/6333ee91E5b491ded/0e98e0ad2dc69be1.png)',
+        backgroundSize: ' 100% 100%'
+      };
     });
 
     const onLeft = () => {
@@ -172,7 +187,9 @@ export default defineComponent({
       onLeft,
       onRight,
       showDesignImgFun,
-      closeSwiper
+      closeSwiper,
+      isJDT,
+      mainJdtStyle
     };
   }
 });
@@ -312,6 +329,17 @@ $mainRed: #fa685d;
           }
         }
       }
+    }
+  }
+}
+.jdt-main {
+  .resource-main-content {
+    background: none;
+    .sub-title {
+      color: rgba(0, 0, 0, 1);
+    }
+    .sub-desc {
+      color: rgba(0, 0, 0, 0.45);
     }
   }
 }

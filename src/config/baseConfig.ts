@@ -308,7 +308,7 @@ export const SiteJDT = {
         show: true
       },
       {
-        name: 'starttaro',
+        name: 'starttaro-jdt',
         cName: '小程序开发',
         eName: 'WeChat',
         show: true
@@ -362,6 +362,20 @@ export const SiteJDT = {
       eName: 'Components',
       path: '/zh-CN/component/button',
       pathName: 'zh-CN/component/button'
+    },
+    {
+      name: '/zh-CN/guide/case',
+      cName: '案例',
+      eName: 'Cases',
+      path: '/zh-CN/guide/case',
+      pathName: 'case'
+    },
+    {
+      name: 'resource',
+      cName: '资源',
+      eName: 'Resource',
+      path: '/zh-CN/guide/resource',
+      pathName: '/zh-CN/guide/resource'
     }
   ],
   // 官网 首页
