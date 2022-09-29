@@ -34,9 +34,11 @@
           src="//img10.360buyimg.com/imagetools/jfs/t1/222088/15/18123/5264/632c1c16Efeb7e568/e0d6b0b3d120c889.png"
           alt=""
         />
-        <span class="sub-box-tip">NutUI-JDT Sketch 组件包</span>
+        <span class="sub-box-tip" :class="isJDT ? 'jdt-tips' : ''">
+          {{ !isJDT() ? 'NutUI-JDT' : '' }} Sketch 组件包</span
+        >
         <span class="sub-box-desc">通过在Sketch中添加组件库，在设计/修改阶段快速完成项目建设交付</span>
-        <span class="sub-box-time">2022.06.29</span>
+        <span class="sub-box-time"> {{ isJDT() ? '更新时间' : '' }} 2022.06.29</span>
         <a download href="https://storage.360buyimg.com/nutui-static/DTDMobileUIkits.sketch" class="sub-box-btn"
           >下载资源</a
         >
@@ -291,6 +293,9 @@ $mainRed: rgba($doc-default-color, 0.8);
         font-weight: 500;
         color: rgba(0, 0, 0, 0.85);
         margin-left: 20px;
+        &.jdt-tips {
+          font-size: 28px;
+        }
       }
       .sub-box-desc {
         width: 466px;
