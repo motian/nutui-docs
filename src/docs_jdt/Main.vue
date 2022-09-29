@@ -92,11 +92,13 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .footer-jdt {
-  text-align: center;
+  display: flex;
   font-size: 12px;
   background-color: #1d1d21;
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
   color: #fff;
+  height: 100px;
 }
 
 @font-face {

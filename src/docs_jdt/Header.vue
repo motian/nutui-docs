@@ -188,8 +188,9 @@ export default defineComponent({
 <style lang="scss" scoped>
 #jdtHeader {
   z-index: 5;
+  border-bottom: 1px solid #eeeeee;
   .logo-link {
-    background: url('@/docs_jdt/assets/images/logo.png') no-repeat center/100%;
+    background: url('@/docs_jdt/assets/images/logonew.png') no-repeat center/100%;
   }
 
   .header-select-hd {
