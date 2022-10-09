@@ -51,7 +51,7 @@ let guide = [
       {
         name: '1.x',
         link: 'https://nutui.jd.com/react',
-        language: ['React17'],
+        language: ['React18'],
         app: 'App 10.0'
       }
     ]

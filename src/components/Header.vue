@@ -227,7 +227,7 @@ export default defineComponent({
 .doc {
   &-header {
     // position: fixed;
-    z-index: 2;
+    z-index: 9999;
     top: 0px;
     left: 0;
     right: 0;
