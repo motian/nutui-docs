@@ -34,7 +34,7 @@
           src="//img10.360buyimg.com/imagetools/jfs/t1/222088/15/18123/5264/632c1c16Efeb7e568/e0d6b0b3d120c889.png"
           alt=""
         />
-        <span class="sub-box-tip" :class="isJDT ? 'jdt-tips' : ''">
+        <span class="sub-box-tip" :class="isJDT() ? 'jdt-tips' : ''">
           {{ !isJDT() ? 'NutUI-JDT' : '' }} Sketch 组件包</span
         >
         <span class="sub-box-desc">通过在Sketch中添加组件库，在设计/修改阶段快速完成项目建设交付</span>
