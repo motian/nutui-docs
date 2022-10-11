@@ -76,24 +76,24 @@ export const SiteReact = {
         desc: 'React Vite 2.x TypeScript',
         url: homefeatures3
       },
-      //   {
-      //     title: '适配多端',
-      //     desc: '基于 Taro 轻松开发多端小程序',
-      //     url: homefeatures5
-      //   },
       {
-        title: '组件丰富',
-        desc: '40+ 组件，覆盖多数业务场景',
-        url: homefeatures2
+        title: '适配多端',
+        desc: '基于 Taro 轻松开发多端小程序',
+        url: homefeatures5
       },
       {
-        title: '贴心通道',
-        desc: '社区维护 高效服务<br />技术支持 经验沉淀',
-        url: homefeatures4
+        title: '组件丰富',
+        desc: '60+ 组件，覆盖多数业务场景',
+        url: homefeatures2
       }
+      // {
+      //   title: '贴心通道',
+      //   desc: '社区维护 高效服务<br />技术支持 经验沉淀',
+      //   url: homefeatures4
+      // }
     ],
     // 是否展示taro楼层
-    taroShow: false,
+    taroShow: true,
     bizComponent: [],
     cases: {
       show: false

@@ -163,7 +163,7 @@
       </div>
 
       <div class="doc-content-desc"
-        >京东集团（京东零售、京东科技、京东物流、京东工业、京东健康）累计应用项目 400+，外部累计应用项目 2,200+</div
+        >京东集团（京东零售、京东科技、京东物流、京东工业、京东健康）累计应用项目 400+，外部累计应用项目 1,500+</div
       >
 
       <div class="doc-content-cases-content">
@@ -1174,6 +1174,7 @@ export default defineComponent({
   .doc-content-more {
     .more-title {
       color: #fff;
+      text-align: center;
     }
   }
   .doc-content-cases-content__main {
