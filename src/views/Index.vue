@@ -11,20 +11,23 @@
       </div>
       <div class="doc-content-document" :class="{ isComponent: isShow(), full: !isShow() }">
         <div class="doc-content-tabs" v-if="isShow() && isShowTaroDoc && (language == 'vue' || language == 'react')">
-          <div
-            class="tab-item"
-            :class="{ cur: curKey === item.key }"
-            v-for="item in tabs"
-            :key="item.key"
-            @click="handleTabs(item.key)"
+          <template v-for="item in tabs">
+            <div
+              class="tab-item"
+              :class="{ cur: curKey === item.key }"
+              :key="item.key"
+              v-if="item.key==language || item.key=='taro'"
+              @click="handleTabs(item.key)"
             >{{ item.text }}</div
-          >
+            >
+          </template>
+
         </div>
         <div
           class="doc-content-tabs single"
           v-if="isShow() && !isShowTaroDoc && (language == 'vue' || language == 'react')"
         >
-          <div class="tab-item cur">vue / taro</div>
+          <div class="tab-item cur">{{language=='react' ? 'react':'vue'}} / taro</div>
         </div>
 
         <router-view />
@@ -101,6 +104,10 @@ export default defineComponent({
         {
           key: 'vue',
           text: 'vue'
+        },
+        {
+          key: 'react',
+          text: 'react'
         },
         {
           key: 'taro',
@@ -204,7 +211,7 @@ export default defineComponent({
     onMounted(async () => {
       componentTitle();
       watchDemoUrl(route);
-      data.curKey = isTaro(route) ? 'taro' : 'vue';
+      data.curKey = isTaro(route) ? 'taro' : language;
       getContributors(route);
 
       document.addEventListener('scroll', scrollTitle);
@@ -248,7 +255,7 @@ export default defineComponent({
 
     onBeforeRouteUpdate((to) => {
       watchDemoUrl(to);
-      data.curKey = isTaro(to) ? 'taro' : 'vue';
+      data.curKey = isTaro(to) ? 'taro' : language;
       getContributors(to);
       componentTitle(to);
       getFaqs(to);
