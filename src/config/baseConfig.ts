@@ -606,3 +606,6 @@ export const SiteJDB = {
   },
   language: 'vue'
 };
+
+// Vue JDDKH 官网配置
+export const SiteJDDKH = SiteJDB;

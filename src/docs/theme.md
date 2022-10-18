@@ -9,6 +9,7 @@ NutUI 默认提供多套 UI 主题，同时允许在一定程度上定制新的�
 * 京东 APP 10.0 设计规范主题（默认）
 * 京东科技设计主题（Vue3版本） <a target="_blank" href="https://nutui.jd.com/jdt/#/zh-CN/component/button" >预览</a>
 * 京东B商城设计主题（Vue3版本） <a target="_blank" href="https://nutui.jd.com/?jdb#/zh-CN/component/button" >预览</a>
+* 京东企业业务主题（Vue3版本） <a target="_blank" href="https://nutui.jd.com/?jddkh#/zh-CN/component/button" >预览</a>
 * 京东物流（Vue2版本）<a target="_blank" href="https://nutui.jd.com/jdl/" >预览</a>
 
 <br/>

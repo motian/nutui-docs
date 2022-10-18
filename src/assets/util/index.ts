@@ -14,4 +14,7 @@ const isJDT = () => {
 const isJDB = () => {
   return location.href.includes('jdb');
 };
-export { isMobile, arrayGroup, isJDT, isJDB };
+const isJDDKH = () => {
+  return location.href.includes('jddkh');
+};
+export { isMobile, arrayGroup, isJDT, isJDB, isJDDKH };

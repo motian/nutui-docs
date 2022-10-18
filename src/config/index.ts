@@ -1,8 +1,8 @@
 import vueConfig from '../docs_vue/config.json';
 import reactConfig from '../docs_react/config.json';
 
-import { SiteReact, SiteVue, SiteJDB, SiteJDT } from './baseConfig';
-import { isJDT, isJDB } from '@/assets/util';
+import { SiteReact, SiteVue, SiteJDB, SiteJDT, SiteJDDKH } from './baseConfig';
+import { isJDT, isJDB, isJDDKH } from '@/assets/util';
 
 let config: any = {};
 
@@ -66,6 +66,7 @@ if ((import.meta as any).env.BASE_URL.includes('react')) {
   let siteconfig = SiteVue;
   if (isJDT()) siteconfig = SiteJDT;
   if (isJDB()) siteconfig = SiteJDB;
+  if (isJDDKH()) siteconfig = SiteJDDKH;
 
   config = {
     ...vueConfig,
