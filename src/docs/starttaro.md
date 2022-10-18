@@ -15,7 +15,7 @@
 
 <img width="200" src="https://storage.360buyimg.com/jdc-article/gh_f2231eb941be_258.jpg" />
 <img src="https://img12.360buyimg.com/imagetools/jfs/t1/205124/1/15643/30360/62aad730Ea5734bf9/703bb91a0b73282f.png" width="200" alt="NutUI" />
-<img src="https://img10.360buyimg.com/imagetools/jfs/t1/17754/21/18397/12874/6334324bE8b04f22f/d2aa12abb15b2c1b.png" width="200" alt="NutUI" />
+<img src="https://img10.360buyimg.com/imagetools/jfs/t1/211804/23/22232/12144/634e4801Eac435cb6/cfd9e1773cf9423d.png" width="200" alt="NutUI" />
 
 ## 安装
 
