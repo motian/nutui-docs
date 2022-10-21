@@ -9,6 +9,7 @@ NutUI support some official themes, welcome to use. if they are not enough, reco
 * JD APP 10.0 Design Specification（default）
 * JDT Design(Vue3) <a target="_blank" href="https://nutui.jd.com/jdt/#/zh-CN/component/button" >preview</a>
 * JD ToB Mall Design(Vue3) <a target="_blank" href="https://nutui.jd.com/?jdb#/zh-CN/component/button" >preview</a>
+* JDDKH Design(Vue3) <a target="_blank" href="https://nutui.jd.com/?jddkh#/zh-CN/component/button" >preview</a>
 * JDL Design(Vue2)<a target="_blank" href="https://nutui.jd.com/jdl/" >preview</a>
 
 <br/>
