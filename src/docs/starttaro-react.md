@@ -97,7 +97,7 @@ render () {
 // config/index.js
 ```js
 sass:{
-  data: `@import "@nutui/nutui-react/dist/styles/variables.scss";`
+  data: `@import "@nutui/nutui-react-taro/dist/styles/variables.scss";`
 }
 ```
 
