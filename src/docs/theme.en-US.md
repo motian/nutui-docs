@@ -14,6 +14,19 @@ NutUI support some official themes, welcome to use. if they are not enough, reco
 
 <br/>
 
+
+> During the use of different themes, the scs file names are as follows, and the specific configuration is shown in the code snippet at the bottom
+
+| Desc                                    | Scss file name        | Framework | Version  |
+|---------------------------------------------|----------------------|------------|-----------|
+| JD APP 10.0 Design Specification（default） | variables.scss       | Vue3       | `v3.1.10` |
+| JDT Design                                  | variables-jdt.scss   | Vue3       | `v3.1.14` |
+| JD ToB Mall Design                          | variables-jdb.scss   | Vue3       | `v3.1.21` |
+| JDDKH Design                                | variables-jddkh.scss | Vue3       | `v3.2.4`  |
+| JDL Design                                  | @nutui/nutui-jdl     | Vue2       | `v2`      |
+
+
+<br/>
 <img src="https://img12.360buyimg.com/imagetools/jfs/t1/157759/16/13989/142151/6052efc7Ef8f4bff4/f3dd6422949ba4b7.jpg" width="700" alt="NutUI 主题定制">
 
 ## Style Variables

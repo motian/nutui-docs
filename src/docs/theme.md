@@ -12,8 +12,19 @@ NutUI 默认提供多套 UI 主题，同时允许在一定程度上定制新的�
 * 京东企业业务主题（Vue3版本） <a target="_blank" href="https://nutui.jd.com/?jddkh#/zh-CN/component/button" >预览</a>
 * 京东物流（Vue2版本）<a target="_blank" href="https://nutui.jd.com/jdl/" >预览</a>
 
-<br/>
 
+> 不同主题在使用过程中，对应的 scss 文件名称如下,具体详细配置见底部代码片段
+
+| 主题说明              | scss 文件名称        | 技术栈要求 | 最底版本要求 |
+|-----------------------|----------------------|------------|--------------|
+| 默认京东 APP 10.0主题 | variables.scss       | Vue3       | `v3.1.10`    |
+| 京东科技主题          | variables-jdt.scss   | Vue3       | `v3.1.14`    |
+| 京东B商城主题         | variables-jdb.scss   | Vue3       | `v3.1.21`    |
+| 京东企业业务主题      | variables-jddkh.scss | Vue3       | `v3.2.4`     |
+| 京东物流              | @nutui/nutui-jdl     | Vue2       | `v2`         |
+
+
+<br/>
 <img src="https://img12.360buyimg.com/imagetools/jfs/t1/157759/16/13989/142151/6052efc7Ef8f4bff4/f3dd6422949ba4b7.jpg" width="700" alt="NutUI 主题定制">
 
 ## 样式变量
@@ -70,7 +81,8 @@ export default defineConfig({
       scss: {
         // 默认京东 APP 10.0主题 > @import "@nutui/nutui/dist/styles/variables.scss";
         // 京东科技主题 > @import "@nutui/nutui/dist/styles/variables-jdt.scss";
-        // 京东B商城主题 > @import "@nutui/nutui-taro/dist/styles/variables-jdb.scss";
+        // 京东B商城主题 > @import "@nutui/nutui/dist/styles/variables-jdb.scss";
+        // 京东企业业务主题 > @import "@nutui/nutui/dist/styles/variables-jddkh.scss";
         additionalData: `@import "./assets/custom_theme.scss";@import "@nutui/nutui/dist/styles/variables.scss";`
       }
     }
@@ -90,6 +102,7 @@ export default defineConfig({
                 // 默认京东 APP 10.0主题 > @import "@nutui/nutui/dist/styles/variables.scss";
                 // 京东科技主题 > @import "@nutui/nutui/dist/styles/variables-jdt.scss";
                 // 京东B商城主题 > @import "@nutui/nutui/dist/styles/variables-jdb.scss";
+                // 京东企业业务主题 > @import "@nutui/nutui/dist/styles/variables-jddkh.scss";
                 // 注意：在 sass-loader 不同版本，这个选项名是 是不一样的，具体可参考 sass-loader对应的版本文档
                 data: `@import "./assets/custom_theme.scss";@import "@nutui/nutui/dist/styles/variables.scss";`,
             }
@@ -129,12 +142,13 @@ const config = {
     375: 2 / 1
   },
   sass: {
-		resource: [
-			path.resolve(__dirname, '..', 'src/assets/styles/custom_theme.scss')
-		],
+    resource: [
+      path.resolve(__dirname, '..', 'src/assets/styles/custom_theme.scss')
+    ],
     // 默认京东 APP 10.0主题 > @import "@nutui/nutui-taro/dist/styles/variables.scss";
     // 京东科技主题 > @import "@nutui/nutui-taro/dist/styles/variables-jdt.scss";
     // 京东B商城主题 > @import "@nutui/nutui-taro/dist/styles/variables-jdb.scss";
+    // 京东企业业务主题 > @import "@nutui/nutui-taro/dist/styles/variables-jddkh.scss";
     data: `@import "@nutui/nutui-taro/dist/styles/variables.scss";`
 	},
   // ...
