@@ -111,18 +111,18 @@ const routes: Array<RouteRecordRaw> = [
     ]
   },
   {
-    path: '/zh-CN/guide/case',
-    name: '/zh-CN/guide/case',
+    path: '/zh-CN/case',
+    name: '/zh-CN/case',
     component: Case
   },
   {
-    path: '/zh-CN/guide/resource',
-    name: '/zh-CN/guide/resource',
+    path: '/zh-CN/resource',
+    name: '/zh-CN/resource',
     component: Resource
   },
   {
-    path: '/zh-CN/guide/notice',
-    name: '/zh-CN/guide/notice',
+    path: '/zh-CN/notice',
+    name: '/zh-CN/notice',
     component: Notice
   }
 ];

@@ -53,6 +53,7 @@ for (const path in modulesPageTaro) {
 
 /** vite */
 const modulesDocs = (import.meta as any).glob('/src/docs/*.md');
+console.log('路由', modulesDocs);
 for (const path in modulesDocs) {
   let name = (/docs\/(.*).md/.exec(path) as any[])[1];
   guideRouters.push({
@@ -70,7 +71,7 @@ for (const path in modulesEnDocs) {
     name: `en-${name}`
   });
 }
-
+console.log(guideRouters);
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -110,33 +111,33 @@ const routes: Array<RouteRecordRaw> = [
     ]
   },
   {
-    path: '/zh-CN/guide/case',
-    name: '/zh-CN/guide/case',
+    path: '/zh-CN/case',
+    name: '/zh-CN/case',
     component: Case
   },
   {
-    path: '/zh-CN/guide/resource',
-    name: '/zh-CN/guide/resource',
+    path: '/zh-CN/resource',
+    name: '/zh-CN/resource',
     component: Resource
   },
   {
-    path: '/zh-CN/guide/notice',
-    name: '/zh-CN/guide/notice',
+    path: '/zh-CN/notice',
+    name: '/zh-CN/notice',
     component: Notice
   },
   {
-    path: '/en-US/guide/case',
-    name: '/en-US/guide/case',
+    path: '/en-US/case',
+    name: '/en-US/case',
     component: Case
   },
   {
-    path: '/en-US/guide/resource',
-    name: '/en-US/guide/resource',
+    path: '/en-US/resource',
+    name: '/en-US/resource',
     component: Resource
   },
   {
-    path: '/en-US/guide/notice',
-    name: '/en-US/guide/notice',
+    path: '/en-US/notice',
+    name: '/en-US/notice',
     component: Notice
   }
 ];

@@ -47,14 +47,14 @@ export const SiteReact = {
     {
       name: 'resource',
       cName: '资源',
-      path: '/zh-CN/guide/resource',
-      pathName: '/zh-CN/guide/resource'
+      path: '/zh-CN/resource',
+      pathName: '/zh-CN/resource'
     },
     {
       name: 'notice',
       cName: '通知',
-      path: '/zh-CN/guide/notice',
-      pathName: '/zh-CN/guide/notice'
+      path: '/zh-CN/notice',
+      pathName: '/zh-CN/notice'
     },
     {
       name: 'joinus',
@@ -101,7 +101,7 @@ export const SiteReact = {
     // 学习资源
     article: {
       show: true,
-      moreRouter: '#/resource'
+      moreRouter: '#/zh-CN/resource'
     }
   },
   language: 'react'
@@ -146,7 +146,7 @@ export const SiteVue = {
 
   header: [
     {
-      name: 'intro-jdt,intro,theme,start,start-jdt,starttaro,international,ide,contributing',
+      name: 'intro-jdt,intro,theme,start,start-jdt,starttaro,international,ide,contributing,en-intro,en-start,en-starttaro,en-theme,en-international,en-ide,en-contributing',
       cName: '指南',
       eName: 'Guide',
       path: '/zh-CN/guide/intro',
@@ -165,25 +165,25 @@ export const SiteVue = {
     //   path: 'demo.html'
     // },
     {
-      name: '/zh-CN/guide/case',
+      name: '/zh-CN/case',
       cName: '案例',
       eName: 'Cases',
-      path: '/zh-CN/guide/case',
+      path: '/zh-CN/case',
       pathName: 'case'
     },
     {
       name: 'resource',
       cName: '资源',
       eName: 'Resource',
-      path: '/zh-CN/guide/resource',
-      pathName: '/zh-CN/guide/resource'
+      path: '/zh-CN/resource',
+      pathName: '/zh-CN/resource'
     },
     {
       name: 'notice',
       cName: '通知',
       eName: 'Notice',
-      path: '/zh-CN/guide/notice',
-      pathName: '/zh-CN/guide/notice'
+      path: '/zh-CN/notice',
+      pathName: '/zh-CN/notice'
     },
     {
       name: 'joinus',
@@ -242,14 +242,14 @@ export const SiteVue = {
     // 应用案例
     cases: {
       show: true,
-      moreRouter: '#/zh-CN/guide/case'
+      moreRouter: '#/zh-CN/case'
     },
     //是否展示二维码
     qrcodeShow: true,
     // 学习资源
     article: {
       show: true,
-      moreRouter: '#/zh-CN/guide/resource'
+      moreRouter: '#/zh-CN/resource'
     }
   },
   language: 'vue'
@@ -364,18 +364,18 @@ export const SiteJDT = {
       pathName: 'zh-CN/component/button'
     },
     {
-      name: '/zh-CN/guide/case',
+      name: '/zh-CN/case',
       cName: '案例',
       eName: 'Cases',
-      path: '/zh-CN/guide/case',
+      path: '/zh-CN/case',
       pathName: 'case'
     },
     {
       name: 'resource',
       cName: '资源',
       eName: 'Resource',
-      path: '/zh-CN/guide/resource',
-      pathName: '/zh-CN/guide/resource'
+      path: '/zh-CN/resource',
+      pathName: '/zh-CN/resource'
     }
   ],
   // 官网 首页
@@ -422,14 +422,14 @@ export const SiteJDT = {
     // 应用案例
     cases: {
       show: true,
-      moreRouter: '#/zh-CN/guide/case'
+      moreRouter: '#/zh-CN/case'
     },
     //是否展示二维码
     qrcodeShow: true,
     // 学习资源
     article: {
       show: true,
-      moreRouter: '#/zh-CN/guide/resource'
+      moreRouter: '#/zh-CN/resource'
     }
   },
   language: 'vue',
@@ -594,14 +594,14 @@ export const SiteJDB = {
     // 应用案例
     cases: {
       show: true,
-      moreRouter: '#/zh-CN/guide/case'
+      moreRouter: '#/zh-CN/case'
     },
     //是否展示二维码
     qrcodeShow: true,
     // 学习资源
     article: {
       show: true,
-      moreRouter: '#/zh-CN/guide/resource'
+      moreRouter: '#/zh-CN/resource'
     }
   },
   language: 'vue'

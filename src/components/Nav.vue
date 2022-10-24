@@ -11,9 +11,10 @@
           :key="_package"
           v-show="_package.show"
         >
-          <router-link v-if="!_package.isLink" :to="_package.name.toLowerCase()">{{
+          <!-- <router-link v-if="!_package.isLink" :to="_package.name.toLowerCase()">{{
             isZh ? _package.cName : _package.eName
-          }}</router-link>
+          }}</router-link> -->
+          <div v-if="!_package.isLink" @click="changeNav(_package)">{{ isZh ? _package.cName : _package.eName }}</div>
           <a v-else :href="_package.name" target="_blank">{{ isZh ? _package.cName : _package.eName }}</a>
         </li>
       </ul>
@@ -59,7 +60,9 @@ export default defineComponent({
       return function (name: string) {
         const currentValue = RefData.getInstance().currentRoute.value;
         let value = currentValue.indexOf('-taro') > -1 ? currentValue.split('-taro')[0] : currentValue;
-        return value == name.toLowerCase();
+
+        if (isZh.value) return value == name.toLowerCase();
+        return value == `en-${name.toLowerCase()}`;
       };
     });
 
@@ -87,6 +90,19 @@ export default defineComponent({
       state.isGuideNav = name.indexOf('guide') > -1 ? true : false;
     };
 
+    // 切换路由
+    const changeNav = (_nav: any) => {
+      if (['notice', 'resource'].includes(_nav.name.toLowerCase())) {
+        router.push({
+          name: `${isZh ? '/zh-CN/' : '/en-US'}` + _nav.name.toLowerCase()
+        });
+      } else {
+        router.push({
+          path: _nav.name.toLowerCase()
+        });
+      }
+    };
+
     onBeforeRouteUpdate((to: any) => {
       let name: any = '';
       console.log('当前路由', to);
@@ -104,7 +120,8 @@ export default defineComponent({
       docs: reactive(docs),
       currentRoute: RefData.getInstance().currentRoute,
       reorder,
-      isZh
+      isZh,
+      changeNav
     };
   }
 });
