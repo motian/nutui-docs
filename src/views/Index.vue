@@ -5,12 +5,36 @@
     <div class="doc-content">
       <div class="doc-title" v-if="isShow()">
         <div class="doc-title-position" :class="{ fixed: fixed, hidden: hidden }">
-          <div class="title">{{ componentName.name }}&nbsp;{{ isZh ? componentName.cName : '' }}</div>
+          <div class="doc-title-content">
+            <div class="title">{{ componentName.name }}&nbsp;{{ isZh ? componentName.cName : '' }}</div>
+            <div
+              class="doc-content-tabs"
+              v-if="isShow() && isShowTaroDoc && (language == 'vue' || language == 'react')"
+            >
+              <template v-for="item in tabs">
+                <div
+                  class="tab-item"
+                  :class="{ cur: curKey === item.key }"
+                  :key="item.key"
+                  v-if="item.key == language || item.key == 'taro'"
+                  @click="handleTabs(item.key)"
+                >
+                  {{ item.text }}
+                </div>
+              </template>
+            </div>
+            <div
+              class="doc-content-tabs single"
+              v-if="isShow() && !isShowTaroDoc && (language == 'vue' || language == 'react')"
+            >
+              <div class="tab-item cur">{{ language == 'react' ? 'react' : 'vue' }} / taro</div>
+            </div>
+          </div>
           <doc-issue class=""></doc-issue>
         </div>
       </div>
       <div class="doc-content-document" :class="{ isComponent: isShow(), full: !isShow() }">
-        <div class="doc-content-tabs" v-if="isShow() && isShowTaroDoc && (language == 'vue' || language == 'react')">
+        <!-- <div class="doc-content-tabs" v-if="isShow() && isShowTaroDoc && (language == 'vue' || language == 'react')">
           <template v-for="item in tabs">
             <div
               class="tab-item"
@@ -28,7 +52,7 @@
           v-if="isShow() && !isShowTaroDoc && (language == 'vue' || language == 'react')"
         >
           <div class="tab-item cur">{{language=='react' ? 'react':'vue'}} / taro</div>
-        </div>
+        </div> -->
 
         <router-view />
 
@@ -292,9 +316,9 @@ $doc-title-height: 137px;
       }
     }
     &-tabs {
-      position: absolute;
-      right: 475px;
-      top: 48px;
+      // position: absolute;
+      // right: 475px;
+      // top: 48px;
       display: flex;
       height: 40px;
       align-items: center;
@@ -394,6 +418,12 @@ $doc-title-height: 137px;
     width: 100%;
     height: $doc-title-height;
     z-index: 2;
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: calc(100% - 370px);
+    }
     &-position {
       top: 0px;
       display: flex;
